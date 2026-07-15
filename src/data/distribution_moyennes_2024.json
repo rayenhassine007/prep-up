@@ -1,0 +1,39 @@
+{
+  "session": 2024,
+  "source": "Rapport du Jury, Concours Nationaux d'entree aux cycles de formation d'ingenieurs, Session 2024 - FIGURE III.1-4 DISTRIBUTIONS DES MOYENNES DES CANDIDATS (extraction des barres du graphique, verifiee par recoupement exact avec les totaux Inscrits/Classes/Elimines/Absents imprimes dans le rapport).",
+  "note": "Moyenne = score total divise par la somme des coefficients (echelle /20), PAS le score brut de classement. bins[i] = nombre de candidats ayant obtenu une moyenne dans l'intervalle [i, i+1[ (bins[19] = [19,20]). 'abs' = candidats absents (non comptes dans les bins). 'classes' = candidats effectivement classes (le rang va de 1 a 'classes').",
+  "filieres": {
+    "MP": {
+      "bins": [5,29,57,134,181,209,208,224,201,162,121,78,58,30,7,6,2,0,0,0],
+      "abs": 40,
+      "inscrits": 1752,
+      "classes": 1685,
+      "admis": 1410,
+      "stats": {"moyenne": 7.26, "ecart_type": 2.85, "min": 0.00, "max": 16.81, "mediane": 7.14}
+    },
+    "PC": {
+      "bins": [4,10,31,93,150,183,203,157,131,96,67,40,35,22,6,6,0,0,0,0],
+      "abs": 23,
+      "inscrits": 1257,
+      "classes": 1226,
+      "admis": 1030,
+      "stats": {"moyenne": 7.06, "ecart_type": 2.66, "min": 0.32, "max": 16.00, "mediane": 6.71}
+    },
+    "T": {
+      "bins": [2,3,26,36,84,107,107,120,116,58,49,35,18,4,0,0,2,0,0,0],
+      "abs": 18,
+      "inscrits": 785,
+      "classes": 762,
+      "admis": 686,
+      "stats": {"moyenne": 7.19, "ecart_type": 2.48, "min": 0.05, "max": 16.08, "mediane": 7.10}
+    },
+    "BG": {
+      "bins": [0,0,0,5,22,45,75,60,38,38,21,14,4,2,3,0,0,0,0,0],
+      "abs": 5,
+      "inscrits": 332,
+      "classes": 323,
+      "admis": 290,
+      "stats": {"moyenne": 7.61, "ecart_type": 2.07, "min": 3.03, "max": 14.62, "mediane": 7.25}
+    }
+  }
+}

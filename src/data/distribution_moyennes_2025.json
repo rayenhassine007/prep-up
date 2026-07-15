@@ -1,0 +1,148 @@
+{
+  "session": 2025,
+  "methode": "reel",
+  "source": "Guide de Preparatoire Tunisie (Ahmed Bechir Tebourbi, IPEIB) - https://blockbechir.github.io/guide-preparatoire/ - histogrammes reels des moyennes des candidats (verifie contre les effectifs officiels, code source public sur GitHub).",
+  "note": "bins[i] = nombre de candidats ayant obtenu une moyenne dans [i, i+1[. 'classes' = somme des bins (candidats classes). 'admis' = places pourvues (source: meme site). Stats (moyenne/ecart_type/min/max/mediane) recalculees a partir des bins (candidat suppose uniformement reparti dans son intervalle), donc legerement approximatives par rapport a des stats calculees sur les notes brutes.",
+  "filieres": {
+    "MP": {
+      "bins": [
+        1,
+        10,
+        18,
+        55,
+        90,
+        138,
+        160,
+        150,
+        167,
+        163,
+        161,
+        136,
+        105,
+        66,
+        55,
+        29,
+        15,
+        0,
+        2,
+        0
+      ],
+      "abs": 1,
+      "inscrits": 1522,
+      "classes": 1521,
+      "admis": 1326,
+      "stats": {
+        "moyenne": 8.9,
+        "ecart_type": 3.22,
+        "min": 0,
+        "max": 19,
+        "mediane": 8.5
+      }
+    },
+    "PC": {
+      "bins": [
+        0,
+        1,
+        13,
+        52,
+        90,
+        150,
+        174,
+        165,
+        143,
+        118,
+        99,
+        85,
+        42,
+        28,
+        13,
+        9,
+        2,
+        1,
+        0,
+        0
+      ],
+      "abs": 1,
+      "inscrits": 1186,
+      "classes": 1185,
+      "admis": 1045,
+      "stats": {
+        "moyenne": 7.97,
+        "ecart_type": 2.74,
+        "min": 1,
+        "max": 18,
+        "mediane": 7.5
+      }
+    },
+    "T": {
+      "bins": [
+        0,
+        2,
+        12,
+        33,
+        58,
+        87,
+        121,
+        100,
+        97,
+        86,
+        74,
+        35,
+        26,
+        9,
+        9,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "abs": 1,
+      "inscrits": 752,
+      "classes": 751,
+      "admis": 689,
+      "stats": {
+        "moyenne": 7.8,
+        "ecart_type": 2.59,
+        "min": 1,
+        "max": 17,
+        "mediane": 7.5
+      }
+    },
+    "BG": {
+      "bins": [
+        0,
+        0,
+        0,
+        2,
+        9,
+        26,
+        52,
+        69,
+        46,
+        37,
+        26,
+        13,
+        6,
+        4,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "abs": 1,
+      "inscrits": 293,
+      "classes": 292,
+      "admis": 253,
+      "stats": {
+        "moyenne": 8.12,
+        "ecart_type": 2.03,
+        "min": 3,
+        "max": 16,
+        "mediane": 7.5
+      }
+    }
+  }
+}

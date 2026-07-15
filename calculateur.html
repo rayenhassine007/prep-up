@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculateur de rang — Prep'Up</title>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+    <header class="site">
+      <a class="brand" href="/"><img class="brand-logo" src="/logo.svg" alt="Prep'Up" />Prep<span>'Up</span></a>
+      <nav>
+        <a class="back" href="/">&larr; Accueil</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <h1>Calculateur de <span class="grad-text">rang</span> & orientation</h1>
+      <div class="calc-tabs" id="calc-tabs">
+        <button data-tab="score" class="active">Calculer mon rang</button>
+        <button data-tab="rang">Simulateur de rang</button>
+      </div>
+
+      <div id="tab-score" class="tab-panel active">
+      <p class="subtitle">Entre tes notes et choisis ta filière.</p>
+
+      <div class="filiere-select" id="filiere-select"></div>
+      <div id="matieres"></div>
+
+      <div class="result-card" id="result-card">
+        <div class="score"><span id="moy-value">0</span><span class="max"> / 20</span></div>
+        <div class="pct" id="score-pct">score <span id="score-value">0</span> / <span id="score-max">44</span><span id="moy-cmp"></span></div>
+      </div>
+
+      <div class="year-select" id="year-select"></div>
+
+      <div class="rank-card" id="rank-card">
+        <div class="rank-title" id="rank-title">Rang estimé</div>
+        <div class="rank-value" id="rank-value">—</div>
+        <div class="rank-sub" id="rank-sub"></div>
+      </div>
+
+      <div class="reach-cta" id="reach-cta">
+        <button type="button" id="go-simulateur" class="go-sim-btn">Voir les filières où je peux aller <span class="arrow">→</span></button>
+        <p class="reach-cta-hint">Ton rang estimé est repris automatiquement dans le simulateur.</p>
+      </div>
+
+      <button class="reset" id="reset-btn">Réinitialiser les notes</button>
+
+      <div class="disclaimer">
+        Score = somme des (note × coefficient) pour chaque matière — ce n'est <strong>pas</strong> une moyenne divisée par le total des coefficients. C'est ce score qui sert au classement du concours.
+        <br /><br />
+        2020, 2024 et 2025 ne sont que des estimations.
+      </div>
+
+      <div class="disclaimer sources">
+        <strong>📄 Sources</strong>
+        <ul>
+          <li>
+            <a class="inline-link" href="/sources/rapport_jury_2025.pdf" target="_blank" rel="noopener">Rapport du jury 2025</a>,
+            <a class="inline-link" href="/sources/rapport_jury_2024.pdf" target="_blank" rel="noopener">2024</a>
+            et
+            <a class="inline-link" href="/sources/rapport_jury_2020.pdf" target="_blank" rel="noopener">2020</a>
+            — distributions réelles des scores et statistiques du concours
+          </li>
+        </ul>
+      </div>
+      </div><!-- /#tab-score -->
+
+      <div id="tab-rang" class="tab-panel">
+        <p class="subtitle">Entre ton rang → vois les filières où tu peux aller.</p>
+        <div class="sim-controls" id="sim-controls"></div>
+        <div class="sim-summary" id="sim-summary"></div>
+        <div class="sim-list" id="sim-list"></div>
+        <div class="sim-wishlist-wrap" id="sim-wishlist"></div>
+        <details class="sim-table-details"><summary>Tableau complet par école / filière — places 2026</summary><p class="sim-table-note">Nombre de places par filière pour la session <strong>2026</strong> (source : JORT officiel). Les rangs min–max affichés sont ceux de 2024.</p><div id="sim-table"></div></details>
+        <div class="disclaimer">
+          Places = capacités <strong>2026</strong> (JORT officiel). Rangs = affectation <strong>2024</strong> (min = meilleur admis, max = dernier admis), utilisés comme <strong>estimation prédictive</strong> — pas une garantie.
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/calculator.js"></script>
+    <script type="module" src="/src/simulateur.js"></script>
+    <script type="module" src="/src/ui.js"></script>
+  </body>
+</html>

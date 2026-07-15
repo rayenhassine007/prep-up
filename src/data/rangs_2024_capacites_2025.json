@@ -1,0 +1,2574 @@
+{
+  "session_rangs": 2024,
+  "session_capacites": 2026,
+  "source": "Guide des Rangs & Capacites 2025 (Rev03) - compile par The Tunisian Engineers (Amine Bouabid), a partir des resultats officiels d'affectation de la session 2024 et des capacites annoncees pour la session 2025. | Rangs 2024 & 2025 alignes sur les fichiers officiels fournis par l'utilisateur.",
+  "note": "PT = filiere Technologie (T). rang_min = meilleur rang admis dans ce programme en 2024, rang_max = moins bon rang admis en 2024. Ces valeurs servent d'estimation predictive pour les candidats 2025, pas de resultat garanti. | Capacites mises a jour vers la session 2026 (JORT n°35 du 3 avril 2026, total officiel 3238 places). Les rangs restent ceux de 2024 (predicteur). | Rangs 2025 ajoutes (champ r2025) pour ENIT, ENISo, ENSIT, ENICar, Enet'Com, EPT, ENSI (fournis par l'utilisateur, resultats officiels).",
+  "programmes": [
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Génie Mécanique",
+      "MP": {
+        "capacite": 22,
+        "rang_min": 99,
+        "rang_max": 1054
+      },
+      "PC": {
+        "capacite": 11,
+        "rang_min": 112,
+        "rang_max": 612
+      },
+      "PT": {
+        "capacite": 19,
+        "rang_min": 57,
+        "rang_max": 325
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          71,
+          878
+        ],
+        "PC": [
+          77,
+          355
+        ],
+        "PT": [
+          64,
+          305
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Génie Industriel",
+      "MP": {
+        "capacite": 40,
+        "rang_min": 228,
+        "rang_max": 606
+      },
+      "PC": {
+        "capacite": 25,
+        "rang_min": 116,
+        "rang_max": 273
+      },
+      "PT": {
+        "capacite": 6,
+        "rang_min": 44,
+        "rang_max": 66
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          217,
+          527
+        ],
+        "PC": [
+          62,
+          208
+        ],
+        "PT": [
+          34,
+          55
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Génie Civil",
+      "MP": {
+        "capacite": 22,
+        "rang_min": 838,
+        "rang_max": 1390
+      },
+      "PC": {
+        "capacite": 18,
+        "rang_min": 120,
+        "rang_max": 781
+      },
+      "PT": {
+        "capacite": 9,
+        "rang_min": 292,
+        "rang_max": 567
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          597,
+          1316
+        ],
+        "PC": [
+          590,
+          719
+        ],
+        "PT": [
+          176,
+          579
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Modélisation pour l’Industrie et Services",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 60,
+        "rang_max": 226
+      },
+      "PC": {
+        "capacite": 1,
+        "rang_min": 114,
+        "rang_max": 114
+      },
+      "PT": {
+        "capacite": 1,
+        "rang_min": 22,
+        "rang_max": 22
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          41,
+          259
+        ],
+        "PC": [
+          82,
+          82
+        ],
+        "PT": [
+          19,
+          19
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Génie Hydraulique et Environnement",
+      "MP": {
+        "capacite": 5,
+        "rang_min": 238,
+        "rang_max": 1235
+      },
+      "PC": {
+        "capacite": 6,
+        "rang_min": 645,
+        "rang_max": 782
+      },
+      "PT": {
+        "capacite": 5,
+        "rang_min": 400,
+        "rang_max": 571
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          1080,
+          1276
+        ],
+        "PC": [
+          479,
+          700
+        ],
+        "PT": [
+          498,
+          602
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Techniques Avancées",
+      "MP": {
+        "capacite": 15,
+        "rang_min": 2,
+        "rang_max": 20
+      },
+      "PC": {
+        "capacite": 2,
+        "rang_min": 2,
+        "rang_max": 3
+      },
+      "PT": {
+        "capacite": 1,
+        "rang_min": 1,
+        "rang_max": 1
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          3,
+          22
+        ],
+        "PC": [
+          1,
+          3
+        ],
+        "PT": [
+          1,
+          1
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Télécommunications",
+      "MP": {
+        "capacite": 26,
+        "rang_min": 44,
+        "rang_max": 191
+      },
+      "PC": {
+        "capacite": 16,
+        "rang_min": 122,
+        "rang_max": 150
+      },
+      "PT": {
+        "capacite": 9,
+        "rang_min": 56,
+        "rang_max": 89
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          249,
+          487
+        ],
+        "PC": [
+          105,
+          146
+        ],
+        "PT": [
+          36,
+          117
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Informatique",
+      "MP": {
+        "capacite": 32,
+        "rang_min": 232,
+        "rang_max": 405
+      },
+      "PC": {
+        "capacite": 10,
+        "rang_min": 40,
+        "rang_max": 126
+      },
+      "PT": {
+        "capacite": 9,
+        "rang_min": 34,
+        "rang_max": 80
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          187,
+          442
+        ],
+        "PC": [
+          110,
+          127
+        ],
+        "PT": [
+          56,
+          98
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
+      "filiere": "Génie Electrique",
+      "MP": {
+        "capacite": 39,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 12,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 17,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          208,
+          781
+        ],
+        "PC": [
+          194,
+          289
+        ],
+        "PT": [
+          74,
+          175
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Bizerte (ENIB)",
+      "filiere": "Génie Industriel",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 670,
+        "rang_max": 1162
+      },
+      "PC": {
+        "capacite": 12,
+        "rang_min": 276,
+        "rang_max": 644
+      },
+      "PT": {
+        "capacite": 3,
+        "rang_min": 175,
+        "rang_max": 277
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Bizerte (ENIB)",
+      "filiere": "Génie Mécanique",
+      "MP": {
+        "capacite": 16,
+        "rang_min": 1166,
+        "rang_max": 1399
+      },
+      "PC": {
+        "capacite": 16,
+        "rang_min": 651,
+        "rang_max": 750
+      },
+      "PT": {
+        "capacite": 8,
+        "rang_min": 329,
+        "rang_max": 554
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Bizerte (ENIB)",
+      "filiere": "Génie Civil",
+      "MP": {
+        "capacite": 3,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 10,
+        "rang_min": 832,
+        "rang_max": 891
+      },
+      "PT": {
+        "capacite": 7,
+        "rang_min": 561,
+        "rang_max": 647
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sousse (ENISo)",
+      "filiere": "Electronique Industrielle",
+      "MP": {
+        "capacite": 22,
+        "rang_min": 794,
+        "rang_max": 1084
+      },
+      "PC": {
+        "capacite": 8,
+        "rang_min": 349,
+        "rang_max": 592
+      },
+      "PT": {
+        "capacite": 15,
+        "rang_min": 158,
+        "rang_max": 355
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sousse (ENISo)",
+      "filiere": "Mécatronique",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 172,
+        "rang_max": 951
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": 178,
+        "rang_max": 480
+      },
+      "PT": {
+        "capacite": 18,
+        "rang_min": 85,
+        "rang_max": 289
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          550,
+          935
+        ],
+        "PC": null,
+        "PT": [
+          38,
+          187
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sousse (ENISo)",
+      "filiere": "Informatique Appliquée",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 381,
+        "rang_max": 600
+      },
+      "PC": {
+        "capacite": 5,
+        "rang_min": 123,
+        "rang_max": 256
+      },
+      "PT": {
+        "capacite": 14,
+        "rang_min": 35,
+        "rang_max": 188
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          423,
+          790
+        ],
+        "PC": [
+          182,
+          257
+        ],
+        "PT": [
+          85,
+          212
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sousse (ENISo)",
+      "filiere": "Génie Mécanique & Productique",
+      "MP": {
+        "capacite": 10,
+        "rang_min": 1033,
+        "rang_max": 1316
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": 575,
+        "rang_max": 650
+      },
+      "PT": {
+        "capacite": 10,
+        "rang_min": 274,
+        "rang_max": 445
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sousse (ENISo)",
+      "filiere": "Ingenierie des Systemes Embarques Automobiles",
+      "MP": {
+        "capacite": 13,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 9,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sousse (ENISo)",
+      "filiere": "Génie Télécommunications Embarquées",
+      "MP": {
+        "capacite": 15,
+        "rang_min": 355,
+        "rang_max": 718
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 7,
+        "rang_min": 164,
+        "rang_max": 206
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          524,
+          907
+        ],
+        "PC": null,
+        "PT": [
+          113,
+          200
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Monastir (ENIM)",
+      "filiere": "Génie Electrique",
+      "MP": {
+        "capacite": 30,
+        "rang_min": null,
+        "rang_max": 1100
+      },
+      "PC": {
+        "capacite": 22,
+        "rang_min": null,
+        "rang_max": 620
+      },
+      "PT": {
+        "capacite": 23,
+        "rang_min": null,
+        "rang_max": 360
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Monastir (ENIM)",
+      "filiere": "Génie Energétique",
+      "MP": {
+        "capacite": 45,
+        "rang_min": null,
+        "rang_max": 1380
+      },
+      "PC": {
+        "capacite": 31,
+        "rang_min": null,
+        "rang_max": 730
+      },
+      "PT": {
+        "capacite": 9,
+        "rang_min": null,
+        "rang_max": 500
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Monastir (ENIM)",
+      "filiere": "Génie Mécanique",
+      "MP": {
+        "capacite": 27,
+        "rang_min": null,
+        "rang_max": 1172
+      },
+      "PC": {
+        "capacite": 12,
+        "rang_min": null,
+        "rang_max": 778
+      },
+      "PT": {
+        "capacite": 36,
+        "rang_min": null,
+        "rang_max": 490
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Monastir (ENIM)",
+      "filiere": "Génie Textile",
+      "MP": {
+        "capacite": 10,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 52,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 16,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "filiere": "Génie Electrique",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 753,
+        "rang_max": 1361
+      },
+      "PC": {
+        "capacite": 20,
+        "rang_min": 504,
+        "rang_max": 762
+      },
+      "PT": {
+        "capacite": 20,
+        "rang_min": 138,
+        "rang_max": 519
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "filiere": "Génie Electromécanique",
+      "MP": {
+        "capacite": 20,
+        "rang_min": 1050,
+        "rang_max": 1361
+      },
+      "PC": {
+        "capacite": 20,
+        "rang_min": 171,
+        "rang_max": 762
+      },
+      "PT": {
+        "capacite": 25,
+        "rang_min": 56,
+        "rang_max": 511
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "filiere": "Génie des Matériaux et Management Industriel",
+      "MP": {
+        "capacite": 5,
+        "rang_min": 1095,
+        "rang_max": 1328
+      },
+      "PC": {
+        "capacite": 25,
+        "rang_min": 304,
+        "rang_max": 835
+      },
+      "PT": {
+        "capacite": 10,
+        "rang_min": 358,
+        "rang_max": 571
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "filiere": "Génie Informatique",
+      "MP": {
+        "capacite": 42,
+        "rang_min": 297,
+        "rang_max": 704
+      },
+      "PC": {
+        "capacite": 25,
+        "rang_min": 83,
+        "rang_max": 253
+      },
+      "PT": {
+        "capacite": 8,
+        "rang_min": 93,
+        "rang_max": 153
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "filiere": "Génie Biologique",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 40,
+        "rang_min": 13,
+        "rang_max": 222
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "filiere": "Géo Ressources et Environnement",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 20,
+        "rang_min": 14,
+        "rang_max": 128
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Sfax (ENIS)",
+      "filiere": "Génie Civil",
+      "MP": {
+        "capacite": 5,
+        "rang_min": 1113,
+        "rang_max": 1280
+      },
+      "PC": {
+        "capacite": 20,
+        "rang_min": 583,
+        "rang_max": 905
+      },
+      "PT": {
+        "capacite": 20,
+        "rang_min": 432,
+        "rang_max": 599
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Gabès (ENIG)",
+      "filiere": "Génie Electrique- Automatique",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 1138,
+        "rang_max": 1349
+      },
+      "PC": {
+        "capacite": 27,
+        "rang_min": 708,
+        "rang_max": 854
+      },
+      "PT": {
+        "capacite": 13,
+        "rang_min": 468,
+        "rang_max": 566
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Gabès (ENIG)",
+      "filiere": "Génie Mécanique",
+      "MP": {
+        "capacite": 1,
+        "rang_min": 1405,
+        "rang_max": 1405
+      },
+      "PC": {
+        "capacite": 19,
+        "rang_min": 825,
+        "rang_max": 937
+      },
+      "PT": {
+        "capacite": 19,
+        "rang_min": 573,
+        "rang_max": 630
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Gabès (ENIG)",
+      "filiere": "Génie Civil",
+      "MP": {
+        "capacite": 5,
+        "rang_min": 1389,
+        "rang_max": 1389
+      },
+      "PC": {
+        "capacite": 35,
+        "rang_min": 789,
+        "rang_max": 994
+      },
+      "PT": {
+        "capacite": 10,
+        "rang_min": 580,
+        "rang_max": 683
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Gabès (ENIG)",
+      "filiere": "Génie Chimique- Procédés",
+      "MP": {
+        "capacite": 1,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 25,
+        "rang_min": 830,
+        "rang_max": 1029
+      },
+      "PT": {
+        "capacite": 5,
+        "rang_min": 646,
+        "rang_max": 665
+      },
+      "BG": {
+        "capacite": 5,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Gabès (ENIG)",
+      "filiere": "Génie des Communications et Réseaux",
+      "MP": {
+        "capacite": 20,
+        "rang_min": 820,
+        "rang_max": 1132
+      },
+      "PC": {
+        "capacite": 20,
+        "rang_min": 258,
+        "rang_max": 697
+      },
+      "PT": {
+        "capacite": 10,
+        "rang_min": 253,
+        "rang_max": 454
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Faculté des Sciences de Tunis (FST)",
+      "filiere": "Chimie Analytique et Instrumentation",
+      "MP": {
+        "capacite": 5,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 25,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 5,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Faculté des Sciences de Tunis (FST)",
+      "filiere": "Géosciences",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 8,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 22,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Faculté des Sciences de Tunis (FST)",
+      "filiere": "Electronique",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Faculté des Sciences de Tunis (FST)",
+      "filiere": "Informatique",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale Supérieure d'Ingénieurs de Tunis (ENSIT)",
+      "filiere": "Génie Electrique",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 675,
+        "rang_max": 1031
+      },
+      "PC": {
+        "capacite": 6,
+        "rang_min": 341,
+        "rang_max": 609
+      },
+      "PT": {
+        "capacite": 24,
+        "rang_min": 179,
+        "rang_max": 380
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          826,
+          1095
+        ],
+        "PC": [
+          410,
+          555
+        ],
+        "PT": [
+          228,
+          394
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale Supérieure d'Ingénieurs de Tunis (ENSIT)",
+      "filiere": "Génie Mécanique",
+      "MP": {
+        "capacite": 20,
+        "rang_min": 925,
+        "rang_max": 1314
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": 631,
+        "rang_max": 668
+      },
+      "PT": {
+        "capacite": 35,
+        "rang_min": 362,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          895,
+          1230
+        ],
+        "PC": [
+          414,
+          564
+        ],
+        "PT": [
+          342,
+          577
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale Supérieure d'Ingénieurs de Tunis (ENSIT)",
+      "filiere": "Génie Civil",
+      "MP": {
+        "capacite": 8,
+        "rang_min": 1000,
+        "rang_max": 1410
+      },
+      "PC": {
+        "capacite": 10,
+        "rang_min": 423,
+        "rang_max": 873
+      },
+      "PT": {
+        "capacite": 12,
+        "rang_min": 579,
+        "rang_max": 625
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": [
+          730,
+          811
+        ],
+        "PT": [
+          557,
+          653
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale Supérieure d'Ingénieurs de Tunis (ENSIT)",
+      "filiere": "Génie Industriel",
+      "MP": {
+        "capacite": 10,
+        "rang_min": 653,
+        "rang_max": 818
+      },
+      "PC": {
+        "capacite": 30,
+        "rang_min": 238,
+        "rang_max": 521
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          565,
+          926
+        ],
+        "PC": [
+          246,
+          485
+        ],
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale Supérieure d'Ingénieurs de Tunis (ENSIT)",
+      "filiere": "Génie Mathématiques Appliquées et Modélisation",
+      "MP": {
+        "capacite": 18,
+        "rang_min": 565,
+        "rang_max": 748
+      },
+      "PC": {
+        "capacite": 12,
+        "rang_min": 240,
+        "rang_max": 372
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          448,
+          818
+        ],
+        "PC": [
+          265,
+          389
+        ],
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale Supérieure d'Ingénieurs de Tunis (ENSIT)",
+      "filiere": "Informatique",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 379,
+        "rang_max": 555
+      },
+      "PC": {
+        "capacite": 16,
+        "rang_min": 127,
+        "rang_max": 229
+      },
+      "PT": {
+        "capacite": 14,
+        "rang_min": 101,
+        "rang_max": 149
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          494,
+          714
+        ],
+        "PC": [
+          139,
+          235
+        ],
+        "PT": [
+          105,
+          197
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Carthage (ENICar)",
+      "filiere": "Génie des Systèmes Industriels et Logistiques",
+      "MP": {
+        "capacite": 16,
+        "rang_min": 659,
+        "rang_max": 913
+      },
+      "PC": {
+        "capacite": 27,
+        "rang_min": 340,
+        "rang_max": 579
+      },
+      "PT": {
+        "capacite": 9,
+        "rang_min": 262,
+        "rang_max": 379
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          534,
+          905
+        ],
+        "PC": [
+          233,
+          557
+        ],
+        "PT": [
+          83,
+          314
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Carthage (ENICar)",
+      "filiere": "Mécatronique",
+      "MP": {
+        "capacite": 12,
+        "rang_min": 505,
+        "rang_max": 876
+      },
+      "PC": {
+        "capacite": 18,
+        "rang_min": 291,
+        "rang_max": 562
+      },
+      "PT": {
+        "capacite": 19,
+        "rang_min": 110,
+        "rang_max": 331
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          475,
+          933
+        ],
+        "PC": [
+          259,
+          454
+        ],
+        "PT": [
+          173,
+          282
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Carthage (ENICar)",
+      "filiere": "Informatique",
+      "MP": {
+        "capacite": 42,
+        "rang_min": 402,
+        "rang_max": 581
+      },
+      "PC": {
+        "capacite": 36,
+        "rang_min": 140,
+        "rang_max": 258
+      },
+      "PT": {
+        "capacite": 12,
+        "rang_min": 75,
+        "rang_max": 119
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          410,
+          603
+        ],
+        "PC": [
+          132,
+          241
+        ],
+        "PT": [
+          103,
+          150
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Carthage (ENICar)",
+      "filiere": "Génie des Systèmes Infotroniques",
+      "MP": {
+        "capacite": 17,
+        "rang_min": 593,
+        "rang_max": 778
+      },
+      "PC": {
+        "capacite": 17,
+        "rang_min": 267,
+        "rang_max": 367
+      },
+      "PT": {
+        "capacite": 5,
+        "rang_min": 148,
+        "rang_max": 197
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          500,
+          855
+        ],
+        "PC": [
+          245,
+          364
+        ],
+        "PT": [
+          153,
+          227
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Electronique et des Télécommunications de Sfax (Enet'Com)",
+      "filiere": "Génie des Télécommunications",
+      "MP": {
+        "capacite": 25,
+        "rang_min": 600,
+        "rang_max": 790
+      },
+      "PC": {
+        "capacite": 30,
+        "rang_min": 234,
+        "rang_max": 336
+      },
+      "PT": {
+        "capacite": 5,
+        "rang_min": 137,
+        "rang_max": 233
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          530,
+          932
+        ],
+        "PC": [
+          202,
+          366
+        ],
+        "PT": [
+          138,
+          222
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Electronique et des Télécommunications de Sfax (Enet'Com)",
+      "filiere": "Génie des Systèmes Electroniques et Communication",
+      "MP": {
+        "capacite": 10,
+        "rang_min": 798,
+        "rang_max": 914
+      },
+      "PC": {
+        "capacite": 35,
+        "rang_min": 339,
+        "rang_max": 585
+      },
+      "PT": {
+        "capacite": 15,
+        "rang_min": 234,
+        "rang_max": 384
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          789,
+          1000
+        ],
+        "PC": [
+          386,
+          614
+        ],
+        "PT": [
+          246,
+          404
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Electronique et des Télécommunications de Sfax (Enet'Com)",
+      "filiere": "Ingénierie des Données et Systèmes Décisionnels",
+      "MP": {
+        "capacite": 20,
+        "rang_min": 377,
+        "rang_max": 756
+      },
+      "PC": {
+        "capacite": 15,
+        "rang_min": 155,
+        "rang_max": 278
+      },
+      "PT": {
+        "capacite": 5,
+        "rang_min": 104,
+        "rang_max": 190
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          235,
+          659
+        ],
+        "PC": [
+          214,
+          320
+        ],
+        "PT": [
+          53,
+          163
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Electronique et des Télécommunications de Sfax (Enet'Com)",
+      "filiere": "Génie Informatique Industrielle",
+      "MP": {
+        "capacite": 12,
+        "rang_min": 778,
+        "rang_max": 864
+      },
+      "PC": {
+        "capacite": 29,
+        "rang_min": 249,
+        "rang_max": 436
+      },
+      "PT": {
+        "capacite": 19,
+        "rang_min": 140,
+        "rang_max": 298
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          761,
+          938
+        ],
+        "PC": [
+          325,
+          474
+        ],
+        "PT": [
+          76,
+          358
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Polytechnique de Tunisie (EPT)",
+      "filiere": "Polytechnique",
+      "MP": {
+        "capacite": 20,
+        "rang_min": 1,
+        "rang_max": 43
+      },
+      "PC": {
+        "capacite": 20,
+        "rang_min": 5,
+        "rang_max": 32
+      },
+      "PT": {
+        "capacite": 10,
+        "rang_min": 2,
+        "rang_max": 11
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": [
+          2,
+          51
+        ],
+        "PC": null,
+        "PT": [
+          3,
+          12
+        ],
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale des Sciences de l'Informatique (ENSI)",
+      "filiere": "Informatique",
+      "MP": {
+        "capacite": 150,
+        "rang_min": 170,
+        "rang_max": 367
+      },
+      "PC": {
+        "capacite": 30,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 20,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure de la Statistique et de l'Analyse de l'Information (ESSAI)",
+      "filiere": "Statistique et Analyse de l'Information",
+      "MP": {
+        "capacite": 55,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure des Communications de Tunis (SUP'COM)",
+      "filiere": "Télécommunications",
+      "MP": {
+        "capacite": 98,
+        "rang_min": 44,
+        "rang_max": 169
+      },
+      "PC": {
+        "capacite": 46,
+        "rang_min": null,
+        "rang_max": 84
+      },
+      "PT": {
+        "capacite": 18,
+        "rang_min": null,
+        "rang_max": 32
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut National Agronomique de Tunisie (INAT)",
+      "filiere": "Sciences de la Production Végétale",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 3,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 12,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut National Agronomique de Tunisie (INAT)",
+      "filiere": "Phytiatrie",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 1,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 12,
+        "rang_min": 69,
+        "rang_max": 171
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut National Agronomique de Tunisie (INAT)",
+      "filiere": "Production Animale",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 1,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 12,
+        "rang_min": 45,
+        "rang_max": 135
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut National Agronomique de Tunisie (INAT)",
+      "filiere": "Economie Agricole",
+      "MP": {
+        "capacite": 2,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 12,
+        "rang_min": 4,
+        "rang_max": 71
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut National Agronomique de Tunisie (INAT)",
+      "filiere": "Génie Rural, Eaux et Forêts",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 2,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 12,
+        "rang_min": 7,
+        "rang_max": 54
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut National Agronomique de Tunisie (INAT)",
+      "filiere": "Agro-alimentaire",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 2,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 12,
+        "rang_min": 1,
+        "rang_max": 41
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut National Agronomique de Tunisie (INAT)",
+      "filiere": "Halieutique",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 12,
+        "rang_min": 43,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure des Industries Alimentaires de Tunis (ESIAT)",
+      "filiere": "Agro- alimentaire",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 2,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 15,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure des Ingénieurs de Medjez El Bab (ESIM)",
+      "filiere": "Hydraulique et Aménagement",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 10,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 5,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure des Ingénieurs de Medjez El Bab (ESIM)",
+      "filiere": "Génie Mécanique et Agro-Industriel",
+      "MP": {
+        "capacite": 0,
+        "rang_min": 1295,
+        "rang_max": 1380
+      },
+      "PC": {
+        "capacite": 10,
+        "rang_min": 790,
+        "rang_max": 868
+      },
+      "PT": {
+        "capacite": 5,
+        "rang_min": 330,
+        "rang_max": 640
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure des Ingénieurs de Medjez El Bab (ESIM)",
+      "filiere": "Topographie et Géomatique",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 10,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 5,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure d'Agriculture de Mateur (ESA-Mateur)",
+      "filiere": "Production Animale et Fourragère",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 13,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure d'Agriculture de Mograne (ESAM)",
+      "filiere": "Economie Rurale",
+      "MP": {
+        "capacite": 1,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 11,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure d'Agriculture de Mograne (ESAM)",
+      "filiere": "Production Agricole",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 11,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Supérieure d'Agriculture du Kef (ESAKef)",
+      "filiere": "Sciences Agricoles",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 2,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 15,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut Supérieur Agronomique de Chott-Mariem (ISACHM)",
+      "filiere": "Horticulture",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 12,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut Supérieur Agronomique de Chott-Mariem (ISACHM)",
+      "filiere": "Aménagement du Paysage",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 11,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale des Sciences et Technologies Avancées de Borj Cedria (ENSTAB)",
+      "filiere": "Technologies Avancées",
+      "MP": {
+        "capacite": 50,
+        "rang_min": 758,
+        "rang_max": 1155
+      },
+      "PC": {
+        "capacite": 38,
+        "rang_min": 283,
+        "rang_max": 708
+      },
+      "PT": {
+        "capacite": 2,
+        "rang_min": 263,
+        "rang_max": 401
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Gafsa (ENIGa)",
+      "filiere": "Génie Chimique Industriel et Minier",
+      "MP": {
+        "capacite": 2,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 4,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 9,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Gafsa (ENIGa)",
+      "filiere": "Génie Energétique et Technologies de l’Environnement",
+      "MP": {
+        "capacite": 2,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 16,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 2,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Ecole Nationale d'Ingénieurs de Gafsa (ENIGa)",
+      "filiere": "Génie Electromécanique",
+      "MP": {
+        "capacite": 2,
+        "rang_min": 1327,
+        "rang_max": 1327
+      },
+      "PC": {
+        "capacite": 9,
+        "rang_min": 873,
+        "rang_max": 1003
+      },
+      "PT": {
+        "capacite": 9,
+        "rang_min": 573,
+        "rang_max": 600
+      },
+      "BG": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    },
+    {
+      "institution": "Institut Supérieur Agronomique de Chott-Mariem (ISACHM)",
+      "filiere": "Production Animale",
+      "MP": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PC": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "PT": {
+        "capacite": 0,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "BG": {
+        "capacite": 11,
+        "rang_min": null,
+        "rang_max": null
+      },
+      "r2025": {
+        "MP": null,
+        "PC": null,
+        "PT": null,
+        "BG": null
+      }
+    }
+  ],
+  "session_rangs_alt": 2025
+}

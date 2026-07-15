@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prep'Up — Outils pour prépas tunisiennes</title>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+    <header class="site">
+      <a class="brand" href="/"><img class="brand-logo" src="/logo.svg" alt="Prep'Up" />Prep<span>'Up</span></a>
+      <nav>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+        </button>
+      </nav>
+    </header>
+    <main class="home">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Réussis ton <span class="grad-text">concours prépa</span>, sans prise de tête</h1>
+          <p class="lead">
+            Estime ton rang avec des données réelles des années précédentes, et découvre
+            les filières où tu peux aller. Pensé pour les prépas tunisiennes.
+          </p>
+          <ul class="check-list">
+            <li>MP / PC / T / BG</li>
+            <li>Résultats instantanés</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn-primary" href="/calculateur.html">Rang &amp; filières accessibles <span class="arrow">→</span></a>
+            <a class="btn-ghost" href="#outils">🧰 Découvrir les outils ↓</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="float-card">
+            <div class="fc-label">🧮 Calculateur</div>
+            <div class="fc-value grad">38.54 <span style="font-size:0.9rem">/ 44</span></div>
+            <div class="fc-sub">rang estimé + filières accessibles</div>
+          </div>
+          <div class="float-card">
+            <div class="fc-label">📚 Ressources</div>
+            <div class="fc-value">300+ docs</div>
+            <div class="fc-sub">cours, TD, DS et concours par filière</div>
+          </div>
+          <div class="float-card">
+            <div class="fc-label">⏱️ Pomodoro</div>
+            <div class="fc-value">25:00</div>
+            <div class="fc-sub">minuteur de révision — sur Rakezly</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ÉCOLES MARQUEE -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span class="marquee-item">EPT</span>
+          <span class="marquee-item">ENIT</span>
+          <span class="marquee-item">ENSI</span>
+          <span class="marquee-item">SUP'COM</span>
+          <span class="marquee-item">ENSTAB</span>
+          <span class="marquee-item">ENICarthage</span>
+          <span class="marquee-item">ENIS</span>
+          <span class="marquee-item">ENIM</span>
+          <span class="marquee-item">ENIG</span>
+          <span class="marquee-item">ENISo</span>
+          <span class="marquee-item">EPT</span>
+          <span class="marquee-item">ENIT</span>
+          <span class="marquee-item">ENSI</span>
+          <span class="marquee-item">SUP'COM</span>
+          <span class="marquee-item">ENSTAB</span>
+          <span class="marquee-item">ENICarthage</span>
+          <span class="marquee-item">ENIS</span>
+          <span class="marquee-item">ENIM</span>
+          <span class="marquee-item">ENIG</span>
+          <span class="marquee-item">ENISo</span>
+        </div>
+      </div>
+
+      <!-- FEATURES -->
+      <div class="section-head reveal" id="outils">
+        <span class="section-pill">🧰 La boîte à outils</span>
+        <h2>Tout ce qu'il te faut pour le concours</h2>
+      </div>
+
+      <div class="feature-grid">
+        <a class="feature-card live reveal" href="/calculateur.html" style="--tint: var(--blue)">
+          <div class="icon-chip">🧮</div>
+          <div class="title-row">
+            <h3>Rang &amp; filières accessibles</h3>
+            <span class="badge">Disponible</span>
+          </div>
+          <p>Calcule ton rang à partir de tes notes — ou entre-le directement — puis découvre les filières où tu peux aller, classées d'après les rangs réels 2024 &amp; 2025.</p>
+        </a>
+
+        <a class="feature-card live reveal d1" href="/ressources.html" style="--tint: var(--violet)">
+          <div class="icon-chip">📚</div>
+          <div class="title-row">
+            <h3>Ressources</h3>
+            <span class="badge">Disponible</span>
+          </div>
+          <p>Sujets, exercices et TD classés par filière et matière.</p>
+        </a>
+
+        <a class="feature-card live reveal d2" href="https://rakezly.vercel.app/" target="_blank" rel="noopener" style="--tint: var(--orange)">
+          <div class="icon-chip">⏱️</div>
+          <div class="title-row">
+            <h3>Pomodoro</h3>
+            <span class="badge external">Rakezly ↗</span>
+          </div>
+          <p>Minuteur de travail avec musique, thèmes et statistiques — sur Rakezly.</p>
+        </a>
+      </div>
+    <!-- COMMENT ÇA MARCHE -->
+      <div class="section-head reveal">
+        <span class="section-pill">⚡ Simple et rapide</span>
+        <h2>Comment ça marche ?</h2>
+        <p>Trois étapes, moins d'une minute, aucune inscription. Et pour t'accompagner : ressources et minuteur pomodoro.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-emoji">✏️</span>
+          <div class="step-num">1</div>
+          <h3>Entre tes notes</h3>
+          <p>Choisis ta filière et saisis tes notes par matière — les coefficients officiels sont déjà intégrés.</p>
+        </div>
+        <div class="step reveal d1">
+          <span class="step-emoji">📊</span>
+          <div class="step-num">2</div>
+          <h3>Vois ton rang</h3>
+          <p>Ton rang au concours s'estime instantanément à partir des données réelles des années précédentes. C'est une estimation, pas ton rang exact.</p>
+        </div>
+        <div class="step reveal d2">
+          <span class="step-emoji">🎯</span>
+          <div class="step-num">3</div>
+          <h3>Découvre tes filières</h3>
+          <p>Entre ton rang (ou reprends celui calculé) et vois chaque filière classée : Sûr, Probable ou Hors de portée — d'après les rangs réels 2024 &amp; 2025.</p>
+        </div>
+      </div>
+
+      </main>
+
+    <footer class="site-footer reveal">
+      <span class="grad-text">Prep'Up</span><br />
+      Les estimations sont indicatives — vérifie toujours les informations officielles.
+    </footer>
+
+    <script>
+      // Smooth in-page scroll (manual rAF tween — works even when the OS
+      // "reduce motion" setting would disable CSS scroll-behavior: smooth).
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href').slice(1);
+          const el = id && document.getElementById(id);
+          if (!el) return;
+          e.preventDefault();
+          const startY = window.scrollY;
+          const endY = el.getBoundingClientRect().top + window.scrollY - 90;
+          const dur = 600, t0 = performance.now();
+          const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+          function step(now) {
+            const p = Math.min(1, (now - t0) / dur);
+            window.scrollTo(0, startY + (endY - startY) * ease(p));
+            if (p < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      });
+    </script>
+    <script type="module" src="/src/ui.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+# dependencies (Vercel réinstalle automatiquement)
+node_modules/
+
+# build output (Vercel régénère)
+dist/
+
+# vite
+.vite/
+vite.config.js.timestamp-*.mjs
+
+# logs
+*.log
+npm-debug.log*
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

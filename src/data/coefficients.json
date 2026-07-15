@@ -1,0 +1,65 @@
+{
+  "note": "Coefficients confirmed identical across the official 'Guide du candidat' for Session 2021 and Session 2026 (2 independent official documents, 5 years apart). Score = somme des (note/20 x coefficient), PAS divisee par le total des coefficients.",
+  "filieres": {
+    "MP": {
+      "total": 44,
+      "matieres": {
+        "Mathematiques I": 10,
+        "Mathematiques II": 6,
+        "Physique": 10,
+        "STA (Systemes techniques automatises)": 4,
+        "Informatique": 4,
+        "Chimie inorganique": 4,
+        "Francais": 3,
+        "Anglais": 3
+      }
+    },
+    "PC": {
+      "total": 44,
+      "matieres": {
+        "Mathematiques": 11,
+        "Physique": 12,
+        "STA (Systemes techniques automatises)": 4,
+        "Chimie inorganique": 4,
+        "Informatique": 4,
+        "Chimie organique": 3,
+        "Francais": 3,
+        "Anglais": 3
+      }
+    },
+    "T": {
+      "total": 46,
+      "matieres": {
+        "Mathematiques": 10,
+        "Physique": 10,
+        "CFM (Conception et fabrication mecanique)": 6,
+        "STA (Systemes techniques automatises)": 6,
+        "Informatique": 4,
+        "Chimie inorganique": 4,
+        "Francais": 3,
+        "Anglais": 3
+      },
+      "correction_appliquee": "Mathematiques = 10 (pas 11). Total = 46 (pas 47). Corrige le 02/07/2026 apres verification croisee du Guide du candidat Session 2021 ET Session 2026."
+    },
+    "BG": {
+      "total": 44,
+      "matieres": {
+        "Mathematiques": 7,
+        "Physique": 5,
+        "Biochimie/Biologie cellulaire/Genetique": 4.5,
+        "Biologie animale et physiologie animale": 4.5,
+        "Biologie vegetale/Botanique/Physiologie vegetale": 4.5,
+        "Geologie": 4.5,
+        "Informatique": 4,
+        "Anglais": 3,
+        "Francais": 3,
+        "Chimie inorganique": 2,
+        "Chimie organique": 2
+      }
+    }
+  },
+  "sources": [
+    "Guide du candidat, Session 2026 - concours-ingenieurs.rnu.tn/documents/Guide_candidat.pdf",
+    "Guide du candidat, Session 2021 - fichier utilisateur ilide.info-guide-candidat2021"
+  ]
+}

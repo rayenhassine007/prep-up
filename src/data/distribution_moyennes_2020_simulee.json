@@ -1,0 +1,113 @@
+{
+  "session": 2020,
+  "filieres": {
+    "MP": {
+      "bins": [
+        0,
+        1,
+        22,
+        128,
+        283,
+        319,
+        266,
+        187,
+        102,
+        43,
+        17,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "abs": null,
+      "inscrits": 1436,
+      "classes": 1374,
+      "admis": 1171,
+      "stats": {
+        "moyenne": 5.96,
+        "ecart_type": 1.69,
+        "min": 0.0,
+        "max": 14.26,
+        "mediane": 5.78
+      },
+      "methode": "simule (Monte Carlo, quantiles Q1/Mediane/Q3/Max par matiere, tires independamment, recale sur la Moyenne officielle) car le rapport 2020 ne publie pas d'histogramme global"
+    },
+    "PC": {
+      "bins": [
+        0,
+        6,
+        70,
+        201,
+        240,
+        173,
+        124,
+        89,
+        47,
+        18,
+        8,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "abs": null,
+      "inscrits": 1000,
+      "classes": 979,
+      "admis": 793,
+      "stats": {
+        "moyenne": 5.19,
+        "ecart_type": 1.78,
+        "min": 0.0,
+        "max": 13.3,
+        "mediane": 4.87
+      },
+      "methode": "simule (Monte Carlo, quantiles Q1/Mediane/Q3/Max par matiere, tires independamment, recale sur la Moyenne officielle) car le rapport 2020 ne publie pas d'histogramme global"
+    },
+    "T": {
+      "bins": [
+        0,
+        1,
+        17,
+        93,
+        179,
+        180,
+        118,
+        62,
+        20,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "abs": null,
+      "inscrits": 696,
+      "classes": 676,
+      "admis": 609,
+      "stats": {
+        "moyenne": 5.37,
+        "ecart_type": 1.39,
+        "min": 0.0,
+        "max": 11.14,
+        "mediane": 5.25
+      },
+      "methode": "simule (Monte Carlo, quantiles Q1/Mediane/Q3/Max par matiere, tires independamment, recale sur la Moyenne officielle) car le rapport 2020 ne publie pas d'histogramme global"
+    }
+  }
+}

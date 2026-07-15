@@ -1,0 +1,704 @@
+{
+  "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfOf_4ZbMaWZSJk0Jyg2vx-b2A5ubU19oHQbA5mxNgG2mwmfg/viewform",
+  "filieres": {
+    "MP": {
+      "1ère année": [
+        {
+          "matiere": "Maths — Algèbre",
+          "items": [
+            { "titre": "ALGÈBRE — 1ère MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1IABRuZ73rGSs2WFAqJFum2nJKFQXuJg1" },
+            { "titre": "Cours d'algèbre par chapitre (complexes, polynômes, espaces vectoriels...)", "type": "Drive", "url": "https://drive.google.com/drive/folders/18GG9V3-xlmI63XllAja2JKaqmmbm0aFP" },
+            { "titre": "MATH — 1ère prépa (exos, oraux X-ENS, Exo7)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1e3CBshB-in-Y2VnKikXzNeJWXRVLhkXu" }
+          ]
+        },
+        {
+          "matiere": "Maths — Analyse",
+          "items": [
+            { "titre": "ANALYSE — 1ère MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1oLxAHclMNdQqYXJR__8GdMYa6ZmqXq_K" },
+            { "titre": "MATH — 1ère prépa (exos, oraux X-ENS, Exo7)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1e3CBshB-in-Y2VnKikXzNeJWXRVLhkXu" }
+          ]
+        },
+        {
+          "matiere": "Physique",
+          "items": [
+            { "titre": "PHYSIQUE — 1ère MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1zoBu7YqYQULr_PymB8yfvoImu88EU5so" },
+            { "titre": "PHYS — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1bqUtm2PfEshpU8Ma6tAPuk51xYgBkhtY" },
+            { "titre": "DS et DM Physique — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1UpmpXPa3eSE-Rl7gvRSlbZBhllc0T1MJ" }
+          ]
+        },
+        {
+          "matiere": "Chimie",
+          "items": [
+            { "titre": "Chimie Tout-en-un MPSI-PTSI (livre)", "type": "PDF", "url": "https://drive.google.com/file/d/1wP2sgaOoa_iO4-WohkXyzIQqpUMkg92a/view" }
+          ]
+        },
+        {
+          "matiere": "Informatique",
+          "items": [
+            { "titre": "Info — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hKZB0wzYbPlIKYQKPeZJo71o2yuEjdsR" },
+            { "titre": "Info — 1ère PT (commun)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1xfP9OxompkJbVG9A2Nz8E3PJHmLZup0b" },
+            { "titre": "Informatique — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1mvI3QZrdM0epdEWQDmH8Aob0RLIV-meG" },
+            { "titre": "Cours Info (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/14TDuhs7eg0ltv9mcJUvIhnMawYDpcsgw/view" },
+            { "titre": "Cours info 1ère année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1DmoHrfmeLeie7MRY8K-B85MNDhGT7ju3/view" }
+          ]
+        },
+        { "matiere": "STA", "items": [] },
+        {
+          "matiere": "Français",
+          "items": [
+            { "titre": "Fr — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CHmcL6Zuza_yEc7sMHNhOOa7L1BE3ux6" },
+            { "titre": "Thème : Le Travail", "type": "Drive", "url": "https://drive.google.com/drive/folders/1XEMav_yJpcZeRBNGZTMdwtny4j9vnVCt" },
+            { "titre": "Thème : L'enfance", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z7ICU8PCRKC5WCJUqoc95K_90wZa0vuz" },
+            { "titre": "Français — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1la_fPf4Dl1Zi8I0L1Rq788lCm2gGon4i" }
+          ]
+        },
+        {
+          "matiere": "Anglais",
+          "items": [
+            { "titre": "English — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1pNuD7xqmpjn5_2u6UqeWvxkLgGr75Bz6" }
+          ]
+        },
+        {
+          "matiere": "Livres",
+          "items": [
+            { "titre": "Livres tout-en-un — maths, physique, SI (MPSI/PCSI/PTSI)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1V59dHenc08KjsdhB6UrD9UiTQOqA3_v2" },
+            { "titre": "Les Maths en tête", "type": "Drive", "url": "https://drive.google.com/drive/folders/1TdLr5Q5LZYKsMsb_dxrNsujZIi5c6JBl" }
+          ]
+        },
+        {
+          "matiere": "Packs complets (toutes matières)",
+          "items": [
+            { "titre": "Pack Taki — 1ère MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1A_LiGctRdfL5qXMGOX3hYT23OnyiaaPg" },
+            { "titre": "Documents MP1 — IPEIM", "type": "PDF", "url": "https://drive.google.com/file/d/1E83ijUA6wCX7rJ3ZCPueBTnXWrSzY8mE/view" },
+            { "titre": "TIPE — conseils et exemples de sujets", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Af4BRu-zNh8Qu5C_64ugFp6Y6c2Fi_Gu" },
+            { "titre": "MP1 — IPEIT 2016", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CV1yj-yWJyDWdIJ7lkGWvqbmFAM2AWfp" },
+            { "titre": "MP1 + MP2 — 2018", "type": "Drive", "url": "https://drive.google.com/drive/folders/1cgd05GllPzkp1ZDL-zGUVjzUoQ-rAV8M" },
+            { "titre": "Cours + TD — IPEIM 2017", "type": "Drive", "url": "https://drive.google.com/drive/folders/1YSe18PM8Idcor18Tvi5mw7wlweEXvXpa" },
+            { "titre": "IPEIM 2017", "type": "Drive", "url": "https://drive.google.com/drive/folders/1zzQd24hnaTUqJSL_mkiDjYsnGPAwfSqe" }
+          ]
+        }
+      ],
+      "2ème année": [
+        {
+          "matiere": "Maths — Algèbre",
+          "items": [
+            { "titre": "ALGÈBRE — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1lP7KzqNu_mVYPJCCFQ27wtCBu2nuCcJa" },
+            { "titre": "ALGÈBRE — cours, TD et DS", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/RhUyxBwL" },
+            { "titre": "Algèbre — MP2", "type": "Drive", "url": "https://drive.google.com/drive/folders/1RqqiHuqSZWvkf1IIHQJAbtdxcw1ngbVS" },
+            { "titre": "Grands Classiques de la Réduction (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1F2HmAKhRaO8kPabrZTlSdewAYOnKDIWH/view" }
+          ]
+        },
+        {
+          "matiere": "Maths — Analyse",
+          "items": [
+            { "titre": "ANALYSE — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1bJvNMLu7cPJ3jLRNhNhu98JSW_U4pEWO" },
+            { "titre": "ANALYSE — cours, TD et DS", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/B1lFTRxJ" },
+            { "titre": "Analyse — MP2", "type": "Drive", "url": "https://drive.google.com/drive/folders/1RhAr4wbSpcL9I2Vkwk5gf_gU0wiAB8OV" }
+          ]
+        },
+        {
+          "matiere": "Maths — Compléments (classiques, oraux, annales)",
+          "items": [
+            { "titre": "Math — Elamdaoui", "type": "Drive", "url": "https://drive.google.com/drive/folders/1sjQpeMbU2aTWD8Dh31HEZBYcmbQ_ocKh" },
+            { "titre": "Exercices classiques", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/QkcUWboY" },
+            { "titre": "Oraux classiques", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/B91kDQ4A" },
+            { "titre": "MATH — dossier complet (annales et PDFs en vrac)", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/BssGzLBB" },
+            { "titre": "Math — Elamdaoui (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-aeVChY1QRts5XPFHm_TcEwS3GaBx2Pk" },
+            { "titre": "Math — MP2 (cours et TD)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1TtwhmIEbE5CoXipKfofTDxS8d2QaJMmw" },
+            { "titre": "Programme officiel Maths MP 2ème (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1NTdsIf5HPM7Ke4Pu3u1tQc7_0IFZEOTT/view" }
+          ]
+        },
+        {
+          "matiere": "Physique",
+          "items": [
+            { "titre": "PHYSIQUE — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1tutJoAEHkovuEO-8Dnic2TzMdH9AymFw" },
+            { "titre": "PHYSIQUE — cours, TD et DS", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/t8kl1bhJ" },
+            { "titre": "Physique — Open Prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1PJqwxkquWKQ56gsMSukXQN8sgQ-qI92L" },
+            { "titre": "Physique — Mr Elamdaoui (prépa Maroc)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1fD43hoUrWUWn4fuL2xiyfV9FjzPanWoP" },
+            { "titre": "Physique — MP2", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Tgo5oh5K6LUpNgZC0vsdUpj9kzzcXzIX" },
+            { "titre": "Induction (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1_A4pdcGjsAYS4j36lOLlb7zzHO21d0Cf/view" },
+            { "titre": "Physique — cours et TD (prépa)", "type": "Drive", "url": "https://drive.google.com/drive/folders/19akrfP-bIqmGfBIS_ILWWTFUI1x_2p22" },
+            { "titre": "Résumés Physique", "type": "Drive", "url": "https://drive.google.com/drive/folders/1LIh_WJ4f1gyOZBYNFBVXxUKx4R7VwJDu" }
+          ]
+        },
+        {
+          "matiere": "Chimie",
+          "items": [
+            { "titre": "CHIMIE — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1m31T3Qrp1FaSIMoOb9ikCEOUKld0e67X" },
+            { "titre": "CHIMIE — cours, TD et DS", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/oxtlnRDR" },
+            { "titre": "Chimie — IPEIM (Ms Sonia Dridi)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SLhLlY5Kav8JpvcDh4cnX-o2h3b1lFpf" },
+            { "titre": "Chimie — MP2", "type": "Drive", "url": "https://drive.google.com/drive/folders/1YNa3QEiWrk9IRHIRy8sxYqkle6iIpLIn" },
+            { "titre": "Chimie — Sonia Dridi (MP2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Tp5LeduIhQdUFAFAnFZr-0SikcdSV14h" },
+            { "titre": "Chimie — cours et TD (prépa)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Pl-F9LZTZ35jqw0zc5UYHH-anQuZiBZh" }
+          ]
+        },
+        {
+          "matiere": "Informatique",
+          "items": [
+            { "titre": "INFO — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1WocTBpcZeCP8m18KA1bSySaVv6Fuczqp" },
+            { "titre": "INFORMATIQUE — cours et TP", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/Bl931DIJ" },
+            { "titre": "Informatique — IPEIN 2018", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Pe2EIO5rg679ExOa_GXjX6qXyt-NhoOA" },
+            { "titre": "Cours Info — 2ème année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1bnyL_WV0QFz3LyPuTNHBWDjmLs0CD4SB/view" },
+            { "titre": "TD Info — 2ème année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1KzesVTpDtqwAmvCPzYAGEP4CEb5L8Gk7/view" },
+            { "titre": "Cours POO (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1lo5tOFZRXWKpbLW1KD9pWoXCS4lBu8J5/view" },
+            { "titre": "Cours Base de Données (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1oSUfIYUeaji4nl2sn5feBRf7zB17qnpL/view" },
+            { "titre": "Simulation Numérique (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1tbPNNwWeMOfwIXiihFYGrwMPdsJSN1TW/view" },
+            { "titre": "Informatique — MP2", "type": "Drive", "url": "https://drive.google.com/drive/folders/14BSxaSzhcZHZYpzdMJ1pLefic1zeV4Ab" },
+            { "titre": "Info — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1IzKWLIEedYrsat1LLIFOgTD1k6Bbc9c7" },
+            { "titre": "Informatique — 2ème PT (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-4YRUZIF_38f5R2cTDeCCRa6UQLKhIdW" }
+          ]
+        },
+        {
+          "matiere": "STA",
+          "items": [
+            { "titre": "STA — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/19cpQCCuuTOO3tX8WRhuM3u06w6GIdftc" },
+            { "titre": "STA — cours, TD et DS", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/ck9wyTbL" }
+          ]
+        },
+        {
+          "matiere": "Français",
+          "items": [
+            { "titre": "FRANÇAIS — thèmes et méthodologie", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/ttFQXB5I" },
+            { "titre": "TD Français — CPGE", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SIwOHD_Va7QrWRUIP6Htpxu8pYbmxGhI" },
+            { "titre": "LANGUES — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1OmLGy6zDbP2-3NGCtV5pWy9iHspLVpJJ" },
+            { "titre": "Français prépa (thèmes et essais)", "type": "Drive", "url": "https://drive.google.com/drive/folders/10F9ung8N60AkC32fEbVdYozVz1v5gGgk" },
+            { "titre": "Commentaires", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iqbAcIdI7UbjUIoTgehJT4I_JOvsHtuq" },
+            { "titre": "Langue — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/120RSofQ_rLsvWIeBwjVVIao4J2C7HlXx" }
+          ]
+        },
+        {
+          "matiere": "Anglais",
+          "items": [
+            { "titre": "ANGLAIS — cours et vocabulaire", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/J4dUzDIb" },
+            { "titre": "English — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-RW1XnZy2BPAkELwVUhjZkluerFEK07x" }
+          ]
+        },
+        {
+          "matiere": "Résumés & Livres",
+          "items": [
+            { "titre": "Résumés de tous les chapitres", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/Y4sVEbKK" },
+            { "titre": "Livres", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/d58mzJQC" },
+            { "titre": "Résumés — Open Prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1J5LGeSalqPE2johVSKVVO_Bzx2NaHDsh" },
+            { "titre": "Résumés très importants", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ZRPxRcpofFIu1fEEwjFhJHuQJ7i510EZ" }
+          ]
+        },
+        {
+          "matiere": "Packs complets (toutes matières)",
+          "items": [
+            { "titre": "2ème prépa — Mehdi", "type": "Drive", "url": "https://drive.google.com/drive/folders/1tI3qPZ_UewlKicjBMhMb74mV8fhknj-l" },
+            { "titre": "Prépa 2ème MP — Skander", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Al2sShJx-2KyNmWDt2fHrO00GNBanMB8" },
+            { "titre": "MP2 — FSS 2021", "type": "Drive", "url": "https://drive.google.com/drive/folders/1PGGRbvMRUz_92ki7FeRcjaQyo9bpBKUw" },
+            { "titre": "MP2 — FSS 2022", "type": "Drive", "url": "https://drive.google.com/drive/folders/1z9A6I9wQUtsnw5GfkoovDebO6EtWhYQM" },
+            { "titre": "MP2 — IPEIN 2020", "type": "Drive", "url": "https://drive.google.com/drive/folders/1uQXbGP9w2AMnJNyoVkIjF88LK1hvfA1F" },
+            { "titre": "MP2 — IPEIT 2017", "type": "Drive", "url": "https://drive.google.com/drive/folders/12maZv1eAv4S6l1BXtPb6I7fAVi8-dui-" },
+            { "titre": "MP2 — IPSTT 2017", "type": "Drive", "url": "https://drive.google.com/drive/folders/1cdGaFXyzQAZB8yJrwuLlTDYT8U4T28n8" },
+            { "titre": "MP2 / PT2 — IPEIS 2022", "type": "Drive", "url": "https://drive.google.com/drive/folders/12gxYzBtazeo7ke8Q9dF9mzahoQHm6ITs" },
+            { "titre": "MPSI2 + MP2 — 2017", "type": "Drive", "url": "https://drive.google.com/drive/folders/1o_-YIeaLjG0vfpTQlRCN9U2l6sNhAWwu" },
+            { "titre": "MI2 — FST 2021", "type": "Drive", "url": "https://drive.google.com/drive/folders/1MGHTw5kEvCK4hWG49QgxuN5cMUzcW48k" },
+            { "titre": "Cours en ligne enregistrés — IPEIS 2020", "type": "Drive", "url": "https://drive.google.com/drive/folders/1xgduWNKv7W_tE24tK7St0mORoAtD-jrd" },
+            { "titre": "Examens semestre 1 — MP2", "type": "Drive", "url": "https://drive.google.com/drive/folders/1BUJ9Jkoi9LLyxUtP6s-PDvf2k4niHwqy" },
+            { "titre": "Concours corrigés (liste, PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1N7tzZgCHJt1STbNxKBvl4RRneDUstah5/view" },
+            { "titre": "Concours MP (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1NP7OIctP_7Gou5lK4pKGcFXBb9lCx1Jj/view" },
+            { "titre": "Sujet MP2 — T2 (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1TRM_guvli6lt1Jag_R3MTKRYGbjuffAD/view" }
+          ]
+        },
+        {
+          "matiere": "Conseils & Orientation",
+          "items": [
+            { "titre": "Conseils", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/E0MixBCL" },
+            { "titre": "Orientation après prépa (rangs et scores)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1g8JAc8P0DaOmIF_ad3s0_9L1__fY7PRw" },
+            { "titre": "Sites utiles", "type": "Drive", "url": "https://drive.google.com/drive/folders/1fCr7jW9h9Q5U1m1JWTVO_db6dDmQETqi" }
+          ]
+        }
+      ]
+    },
+    "PC": {
+      "1ère année": [
+        {
+          "matiere": "Mathématiques",
+          "items": [
+            { "titre": "ALGÈBRE — 1ère PT/PC", "type": "Drive", "url": "https://drive.google.com/drive/folders/1kRE7bBUCo5Zh7BqBUqukLeDAB64ahFAV" },
+            { "titre": "ANALYSE — 1ère PT/PC", "type": "Drive", "url": "https://drive.google.com/drive/folders/1sVnFvyTWlnKAA7KYzJZlsCc4R3S4tk69" },
+            { "titre": "ALGÈBRE — 1ère prépa PT/PC (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1T8FrGY2VgcyLuu2eHxqS8CLEAFfJbfWx" },
+            { "titre": "ANALYSE — 1ère prépa PT/PC (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/10Pj1wXWWM2JusgDSnndeqJMmkSxXsywU" },
+            { "titre": "Algèbre — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iJvBXPMzWJf5XATjZNp5sO9KjIii5jzE" },
+            { "titre": "Analyse — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ifMnflNtewQby_2WmyR8PZqeEDe7cL5W" },
+            { "titre": "TD, DS et examens Math — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1icXhLOfegbi6QBijG70Siw1CLm4ZKdbm" },
+            { "titre": "J'intègre — Méthodes et exercices PCSI-PTSI (livre)", "type": "PDF", "url": "https://drive.google.com/file/d/1iXHkM1wSOUxCqyz5s0H5LaiqkDAF1uyn/view" },
+            { "titre": "Fiches Daniel Fredon — algèbre & analyse (livres)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1WmlNmhl57hxqlJOGmVycsvePsgZ2_K7Y" },
+            { "titre": "Cours d'algèbre par chapitre", "type": "Drive", "url": "https://drive.google.com/drive/folders/18GG9V3-xlmI63XllAja2JKaqmmbm0aFP" },
+            { "titre": "Cours Algèbre (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1sE-kDUX5bMlY041novOlGuF7TBjWcQZb/view" },
+            { "titre": "Cours Analyse (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1u51gA2bY2-nY4-mK14Fsux5PYXh-YvLp/view" },
+            { "titre": "Algèbre — pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/19vAjJDH0XocHrkpl0E_PcN0QEBAF8He6" },
+            { "titre": "Analyse — pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/1TOWbMuK8vy2_KQedqcQvxQrYc5D5c8ZI" }
+          ]
+        },
+        { "matiere": "Physique", "items": [] },
+        { "matiere": "Chimie", "items": [] },
+        {
+          "matiere": "Informatique",
+          "items": [
+            { "titre": "Info — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hKZB0wzYbPlIKYQKPeZJo71o2yuEjdsR" },
+            { "titre": "Info — 1ère PT (commun)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1xfP9OxompkJbVG9A2Nz8E3PJHmLZup0b" },
+            { "titre": "Informatique — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1mvI3QZrdM0epdEWQDmH8Aob0RLIV-meG" },
+            { "titre": "Cours Info (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/14TDuhs7eg0ltv9mcJUvIhnMawYDpcsgw/view" },
+            { "titre": "Cours info 1ère année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1DmoHrfmeLeie7MRY8K-B85MNDhGT7ju3/view" }
+          ]
+        },
+        { "matiere": "STA", "items": [] },
+        {
+          "matiere": "Français",
+          "items": [
+            { "titre": "Fr — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CHmcL6Zuza_yEc7sMHNhOOa7L1BE3ux6" },
+            { "titre": "Thème : Le Travail", "type": "Drive", "url": "https://drive.google.com/drive/folders/1XEMav_yJpcZeRBNGZTMdwtny4j9vnVCt" },
+            { "titre": "Thème : L'enfance", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z7ICU8PCRKC5WCJUqoc95K_90wZa0vuz" },
+            { "titre": "Français — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1la_fPf4Dl1Zi8I0L1Rq788lCm2gGon4i" }
+          ]
+        },
+        {
+          "matiere": "Anglais",
+          "items": [
+            { "titre": "English — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1pNuD7xqmpjn5_2u6UqeWvxkLgGr75Bz6" }
+          ]
+        },
+        {
+          "matiere": "Livres",
+          "items": [
+            { "titre": "Livres tout-en-un — maths, physique, SI (MPSI/PCSI/PTSI)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1V59dHenc08KjsdhB6UrD9UiTQOqA3_v2" }
+          ]
+        },
+        {
+          "matiere": "Packs complets (toutes matières)",
+          "items": [
+            { "titre": "Documents PC1 — IPEIM", "type": "PDF", "url": "https://drive.google.com/file/d/18ePE71UqLIojh5bFjBnMilqQn-MS-n4Y/view" }
+          ]
+        }
+      ],
+      "2ème année": [
+        {
+          "matiere": "Mathématiques",
+          "items": [
+            { "titre": "Algèbre — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/10mizWBzFEgMc4LZk3TplBCAYW_HcmoCS" },
+            { "titre": "Analyse — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1nLCMQSHp7EiAl76vt47fqZS6Klh8-wMh" },
+            { "titre": "Cours complet analyse + exercices", "type": "Drive", "url": "https://drive.google.com/drive/folders/1DgUJYUhoLFelB65W7o_uu-gAldpOi2IK" },
+            { "titre": "Algèbre — 2EME PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/12eiR4HhKj3h1j4p2RiReTlT5xPMdpSGc" },
+            { "titre": "Analyse — 2EME PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1yIMwYDEJKEoVT7hXrEwzchRnFM-8YC7i" },
+            { "titre": "Math — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-KZi2PgdcaL9wRM_5d6M3839GYGrmV_A" },
+            { "titre": "Algèbre — Top 100 docs", "type": "Drive", "url": "https://drive.google.com/drive/folders/1eq-CisEQE_EoTwfqVTj5TGs3UKKeanak" },
+            { "titre": "Analyse — Top 100 docs", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ezj98OEhsTocuOd5Kn8h-vJfWDfKKI0S" },
+            { "titre": "Cours Algèbre (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1-LyIFp1og40D2kQpLhpZfIRP0Xq5ZrG4/view" },
+            { "titre": "Cours Analyse (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1ZLTQ7L0lCAx0mLQQ6h8X3wt_68xeYymq/view" }
+          ]
+        },
+        { "matiere": "Physique", "items": [] },
+        { "matiere": "Chimie", "items": [] },
+        {
+          "matiere": "Informatique",
+          "items": [
+            { "titre": "INFO — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1WocTBpcZeCP8m18KA1bSySaVv6Fuczqp" },
+            { "titre": "INFORMATIQUE — cours et TP", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/Bl931DIJ" },
+            { "titre": "Informatique — IPEIN 2018", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Pe2EIO5rg679ExOa_GXjX6qXyt-NhoOA" },
+            { "titre": "Cours Info — 2ème année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1bnyL_WV0QFz3LyPuTNHBWDjmLs0CD4SB/view" },
+            { "titre": "TD Info — 2ème année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1KzesVTpDtqwAmvCPzYAGEP4CEb5L8Gk7/view" },
+            { "titre": "Cours POO (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1lo5tOFZRXWKpbLW1KD9pWoXCS4lBu8J5/view" },
+            { "titre": "Cours Base de Données (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1oSUfIYUeaji4nl2sn5feBRf7zB17qnpL/view" },
+            { "titre": "Simulation Numérique (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1tbPNNwWeMOfwIXiihFYGrwMPdsJSN1TW/view" },
+            { "titre": "Informatique — MP2", "type": "Drive", "url": "https://drive.google.com/drive/folders/14BSxaSzhcZHZYpzdMJ1pLefic1zeV4Ab" },
+            { "titre": "Info — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1IzKWLIEedYrsat1LLIFOgTD1k6Bbc9c7" },
+            { "titre": "Informatique — 2ème PT (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-4YRUZIF_38f5R2cTDeCCRa6UQLKhIdW" }
+          ]
+        },
+        {
+          "matiere": "STA",
+          "items": [
+            { "titre": "STA — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/19cpQCCuuTOO3tX8WRhuM3u06w6GIdftc" },
+            { "titre": "STA — cours, TD et DS", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/ck9wyTbL" }
+          ]
+        },
+        {
+          "matiere": "Français",
+          "items": [
+            { "titre": "FRANÇAIS — thèmes et méthodologie", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/ttFQXB5I" },
+            { "titre": "TD Français — CPGE", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SIwOHD_Va7QrWRUIP6Htpxu8pYbmxGhI" },
+            { "titre": "LANGUES — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1OmLGy6zDbP2-3NGCtV5pWy9iHspLVpJJ" },
+            { "titre": "Français prépa (thèmes et essais)", "type": "Drive", "url": "https://drive.google.com/drive/folders/10F9ung8N60AkC32fEbVdYozVz1v5gGgk" },
+            { "titre": "Commentaires", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iqbAcIdI7UbjUIoTgehJT4I_JOvsHtuq" },
+            { "titre": "Langue — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/120RSofQ_rLsvWIeBwjVVIao4J2C7HlXx" }
+          ]
+        },
+        {
+          "matiere": "Anglais",
+          "items": [
+            { "titre": "ANGLAIS — cours et vocabulaire", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/J4dUzDIb" },
+            { "titre": "English — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-RW1XnZy2BPAkELwVUhjZkluerFEK07x" }
+          ]
+        },
+        {
+          "matiere": "Conseils & Orientation",
+          "items": [
+            { "titre": "Conseils", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/E0MixBCL" },
+            { "titre": "Orientation après prépa (rangs et scores)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1g8JAc8P0DaOmIF_ad3s0_9L1__fY7PRw" },
+            { "titre": "Sites utiles", "type": "Drive", "url": "https://drive.google.com/drive/folders/1fCr7jW9h9Q5U1m1JWTVO_db6dDmQETqi" }
+          ]
+        }
+      ]
+    },
+    "PT": {
+      "1ère année": [
+        {
+          "matiere": "Mathématiques",
+          "items": [
+            { "titre": "ALGÈBRE — 1ère PT/PC", "type": "Drive", "url": "https://drive.google.com/drive/folders/1kRE7bBUCo5Zh7BqBUqukLeDAB64ahFAV" },
+            { "titre": "ANALYSE — 1ère PT/PC", "type": "Drive", "url": "https://drive.google.com/drive/folders/1sVnFvyTWlnKAA7KYzJZlsCc4R3S4tk69" },
+            { "titre": "ALGÈBRE — 1ère prépa PT/PC (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1T8FrGY2VgcyLuu2eHxqS8CLEAFfJbfWx" },
+            { "titre": "ANALYSE — 1ère prépa PT/PC (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/10Pj1wXWWM2JusgDSnndeqJMmkSxXsywU" },
+            { "titre": "Algèbre — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iJvBXPMzWJf5XATjZNp5sO9KjIii5jzE" },
+            { "titre": "Analyse — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ifMnflNtewQby_2WmyR8PZqeEDe7cL5W" },
+            { "titre": "TD, DS et examens Math — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1icXhLOfegbi6QBijG70Siw1CLm4ZKdbm" },
+            { "titre": "J'intègre — Méthodes et exercices PCSI-PTSI (livre)", "type": "PDF", "url": "https://drive.google.com/file/d/1iXHkM1wSOUxCqyz5s0H5LaiqkDAF1uyn/view" },
+            { "titre": "Fiches Daniel Fredon — algèbre & analyse (livres)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1WmlNmhl57hxqlJOGmVycsvePsgZ2_K7Y" },
+            { "titre": "Cours d'algèbre par chapitre", "type": "Drive", "url": "https://drive.google.com/drive/folders/18GG9V3-xlmI63XllAja2JKaqmmbm0aFP" },
+            { "titre": "Cours Algèbre (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1sE-kDUX5bMlY041novOlGuF7TBjWcQZb/view" },
+            { "titre": "Cours Analyse (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1u51gA2bY2-nY4-mK14Fsux5PYXh-YvLp/view" },
+            { "titre": "Algèbre — pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/19vAjJDH0XocHrkpl0E_PcN0QEBAF8He6" },
+            { "titre": "Analyse — pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/1TOWbMuK8vy2_KQedqcQvxQrYc5D5c8ZI" }
+          ]
+        },
+        {
+          "matiere": "Physique",
+          "items": [
+            { "titre": "PHYSIQUE — 1ère PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1roPxjorshNbXE5FKtU4mQHwjsVEOCKX-" },
+            { "titre": "PHYSIQUE — 1ère PT (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1VKStB5ge7n8QvFUB58vlx6eLufbS4-CP" },
+            { "titre": "Physique — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1M2LtmwUrx-C0fJSmwBX9oeZmwMSLGLem" },
+            { "titre": "Physique — pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/1fOE0rHilTSKmiC3xV8CNo01u5WtEwgac" },
+            { "titre": "Cours Physique (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1sSWtV_gUGGXURa9nwE7tIQo4Nk6PYiqs/view" }
+          ]
+        },
+        {
+          "matiere": "Chimie",
+          "items": [
+            { "titre": "Chimie — 1ère PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1pfNuaFiPOTkSm81FOr4Eq1k26r6G4LSy" },
+            { "titre": "Chimie — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1lcNGPBgN950zUK8PC_E2H-kKzGEiu7QY" },
+            { "titre": "Chimie — pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/15wW8FQqBxHww2EuaJBbE_ZSwgp-PYws5" },
+            { "titre": "Cours Chimie (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1ws6voG4WON2o9qg4fMlW5B-JvdbFJcAa/view" },
+            { "titre": "Chimie Tout-en-un MPSI-PTSI (livre)", "type": "PDF", "url": "https://drive.google.com/file/d/1wP2sgaOoa_iO4-WohkXyzIQqpUMkg92a/view" }
+          ]
+        },
+        {
+          "matiere": "Sciences industrielles (STA)",
+          "items": [
+            { "titre": "STA — 1ère PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1FV3zs9MBsB0lG2PxxbEUmN6YNNC2UyCq" },
+            { "titre": "STA — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1M7QWeKl6olTuYeZYtHPBEF15ry3wVfXm" },
+            { "titre": "Mécanique générale MSI — pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/1mgGyS0uImuW5R2boVLSbUpxBKJ69bjLO" },
+            { "titre": "Automatique — pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hmMu5MPDTzE9Vgu4pVk7BlHHBJcWZWFj" },
+            { "titre": "Cours STI (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1e6hOTGmOv99G2-LEFFf_n55vsXw5frcA/view" }
+          ]
+        },
+        {
+          "matiere": "CFM",
+          "items": [
+            { "titre": "CFM — 1ère PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1RaMi8R-u5FVTI3dsgFe-GZP1BvFlIBm-" },
+            { "titre": "CFM — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1M30Sw6bmQzMbZThzl3V3RCQ-4rE7UeeR" },
+            { "titre": "Cours FM — 1ère année (YAAKOUB)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1FgaUuYTGrKNNTdh1Ur6YYWMi-p44ks3p" }
+          ]
+        },
+        {
+          "matiere": "Informatique",
+          "items": [
+            { "titre": "Info — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hKZB0wzYbPlIKYQKPeZJo71o2yuEjdsR" },
+            { "titre": "Info — 1ère PT (commun)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1xfP9OxompkJbVG9A2Nz8E3PJHmLZup0b" },
+            { "titre": "Informatique — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1mvI3QZrdM0epdEWQDmH8Aob0RLIV-meG" },
+            { "titre": "Cours Info (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/14TDuhs7eg0ltv9mcJUvIhnMawYDpcsgw/view" },
+            { "titre": "Cours info 1ère année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1DmoHrfmeLeie7MRY8K-B85MNDhGT7ju3/view" }
+          ]
+        },
+        {
+          "matiere": "Français",
+          "items": [
+            { "titre": "Fr — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CHmcL6Zuza_yEc7sMHNhOOa7L1BE3ux6" },
+            { "titre": "Thème : Le Travail", "type": "Drive", "url": "https://drive.google.com/drive/folders/1XEMav_yJpcZeRBNGZTMdwtny4j9vnVCt" },
+            { "titre": "Thème : L'enfance", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z7ICU8PCRKC5WCJUqoc95K_90wZa0vuz" },
+            { "titre": "Français — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1la_fPf4Dl1Zi8I0L1Rq788lCm2gGon4i" }
+          ]
+        },
+        {
+          "matiere": "Anglais",
+          "items": [
+            { "titre": "English — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1pNuD7xqmpjn5_2u6UqeWvxkLgGr75Bz6" }
+          ]
+        },
+        {
+          "matiere": "Livres",
+          "items": [
+            { "titre": "Livres tout-en-un — maths, physique, SI (MPSI/PCSI/PTSI)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1V59dHenc08KjsdhB6UrD9UiTQOqA3_v2" }
+          ]
+        },
+        {
+          "matiere": "Packs complets (toutes matières)",
+          "items": [
+            { "titre": "DS et examens — Sfax (sans corrigé)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1M48sUoJhrPHEGoHF8WOAMXEvbcXUm-we" },
+            { "titre": "DS Nabeul — 1er semestre (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1pQKe_V0jS3bgH1uCxFu55pNQEaep2k2o/view" },
+            { "titre": "Documents Techno 1ère — IPEIM", "type": "PDF", "url": "https://drive.google.com/file/d/1ZchwmsQ5k0EnERrKbQowEs-_pMT2PzgC/view" },
+            { "titre": "Sources de cours — 1er prépa (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1pP6gIkjuRZWlDyHD2pjw3uYfhYVrSfWy/view" },
+            { "titre": "CDC junior (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1cRIO09S4P4hn-rXFi4_MZOwUbqwLTmGC/view" }
+          ]
+        }
+      ],
+      "2ème année": [
+        {
+          "matiere": "Mathématiques",
+          "items": [
+            { "titre": "Algèbre — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/10mizWBzFEgMc4LZk3TplBCAYW_HcmoCS" },
+            { "titre": "Analyse — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1nLCMQSHp7EiAl76vt47fqZS6Klh8-wMh" },
+            { "titre": "Cours complet analyse + exercices", "type": "Drive", "url": "https://drive.google.com/drive/folders/1DgUJYUhoLFelB65W7o_uu-gAldpOi2IK" },
+            { "titre": "Algèbre — 2EME PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/12eiR4HhKj3h1j4p2RiReTlT5xPMdpSGc" },
+            { "titre": "Analyse — 2EME PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1yIMwYDEJKEoVT7hXrEwzchRnFM-8YC7i" },
+            { "titre": "Math — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-KZi2PgdcaL9wRM_5d6M3839GYGrmV_A" },
+            { "titre": "Algèbre — Top 100 docs", "type": "Drive", "url": "https://drive.google.com/drive/folders/1eq-CisEQE_EoTwfqVTj5TGs3UKKeanak" },
+            { "titre": "Analyse — Top 100 docs", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ezj98OEhsTocuOd5Kn8h-vJfWDfKKI0S" },
+            { "titre": "Cours Algèbre (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1-LyIFp1og40D2kQpLhpZfIRP0Xq5ZrG4/view" },
+            { "titre": "Cours Analyse (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1ZLTQ7L0lCAx0mLQQ6h8X3wt_68xeYymq/view" }
+          ]
+        },
+        {
+          "matiere": "Physique",
+          "items": [
+            { "titre": "Physique — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1sCHq9YctZgin9ouVnlQItEPLx-GHzaIB" },
+            { "titre": "Révision Physique — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1dzPqdXdbqP4To3cHSVEMYHfpW4eOA9ZI" },
+            { "titre": "Physique — 2EME PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iDripe13r-lIufhL-4DFM9_xc3mrj_81" },
+            { "titre": "Physique — 2ème PT (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/14CEgaDpThxyZW4yxTsOuuxcvSp5PaJ2f" },
+            { "titre": "Physique — Top 100 docs", "type": "Drive", "url": "https://drive.google.com/drive/folders/1f3g9D0x9EgkfgkoxO_qaWJTuaFcUq59N" },
+            { "titre": "Cours Physique (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1s5-dChtqQR8FcFjl0OooXsyRFZSenSa1/view" }
+          ]
+        },
+        {
+          "matiere": "Chimie",
+          "items": [
+            { "titre": "Cours chimie complet — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1aR7EgrHinS1FXhZWBQ2mFd49uFgOHXoP" },
+            { "titre": "Chimie — 2EME PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1kB1uABJO6mbYR3FMWkV6Hl2yJeRd0MVD" },
+            { "titre": "Chimie — 2ème PT (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/132UUOlW8u5IwsY5mCNuU1l8RQerrqNa-" },
+            { "titre": "Chimie — Top 100 docs", "type": "Drive", "url": "https://drive.google.com/drive/folders/1eHbGRx4OTPb4XvR_89kpUbpzd6Q3GO58" },
+            { "titre": "Cours Chimie (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1vNkbcTnm6y7jZVAscBFi1VGVgraPGyN5/view" },
+            { "titre": "TD Chimie (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1XZbYGbSuxEIsZXCF3noDbv76Gab9yFCL/view" }
+          ]
+        },
+        {
+          "matiere": "Sciences industrielles (STA)",
+          "items": [
+            { "titre": "Mécanique Générale MSI — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1vHfYuvjzvByFPfQA_e57DFifHm8zabFW" },
+            { "titre": "Cours MSI complet — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1QZu_bzqDru8V3dc6s25zi0skZOR2aSo9" },
+            { "titre": "Automatique — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/12lTL_aajDVYXX13UUVCkUlwNgyvCn-cs" },
+            { "titre": "STA — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1U5N9ORjobd64vLzX7KibrqpNRz-lft4s" },
+            { "titre": "STA — 2ème PT (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-EPChDRjGNQfyxovL2pG0voqi3XzZOnI" },
+            { "titre": "Automatique — prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1c6UmfAn2fS5XCUw_omOffSQ7G5BJAg_V" },
+            { "titre": "Automatique — Top 100 docs", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ecjPC0ZvPc0bOOMHxe00qapiSvqRA29k" },
+            { "titre": "Cours STI (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1rDjQAqc_gXxIjbAXm8uqHZL0ofrQI8v9/view" },
+            { "titre": "TD STI (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1-0ge2GLOoXoCqFkcbEjJ8ec2AOg9SkEI/view" }
+          ]
+        },
+        {
+          "matiere": "CFM",
+          "items": [
+            { "titre": "Fabrication mécanique — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1o3aAe2rrwRHMshPWLLHULeMnsfrsezRu" },
+            { "titre": "Conception mécanique — YAAKOUB PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1pqflMGtk_4M663q8MSQokvXWARwX7GQx" },
+            { "titre": "CFM — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1EycD9U-N8-HPbz5voVQ6XSX2eyHtVimj" },
+            { "titre": "CFM — 2ème PT (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/135lrS19B1kvvL6kwravxXI2NoqghPfn9" }
+          ]
+        },
+        {
+          "matiere": "Informatique",
+          "items": [
+            { "titre": "INFO — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1WocTBpcZeCP8m18KA1bSySaVv6Fuczqp" },
+            { "titre": "INFORMATIQUE — cours et TP", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/Bl931DIJ" },
+            { "titre": "Informatique — IPEIN 2018", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Pe2EIO5rg679ExOa_GXjX6qXyt-NhoOA" },
+            { "titre": "Cours Info — 2ème année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1bnyL_WV0QFz3LyPuTNHBWDjmLs0CD4SB/view" },
+            { "titre": "TD Info — 2ème année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1KzesVTpDtqwAmvCPzYAGEP4CEb5L8Gk7/view" },
+            { "titre": "Cours POO (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1lo5tOFZRXWKpbLW1KD9pWoXCS4lBu8J5/view" },
+            { "titre": "Cours Base de Données (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1oSUfIYUeaji4nl2sn5feBRf7zB17qnpL/view" },
+            { "titre": "Simulation Numérique (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1tbPNNwWeMOfwIXiihFYGrwMPdsJSN1TW/view" },
+            { "titre": "Informatique — MP2", "type": "Drive", "url": "https://drive.google.com/drive/folders/14BSxaSzhcZHZYpzdMJ1pLefic1zeV4Ab" },
+            { "titre": "Info — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1IzKWLIEedYrsat1LLIFOgTD1k6Bbc9c7" },
+            { "titre": "Informatique — 2ème PT (2)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-4YRUZIF_38f5R2cTDeCCRa6UQLKhIdW" }
+          ]
+        },
+        {
+          "matiere": "Français",
+          "items": [
+            { "titre": "FRANÇAIS — thèmes et méthodologie", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/ttFQXB5I" },
+            { "titre": "TD Français — CPGE", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SIwOHD_Va7QrWRUIP6Htpxu8pYbmxGhI" },
+            { "titre": "LANGUES — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1OmLGy6zDbP2-3NGCtV5pWy9iHspLVpJJ" },
+            { "titre": "Français prépa (thèmes et essais)", "type": "Drive", "url": "https://drive.google.com/drive/folders/10F9ung8N60AkC32fEbVdYozVz1v5gGgk" },
+            { "titre": "Commentaires", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iqbAcIdI7UbjUIoTgehJT4I_JOvsHtuq" },
+            { "titre": "Langue — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/120RSofQ_rLsvWIeBwjVVIao4J2C7HlXx" }
+          ]
+        },
+        {
+          "matiere": "Anglais",
+          "items": [
+            { "titre": "ANGLAIS — cours et vocabulaire", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/J4dUzDIb" },
+            { "titre": "English — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-RW1XnZy2BPAkELwVUhjZkluerFEK07x" }
+          ]
+        },
+        {
+          "matiere": "Packs complets (toutes matières)",
+          "items": [
+            { "titre": "MP2 / PT2 — IPEIS 2022", "type": "Drive", "url": "https://drive.google.com/drive/folders/12gxYzBtazeo7ke8Q9dF9mzahoQHm6ITs" },
+            { "titre": "YAAKOUB 2020 — dossier complet (livres, résumés, formulaires)", "type": "Drive", "url": "https://drive.google.com/drive/folders/13vVFp8wgaHqcT13EmTJBLOyp17fOPjlN" },
+            { "titre": "Concours nationaux (énoncés)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1FxrOORdUwkyh7i-QsTIIpT0YUtoFqdtY" },
+            { "titre": "Concours PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1vKvtnWmATQgs_u57etUnvm8RlvUTyLkM" },
+            { "titre": "Concours — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1RqIr3DahyVqO3zVKxxPKgY4U1MiA3F9u" },
+            { "titre": "Révision 2022-2023", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iHE7dSL4cSXSVJhI1by0ess6wWK24ebQ" },
+            { "titre": "Révision — Mr Aidi", "type": "Drive", "url": "https://drive.google.com/drive/folders/1fAuHD0kxu54MgiH8T8b7JRox2mPzlHK_" },
+            { "titre": "Préparation concours 2023", "type": "Drive", "url": "https://drive.google.com/drive/folders/10RYKWxV0bLDzv-NmJg4cOUSkkOILhWSc" },
+            { "titre": "IPEIT — documents", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-fvKL6OmJ2MKQHeewvqr0CajdYCYESfX" },
+            { "titre": "Programmes officiels (STI, math, info, chimie)", "type": "Drive", "url": "https://drive.google.com/drive/folders/15jKy9XIFk4xdqN3eUVIwc2ARPbo3Qq8R" },
+            { "titre": "Algèbre-Analyse-Physique-Chimie (mixte) — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iv1QZelrjt50HwTLrU3F1Iui_h0gwGcC" }
+          ]
+        },
+        {
+          "matiere": "Conseils & Orientation",
+          "items": [
+            { "titre": "Conseils", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/E0MixBCL" },
+            { "titre": "Orientation après prépa (rangs et scores)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1g8JAc8P0DaOmIF_ad3s0_9L1__fY7PRw" },
+            { "titre": "Sites utiles", "type": "Drive", "url": "https://drive.google.com/drive/folders/1fCr7jW9h9Q5U1m1JWTVO_db6dDmQETqi" }
+          ]
+        }
+      ]
+    },
+    "BG": {
+      "1ère année": [
+        {
+          "matiere": "Biologie",
+          "items": [
+            { "titre": "Biologie cellulaire (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1g0HLO8d96s3cQYOoJkoIa96NNz8rz3M4/view" },
+            { "titre": "Biologie animale (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/13i8ppJXgNuXnpDr9kviYIB0-M_kjWVVY/view" },
+            { "titre": "Biologie végétale (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/10PDx9PUs7qJe5VaPig7OhZWFRTeobF8w/view" },
+            { "titre": "Biologie végétale (résumé BG1)", "type": "PDF", "url": "https://drive.google.com/file/d/1s8grXi1EwkeBAPaUNGlcwIV48DEkvQRw/view" },
+            { "titre": "Zoologie (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1Vzh11ud6qqWAU9j2NMd8GpsH0Ag2r-NF/view" },
+            { "titre": "La fleur (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/18seObqjwFmqk8on16wP8yUwNRkq0ydSL/view" },
+            { "titre": "Génétique 1 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1MOEGsJEfVMGBqB0o1kxKreEW7XFn0d5j/view" },
+            { "titre": "Biologie animale — BA1", "type": "Drive", "url": "https://drive.google.com/drive/folders/1BJLjX8Rx7beFvDwexhwjIm8eToq5cV5T" },
+            { "titre": "Biologie animale — BA2", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ArO-P7H4-sl431sid0D9WEow-JqFo-6i" },
+            { "titre": "ADN (Google Doc)", "type": "Doc", "url": "https://docs.google.com/document/d/1_ied9n4FQ-hApZsnefunIrLnfg4IjURZlP8GzqggQ08" }
+          ]
+        },
+        {
+          "matiere": "Géologie",
+          "items": [
+            { "titre": "Géologie 1 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/16Yo2JqUQBeeWXveWRt9UM1af1FrechWa/view" }
+          ]
+        },
+        {
+          "matiere": "Mathématiques",
+          "items": [
+            { "titre": "Maths 1 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1Mcmbc6cv17_S3dk5XpR8HwUdi82myUxV/view" }
+          ]
+        },
+        {
+          "matiere": "Physique",
+          "items": [
+            { "titre": "Physique BG1 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1TWKIdOvMx5DUsEPfRJokgalzPWlasPCP/view" }
+          ]
+        },
+        {
+          "matiere": "Chimie",
+          "items": [
+            { "titre": "Chimie organique 1 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1qZ3LqGb6mYvK4962i2MoRQogAR4okSBW/view" },
+            { "titre": "Chimie inorganique 1 (résumé)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1vKqk7-wptMHob55sMcYnV2SNHV2_OwDJ" }
+          ]
+        },
+        {
+          "matiere": "Informatique",
+          "items": [
+            { "titre": "Info 1 et 2 (résumé)", "type": "Drive", "url": "https://drive.google.com/drive/folders/19ZNmKkqseZmvm-DKMJVD8hG_D_FlQjuC" }
+          ]
+        },
+        {
+          "matiere": "Français",
+          "items": [
+            { "titre": "Fr — 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CHmcL6Zuza_yEc7sMHNhOOa7L1BE3ux6" },
+            { "titre": "Thème : Le Travail", "type": "Drive", "url": "https://drive.google.com/drive/folders/1XEMav_yJpcZeRBNGZTMdwtny4j9vnVCt" },
+            { "titre": "Thème : L'enfance", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z7ICU8PCRKC5WCJUqoc95K_90wZa0vuz" },
+            { "titre": "Français — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1la_fPf4Dl1Zi8I0L1Rq788lCm2gGon4i" }
+          ]
+        },
+        {
+          "matiere": "Anglais",
+          "items": [
+            { "titre": "English — 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1pNuD7xqmpjn5_2u6UqeWvxkLgGr75Bz6" }
+          ]
+        }
+      ],
+      "2ème année": [
+        {
+          "matiere": "Biologie",
+          "items": [
+            { "titre": "Physiologie animale (résumé)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1YFDq0Smo0_BzhaExtmRa-nPALGfqogwN" },
+            { "titre": "Physiologie végétale (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1ldJLkujeXLEJrq2zMf2EtS8yoCx7oqdw/view" },
+            { "titre": "Botanique (résumé)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1lGkoGjEtl8nanMVjVcIZoriH3CmiWAzT" },
+            { "titre": "Biochimie (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1WIgc--_GjfmJ4jtNx6_Oti_ITDf05zH0/view" },
+            { "titre": "Génétique 2 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1J_FMRQRdcP2CvYA-eHIma7kICZInUe9Z/view" },
+            { "titre": "Biologie animale — BA3", "type": "Drive", "url": "https://drive.google.com/drive/folders/1t7bd69RMkD9MNPjFMsz3w_QlLlqJNgSL" }
+          ]
+        },
+        {
+          "matiere": "Géologie",
+          "items": [
+            { "titre": "Géologie 2 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/10XClfAgbfwebCB6R3_1N40x_Fofjzd7M/view" }
+          ]
+        },
+        {
+          "matiere": "Mathématiques",
+          "items": [
+            { "titre": "Maths 2 (résumé)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1DoOM9gim2JyUJhL0ALgbuOUG4OYVCS_B" }
+          ]
+        },
+        {
+          "matiere": "Physique",
+          "items": [
+            { "titre": "Physique BG2 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1tbNETPHznzeRlkMK3SbNv5kToTpntL6u/view" }
+          ]
+        },
+        {
+          "matiere": "Chimie",
+          "items": [
+            { "titre": "Chimie organique 2 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1u54r6y_D0iSdSOwglBsf3UsdcHst8_MP/view" },
+            { "titre": "Chimie inorganique 2 (résumé)", "type": "PDF", "url": "https://drive.google.com/file/d/1umkYkL_apXNs4frcnvspinQS_rK23oct/view" }
+          ]
+        },
+        {
+          "matiere": "Informatique",
+          "items": [
+            { "titre": "Info 1 et 2 (résumé)", "type": "Drive", "url": "https://drive.google.com/drive/folders/19ZNmKkqseZmvm-DKMJVD8hG_D_FlQjuC" }
+          ]
+        },
+        {
+          "matiere": "Français",
+          "items": [
+            { "titre": "FRANÇAIS — thèmes et méthodologie", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/ttFQXB5I" },
+            { "titre": "TD Français — CPGE", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SIwOHD_Va7QrWRUIP6Htpxu8pYbmxGhI" },
+            { "titre": "LANGUES — 2ème prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1OmLGy6zDbP2-3NGCtV5pWy9iHspLVpJJ" },
+            { "titre": "Français prépa (thèmes et essais)", "type": "Drive", "url": "https://drive.google.com/drive/folders/10F9ung8N60AkC32fEbVdYozVz1v5gGgk" },
+            { "titre": "Commentaires", "type": "Drive", "url": "https://drive.google.com/drive/folders/1iqbAcIdI7UbjUIoTgehJT4I_JOvsHtuq" },
+            { "titre": "Langue — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/120RSofQ_rLsvWIeBwjVVIao4J2C7HlXx" }
+          ]
+        },
+        {
+          "matiere": "Anglais",
+          "items": [
+            { "titre": "ANGLAIS — cours et vocabulaire", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/J4dUzDIb" },
+            { "titre": "English — 2ème PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-RW1XnZy2BPAkELwVUhjZkluerFEK07x" }
+          ]
+        },
+        {
+          "matiere": "Conseils & Orientation",
+          "items": [
+            { "titre": "Conseils", "type": "MEGA", "url": "https://mega.nz/folder/E0VHSara#QhpHsCzuxJ2TM_SapRFSzw/folder/E0MixBCL" },
+            { "titre": "Orientation après prépa (rangs et scores)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1g8JAc8P0DaOmIF_ad3s0_9L1__fY7PRw" },
+            { "titre": "Sites utiles", "type": "Drive", "url": "https://drive.google.com/drive/folders/1fCr7jW9h9Q5U1m1JWTVO_db6dDmQETqi" }
+          ]
+        }
+      ]
+    }
+  }
+}
