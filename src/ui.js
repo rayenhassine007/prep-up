@@ -1,6 +1,10 @@
 // Shared UI: theme toggle, scroll reveal (site-wide), count-up stats.
 // The initial theme is set by the inline snippet in each page's <head>.
 
+// ---------- Vercel Web Analytics ----------
+import { inject } from '@vercel/analytics';
+inject();
+
 // ---------- theme: locked to dark ----------
 document.documentElement.dataset.theme = 'dark';
 
