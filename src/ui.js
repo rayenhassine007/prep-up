@@ -5,6 +5,10 @@
 import { inject } from '@vercel/analytics';
 inject();
 
+// ---------- Vercel Speed Insights ----------
+import { injectSpeedInsights } from '@vercel/speed-insights';
+injectSpeedInsights();
+
 // ---------- theme: locked to dark ----------
 document.documentElement.dataset.theme = 'dark';
 
