@@ -651,17 +651,17 @@
       "filiere": "Génie Electrique",
       "MP": {
         "capacite": 30,
-        "rang_min": null,
+        "rang_min": 1100,
         "rang_max": 1100
       },
       "PC": {
         "capacite": 22,
-        "rang_min": null,
+        "rang_min": 620,
         "rang_max": 620
       },
       "PT": {
         "capacite": 23,
-        "rang_min": null,
+        "rang_min": 360,
         "rang_max": 360
       },
       "BG": {
@@ -681,17 +681,17 @@
       "filiere": "Génie Energétique",
       "MP": {
         "capacite": 45,
-        "rang_min": null,
+        "rang_min": 1380,
         "rang_max": 1380
       },
       "PC": {
         "capacite": 31,
-        "rang_min": null,
+        "rang_min": 730,
         "rang_max": 730
       },
       "PT": {
         "capacite": 9,
-        "rang_min": null,
+        "rang_min": 500,
         "rang_max": 500
       },
       "BG": {
@@ -711,17 +711,17 @@
       "filiere": "Génie Mécanique",
       "MP": {
         "capacite": 27,
-        "rang_min": null,
+        "rang_min": 1172,
         "rang_max": 1172
       },
       "PC": {
         "capacite": 12,
-        "rang_min": null,
+        "rang_min": 778,
         "rang_max": 778
       },
       "PT": {
         "capacite": 36,
-        "rang_min": null,
+        "rang_min": 490,
         "rang_max": 490
       },
       "BG": {
@@ -1301,7 +1301,7 @@
       "PT": {
         "capacite": 35,
         "rang_min": 362,
-        "rang_max": null
+        "rang_max": 362
       },
       "BG": {
         "capacite": 0,
@@ -1889,12 +1889,12 @@
       },
       "PC": {
         "capacite": 46,
-        "rang_min": null,
+        "rang_min": 84,
         "rang_max": 84
       },
       "PT": {
         "capacite": 18,
-        "rang_min": null,
+        "rang_min": 32,
         "rang_max": 32
       },
       "BG": {
@@ -2110,7 +2110,7 @@
       "BG": {
         "capacite": 12,
         "rang_min": 43,
-        "rang_max": null
+        "rang_max": 43
       },
       "r2025": {
         "MP": null,
