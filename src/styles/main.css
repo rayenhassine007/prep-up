@@ -724,8 +724,17 @@ p.subtitle {
 .sim-table th { color: var(--text-dim); text-transform: uppercase; font-size: 0.7rem; letter-spacing: .04em; }
 .sim-table td { color: var(--text); }
 @media (max-width: 560px) {
-  .sim-item { grid-template-columns: auto 1fr auto; }
-  .sim-item .sim-meta { grid-column: 2 / 4; }
+  .sim-item {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      "badge name add"
+      "meta meta meta";
+    row-gap: 4px;
+  }
+  .sim-item .tier-badge { grid-area: badge; }
+  .sim-item .sim-name { grid-area: name; }
+  .sim-item .sim-add { grid-area: add; }
+  .sim-item .sim-meta { grid-area: meta; margin-top: 2px; }
 }
 
 /* modern, theme-aware filter controls (replace unreadable native selects) */
