@@ -19,8 +19,6 @@ const TIER_LABEL = {
   limite: 'Limite',
   impossible: 'Hors de portée',
 };
-const TIER_ORDER = { sur: 0, probable: 1, limite: 2, impossible: 3 };
-
 const state = {
   track: 'MP',
   year: '2024', // ranks reference year: '2024' | '2025'
@@ -121,10 +119,8 @@ function filteredSortedRows() {
     if (state.sort === 'nom') return a.inst.localeCompare(b.inst) || (a.rmax || 1e9) - (b.rmax || 1e9);
     if (state.sort === 'places') return b.cap - a.cap;
     if (state.sort === 'selectivite') return (a.rmax || 1e9) - (b.rmax || 1e9);
-    // proximité: closest to my rank (by |margin|), reachable first
+    // proximité: closest to my rank first, by |margin| only (tier is not a tiebreaker)
     if (state.rank == null) return (a.rmax || 1e9) - (b.rmax || 1e9);
-    const ta = TIER_ORDER[a.tier] ?? 9, tb = TIER_ORDER[b.tier] ?? 9;
-    if (ta !== tb) return ta - tb;
     const ma = a.margin == null ? 1e9 : Math.abs(a.margin);
     const mb = b.margin == null ? 1e9 : Math.abs(b.margin);
     return ma - mb;
