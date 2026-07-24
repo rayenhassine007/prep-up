@@ -379,9 +379,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1149,
+          1149
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          342,
+          342
+        ],
         "BG": null
       }
     },
@@ -409,9 +415,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1313,
+          1313
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          567,
+          567
+        ],
         "BG": null
       }
     },
@@ -439,9 +451,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1327,
+          1327
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          665,
+          665
+        ],
         "BG": null
       }
     },
@@ -469,9 +487,18 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
-        "PC": null,
-        "PT": null,
+        "MP": [
+          1153,
+          1153
+        ],
+        "PC": [
+          592,
+          592
+        ],
+        "PT": [
+          349,
+          349
+        ],
         "BG": null
       }
     },
@@ -574,9 +601,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1274,
+          1274
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          424,
+          424
+        ],
         "BG": null
       }
     },
@@ -604,9 +637,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          916,
+          916
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          265,
+          265
+        ],
         "BG": null
       }
     },
@@ -670,9 +709,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1170,
+          1170
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          363,
+          363
+        ],
         "BG": null
       }
     },
@@ -700,9 +745,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1275,
+          1275
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          338,
+          338
+        ],
         "BG": null
       }
     },
@@ -730,9 +781,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1269,
+          1269
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          527,
+          527
+        ],
         "BG": null
       }
     },
@@ -760,9 +817,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1302,
+          1302
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          690,
+          690
+        ],
         "BG": null
       }
     },
@@ -790,9 +853,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1204,
+          1204
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          466,
+          466
+        ],
         "BG": null
       }
     },
@@ -820,9 +889,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1304,
+          1304
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          496,
+          496
+        ],
         "BG": null
       }
     },
@@ -850,9 +925,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1305,
+          1305
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          596,
+          596
+        ],
         "BG": null
       }
     },
@@ -880,9 +961,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          774,
+          774
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          203,
+          203
+        ],
         "BG": null
       }
     },
@@ -913,7 +1000,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          189,
+          189
+        ]
       }
     },
     {
@@ -943,7 +1033,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          142,
+          142
+        ]
       }
     },
     {
@@ -970,9 +1063,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1294,
+          1294
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          686,
+          686
+        ],
         "BG": null
       }
     },
@@ -1000,9 +1099,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1324,
+          1324
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          576,
+          576
+        ],
         "BG": null
       }
     },
@@ -1032,7 +1137,10 @@
       "r2025": {
         "MP": null,
         "PC": null,
-        "PT": null,
+        "PT": [
+          622,
+          622
+        ],
         "BG": null
       }
     },
@@ -1062,7 +1170,10 @@
       "r2025": {
         "MP": null,
         "PC": null,
-        "PT": null,
+        "PT": [
+          690,
+          690
+        ],
         "BG": null
       }
     },
@@ -1090,10 +1201,19 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1301,
+          1301
+        ],
         "PC": null,
-        "PT": null,
-        "BG": null
+        "PT": [
+          685,
+          685
+        ],
+        "BG": [
+          165,
+          165
+        ]
       }
     },
     {
@@ -1120,9 +1240,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1157,
+          1157
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          543,
+          543
+        ],
         "BG": null
       }
     },
@@ -1150,10 +1276,16 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1139,
+          1139
+        ],
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          66,
+          66
+        ]
       }
     },
     {
@@ -1183,7 +1315,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          107,
+          107
+        ]
       }
     },
     {
@@ -1348,7 +1483,10 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1319,
+          1319
+        ],
         "PC": [
           730,
           811
@@ -1731,7 +1869,7 @@
       "r2025": {
         "MP": [
           235,
-          659
+          760
         ],
         "PC": [
           214,
@@ -1811,7 +1949,10 @@
           2,
           51
         ],
-        "PC": null,
+        "PC": [
+          35,
+          35
+        ],
         "PT": [
           3,
           12
@@ -1843,9 +1984,18 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
-        "PC": null,
-        "PT": null,
+        "MP": [
+          410,
+          410
+        ],
+        "PC": [
+          110,
+          110
+        ],
+        "PT": [
+          78,
+          78
+        ],
         "BG": null
       }
     },
@@ -1873,7 +2023,10 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          875,
+          875
+        ],
         "PC": null,
         "PT": null,
         "BG": null
@@ -1903,9 +2056,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          191,
+          191
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          31,
+          31
+        ],
         "BG": null
       }
     },
@@ -1936,7 +2095,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          137,
+          137
+        ]
       }
     },
     {
@@ -1966,7 +2128,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          168,
+          168
+        ]
       }
     },
     {
@@ -1996,7 +2161,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          133,
+          133
+        ]
       }
     },
     {
@@ -2023,10 +2191,16 @@
         "rang_max": 71
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1315,
+          1315
+        ],
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          43,
+          43
+        ]
       }
     },
     {
@@ -2056,7 +2230,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          48,
+          48
+        ]
       }
     },
     {
@@ -2086,7 +2263,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          60,
+          60
+        ]
       }
     },
     {
@@ -2116,7 +2296,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          192,
+          192
+        ]
       }
     },
     {
@@ -2146,7 +2329,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          119,
+          119
+        ]
       }
     },
     {
@@ -2205,7 +2391,10 @@
       "r2025": {
         "MP": null,
         "PC": null,
-        "PT": null,
+        "PT": [
+          673,
+          673
+        ],
         "BG": null
       }
     },
@@ -2266,7 +2455,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          252,
+          252
+        ]
       }
     },
     {
@@ -2296,7 +2488,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          211,
+          211
+        ]
       }
     },
     {
@@ -2356,7 +2551,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          251,
+          251
+        ]
       }
     },
     {
@@ -2386,7 +2584,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          218,
+          218
+        ]
       }
     },
     {
@@ -2416,7 +2617,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          242,
+          242
+        ]
       }
     },
     {
@@ -2443,9 +2647,15 @@
         "rang_max": null
       },
       "r2025": {
-        "MP": null,
+        "MP": [
+          1257,
+          1257
+        ],
         "PC": null,
-        "PT": null,
+        "PT": [
+          480,
+          480
+        ],
         "BG": null
       }
     },
@@ -2476,7 +2686,10 @@
         "MP": null,
         "PC": null,
         "PT": null,
-        "BG": null
+        "BG": [
+          227,
+          227
+        ]
       }
     },
     {
@@ -2505,7 +2718,10 @@
       "r2025": {
         "MP": null,
         "PC": null,
-        "PT": null,
+        "PT": [
+          646,
+          646
+        ],
         "BG": null
       }
     },
@@ -2535,7 +2751,10 @@
       "r2025": {
         "MP": null,
         "PC": null,
-        "PT": null,
+        "PT": [
+          653,
+          653
+        ],
         "BG": null
       }
     },
