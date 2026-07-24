@@ -55,7 +55,7 @@ html[data-theme='light'] {
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   margin: 0;
@@ -617,10 +617,10 @@ p.subtitle {
   border-radius: 10px; cursor: pointer; transition: all .2s;
 }
 .sim-track button.active { color: #fff; background: var(--accent); border-color: var(--accent); }
-.sim-rank-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.sim-rank-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; min-width: 0; }
 .sim-rank-row label { font-weight: 600; color: var(--text); white-space: nowrap; }
 .sim-rank-row input {
-  flex: 1; padding: 11px 14px; font: inherit; border-radius: 10px;
+  flex: 1; min-width: 0; padding: 11px 14px; font: inherit; border-radius: 10px;
   border: 1px solid var(--border); background: var(--input-bg); color: var(--text); outline: none;
 }
 .sim-rank-row input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
@@ -692,8 +692,8 @@ p.subtitle {
   padding: 11px 4px; border-bottom: 1px solid var(--border); font-size: 0.9rem;
 }
 .sim-item:last-child { border-bottom: none; }
-.sim-name { color: var(--text); }
-.sim-meta { color: var(--text-dim); font-size: 0.8rem; white-space: nowrap; }
+.sim-name { color: var(--text); min-width: 0; overflow-wrap: anywhere; }
+.sim-meta { color: var(--text-dim); font-size: 0.8rem; min-width: 0; overflow-wrap: anywhere; }
 .sim-add {
   width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--border);
   background: var(--input-bg); color: var(--text); cursor: pointer; font-size: 1rem; line-height: 1;
@@ -704,13 +704,23 @@ p.subtitle {
 .sim-wishlist-wrap { margin: 16px 0; padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface-2); }
 .sim-wishlist-empty { color: var(--text-dim); font-size: 0.88rem; }
 .sim-wishlist-title { font-weight: 700; margin-bottom: 8px; color: var(--text); }
-.sim-wishlist { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
-.sim-wishlist li { display: flex; align-items: center; gap: 8px; }
-.wl-name { flex: 1; color: var(--text); font-size: 0.88rem; }
-.wl-meta { color: var(--text-dim); font-size: 0.78rem; white-space: nowrap; }
-.wl-rm { border: none; background: none; color: var(--red); cursor: pointer; font-size: 0.9rem; }
-.wl-order { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); font-size: 0.72rem; font-weight: 700; flex: 0 0 auto; }
+.sim-wishlist { margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.sim-wishlist li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "order name name"
+    "order meta acts";
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 4px;
+}
+.wl-name { grid-area: name; min-width: 0; color: var(--text); font-size: 0.88rem; overflow-wrap: anywhere; }
+.wl-meta { grid-area: meta; min-width: 0; color: var(--text-dim); font-size: 0.78rem; overflow-wrap: anywhere; }
+.wl-order { grid-area: order; align-self: start; margin-top: 1px; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); font-size: 0.72rem; font-weight: 700; flex: 0 0 auto; }
+.wl-actions { grid-area: acts; display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
 .wl-moves { display: inline-flex; gap: 3px; }
+.wl-rm { border: none; background: none; color: var(--red); cursor: pointer; font-size: 0.9rem; padding: 2px 4px; }
 .wl-mv { border: 1px solid var(--border); background: var(--input-bg); color: var(--text-dim); cursor: pointer; border-radius: 6px; width: 22px; height: 22px; line-height: 1; font-size: 0.8rem; }
 .wl-mv:hover:not([disabled]) { border-color: var(--accent); color: var(--accent); }
 .wl-mv[disabled] { opacity: .35; cursor: default; }
@@ -719,6 +729,7 @@ p.subtitle {
 
 .sim-table-details { margin: 14px 0; }
 .sim-table-details summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+#sim-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .sim-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.82rem; }
 .sim-table th, .sim-table td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border); }
 .sim-table th { color: var(--text-dim); text-transform: uppercase; font-size: 0.7rem; letter-spacing: .04em; }
@@ -847,7 +858,8 @@ p.subtitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 4px 12px;
   padding: 11px 4px;
   border-bottom: 1px solid var(--border);
   font-size: 0.9rem;
@@ -855,7 +867,7 @@ p.subtitle {
   transition: background 0.15s ease;
 }
 .res-item:last-child { border-bottom: none; }
-.res-item .res-name { color: var(--text-dim); }
+.res-item .res-name { color: var(--text-dim); min-width: 0; overflow-wrap: anywhere; }
 .res-item.live { cursor: pointer; }
 .res-item.live .res-name { color: var(--text); }
 .res-item.live:hover { background: var(--surface-2); }
@@ -863,7 +875,9 @@ p.subtitle {
 .res-item .res-meta {
   color: var(--text-dim);
   font-size: 0.78rem;
-  white-space: nowrap;
+  text-align: right;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .submit-card {
