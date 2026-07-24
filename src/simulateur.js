@@ -384,9 +384,9 @@ function renderWishlist() {
     const r = p ? computeRow(p) : { cap: 0 };
     covered += r.cap;
     html += `<li><span class="wl-order">${i + 1}</span><span class="wl-name">${shortInst(w.inst)} — ${w.spec}</span><span class="wl-meta">${p ? formatMeta(r) : '—'}</span>` +
-            `<span class="wl-moves"><button class="wl-mv" data-dir="up" data-i="${i}" title="Monter"${i === 0 ? ' disabled' : ''}>↑</button>` +
+            `<span class="wl-actions"><span class="wl-moves"><button class="wl-mv" data-dir="up" data-i="${i}" title="Monter"${i === 0 ? ' disabled' : ''}>↑</button>` +
             `<button class="wl-mv" data-dir="down" data-i="${i}" title="Descendre"${i === state.wishlist.length - 1 ? ' disabled' : ''}>↓</button></span>` +
-            `<button class="wl-rm" data-i="${i}" title="Retirer">✕</button></li>`;
+            `<button class="wl-rm" data-i="${i}" title="Retirer">✕</button></span></li>`;
   });
   html += '</ol>';
   html += `<div class="sim-wishlist-cov"><strong>${state.wishlist.length}</strong> vœux · <strong>${covered}</strong> places couvertes</div>`;
