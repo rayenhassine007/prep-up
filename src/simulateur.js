@@ -41,7 +41,7 @@ function tierFor(rank, rmin, rmax) {
 }
 
 // ---- element refs (created in calculateur.html) ----
-let elControls, elSummary, elList, elTable, elWishlist;
+let elControls, elSummary, elList, elWishlist;
 
 function q(id) { return document.getElementById(id); }
 
@@ -300,7 +300,6 @@ function inWishlist(r) {
 function render() {
   renderSummary();
   renderList();
-  renderTable();
   renderWishlist();
 }
 
@@ -358,18 +357,6 @@ function renderList() {
     item.appendChild(add);
     elList.appendChild(item);
   }
-}
-
-function renderTable() {
-  if (!elTable) return;
-  const rows = currentRows().slice().sort((a, b) => a.inst.localeCompare(b.inst) || (a.rmax || 1e9) - (b.rmax || 1e9));
-  if (rows.length === 0) { elTable.innerHTML = ''; return; }
-  let html = '<table class="sim-table"><thead><tr><th>École</th><th>Filière</th><th>Places</th><th>Rang min–max</th></tr></thead><tbody>';
-  for (const r of rows) {
-    html += `<tr><td>${shortInst(r.inst)}</td><td>${r.spec}</td><td>${r.cap}</td><td>${r.rmax == null ? '—' : (r.rmin != null ? r.rmin + '–' + r.rmax : r.rmax)}</td></tr>`;
-  }
-  html += '</tbody></table>';
-  elTable.innerHTML = html;
 }
 
 function renderWishlist() {
@@ -446,7 +433,6 @@ function init() {
   elControls = q('sim-controls');
   elSummary = q('sim-summary');
   elList = q('sim-list');
-  elTable = q('sim-table');
   elWishlist = q('sim-wishlist');
   if (!elControls) return;
   document.addEventListener('click', closeAllDropdowns);
