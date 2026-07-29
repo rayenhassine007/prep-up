@@ -1,4 +1,5 @@
 import data from './data/ressources.json' with { type: 'json' };
+import { normalizeText } from './search.js';
 
 // ---------------------------------------------------------------------------
 // Pour ajouter des ressources : édite src/data/ressources.json
@@ -81,12 +82,12 @@ function renderAnneeButtons() {
 }
 
 function matchesSearch(item, matiere) {
-  const q = state.search.trim().toLowerCase();
+  const q = normalizeText(state.search.trim());
   if (!q) return true;
   return (
-    item.titre.toLowerCase().includes(q) ||
-    (item.type || '').toLowerCase().includes(q) ||
-    matiere.toLowerCase().includes(q)
+    normalizeText(item.titre).includes(q) ||
+    normalizeText(item.type || '').includes(q) ||
+    normalizeText(matiere).includes(q)
   );
 }
 

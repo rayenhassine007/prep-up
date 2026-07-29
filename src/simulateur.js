@@ -1,6 +1,7 @@
 // Simulateur de rang — "avec mon rang, quelles filières ?"
 // Uses Prep'Up's own data: rangs 2024 (min/max admitted) + capacités 2025.
 import data from './data/rangs_2024_capacites_2025.json' with { type: 'json' };
+import { normalizeText } from './search.js';
 
 const TRACKS = ['MP', 'PC', 'PT', 'BG'];
 const TRACK_LABEL = { MP: 'MP', PC: 'PC', PT: 'PT (T)', BG: 'BG' };
@@ -107,10 +108,10 @@ function tierPass(tier) {
 }
 
 function filteredSortedRows() {
-  const term = (state.search || '').trim().toLowerCase();
+  const term = normalizeText((state.search || '').trim());
   let rows = currentRows().filter((r) => {
     if (state.inst !== 'all' && r.inst !== state.inst) return false;
-    if (term && !(r.inst.toLowerCase().includes(term) || r.spec.toLowerCase().includes(term))) return false;
+    if (term && !(normalizeText(r.inst).includes(term) || normalizeText(r.spec).includes(term))) return false;
     if (state.rank != null && !tierPass(r.tier)) return false;
     return true;
   });
