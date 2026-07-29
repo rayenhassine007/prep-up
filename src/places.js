@@ -1,4 +1,5 @@
 import data from './data/places2026.json' with { type: 'json' };
+import { normalizeText } from './search.js';
 
 // Places ouvertes session 2026 (JORT n°35 du 3 avril 2026).
 // Pour mettre à jour : édite src/data/places2026.json
@@ -51,9 +52,9 @@ function specTotal(s) {
 }
 
 function matches(ecole, s) {
-  const q = state.search.trim().toLowerCase();
+  const q = normalizeText(state.search.trim());
   if (!q) return true;
-  return ecole.nom.toLowerCase().includes(q) || s.nom.toLowerCase().includes(q);
+  return normalizeText(ecole.nom).includes(q) || normalizeText(s.nom).includes(q);
 }
 
 function renderList() {
