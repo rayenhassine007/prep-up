@@ -48,6 +48,7 @@
       <div class="calc-tabs" id="calc-tabs">
         <button data-tab="score" class="active">Calculer mon rang</button>
         <button data-tab="rang">Simulateur de rang</button>
+        <button data-tab="objectif">Notes à viser</button>
       </div>
 
       <div id="tab-score" class="tab-panel active">
@@ -114,10 +115,43 @@
           Places = capacités <strong>2026</strong> (JORT officiel). Rangs = affectation <strong>2024</strong> (min = meilleur admis, max = dernier admis), utilisés comme <strong>estimation prédictive</strong> — pas une garantie.
         </div>
       </div>
+
+      <div id="tab-objectif" class="tab-panel">
+        <p class="subtitle">Fixe-toi un rang à atteindre → vois la note qu'il te faut dans chaque matière.</p>
+
+        <div class="filiere-select" id="obj-filiere-select"></div>
+
+        <div class="obj-target-row">
+          <label for="obj-rank-input">Rang visé</label>
+          <input type="number" id="obj-rank-input" min="1" step="1" placeholder="ex. 500" inputmode="numeric" />
+        </div>
+
+        <div class="year-select" id="obj-year-select"></div>
+
+        <div class="result-card" id="obj-result">
+          <div class="score"><span id="obj-moy-value">—</span><span class="max"> / 20</span></div>
+          <div class="pct" id="obj-moy-sub">moyenne pondérée nécessaire</div>
+        </div>
+
+        <p class="obj-hint" id="obj-hint">
+          Remplis les matières dont tu es sûr — la note nécessaire dans les matières restantes se met à jour automatiquement.
+        </p>
+
+        <div id="obj-matieres"></div>
+
+        <div class="obj-verdict" id="obj-verdict"></div>
+
+        <button class="reset" id="obj-reset-btn">Réinitialiser les notes</button>
+
+        <div class="disclaimer">
+          Le rang visé est converti en <strong>moyenne pondérée</strong> à partir de la distribution réelle des moyennes de la session choisie. C'est une <strong>estimation</strong> : à moyenne égale, le rang change d'une année à l'autre.
+        </div>
+      </div>
     </main>
     <script type="module" src="/src/analytics.js"></script>
     <script type="module" src="/src/calculator.js"></script>
     <script type="module" src="/src/simulateur.js"></script>
+    <script type="module" src="/src/objectif.js"></script>
     <script type="module" src="/src/ui.js"></script>
   </body>
 </html>
