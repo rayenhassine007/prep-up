@@ -739,6 +739,9 @@ p.subtitle {
 
 .obj-hint { color: var(--text-dim); font-size: 0.85rem; line-height: 1.5; margin: 0 0 14px; }
 
+.obj-school-field { margin-bottom: 18px; }
+.obj-school-note { color: var(--text-dim); font-size: 0.78rem; line-height: 1.45; margin-top: 6px; }
+
 .obj-row { flex-wrap: wrap; }
 .obj-need {
   font-size: 0.78rem; font-weight: 600; white-space: nowrap;
