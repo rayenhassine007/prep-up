@@ -728,6 +728,40 @@ p.subtitle {
 .wl-mv[disabled] { opacity: .35; cursor: default; }
 .sim-wishlist-cov { margin-top: 10px; color: var(--text); font-size: 0.88rem; }
 
+/* ---------- Objectif tab (rang visé -> notes nécessaires) ---------- */
+.obj-target-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; min-width: 0; }
+.obj-target-row label { font-weight: 600; color: var(--text); white-space: nowrap; }
+.obj-target-row input {
+  flex: 1; min-width: 0; padding: 11px 14px; font: inherit; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--input-bg); color: var(--text); outline: none;
+}
+.obj-target-row input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+
+.obj-hint { color: var(--text-dim); font-size: 0.85rem; line-height: 1.5; margin: 0 0 14px; }
+
+.obj-row { flex-wrap: wrap; }
+.obj-need {
+  font-size: 0.78rem; font-weight: 600; white-space: nowrap;
+  padding: 3px 10px; border-radius: 999px; color: var(--text-dim);
+}
+.obj-need.is-need { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.obj-need.is-hard { color: var(--orange); background: color-mix(in srgb, var(--orange) 15%, transparent); }
+.obj-need.is-bad { color: var(--red); background: color-mix(in srgb, var(--red) 14%, transparent); }
+.obj-need.is-good { color: var(--green); background: color-mix(in srgb, var(--green) 15%, transparent); }
+.obj-need.is-set { color: var(--text-dim); background: var(--surface-2); }
+
+.obj-verdict { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; margin: 4px 0 18px; }
+.obj-verdict.good { color: var(--green); }
+.obj-verdict.warn { color: var(--orange); }
+.obj-verdict.bad { color: var(--red); }
+
+@media (max-width: 560px) {
+  /* keep the note field on the same line as the label, push the hint below */
+  .obj-row label { flex: 1 1 100%; }
+  .obj-row .obj-need { order: 3; }
+  .obj-row input { margin-left: auto; }
+}
+
 /* link out to the full Places 2026 page */
 .sim-places-link {
   display: flex; align-items: center; gap: 12px;

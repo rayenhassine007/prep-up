@@ -402,16 +402,17 @@ function renderWishlist() {
 // ---- tab switching + auto-fill from the score calculator ----
 function setupTabs() {
   const bar = document.getElementById('calc-tabs');
-  const tabScore = document.getElementById('tab-score');
-  const tabRang = document.getElementById('tab-rang');
-  if (!bar || !tabScore || !tabRang) return;
+  if (!bar) return;
   bar.addEventListener('click', (e) => {
     const b = e.target.closest('button[data-tab]');
     if (!b) return;
     const t = b.dataset.tab;
     bar.querySelectorAll('button').forEach((x) => x.classList.toggle('active', x === b));
-    tabScore.classList.toggle('active', t === 'score');
-    tabRang.classList.toggle('active', t === 'rang');
+    // each button[data-tab="x"] drives the panel with id="tab-x"
+    bar.querySelectorAll('button[data-tab]').forEach((x) => {
+      const panel = document.getElementById('tab-' + x.dataset.tab);
+      if (panel) panel.classList.toggle('active', x.dataset.tab === t);
+    });
     if (t === 'rang') {
       autofillFromCalculator();
       buildControls();
