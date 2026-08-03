@@ -762,6 +762,7 @@ p.subtitle {
 .a1-card:focus-within { border-color: var(--accent); }
 .a1-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .a1-name { flex: 1; min-width: 0; font-size: 0.92rem; overflow-wrap: anywhere; }
+.a1-note { display: block; margin-top: 2px; font-size: 0.72rem; color: var(--text-dim); line-height: 1.4; }
 .a1-coef { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; color: var(--text-dim); font-size: 0.76rem; }
 .a1-coef input {
   width: 56px; padding: 5px 8px; font: inherit; font-size: 0.8rem; text-align: center;
