@@ -15,6 +15,11 @@
 // To update: this script mirrors the render logic in src/places.js and
 // src/ressources.js. If you change how those render lists, mirror the change
 // here too.
+//
+// Deliberate divergence: the favourite-star buttons on ressources rows are not
+// emitted here. They are client-only controls backed by localStorage, so a
+// static copy would be inert markup for a crawler. The client adds them when it
+// re-renders.
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
