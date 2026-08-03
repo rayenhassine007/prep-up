@@ -1,0 +1,56 @@
+{
+  "note": "Coefficients de la 1ère année du cycle préparatoire (contrôle continu), distincts des coefficients du concours (voir coefficients.json). Certaines matières regroupent plusieurs éléments notés séparément : le champ 'note' le précise. Le champ 'tp' indique les matières comportant des travaux pratiques, qui suivent la pondération 15/25/20/40 au lieu de 15/35/50.",
+  "source": "Modalités d'évaluation du cycle préparatoire (IPEIN) — tableaux de coefficients par filière fournis par l'utilisateur.",
+  "legende": {
+    "(*)": "TP annuel",
+    "(**)": "TP du semestre 2",
+    "(***)": "TP du semestre 1",
+    "(#)": "Élément évalué au semestre 1",
+    "(##)": "Élément évalué au semestre 2"
+  },
+  "filieres": {
+    "MP": {
+      "total": 42,
+      "matieres": [
+        { "nom": "Algèbre", "coef": 7 },
+        { "nom": "Analyse", "coef": 7 },
+        { "nom": "Physique", "coef": 8, "tp": true, "note": "TP annuel" },
+        { "nom": "Chimie générale", "coef": 4, "tp": true, "note": "TP du semestre 2" },
+        { "nom": "Informatique", "coef": 4 },
+        { "nom": "Mécanique des solides indéformables (MSI)", "coef": 5, "note": "MSI 65 % (S2) + Automatique 35 % (S1)" },
+        { "nom": "Français", "coef": 3 },
+        { "nom": "Anglais", "coef": 3 },
+        { "nom": "Sport", "coef": 1 }
+      ]
+    },
+    "PC": {
+      "total": 42,
+      "matieres": [
+        { "nom": "Algèbre", "coef": 5 },
+        { "nom": "Analyse", "coef": 5 },
+        { "nom": "Physique", "coef": 10, "tp": true, "note": "TP annuel" },
+        { "nom": "Chimie", "coef": 6, "note": "Chimie générale 70 % + chimie organique 30 % (S2)" },
+        { "nom": "Informatique", "coef": 4 },
+        { "nom": "Mécanique des solides indéformables (MSI)", "coef": 5, "tp": true, "note": "MSI 65 % + Automatique 35 % (S1) · TP du semestre 2" },
+        { "nom": "Français", "coef": 3 },
+        { "nom": "Anglais", "coef": 3 },
+        { "nom": "Sport", "coef": 1 }
+      ]
+    },
+    "T": {
+      "total": 45,
+      "matieres": [
+        { "nom": "Algèbre", "coef": 5 },
+        { "nom": "Analyse", "coef": 5 },
+        { "nom": "Physique", "coef": 8, "tp": true, "note": "TP annuel" },
+        { "nom": "Chimie générale", "coef": 4, "tp": true, "note": "TP du semestre 2" },
+        { "nom": "Informatique", "coef": 4 },
+        { "nom": "Mécanique des solides indéformables (MSI)", "coef": 5, "tp": true, "note": "MSI 65 % + Automatique 35 % · TP du semestre 2" },
+        { "nom": "Conception mécanique", "coef": 7, "note": "Conception 70 % + Fabrication 30 % (CMF)" },
+        { "nom": "Français", "coef": 3 },
+        { "nom": "Anglais", "coef": 3 },
+        { "nom": "Sport", "coef": 1 }
+      ]
+    }
+  }
+}

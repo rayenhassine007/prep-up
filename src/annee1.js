@@ -9,13 +9,14 @@
 //   moyenne annuelle = (2 × S1 + 3 × S2) / 5
 //
 // A student can type a matière average straight in, or expand a row and let the
-// weighting compute it. Coefficients are pre-filled from the concours ones
-// because they are the only published set, and are editable since an
-// établissement may weigh its year differently.
+// weighting compute it. Coefficients come from the 1ère année tables (which are
+// not the concours ones) and stay editable, since an établissement may weigh its
+// year differently.
 
-import coefficients from './data/coefficients.json' with { type: 'json' };
+import coefficients from './data/coefficients_1ere_annee.json' with { type: 'json' };
 
-const FILIERES = ['MP', 'PC', 'T', 'BG'];
+// The 1ère année tables cover MP, PC and T; BG is not among them.
+const FILIERES = Object.keys(coefficients.filieres);
 const SEMESTRES = ['S1', 'S2'];
 const STORE_KEY = 'prepup:annee1';
 
@@ -26,7 +27,7 @@ const PONDERATION = {
 };
 
 const state = {
-  filiere: 'MP',
+  filiere: FILIERES[0],
   semestre: 'S1',
   target: null,
   rows: {},          // "S1|MP|matière" -> {coef, avecTP, detail, moy, tests, ds, tp, exam}
@@ -44,7 +45,9 @@ function load() {
     const raw = JSON.parse(localStorage.getItem(STORE_KEY));
     if (raw && typeof raw === 'object') {
       if (raw.rows && typeof raw.rows === 'object') state.rows = raw.rows;
+      // a filière saved before (or outside) the 1ère année tables falls back
       if (FILIERES.includes(raw.filiere)) state.filiere = raw.filiere;
+      else state.filiere = FILIERES[0];
       if (SEMESTRES.includes(raw.semestre)) state.semestre = raw.semestre;
       if (typeof raw.target === 'number') state.target = raw.target;
       if (typeof raw.otherSemMoy === 'number') state.otherSemMoy = raw.otherSemMoy;
@@ -63,11 +66,12 @@ function save() {
 function matieres() { return coefficients.filieres[state.filiere].matieres; }
 function rowKey(nom) { return `${state.semestre}|${state.filiere}|${nom}`; }
 
-function getRow(nom, defaultCoef) {
-  const k = rowKey(nom);
-  if (!state.rows[k]) state.rows[k] = { coef: defaultCoef, avecTP: false, detail: false };
+// `m` is the matière definition: { nom, coef, tp?, note? }
+function getRow(m) {
+  const k = rowKey(m.nom);
+  if (!state.rows[k]) state.rows[k] = { coef: m.coef, avecTP: Boolean(m.tp), detail: false };
   const r = state.rows[k];
-  if (typeof r.coef !== 'number') r.coef = defaultCoef;
+  if (typeof r.coef !== 'number') r.coef = m.coef;
   return r;
 }
 
@@ -97,13 +101,13 @@ function compute() {
   const ms = matieres();
   let weighted = 0, coefSum = 0, blankCoef = 0;
   const rows = [];
-  for (const [nom, defCoef] of Object.entries(ms)) {
-    const r = getRow(nom, defCoef);
+  for (const m of ms) {
+    const r = getRow(m);
     const moy = effectiveMoy(r);
     const coef = typeof r.coef === 'number' && r.coef > 0 ? r.coef : 0;
     if (moy != null) { weighted += moy * coef; coefSum += coef; }
     else blankCoef += coef;
-    rows.push({ nom, r, moy, coef });
+    rows.push({ nom: m.nom, note: m.note, r, moy, coef });
   }
   const moyenne = coefSum > 0 ? weighted / coefSum : null;
   const totalCoef = coefSum + blankCoef;
@@ -152,7 +156,7 @@ function fmt(n) {
 
 function renderMatieres(res) {
   elMatieres.innerHTML = '';
-  for (const { nom, r, moy, coef } of res.rows) {
+  for (const { nom, note, r, moy, coef } of res.rows) {
     const card = document.createElement('div');
     card.className = 'a1-card';
 
@@ -162,6 +166,12 @@ function renderMatieres(res) {
     const label = document.createElement('span');
     label.className = 'a1-name';
     label.textContent = nom;
+    if (note) {
+      const sub = document.createElement('span');
+      sub.className = 'a1-note';
+      sub.textContent = note; // e.g. "MSI 65 % + Automatique 35 %"
+      label.appendChild(sub);
+    }
 
     // coefficient — editable, the published set is only a starting point
     const coefWrap = document.createElement('span');
