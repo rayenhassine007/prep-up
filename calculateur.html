@@ -117,6 +117,12 @@
       </div>
 
       <div id="tab-objectif" class="tab-panel">
+        <div class="obj-mode-switch" id="obj-mode-switch">
+          <button type="button" data-mode="concours" class="active">2ème année — concours</button>
+          <button type="button" data-mode="annee1">1ère année — moyennes</button>
+        </div>
+
+      <div id="obj-mode-concours">
         <p class="subtitle">Fixe-toi un rang à atteindre → vois la note qu'il te faut dans chaque matière.</p>
 
         <div class="filiere-select" id="obj-filiere-select"></div>
@@ -153,12 +159,51 @@
         <div class="disclaimer">
           Le rang visé est converti en <strong>moyenne pondérée</strong> à partir de la distribution réelle des moyennes de la session choisie. C'est une <strong>estimation</strong> : à moyenne égale, le rang change d'une année à l'autre.
         </div>
+      </div><!-- /#obj-mode-concours -->
+
+      <div id="obj-mode-annee1" hidden>
+        <p class="subtitle">Calcule ta moyenne du semestre — et vois ce qu'il te faut pour atteindre la moyenne que tu vises.</p>
+
+        <div class="filiere-select" id="a1-filiere"></div>
+        <div class="year-select" id="a1-sem"></div>
+
+        <div class="result-card">
+          <div class="score"><span id="a1-moy">—</span><span class="max"> / 20</span></div>
+          <div class="pct" id="a1-moy-sub">moyenne du semestre</div>
+        </div>
+
+        <div class="obj-target-row">
+          <label for="a1-target">Moyenne visée</label>
+          <input type="number" id="a1-target" min="0" max="20" step="0.25" placeholder="ex. 12" inputmode="decimal" />
+        </div>
+
+        <div class="obj-verdict" id="a1-verdict"></div>
+
+        <p class="obj-hint">
+          Saisis directement ta moyenne par matière, ou clique sur <strong>Détailler</strong> pour la calculer
+          à partir de tes notes (tests&nbsp;/ DS / TP / examen) avec la pondération officielle.
+          Les coefficients sont pré-remplis d'après ceux du concours — <strong>modifie-les</strong> si ton établissement en utilise d'autres.
+        </p>
+
+        <div id="a1-matieres"></div>
+
+        <div class="a1-annual" id="a1-annual"></div>
+
+        <button class="reset" id="a1-reset">Réinitialiser</button>
+
+        <div class="disclaimer">
+          Pondération officielle par matière — <strong>sans TP</strong>&nbsp;: tests &amp; oral 15&nbsp;%, devoirs surveillés 35&nbsp;%, examen de fin de semestre 50&nbsp;%.
+          <strong>Avec TP</strong>&nbsp;: tests &amp; oral 15&nbsp;%, devoirs surveillés 25&nbsp;%, TP 20&nbsp;%, examen 40&nbsp;%.
+          Moyenne annuelle = (2&nbsp;×&nbsp;S1 + 3&nbsp;×&nbsp;S2) / 5.
+        </div>
+      </div><!-- /#obj-mode-annee1 -->
       </div>
     </main>
     <script type="module" src="/src/analytics.js"></script>
     <script type="module" src="/src/calculator.js"></script>
     <script type="module" src="/src/simulateur.js"></script>
     <script type="module" src="/src/objectif.js"></script>
+    <script type="module" src="/src/annee1.js"></script>
     <script type="module" src="/src/ui.js"></script>
   </body>
 </html>
