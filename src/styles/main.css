@@ -930,6 +930,39 @@ p.subtitle {
   overflow-wrap: anywhere;
 }
 
+/* ---------- ressources: vues (toutes / favoris / récents) ---------- */
+.res-views { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.res-view {
+  padding: 8px 14px; font: inherit; font-size: 0.85rem; font-weight: 600;
+  color: var(--text-dim); background: var(--input-bg);
+  border: 1px solid var(--border); border-radius: 999px; cursor: pointer;
+  transition: color .18s ease, background .18s ease, border-color .18s ease;
+}
+.res-view:hover { color: var(--text); border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
+.res-view.active { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+.is-hidden { display: none !important; }
+
+.res-saved-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.res-clear {
+  font: inherit; font-size: 0.76rem; font-weight: 600; cursor: pointer;
+  color: var(--text-dim); background: transparent;
+  border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px;
+  transition: color .18s ease, border-color .18s ease;
+}
+.res-clear:hover { color: var(--red); border-color: color-mix(in srgb, var(--red) 45%, var(--border)); }
+
+/* favourite star sits inside the row (which is itself a link) */
+.res-fav {
+  flex: 0 0 auto; width: 30px; height: 30px; line-height: 1;
+  font-size: 1rem; cursor: pointer;
+  color: var(--text-dim); background: transparent;
+  border: 1px solid transparent; border-radius: 8px;
+  transition: color .18s ease, background .18s ease, transform .12s ease;
+}
+.res-fav:hover { color: var(--yellow); background: color-mix(in srgb, var(--yellow) 14%, transparent); transform: scale(1.12); }
+.res-fav.on { color: var(--yellow); }
+
 .submit-card {
   padding: 22px;
   margin-top: 24px;
