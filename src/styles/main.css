@@ -739,6 +739,79 @@ p.subtitle {
 
 .obj-hint { color: var(--text-dim); font-size: 0.85rem; line-height: 1.5; margin: 0 0 14px; }
 
+/* mode switch: 2ème année (concours) vs 1ère année (moyennes) */
+.obj-mode-switch { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.obj-mode-switch button {
+  flex: 1 1 160px; padding: 10px 14px; font: inherit; font-size: 0.88rem; font-weight: 600;
+  color: var(--text-dim); background: var(--input-bg);
+  border: 1px solid var(--border); border-radius: 12px; cursor: pointer;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.obj-mode-switch button:hover { color: var(--text); }
+.obj-mode-switch button.active {
+  color: var(--text); border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+/* ---------- 1ère année: moyenne par matière ---------- */
+.a1-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 10px;
+  transition: border-color 0.2s ease;
+}
+.a1-card:focus-within { border-color: var(--accent); }
+.a1-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.a1-name { flex: 1; min-width: 0; font-size: 0.92rem; overflow-wrap: anywhere; }
+.a1-coef { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; color: var(--text-dim); font-size: 0.76rem; }
+.a1-coef input {
+  width: 56px; padding: 5px 8px; font: inherit; font-size: 0.8rem; text-align: center;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--input-bg); color: var(--text); outline: none;
+}
+.a1-body { margin-bottom: 10px; }
+.a1-moy-input {
+  width: 100%; padding: 9px 12px; font: inherit; text-align: center;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--input-bg); color: var(--text); outline: none;
+}
+.a1-moy-input:focus { border-color: var(--accent); }
+.a1-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.a1-cell { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.a1-cell-label { font-size: 0.7rem; color: var(--text-dim); }
+.a1-cell input {
+  width: 100%; padding: 8px 10px; font: inherit; font-size: 0.9rem; text-align: center;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--input-bg); color: var(--text); outline: none;
+}
+.a1-cell input:focus { border-color: var(--accent); }
+.a1-foot { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.a1-toggle {
+  font: inherit; font-size: 0.76rem; font-weight: 600; cursor: pointer;
+  color: var(--accent); background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: 999px; padding: 4px 12px;
+}
+.a1-toggle:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.a1-tp { display: inline-flex; align-items: center; gap: 5px; font-size: 0.78rem; color: var(--text-dim); cursor: pointer; }
+.a1-out { margin-left: auto; font-size: 0.8rem; font-weight: 600; }
+.a1-out.is-ok { color: var(--green); }
+.a1-out.is-partial { color: var(--orange); }
+.a1-out.is-need { color: var(--accent); }
+
+.a1-annual-box {
+  margin: 18px 0; padding: 14px;
+  border: 1px solid var(--border); border-radius: 14px; background: var(--surface-2);
+}
+.a1-annual-title { font-weight: 700; margin-bottom: 10px; }
+.a1-annual-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+.a1-annual-row label { font-size: 0.88rem; color: var(--text-dim); }
+.a1-annual-row input {
+  flex: 1; min-width: 90px; padding: 9px 12px; font: inherit; text-align: center;
+  border: 1px solid var(--border); border-radius: 10px;
+  background: var(--input-bg); color: var(--text); outline: none;
+}
+.a1-annual-out { font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; }
+
 .obj-school-field { margin-bottom: 18px; }
 .obj-school-note { color: var(--text-dim); font-size: 0.78rem; line-height: 1.45; margin-top: 6px; }
 
