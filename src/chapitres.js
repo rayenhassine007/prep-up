@@ -73,12 +73,13 @@ function buildRow(c, niveau) {
 
   const main = el('div', 'chap-main');
   main.appendChild(el('span', 'chap-name', nomDe(c)));
-  const sub = el('span', 'chap-sub');
+  // Seule la physique a une seconde ligne : le chapitre parent, puisque son
+  // tableau est au niveau sous-chapitre. Les autres épreuves n'en ont pas.
   if (niveau === 'sous-chapitre' && c.chapitre_parent) {
+    const sub = el('span', 'chap-sub');
     sub.appendChild(el('span', 'chap-parent', c.chapitre_parent));
+    main.appendChild(sub);
   }
-  sub.appendChild(el('span', 'chap-annee', c.annee_label));
-  main.appendChild(sub);
   row.appendChild(main);
 
   row.appendChild(el('span', 'chap-count', `${c.sessions_ou_present}/${c.sessions_analysees}`));

@@ -129,10 +129,9 @@ function buildChapitres() {
     const band = BANDES[c.regularite] || 'b-rare';
     const pct = c.sessions_analysees ? (c.sessions_ou_present / c.sessions_analysees) * 100 : 0;
     const parent = niveau === 'sous-chapitre' && c.chapitre_parent
-      ? `<span class="chap-parent">${esc(c.chapitre_parent)}</span>` : '';
+      ? `<span class="chap-sub"><span class="chap-parent">${esc(c.chapitre_parent)}</span></span>` : '';
     return `<div class="chap-item">` +
-      `<div class="chap-main"><span class="chap-name">${esc(nom)}</span>` +
-      `<span class="chap-sub">${parent}<span class="chap-annee">${esc(c.annee_label)}</span></span></div>` +
+      `<div class="chap-main"><span class="chap-name">${esc(nom)}</span>${parent}</div>` +
       `<span class="chap-count">${esc(c.sessions_ou_present)}/${esc(c.sessions_analysees)}</span>` +
       `<span class="freq-badge ${band}">${esc(c.regularite)}</span>` +
       `<div class="chap-bar" aria-hidden="true"><span class="chap-bar-fill ${band}" style="width:${pct}%"></span></div>` +

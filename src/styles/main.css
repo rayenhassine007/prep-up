@@ -1726,7 +1726,6 @@ main.home { max-width: 1060px; }
   min-width: 0;
 }
 .chap-parent { overflow-wrap: anywhere; }
-.chap-parent::after { content: ' ·'; }
 .chap-count {
   grid-area: count;
   font-family: var(--font-display);
