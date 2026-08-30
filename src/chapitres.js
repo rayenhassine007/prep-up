@@ -38,8 +38,32 @@ const state = { epreuve: EPREUVES[0][0] };
 const tabsEl = document.getElementById('chap-tabs');
 const panelEl = document.getElementById('chap-panel');
 
+// Les libellés du programme portent parfois « (1re année) » / « (2e année) »
+// pour distinguer deux chapitres homonymes. On ne les affiche pas. Le nettoyage
+// se fait ici, à l'affichage, et pas dans le fichier de données : celui-ci
+// reste fidèle à la source, et un JSON régénéré depuis les CSV — qui les
+// contiendra de nouveau — sera nettoyé sans intervention.
+const ANNEE_SUFFIXE = /\s*\((?:1re|1ère|2e|2ème)\s+ann[ée]e\)/g;
+
+function propre(s) {
+  return String(s ?? '').replace(ANNEE_SUFFIXE, '');
+}
+
 function nomDe(c) {
-  return c.sous_chapitre || c.chapitre;
+  return propre(c.sous_chapitre || c.chapitre);
+}
+
+// Une fois les suffixes retirés, deux chapitres distincts peuvent porter le
+// même nom. Quand tout ce qui est affiché est identique, la seconde ligne
+// n'apprendrait rien : on ne la garde pas.
+function sansDoublons(chapitres) {
+  const vus = new Set();
+  return chapitres.filter((c) => {
+    const cle = `${nomDe(c)}|${c.sessions_ou_present}|${c.regularite}|${propre(c.chapitre_parent)}`;
+    if (vus.has(cle)) return false;
+    vus.add(cle);
+    return true;
+  });
 }
 
 function el(tag, className, text) {
@@ -118,7 +142,7 @@ function buildRow(c, e) {
   // tableau est au niveau sous-chapitre. Les autres épreuves n'en ont pas.
   if (e.niveau === 'sous-chapitre' && c.chapitre_parent) {
     const sub = el('span', 'chap-sub');
-    sub.appendChild(el('span', 'chap-parent', c.chapitre_parent));
+    sub.appendChild(el('span', 'chap-parent', propre(c.chapitre_parent)));
     main.appendChild(sub);
   }
   row.appendChild(main);
@@ -172,14 +196,13 @@ function renderPanel() {
     `coefficient ${e.coefficient}`,
     `${e.sessions_analysees} sessions (${e.annees})`,
     `seuil de présence : ≥ ${e.seuil_presence_questions} question${e.seuil_presence_questions > 1 ? 's' : ''}`,
-    `niveau ${e.niveau}`,
   ];
   for (const b of bits) meta.appendChild(el('span', 'chap-chip', b));
   head.appendChild(meta);
   card.appendChild(head);
 
-  const rencontres = e.chapitres.filter((c) => c.sessions_ou_present > 0);
-  const jamais = e.chapitres.filter((c) => c.sessions_ou_present === 0);
+  const rencontres = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present > 0));
+  const jamais = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present === 0));
 
   const list = el('div', 'chap-list');
   for (const c of rencontres) list.appendChild(buildRow(c, e));

@@ -124,7 +124,20 @@ function buildChapitres() {
     `<span class="chap-tab-coef">coef ${esc(e.coefficient)}</span></button>`
   ).join('');
 
-  // Mirrors sessionYears()/presentYears() in src/chapitres.js.
+  // Mirrors propre()/sansDoublons()/sessionYears() in src/chapitres.js.
+  const ANNEE_SUFFIXE = /\s*\((?:1re|1ère|2e|2ème)\s+ann[ée]e\)/g;
+  const propre = (s) => String(s ?? '').replace(ANNEE_SUFFIXE, '');
+  const nomDe = (c) => propre(c.sous_chapitre || c.chapitre);
+  const sansDoublons = (chapitres) => {
+    const vus = new Set();
+    return chapitres.filter((c) => {
+      const cle = `${nomDe(c)}|${c.sessions_ou_present}|${c.regularite}|${propre(c.chapitre_parent)}`;
+      if (vus.has(cle)) return false;
+      vus.add(cle);
+      return true;
+    });
+  };
+
   const sessionYears = (e) => {
     const m = String(e.annees || '').match(/(\d{4})\s*[–—-]\s*(\d{4})/);
     if (!m) return null;
@@ -134,11 +147,11 @@ function buildChapitres() {
   };
 
   const row = (c, e) => {
-    const nom = c.sous_chapitre || c.chapitre;
+    const nom = nomDe(c);
     const band = BANDES[c.regularite] || 'b-rare';
     const pct = c.sessions_analysees ? (c.sessions_ou_present / c.sessions_analysees) * 100 : 0;
     const parent = e.niveau === 'sous-chapitre' && c.chapitre_parent
-      ? `<span class="chap-sub"><span class="chap-parent">${esc(c.chapitre_parent)}</span></span>` : '';
+      ? `<span class="chap-sub"><span class="chap-parent">${esc(propre(c.chapitre_parent))}</span></span>` : '';
 
     const years = sessionYears(e);
     const set = Array.isArray(c.sessions_presentes) ? new Set(c.sessions_presentes.map(Number)) : null;
@@ -172,11 +185,10 @@ function buildChapitres() {
       `coefficient ${e.coefficient}`,
       `${e.sessions_analysees} sessions (${e.annees})`,
       `seuil de présence : ≥ ${e.seuil_presence_questions} question${e.seuil_presence_questions > 1 ? 's' : ''}`,
-      `niveau ${e.niveau}`,
     ].map((b) => `<span class="chap-chip">${esc(b)}</span>`).join('');
 
-    const vus = e.chapitres.filter((c) => c.sessions_ou_present > 0);
-    const jamais = e.chapitres.filter((c) => c.sessions_ou_present === 0);
+    const vus = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present > 0));
+    const jamais = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present === 0));
     const neverHtml = jamais.length
       ? `<details class="chap-never"><summary>Voir les ${jamais.length} chapitre${jamais.length > 1 ? 's' : ''} jamais rencontré${jamais.length > 1 ? 's' : ''}</summary>` +
         `<div class="chap-list">${jamais.map((c) => row(c, e)).join('')}</div></details>`
