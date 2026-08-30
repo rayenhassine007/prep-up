@@ -1,0 +1,842 @@
+{
+  "meta": {
+    "projet": "prep-upp.com — analyse des chapitres du concours national tunisien (filière MP)",
+    "description": "Pour chaque épreuve du concours MP, fréquence d'apparition de chaque chapitre du programme, session par session (2015–2026). Un chapitre est « présent » dans une session dès qu'il atteint un seuil de questions.",
+    "filiere": "MP",
+    "genere_le": "2026-08-30",
+    "donnees": "PUBLIQUES — régularité uniquement. Aucune donnée de barème ni de pondération interne.",
+    "seuil_presence_questions": {
+      "Mathematiques I": 3,
+      "Mathematiques II": 3,
+      "Physique": 3,
+      "Chimie inorganique": 2
+    },
+    "bandes_regularite": [
+      {
+        "bande": "incontournable",
+        "regle": "présent dans 100 % des sessions"
+      },
+      {
+        "bande": "très régulier",
+        "regle": "≥ 80 %"
+      },
+      {
+        "bande": "régulier",
+        "regle": "≥ 60 %"
+      },
+      {
+        "bande": "variable",
+        "regle": "≥ 40 %"
+      },
+      {
+        "bande": "rare",
+        "regle": "≥ 1 %"
+      },
+      {
+        "bande": "jamais rencontré",
+        "regle": "0 %"
+      }
+    ],
+    "couverture": "30 des 44 coefficients du concours MP (68 %). Non couvertes : Informatique (4), STA (4), Français (3), Anglais (3).",
+    "avertissements": [
+      "Historique, pas prédiction : ces tableaux décrivent ce qui est tombé, pas ce qui va tomber. « Jamais rencontré » ne veut pas dire « à ne pas réviser ».",
+      "Le seuil de présence diffère selon l'épreuve (≥ 3 questions sauf la chimie, ≥ 2) : à préciser si l'on compare deux épreuves.",
+      "Physique : volumes horaires non publiés (estimations internes) ; le tableau est au niveau sous-chapitre. Les autres épreuves sont au niveau chapitre du programme officiel.",
+      "Filière MP uniquement — rien pour PC, T ou BG.",
+      "Chimie 2016 et 2018 étiquetées depuis le corrigé (énoncé absent des archives) ; en 2018 une page du corrigé manque à la source (diagramme binaire solide-liquide possiblement sous-compté).",
+      "Ne recopier aucune donnée d'un autre site : ces chiffres proviennent de l'étiquetage manuel des sujets officiels."
+    ]
+  },
+  "epreuves": {
+    "mathematiques-1": {
+      "epreuve": "Mathématiques I",
+      "coefficient": 10,
+      "sessions_analysees": 12,
+      "annees": "2015–2026",
+      "seuil_presence_questions": 3,
+      "niveau": "chapitre",
+      "chapitres": [
+        {
+          "chapitre": "Suites et séries de fonctions",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 30,
+          "sessions_ou_present": 11,
+          "sessions_analysees": 12,
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Topologie des espaces vectoriels normés",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 26,
+          "sessions_ou_present": 10,
+          "sessions_analysees": 12,
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Intégration sur un intervalle quelconque",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 18,
+          "sessions_ou_present": 9,
+          "sessions_analysees": 12,
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Variables aléatoires discrètes",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 34,
+          "sessions_ou_present": 8,
+          "sessions_analysees": 12,
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Séries entières",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 12,
+          "sessions_ou_present": 8,
+          "sessions_analysees": 12,
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Dérivation",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 14,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Intégrales à paramètre",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 18,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Intégration",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 24,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Séries numériques (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 10,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Techniques fondamentales de calcul en analyse",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 20,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Analyse asymptotique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 14,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Probabilités",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 26,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Équations différentielles linéaires",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 16,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Limites, continuité",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Fonctions convexes",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Familles sommables de nombres complexes",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Calcul différentiel",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 24,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Nombres réels et suites numériques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 18,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Séries numériques (1re année)",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 18,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Dénombrement",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 10,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Fonctions vectorielles, arcs paramétrés",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 12,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        }
+      ],
+      "court": "Maths I",
+      "analyse": [
+        "Les probabilités (variables aléatoires discrètes) sont entrées dans l'épreuve en 2019 et n'en sont plus sorties : absentes de 2015 à 2018, présentes à chacune des huit sessions depuis. C'est la rupture la plus nette du corpus.",
+        "La topologie n'est presque jamais le sujet, mais presque toujours l'outil : compacité, point fixe, densité, valeurs d'adhérence.",
+        "La session 2026, entièrement consacrée aux fonctions à variation régulière (théorie de Karamata), mobilise les suites et séries de fonctions, l'intégration sur un intervalle quelconque et — massivement — l'analyse asymptotique."
+      ]
+    },
+    "physique": {
+      "epreuve": "Physique",
+      "coefficient": 10,
+      "sessions_analysees": 12,
+      "annees": "2015–2026",
+      "seuil_presence_questions": 3,
+      "niveau": "sous-chapitre",
+      "chapitres": [
+        {
+          "sous_chapitre": "Ondes électromagnétiques dans le vide et dans les milieux",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 9,
+          "sessions_analysees": 12,
+          "regularite": "régulier"
+        },
+        {
+          "sous_chapitre": "Optique ondulatoire : interférences, cohérence, diffraction, réseaux",
+          "chapitre_parent": "Optique",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 8,
+          "sessions_analysees": 12,
+          "regularite": "régulier"
+        },
+        {
+          "sous_chapitre": "Diffusion thermique (conduction) et bilans d'énergie",
+          "chapitre_parent": "Thermodynamique (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "sous_chapitre": "Thermodynamique statistique : facteur de Boltzmann, systèmes à deux niveaux",
+          "chapitre_parent": "Éléments de thermodynamique statistique",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "sous_chapitre": "Physique quantique : dualité, Schrödinger, puits, effet tunnel",
+          "chapitre_parent": "Physique quantique",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "sous_chapitre": "Induction électromagnétique, circuits fixes et mobiles",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "sous_chapitre": "Équations de Maxwell, énergie électromagnétique (Poynting)",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "sous_chapitre": "Électrostatique et magnétostatique, dipôles",
+          "chapitre_parent": "Électromagnétisme (1re année)",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Rayonnement thermique, corps noir, loi de Stefan",
+          "chapitre_parent": "Thermodynamique (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Rayonnement dipolaire",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Filtrage linéaire, diagramme de Bode, régimes transitoires",
+          "chapitre_parent": "Électrocinétique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Premier et second principes, machines thermiques, changements d'état",
+          "chapitre_parent": "Thermodynamique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Réflexion et transmission à une interface, conducteur parfait",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Optique géométrique (lentilles, miroirs, instruments)",
+          "chapitre_parent": "Signaux physiques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Oscillateur harmonique, résonance, amortissement",
+          "chapitre_parent": "Signaux physiques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Ondes mécaniques et acoustiques, équation de d'Alembert",
+          "chapitre_parent": "Signaux physiques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Mécanique du point : cinématique, dynamique, énergie",
+          "chapitre_parent": "Mécanique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Guides d'ondes et cavités",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Analyse de Fourier, échantillonnage et filtrage numérique",
+          "chapitre_parent": "Éléments de traitement du signal",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "sous_chapitre": "Référentiels non inertiels, forces d'inertie",
+          "chapitre_parent": "Mécanique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "sous_chapitre": "Mécanique du solide, rotation autour d'un axe fixe",
+          "chapitre_parent": "Mécanique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "sous_chapitre": "Forces centrales, mouvement newtonien, particules chargées",
+          "chapitre_parent": "Mécanique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        }
+      ],
+      "court": "Physique",
+      "analyse": [
+        "Une fois les sous-chapitres regroupés, l'électromagnétisme de 2e année reste le noyau de l'épreuve.",
+        "La mécanique est le gouffre du programme : 50 heures de cours officielles, et trois de ses quatre sous-chapitres n'ont jamais atteint le seuil en douze ans.",
+        "L'optique ondulatoire ne tombe pas à toutes les sessions, mais quand elle tombe elle occupe la moitié du sujet : 32 questions en 2015, 20 en 2026.",
+        "La session 2026 est un sujet-fleuve de 68 questions (commun MP + T, cinq parties indépendantes) qui fait franchir le seuil au filtrage linéaire (chaîne d'acquisition d'un capteur) et au rayonnement dipolaire (diffusion de Rayleigh, couleur du ciel)."
+      ]
+    },
+    "mathematiques-2": {
+      "epreuve": "Mathématiques II",
+      "coefficient": 6,
+      "sessions_analysees": 12,
+      "annees": "2015–2026",
+      "seuil_presence_questions": 3,
+      "niveau": "chapitre",
+      "chapitres": [
+        {
+          "chapitre": "Réduction des endomorphismes et des matrices carrées",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 48,
+          "sessions_ou_present": 12,
+          "sessions_analysees": 12,
+          "regularite": "incontournable"
+        },
+        {
+          "chapitre": "Espaces préhilbertiens réels. Endomorphismes des espaces euclidiens",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 36,
+          "sessions_ou_present": 8,
+          "sessions_analysees": 12,
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Espaces préhilbertiens réels",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Polynômes et fractions rationnelles",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 28,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Applications linéaires",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 16,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Matrices — Opérations sur les matrices",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 4,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Espaces vectoriels",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 16,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Changements de bases, équivalence et similitude",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Déterminants",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 8,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Structures algébriques usuelles (1re année)",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Calculs algébriques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Vocabulaire ensembliste",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Espaces de dimension finie",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 9,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Matrices et applications linéaires",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 4,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Structures algébriques usuelles (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 20,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Nombres complexes et trigonométrie",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Arithmétique dans l’ensemble des entiers relatifs",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Calcul matriciel",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Sous-espaces affines d’un espace vectoriel",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 3,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Opérations élémentaires et systèmes linéaires",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 4,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Groupe symétrique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 2,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        }
+      ],
+      "court": "Maths II",
+      "analyse": [
+        "C'est le tableau le plus tranché des quatre : la réduction tombe à toutes les sessions, sans exception (2026 comprise, avec 25 questions sur les matrices normales).",
+        "Deux chapitres seulement — réduction et espaces préhilbertiens — portent l'essentiel de l'épreuve.",
+        "Treize chapitres du programme d'algèbre n'ont jamais atteint le seuil en douze ans, dont l'arithmétique, le groupe symétrique et les systèmes linéaires."
+      ]
+    },
+    "chimie": {
+      "epreuve": "Chimie inorganique",
+      "coefficient": 4,
+      "sessions_analysees": 12,
+      "annees": "2015–2026",
+      "seuil_presence_questions": 2,
+      "niveau": "chapitre",
+      "chapitres": [
+        {
+          "chapitre": "Introduction et notions de base de la cristallographie",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 12,
+          "sessions_analysees": 12,
+          "regularite": "incontournable"
+        },
+        {
+          "chapitre": "Thermodynamique chimique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 11,
+          "sessions_analysees": 12,
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Équilibres d’oxydo-réduction",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 4.5,
+          "sessions_ou_present": 11,
+          "sessions_analysees": 12,
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Diagramme de Pourbaix (E-pH)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 10,
+          "sessions_analysees": 12,
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Atomistique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 10,
+          "sessions_ou_present": 10,
+          "sessions_analysees": 12,
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Diagrammes de phase de corps purs",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 4,
+          "sessions_ou_present": 9,
+          "sessions_analysees": 12,
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Cristaux ioniques",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 4,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Liaison chimique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Diagrammes binaires d'équilibre isobare de phase solide-liquide",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 8,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Diagrammes binaires d'équilibre de phases liquide-vapeur",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 12,
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Cristaux métalliques",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Courbes intensité-potentiel",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 8,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Étude des cristaux macrocovalents",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 2,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 12,
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Cinétique chimique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 12,
+          "regularite": "jamais rencontré"
+        }
+      ],
+      "court": "Chimie",
+      "analyse": [
+        "Le diagramme de Pourbaix et les équilibres d'oxydo-réduction se déplacent ensemble : presque aucune session ne contient l'un sans l'autre.",
+        "La cinétique chimique, 6 heures au programme, n'est jamais tombée en douze sessions. C'est le résultat le plus frappant du corpus.",
+        "Une fois les sessions 2016 et 2018 ajoutées, l'introduction à la cristallographie devient incontournable (12/12)."
+      ],
+      "reserve": "Réserve 2018 : une page du corrigé — la seule source disponible cette année-là — manque à la source. Elle portait probablement un diagramme binaire solide-liquide, chapitre donc peut-être sous-compté pour cette session."
+    }
+  }
+}

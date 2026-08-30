@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapitres du concours MP — Prep'Up</title>
+    <meta name="description" content="Pour chaque épreuve du concours d'ingénieur tunisien en filière MP, dans combien des 12 sessions 2015–2026 chaque chapitre du programme est apparu : Maths I, Maths II, Physique, Chimie." />
+    <link rel="canonical" href="https://prep-upp.com/chapitres-concours.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prep'Up" />
+    <meta property="og:title" content="Chapitres du concours MP — Prep'Up" />
+    <meta property="og:description" content="Pour chaque épreuve du concours d'ingénieur tunisien en filière MP, dans combien des 12 sessions 2015–2026 chaque chapitre du programme est apparu : Maths I, Maths II, Physique, Chimie." />
+    <meta property="og:url" content="https://prep-upp.com/chapitres-concours.html" />
+    <meta property="og:image" content="https://prep-upp.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Chapitres du concours MP — Prep'Up" />
+    <meta name="twitter:description" content="Pour chaque épreuve du concours d'ingénieur tunisien en filière MP, dans combien des 12 sessions 2015–2026 chaque chapitre du programme est apparu : Maths I, Maths II, Physique, Chimie." />
+    <meta name="twitter:image" content="https://prep-upp.com/og-image.png" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+    <header class="site">
+      <a class="brand" href="/"><img class="brand-logo" src="/logo.svg" alt="Prep'Up" />Prep<span>'Up</span></a>
+      <nav>
+        <a class="back" href="/">&larr; Accueil</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <h1>Chapitres du concours — <span class="grad-text">filière MP</span></h1>
+      <p class="subtitle">
+        Pour chaque épreuve, dans combien des 12 sessions 2015–2026 chaque chapitre du programme
+        a été rencontré. Chiffres établis en étiquetant à la main, question par question, les sujets
+        officiels du concours national.
+      </p>
+
+      <div class="chap-warning">
+        <strong>Historique, pas prédiction.</strong>
+        Ces chiffres décrivent ce qui est tombé, pas ce qui va tomber. « Jamais rencontré » ne veut pas
+        dire « à ne pas réviser » : le jury peut changer d'avis, et un chapitre récemment ajouté au
+        programme est mécaniquement sous-évalué. Le seuil de présence n'est pas le même dans toutes les
+        épreuves — voir la méthodologie en bas de page. <strong>Filière MP uniquement.</strong>
+      </div>
+
+      <section class="chap-picker" aria-labelledby="chap-picker-label">
+        <div class="chap-picker-label" id="chap-picker-label">Épreuves</div>
+        <div class="chap-tabs" id="chap-tabs" role="tablist"></div>
+      </section>
+
+      <div id="chap-panel"></div>
+
+      <details class="chap-method">
+        <summary>Méthodologie et réserves</summary>
+        <div class="chap-method-body">
+          <p>
+            <strong>Le corpus.</strong> 2 189 questions étiquetées sur 48 sessions, soit les quatre
+            épreuves au complet de 2015 à 2026. Les sujets sont des scans sans couche texte : chaque page
+            a été lue et chaque question rattachée à un ou plusieurs chapitres du programme officiel.
+            Quand une question relève de deux chapitres, le poids est réparti entre eux. Sources : les
+            fonds de l'IPEIS et du ministère de l'Enseignement supérieur.
+          </p>
+          <p>
+            <strong>Ce que « présent » veut dire.</strong> Pour chaque chapitre et chaque session, on
+            compte le nombre de questions qui le mobilisent ; le chapitre est déclaré présent dans cette
+            session dès qu'il atteint un seuil. <strong>Ce seuil vaut ≥ 3 questions en Maths I, Maths II
+            et Physique, mais ≥ 2 questions en Chimie</strong>, épreuve plus courte et plus découpée. Un
+            lecteur qui compare deux épreuves doit le savoir.
+          </p>
+          <p><strong>Les bandes de régularité</strong> traduisent la fréquence obtenue :</p>
+          <ul>
+            <li><em>incontournable</em> — présent dans 100 % des sessions</li>
+            <li><em>très régulier</em> — au moins 80 %</li>
+            <li><em>régulier</em> — au moins 60 %</li>
+            <li><em>variable</em> — au moins 40 %</li>
+            <li><em>rare</em> — au moins une session</li>
+            <li><em>jamais rencontré</em> — aucune session</li>
+          </ul>
+          <p>
+            <strong>Physique.</strong> Le découpage officiel du programme s'arrête au chapitre
+            (« Électromagnétisme », 50 h), trop grossier pour être utile : tout tomberait 12/12. Le tableau
+            de physique est donc au niveau <em>sous-chapitre</em>, un découpage établi à la main. Les
+            volumes horaires n'y sont pas publiés, puisqu'ils seraient des estimations.
+          </p>
+          <p>
+            <strong>Réserves sur les sources.</strong> La chimie 2016 et 2018 a été étiquetée à partir du
+            corrigé, l'énoncé étant absent des archives ; en 2018, une page du corrigé manque à la source
+            (probablement un diagramme binaire solide-liquide, chapitre donc peut-être sous-compté cette
+            année-là). La physique 2024 a longtemps manqué — le serveur du ministère sert le sujet 2025
+            sous l'URL 2024, fichier identique — mais a été récupérée depuis l'archive IPEIS.
+          </p>
+          <p>
+            <strong>Format 2026.</strong> Depuis 2026 les sujets sont des cahiers d'examen (énoncé et
+            espaces de réponse dans un même livret), et l'épreuve de Chimie est devenue un sujet commun
+            MP + T, comme la Physique depuis 2024. Le contenu reste dans le programme MP, mais le nombre
+            de pages d'un sujet 2026 n'est plus comparable aux années précédentes.
+          </p>
+          <p>
+            <strong>Couverture.</strong> Les quatre épreuves analysées pèsent 30 des 44 coefficients du
+            concours MP, soit 68 % du barème. Non couvertes pour le moment : Informatique (coef 4),
+            STA (4), Français (3) et Anglais (3).
+          </p>
+          <p>
+            <strong>Origine des chiffres.</strong> Tout ce qui est affiché ici vient de cet étiquetage
+            manuel des sujets officiels. Aucun tableau publié ailleurs n'a été recopié.
+          </p>
+        </div>
+      </details>
+
+      <div class="disclaimer">
+        Ces chiffres sont un relevé du passé, pas une prévision, et ils ne remplacent pas le programme
+        officiel. Sujets consultés via les fonds de l'IPEIS et du ministère de l'Enseignement supérieur.
+      </div>
+    </main>
+    <script type="module" src="/src/analytics.js"></script>
+    <script type="module" src="/src/chapitres.js"></script>
+    <script type="module" src="/src/ui.js"></script>
+  </body>
+</html>

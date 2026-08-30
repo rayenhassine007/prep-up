@@ -1,8 +1,9 @@
 // scripts/prerender.mjs
 //
 // Runs after `vite build`. Injects real, crawlable HTML for the default view
-// of the data-driven pages (places-2026.html, ressources.html) directly into
-// dist/*.html, using the exact same JSON data the client-side JS uses.
+// of the data-driven pages (places-2026.html, ressources.html,
+// chapitres-concours.html) directly into dist/*.html, using the exact same JSON
+// data the client-side JS uses.
 //
 // Why: these pages normally render their content entirely in the browser
 // (empty <div id="..."></div> filled by JS after load). That's invisible to
@@ -12,9 +13,9 @@
 // (progressive enhancement) — filtering/search still work exactly as before,
 // nothing about the interactive behavior changes.
 //
-// To update: this script mirrors the render logic in src/places.js and
-// src/ressources.js. If you change how those render lists, mirror the change
-// here too.
+// To update: this script mirrors the render logic in src/places.js,
+// src/ressources.js and src/chapitres.js. If you change how those render lists,
+// mirror the change here too.
 //
 // Deliberate divergence: the favourite-star buttons on ressources rows are not
 // emitted here. They are client-only controls backed by localStorage, so a
@@ -100,6 +101,74 @@ function buildRessources() {
   return { listHtml, filiere, annee };
 }
 
+// Deliberate divergence #2: the static copy of chapitres-concours.html carries
+// all four épreuves stacked, where the client shows one at a time behind the
+// "Épreuves" buttons. A crawler (and a reader with JS off) then gets the whole
+// dataset instead of a quarter of it; the client replaces the block on load.
+function buildChapitres() {
+  const data = JSON.parse(readFileSync(resolve(root, 'src/data/chapitres_concours_mp.json'), 'utf8'));
+  const BANDES = {
+    'incontournable': 'b-incontournable',
+    'très régulier': 'b-tres-regulier',
+    'régulier': 'b-regulier',
+    'variable': 'b-variable',
+    'rare': 'b-rare',
+    'jamais rencontré': 'b-jamais',
+  };
+  const epreuves = Object.entries(data.epreuves)
+    .sort((a, b) => b[1].coefficient - a[1].coefficient);
+
+  const tabsHtml = epreuves.map(([, e], i) =>
+    `<button type="button" class="chap-tab${i === 0 ? ' active' : ''}" role="tab" aria-selected="${i === 0}">` +
+    `<span class="chap-tab-name">${esc(e.court)}</span>` +
+    `<span class="chap-tab-coef">coef ${esc(e.coefficient)}</span></button>`
+  ).join('');
+
+  const row = (c, niveau) => {
+    const nom = c.sous_chapitre || c.chapitre;
+    const band = BANDES[c.regularite] || 'b-rare';
+    const pct = c.sessions_analysees ? (c.sessions_ou_present / c.sessions_analysees) * 100 : 0;
+    const parent = niveau === 'sous-chapitre' && c.chapitre_parent
+      ? `<span class="chap-parent">${esc(c.chapitre_parent)}</span>` : '';
+    return `<div class="chap-item">` +
+      `<div class="chap-main"><span class="chap-name">${esc(nom)}</span>` +
+      `<span class="chap-sub">${parent}<span class="chap-annee">${esc(c.annee_label)}</span></span></div>` +
+      `<span class="chap-count">${esc(c.sessions_ou_present)}/${esc(c.sessions_analysees)}</span>` +
+      `<span class="freq-badge ${band}">${esc(c.regularite)}</span>` +
+      `<div class="chap-bar" aria-hidden="true"><span class="chap-bar-fill ${band}" style="width:${pct}%"></span></div>` +
+      `</div>`;
+  };
+
+  const panelHtml = epreuves.map(([, e]) => {
+    const chips = [
+      `coefficient ${e.coefficient}`,
+      `${e.sessions_analysees} sessions (${e.annees})`,
+      `seuil de présence : ≥ ${e.seuil_presence_questions} question${e.seuil_presence_questions > 1 ? 's' : ''}`,
+      `niveau ${e.niveau}`,
+    ].map((b) => `<span class="chap-chip">${esc(b)}</span>`).join('');
+
+    const analyse = (e.analyse || []).length
+      ? `<div class="chap-analyse"><div class="chap-analyse-title">Ce que montrent les chiffres</div>` +
+        (e.analyse || []).map((p) => `<p>${esc(p)}</p>`).join('') +
+        (e.reserve ? `<p class="chap-analyse-reserve">${esc(e.reserve)}</p>` : '') +
+        `</div>`
+      : '';
+
+    const vus = e.chapitres.filter((c) => c.sessions_ou_present > 0);
+    const jamais = e.chapitres.filter((c) => c.sessions_ou_present === 0);
+    const neverHtml = jamais.length
+      ? `<details class="chap-never"><summary>Voir les ${jamais.length} chapitre${jamais.length > 1 ? 's' : ''} jamais rencontré${jamais.length > 1 ? 's' : ''}</summary>` +
+        `<div class="chap-list">${jamais.map((c) => row(c, e.niveau)).join('')}</div></details>`
+      : '';
+
+    return `<section class="chap-card"><div class="chap-head"><h2 class="chap-title">${esc(e.epreuve)}</h2>` +
+      `<div class="chap-meta">${chips}</div></div>${analyse}` +
+      `<div class="chap-list">${vus.map((c) => row(c, e.niveau)).join('')}</div>${neverHtml}</section>`;
+  }).join('');
+
+  return { tabsHtml, panelHtml };
+}
+
 function run() {
   if (!existsSync(dist)) {
     console.warn('[prerender] dist/ not found — run `vite build` first. Skipping.');
@@ -121,6 +190,15 @@ function run() {
     html = injectInto(html, 'res-list', listHtml);
     writeFileSync(ressourcesPath, html);
     console.log('[prerender] ressources.html: injected static content.');
+  }
+  const chapitresPath = resolve(dist, 'chapitres-concours.html');
+  if (existsSync(chapitresPath)) {
+    let html = readFileSync(chapitresPath, 'utf8');
+    const { tabsHtml, panelHtml } = buildChapitres();
+    html = injectInto(html, 'chap-tabs', tabsHtml);
+    html = injectInto(html, 'chap-panel', panelHtml);
+    writeFileSync(chapitresPath, html);
+    console.log('[prerender] chapitres-concours.html: injected static content.');
   }
 }
 

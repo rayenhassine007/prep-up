@@ -1599,4 +1599,261 @@ main.home { max-width: 1060px; }
   font-size: 1.02rem;
 }
 .step p {
-  margin: 0
+  margin: 0;
+}
+
+/* ---------- chapitres du concours (MP) ---------- */
+.chap-warning {
+  background: color-mix(in srgb, var(--orange) 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--orange) 32%, transparent);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 22px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+.chap-warning strong { color: var(--text); }
+
+.chap-picker { margin-bottom: 18px; }
+.chap-picker-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+.chap-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.chap-tab {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 9px 15px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.chap-tab:hover { color: var(--text); border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
+.chap-tab.active { color: #fff; background: var(--accent); border-color: var(--accent); }
+.chap-tab-coef { font-size: 0.72rem; font-weight: 500; opacity: 0.75; }
+
+.chap-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.chap-head { margin-bottom: 14px; }
+.chap-title {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  margin: 0 0 10px;
+}
+.chap-meta { display: flex; flex-wrap: wrap; gap: 6px; }
+.chap-chip {
+  font-size: 0.73rem;
+  color: var(--text-dim);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.chap-analyse {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.chap-analyse-title {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+.chap-analyse p {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 0.88rem;
+  line-height: 1.62;
+}
+.chap-analyse p:last-child { margin-bottom: 0; }
+.chap-analyse-reserve { color: var(--text-dim) !important; font-size: 0.8rem !important; }
+
+.chap-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.chap-filter {
+  padding: 6px 13px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.chap-filter:hover { color: var(--text); border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
+.chap-filter.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.chap-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-areas:
+    'name count badge'
+    'bar  bar   bar';
+  align-items: center;
+  gap: 7px 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.chap-item:last-child { border-bottom: none; }
+.chap-main { grid-area: name; min-width: 0; }
+.chap-name {
+  display: block;
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.chap-sub {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-top: 3px;
+  font-size: 0.73rem;
+  color: var(--text-dim);
+  min-width: 0;
+}
+.chap-parent { overflow-wrap: anywhere; }
+.chap-parent::after { content: ' ·'; }
+.chap-count {
+  grid-area: count;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text);
+  white-space: nowrap;
+  /* chaque ligne est sa propre grille : sans largeur imposée, « 9/12 » et
+     « 11/12 » décalent la colonne d'une ligne à l'autre */
+  min-width: 3.1em;
+  text-align: right;
+}
+.chap-bar {
+  grid-area: bar;
+  height: 4px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-dim) 18%, transparent);
+  overflow: hidden;
+}
+.chap-bar-fill { display: block; height: 100%; border-radius: 999px; }
+
+.freq-badge {
+  grid-area: badge;
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.freq-badge.b-incontournable { background: color-mix(in srgb, var(--green) 20%, transparent); color: var(--green); border: 1px solid color-mix(in srgb, var(--green) 38%, transparent); }
+.chap-bar-fill.b-incontournable { background: var(--green); }
+
+.freq-badge.b-tres-regulier { background: color-mix(in srgb, var(--blue) 20%, transparent); color: var(--blue); border: 1px solid color-mix(in srgb, var(--blue) 38%, transparent); }
+.chap-bar-fill.b-tres-regulier { background: var(--blue); }
+
+.freq-badge.b-regulier { background: color-mix(in srgb, var(--violet) 20%, transparent); color: var(--violet); border: 1px solid color-mix(in srgb, var(--violet) 38%, transparent); }
+.chap-bar-fill.b-regulier { background: var(--violet); }
+
+.freq-badge.b-variable { background: color-mix(in srgb, var(--orange) 20%, transparent); color: var(--orange); border: 1px solid color-mix(in srgb, var(--orange) 38%, transparent); }
+.chap-bar-fill.b-variable { background: var(--orange); }
+
+.freq-badge.b-rare { background: color-mix(in srgb, var(--yellow) 20%, transparent); color: var(--yellow); border: 1px solid color-mix(in srgb, var(--yellow) 38%, transparent); }
+.chap-bar-fill.b-rare { background: var(--yellow); }
+
+.freq-badge.b-jamais { background: color-mix(in srgb, var(--text-dim) 14%, transparent); color: var(--text-dim); border: 1px solid color-mix(in srgb, var(--text-dim) 30%, transparent); }
+.chap-bar-fill.b-jamais { background: var(--text-dim); }
+
+.chap-never { margin-top: 14px; }
+.chap-never > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+.chap-never > summary::-webkit-details-marker { display: none; }
+.chap-never > summary::before { content: '▸ '; }
+.chap-never[open] > summary::before { content: '▾ '; }
+.chap-never > summary:hover { color: var(--text); border-color: var(--border-strong); }
+.chap-never[open] > summary { margin-bottom: 4px; }
+
+.chap-method {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px 20px;
+  margin-bottom: 18px;
+}
+.chap-method > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.chap-method > summary::-webkit-details-marker { display: none; }
+.chap-method > summary::before { content: '▸ '; color: var(--text-dim); }
+.chap-method[open] > summary::before { content: '▾ '; }
+.chap-method-body {
+  padding-bottom: 12px;
+  color: var(--text-dim);
+  font-size: 0.83rem;
+  line-height: 1.68;
+}
+.chap-method-body p { margin: 0 0 10px; }
+.chap-method-body strong { color: var(--text); }
+.chap-method-body ul { margin: 0 0 10px; padding-left: 20px; }
+.chap-method-body li { margin-bottom: 3px; }
+
+@media (max-width: 560px) {
+  .chap-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'name  count'
+      'badge badge'
+      'bar   bar';
+  }
+  .freq-badge { justify-self: start; }
+  .chap-card { padding: 18px 16px 14px; }
+  .chap-warning { padding: 14px 16px; }
+  .chap-method { padding: 4px 16px; }
+}
