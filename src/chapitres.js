@@ -5,10 +5,10 @@ import data from './data/chapitres_concours_mp.json' with { type: 'json' };
 //
 // Pour mettre à jour : remplace src/data/chapitres_concours_mp.json.
 // Structure : meta + epreuves > <clé> > { epreuve, court, coefficient,
-//   sessions_analysees, annees, seuil_presence_questions, niveau,
-//   analyse: [...], reserve?, chapitres: [...] }
+//   sessions_analysees, annees, seuil_presence_questions, niveau, chapitres: [...] }
 // Chaque chapitre : { chapitre | sous_chapitre, chapitre_parent?, annee_programme,
-//   annee_label, heures, sessions_ou_present, sessions_analysees, regularite }
+//   annee_label, heures, sessions_ou_present, sessions_analysees, regularite,
+//   annees_presentes: [...], annees_analysees: [...] }
 //
 // Les heures sont dans les données mais ne sont pas affichées : elles sont
 // estimées en physique, et une colonne présente sur trois épreuves seulement
@@ -92,10 +92,13 @@ function renderTabs() {
   }
 }
 
-// Les millésimes des sessions analysées, déduits de « 2015–2026 ». On ne les
-// utilise que si l'intervalle recouvre exactement le nombre de sessions
-// annoncé : sinon on ne sait pas à quelle année correspond quoi.
-function sessionYears(e) {
+// L'axe du dépliant : les millésimes analysés, tels que le fichier les donne
+// (`annees_analysees`). À défaut, on les déduit de « 2015–2026 », et seulement
+// si l'intervalle recouvre exactement le nombre de sessions annoncé.
+function sessionYears(c, e) {
+  if (Array.isArray(c.annees_analysees) && c.annees_analysees.length) {
+    return c.annees_analysees.map(Number);
+  }
   const m = String(e.annees || '').match(/(\d{4})\s*[–—-]\s*(\d{4})/);
   if (!m) return null;
   const years = [];
@@ -103,14 +106,11 @@ function sessionYears(e) {
   return years.length === e.sessions_analysees ? years : null;
 }
 
-// Le détail session par session n'existe que si le fichier de données porte,
-// pour ce chapitre, la liste des millésimes où il a été rencontré
-// (`sessions_presentes: [2019, 2020, ...]`). Sans elle, pas de dépliant :
-// on n'a aucun moyen de deviner *lesquelles* des N sessions comptées.
+// Pas de dépliant sans la liste des millésimes où le chapitre a été rencontré :
+// « 9/12 » ne dit pas *lesquelles* des douze, et on ne les devine pas.
 function presentYears(c, years) {
-  if (!years || !Array.isArray(c.sessions_presentes)) return null;
-  const set = new Set(c.sessions_presentes.map(Number));
-  return years.some((y) => set.has(y)) ? set : null;
+  if (!years || !Array.isArray(c.annees_presentes) || !c.annees_presentes.length) return null;
+  return new Set(c.annees_presentes.map(Number));
 }
 
 function buildDetail(c, years, present) {
@@ -162,7 +162,7 @@ function buildRow(c, e) {
   bar.setAttribute('aria-hidden', 'true'); // le compte X/N dit déjà la même chose
   row.appendChild(bar);
 
-  const years = sessionYears(e);
+  const years = sessionYears(c, e);
   const present = presentYears(c, years);
   if (present) {
     const detail = buildDetail(c, years, present);

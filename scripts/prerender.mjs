@@ -138,7 +138,10 @@ function buildChapitres() {
     });
   };
 
-  const sessionYears = (e) => {
+  const sessionYears = (c, e) => {
+    if (Array.isArray(c.annees_analysees) && c.annees_analysees.length) {
+      return c.annees_analysees.map(Number);
+    }
     const m = String(e.annees || '').match(/(\d{4})\s*[–—-]\s*(\d{4})/);
     if (!m) return null;
     const years = [];
@@ -153,8 +156,9 @@ function buildChapitres() {
     const parent = e.niveau === 'sous-chapitre' && c.chapitre_parent
       ? `<span class="chap-sub"><span class="chap-parent">${esc(propre(c.chapitre_parent))}</span></span>` : '';
 
-    const years = sessionYears(e);
-    const set = Array.isArray(c.sessions_presentes) ? new Set(c.sessions_presentes.map(Number)) : null;
+    const years = sessionYears(c, e);
+    const set = Array.isArray(c.annees_presentes) && c.annees_presentes.length
+      ? new Set(c.annees_presentes.map(Number)) : null;
     // The per-session panel is emitted open: with JS off the toggle is inert,
     // so hiding it would hide the years from a crawler for no gain. The client
     // collapses it when it re-renders.
