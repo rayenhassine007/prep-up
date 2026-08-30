@@ -246,12 +246,7 @@
           "regularite": "jamais rencontré"
         }
       ],
-      "court": "Maths I",
-      "analyse": [
-        "Les probabilités (variables aléatoires discrètes) sont entrées dans l'épreuve en 2019 et n'en sont plus sorties : absentes de 2015 à 2018, présentes à chacune des huit sessions depuis. C'est la rupture la plus nette du corpus.",
-        "La topologie n'est presque jamais le sujet, mais presque toujours l'outil : compacité, point fixe, densité, valeurs d'adhérence.",
-        "La session 2026, entièrement consacrée aux fonctions à variation régulière (théorie de Karamata), mobilise les suites et séries de fonctions, l'intégration sur un intervalle quelconque et — massivement — l'analyse asymptotique."
-      ]
+      "court": "Maths I"
     },
     "physique": {
       "epreuve": "Physique",
@@ -482,13 +477,7 @@
           "regularite": "jamais rencontré"
         }
       ],
-      "court": "Physique",
-      "analyse": [
-        "Une fois les sous-chapitres regroupés, l'électromagnétisme de 2e année reste le noyau de l'épreuve.",
-        "La mécanique est le gouffre du programme : 50 heures de cours officielles, et trois de ses quatre sous-chapitres n'ont jamais atteint le seuil en douze ans.",
-        "L'optique ondulatoire ne tombe pas à toutes les sessions, mais quand elle tombe elle occupe la moitié du sujet : 32 questions en 2015, 20 en 2026.",
-        "La session 2026 est un sujet-fleuve de 68 questions (commun MP + T, cinq parties indépendantes) qui fait franchir le seuil au filtrage linéaire (chaîne d'acquisition d'un capteur) et au rayonnement dipolaire (diffusion de Rayleigh, couleur du ciel)."
-      ]
+      "court": "Physique"
     },
     "mathematiques-2": {
       "epreuve": "Mathématiques II",
@@ -688,12 +677,7 @@
           "regularite": "jamais rencontré"
         }
       ],
-      "court": "Maths II",
-      "analyse": [
-        "C'est le tableau le plus tranché des quatre : la réduction tombe à toutes les sessions, sans exception (2026 comprise, avec 25 questions sur les matrices normales).",
-        "Deux chapitres seulement — réduction et espaces préhilbertiens — portent l'essentiel de l'épreuve.",
-        "Treize chapitres du programme d'algèbre n'ont jamais atteint le seuil en douze ans, dont l'arithmétique, le groupe symétrique et les systèmes linéaires."
-      ]
+      "court": "Maths II"
     },
     "chimie": {
       "epreuve": "Chimie inorganique",
@@ -830,13 +814,7 @@
           "regularite": "jamais rencontré"
         }
       ],
-      "court": "Chimie",
-      "analyse": [
-        "Le diagramme de Pourbaix et les équilibres d'oxydo-réduction se déplacent ensemble : presque aucune session ne contient l'un sans l'autre.",
-        "La cinétique chimique, 6 heures au programme, n'est jamais tombée en douze sessions. C'est le résultat le plus frappant du corpus.",
-        "Une fois les sessions 2016 et 2018 ajoutées, l'introduction à la cristallographie devient incontournable (12/12)."
-      ],
-      "reserve": "Réserve 2018 : une page du corrigé — la seule source disponible cette année-là — manque à la source. Elle portait probablement un diagramme binaire solide-liquide, chapitre donc peut-être sous-compté pour cette session."
+      "court": "Chimie"
     }
   }
 }

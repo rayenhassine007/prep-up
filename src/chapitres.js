@@ -68,14 +68,55 @@ function renderTabs() {
   }
 }
 
-function buildRow(c, niveau) {
+// Les millésimes des sessions analysées, déduits de « 2015–2026 ». On ne les
+// utilise que si l'intervalle recouvre exactement le nombre de sessions
+// annoncé : sinon on ne sait pas à quelle année correspond quoi.
+function sessionYears(e) {
+  const m = String(e.annees || '').match(/(\d{4})\s*[–—-]\s*(\d{4})/);
+  if (!m) return null;
+  const years = [];
+  for (let y = Number(m[1]); y <= Number(m[2]); y++) years.push(y);
+  return years.length === e.sessions_analysees ? years : null;
+}
+
+// Le détail session par session n'existe que si le fichier de données porte,
+// pour ce chapitre, la liste des millésimes où il a été rencontré
+// (`sessions_presentes: [2019, 2020, ...]`). Sans elle, pas de dépliant :
+// on n'a aucun moyen de deviner *lesquelles* des N sessions comptées.
+function presentYears(c, years) {
+  if (!years || !Array.isArray(c.sessions_presentes)) return null;
+  const set = new Set(c.sessions_presentes.map(Number));
+  return years.some((y) => set.has(y)) ? set : null;
+}
+
+function buildDetail(c, years, present) {
+  const wrap = el('div', 'chap-detail');
+  wrap.hidden = true;
+  wrap.appendChild(el('div', 'chap-detail-title', 'Sessions où le chapitre a été rencontré'));
+
+  const grid = el('div', 'chap-years');
+  for (const y of years) {
+    const on = present.has(y);
+    const cell = el('div', 'chap-year' + (on ? ' is-on' : ''));
+    cell.setAttribute('aria-label', on ? `${y} : rencontré` : `${y} : non rencontré`);
+    const mark = el('span', 'cy-mark', on ? '✓' : '–');
+    mark.setAttribute('aria-hidden', 'true');
+    cell.appendChild(mark);
+    cell.appendChild(el('span', 'cy-num', String(y)));
+    grid.appendChild(cell);
+  }
+  wrap.appendChild(grid);
+  return wrap;
+}
+
+function buildRow(c, e) {
   const row = el('div', 'chap-item');
 
   const main = el('div', 'chap-main');
   main.appendChild(el('span', 'chap-name', nomDe(c)));
   // Seule la physique a une seconde ligne : le chapitre parent, puisque son
   // tableau est au niveau sous-chapitre. Les autres épreuves n'en ont pas.
-  if (niveau === 'sous-chapitre' && c.chapitre_parent) {
+  if (e.niveau === 'sous-chapitre' && c.chapitre_parent) {
     const sub = el('span', 'chap-sub');
     sub.appendChild(el('span', 'chap-parent', c.chapitre_parent));
     main.appendChild(sub);
@@ -96,6 +137,24 @@ function buildRow(c, niveau) {
   bar.appendChild(fill);
   bar.setAttribute('aria-hidden', 'true'); // le compte X/N dit déjà la même chose
   row.appendChild(bar);
+
+  const years = sessionYears(e);
+  const present = presentYears(c, years);
+  if (present) {
+    const detail = buildDetail(c, years, present);
+    const toggle = el('button', 'chap-toggle', '▾');
+    toggle.type = 'button';
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', `Voir les sessions de « ${nomDe(c)} »`);
+    toggle.addEventListener('click', () => {
+      const open = detail.hidden;
+      detail.hidden = !open;
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    row.appendChild(toggle);
+    row.appendChild(detail);
+  }
 
   return row;
 }
@@ -119,19 +178,11 @@ function renderPanel() {
   head.appendChild(meta);
   card.appendChild(head);
 
-  if (e.analyse && e.analyse.length) {
-    const box = el('div', 'chap-analyse');
-    box.appendChild(el('div', 'chap-analyse-title', 'Ce que montrent les chiffres'));
-    for (const p of e.analyse) box.appendChild(el('p', null, p));
-    if (e.reserve) box.appendChild(el('p', 'chap-analyse-reserve', e.reserve));
-    card.appendChild(box);
-  }
-
   const rencontres = e.chapitres.filter((c) => c.sessions_ou_present > 0);
   const jamais = e.chapitres.filter((c) => c.sessions_ou_present === 0);
 
   const list = el('div', 'chap-list');
-  for (const c of rencontres) list.appendChild(buildRow(c, e.niveau));
+  for (const c of rencontres) list.appendChild(buildRow(c, e));
   card.appendChild(list);
 
   if (jamais.length) {
@@ -140,7 +191,7 @@ function renderPanel() {
       `Voir les ${jamais.length} chapitre${jamais.length > 1 ? 's' : ''} jamais rencontré${jamais.length > 1 ? 's' : ''}`);
     det.appendChild(sum);
     const inner = el('div', 'chap-list');
-    for (const c of jamais) inner.appendChild(buildRow(c, e.niveau));
+    for (const c of jamais) inner.appendChild(buildRow(c, e));
     det.appendChild(inner);
     card.appendChild(det);
   }

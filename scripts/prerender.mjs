@@ -124,17 +124,46 @@ function buildChapitres() {
     `<span class="chap-tab-coef">coef ${esc(e.coefficient)}</span></button>`
   ).join('');
 
-  const row = (c, niveau) => {
+  // Mirrors sessionYears()/presentYears() in src/chapitres.js.
+  const sessionYears = (e) => {
+    const m = String(e.annees || '').match(/(\d{4})\s*[–—-]\s*(\d{4})/);
+    if (!m) return null;
+    const years = [];
+    for (let y = Number(m[1]); y <= Number(m[2]); y++) years.push(y);
+    return years.length === e.sessions_analysees ? years : null;
+  };
+
+  const row = (c, e) => {
     const nom = c.sous_chapitre || c.chapitre;
     const band = BANDES[c.regularite] || 'b-rare';
     const pct = c.sessions_analysees ? (c.sessions_ou_present / c.sessions_analysees) * 100 : 0;
-    const parent = niveau === 'sous-chapitre' && c.chapitre_parent
+    const parent = e.niveau === 'sous-chapitre' && c.chapitre_parent
       ? `<span class="chap-sub"><span class="chap-parent">${esc(c.chapitre_parent)}</span></span>` : '';
+
+    const years = sessionYears(e);
+    const set = Array.isArray(c.sessions_presentes) ? new Set(c.sessions_presentes.map(Number)) : null;
+    // The per-session panel is emitted open: with JS off the toggle is inert,
+    // so hiding it would hide the years from a crawler for no gain. The client
+    // collapses it when it re-renders.
+    const detail = years && set && years.some((y) => set.has(y))
+      ? `<button type="button" class="chap-toggle" aria-expanded="true" aria-label="Voir les sessions de « ${esc(nom)} »">▾</button>` +
+        `<div class="chap-detail"><div class="chap-detail-title">Sessions où le chapitre a été rencontré</div>` +
+        `<div class="chap-years">` +
+        years.map((y) => {
+          const on = set.has(y);
+          return `<div class="chap-year${on ? ' is-on' : ''}" aria-label="${y} : ${on ? 'rencontré' : 'non rencontré'}">` +
+            `<span class="cy-mark" aria-hidden="true">${on ? '✓' : '–'}</span>` +
+            `<span class="cy-num">${y}</span></div>`;
+        }).join('') +
+        `</div></div>`
+      : '';
+
     return `<div class="chap-item">` +
       `<div class="chap-main"><span class="chap-name">${esc(nom)}</span>${parent}</div>` +
       `<span class="chap-count">${esc(c.sessions_ou_present)}/${esc(c.sessions_analysees)}</span>` +
       `<span class="freq-badge ${band}">${esc(c.regularite)}</span>` +
       `<div class="chap-bar" aria-hidden="true"><span class="chap-bar-fill ${band}" style="width:${pct}%"></span></div>` +
+      detail +
       `</div>`;
   };
 
@@ -146,23 +175,16 @@ function buildChapitres() {
       `niveau ${e.niveau}`,
     ].map((b) => `<span class="chap-chip">${esc(b)}</span>`).join('');
 
-    const analyse = (e.analyse || []).length
-      ? `<div class="chap-analyse"><div class="chap-analyse-title">Ce que montrent les chiffres</div>` +
-        (e.analyse || []).map((p) => `<p>${esc(p)}</p>`).join('') +
-        (e.reserve ? `<p class="chap-analyse-reserve">${esc(e.reserve)}</p>` : '') +
-        `</div>`
-      : '';
-
     const vus = e.chapitres.filter((c) => c.sessions_ou_present > 0);
     const jamais = e.chapitres.filter((c) => c.sessions_ou_present === 0);
     const neverHtml = jamais.length
       ? `<details class="chap-never"><summary>Voir les ${jamais.length} chapitre${jamais.length > 1 ? 's' : ''} jamais rencontré${jamais.length > 1 ? 's' : ''}</summary>` +
-        `<div class="chap-list">${jamais.map((c) => row(c, e.niveau)).join('')}</div></details>`
+        `<div class="chap-list">${jamais.map((c) => row(c, e)).join('')}</div></details>`
       : '';
 
     return `<section class="chap-card"><div class="chap-head"><h2 class="chap-title">${esc(e.epreuve)}</h2>` +
-      `<div class="chap-meta">${chips}</div></div>${analyse}` +
-      `<div class="chap-list">${vus.map((c) => row(c, e.niveau)).join('')}</div>${neverHtml}</section>`;
+      `<div class="chap-meta">${chips}</div></div>` +
+      `<div class="chap-list">${vus.map((c) => row(c, e)).join('')}</div>${neverHtml}</section>`;
   }).join('');
 
   return { tabsHtml, panelHtml };
