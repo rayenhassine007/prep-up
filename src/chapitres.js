@@ -15,7 +15,7 @@ import data from './data/chapitres_concours_mp.json' with { type: 'json' };
 // invite à des comparaisons que ces chiffres ne supportent pas.
 //
 // L'ordre d'affichage des chapitres est celui du fichier (fréquence
-// décroissante) : pas de contrôle de tri, seul le filtre 1re/2e année agit.
+// décroissante) : ni tri ni filtre, la liste se lit telle quelle.
 // ---------------------------------------------------------------------------
 
 // Coefficient décroissant ; à égalité, l'ordre du fichier est conservé.
@@ -33,13 +33,7 @@ const BANDES = {
   'jamais rencontré': 'b-jamais',
 };
 
-const ANNEES = [
-  ['toutes', 'Toutes'],
-  ['1', '1re année'],
-  ['2', '2e année'],
-];
-
-const state = { epreuve: EPREUVES[0][0], annee: 'toutes' };
+const state = { epreuve: EPREUVES[0][0] };
 
 const tabsEl = document.getElementById('chap-tabs');
 const panelEl = document.getElementById('chap-panel');
@@ -67,7 +61,6 @@ function renderTabs() {
     btn.addEventListener('click', () => {
       if (state.epreuve === key) return;
       state.epreuve = key;
-      state.annee = 'toutes'; // le filtre ne suit pas d'une épreuve à l'autre
       renderTabs();
       renderPanel();
     });
@@ -106,24 +99,6 @@ function buildRow(c, niveau) {
   return row;
 }
 
-function renderAnneeFilter(chapitres) {
-  const wrap = el('div', 'chap-filters');
-  for (const [key, label] of ANNEES) {
-    const n = key === 'toutes'
-      ? chapitres.length
-      : chapitres.filter((c) => String(c.annee_programme) === key).length;
-    if (n === 0 && key !== 'toutes') continue; // pas de bouton pour un filtre vide
-    const btn = el('button', 'chap-filter' + (key === state.annee ? ' active' : ''), label);
-    btn.type = 'button';
-    btn.addEventListener('click', () => {
-      state.annee = key;
-      renderPanel();
-    });
-    wrap.appendChild(btn);
-  }
-  return wrap;
-}
-
 function renderPanel() {
   const e = data.epreuves[state.epreuve];
   panelEl.innerHTML = '';
@@ -151,21 +126,11 @@ function renderPanel() {
     card.appendChild(box);
   }
 
-  const chapitres = e.chapitres;
-  card.appendChild(renderAnneeFilter(chapitres));
-
-  const visibles = state.annee === 'toutes'
-    ? chapitres
-    : chapitres.filter((c) => String(c.annee_programme) === state.annee);
-
-  const rencontres = visibles.filter((c) => c.sessions_ou_present > 0);
-  const jamais = visibles.filter((c) => c.sessions_ou_present === 0);
+  const rencontres = e.chapitres.filter((c) => c.sessions_ou_present > 0);
+  const jamais = e.chapitres.filter((c) => c.sessions_ou_present === 0);
 
   const list = el('div', 'chap-list');
   for (const c of rencontres) list.appendChild(buildRow(c, e.niveau));
-  if (rencontres.length === 0) {
-    list.appendChild(el('div', 'reach-empty', 'Aucun chapitre pour ce filtre.'));
-  }
   card.appendChild(list);
 
   if (jamais.length) {

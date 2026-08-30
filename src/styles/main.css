@@ -1696,26 +1696,6 @@ main.home { max-width: 1060px; }
 .chap-analyse p:last-child { margin-bottom: 0; }
 .chap-analyse-reserve { color: var(--text-dim) !important; font-size: 0.8rem !important; }
 
-.chap-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-.chap-filter {
-  padding: 6px 13px;
-  font: inherit;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-dim);
-  background: var(--input-bg);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  cursor: pointer;
-  transition: color 0.18s ease, border-color 0.18s ease;
-}
-.chap-filter:hover { color: var(--text); border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
-.chap-filter.active {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-}
-
 .chap-item {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
