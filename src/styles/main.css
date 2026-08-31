@@ -1584,13 +1584,13 @@ button.submit-btn { border: none; cursor: pointer; }
   margin: 0 auto;
 }
 
-/* ---------- homepage: about (closing band, distinct from outils cards) ---------- */
+/* ---------- homepage: about (expressive intro + outil names only) ---------- */
 .about-band {
   position: relative;
   overflow: hidden;
   width: 100%;
   margin-top: 4px;
-  padding: 56px 20px 64px;
+  padding: 48px 20px 52px;
   border-top: 1px solid var(--border);
 }
 .about-glow {
@@ -1604,13 +1604,9 @@ button.submit-btn { border: none; cursor: pointer; }
 }
 .about-wrap {
   position: relative;
-  max-width: 880px;
+  max-width: 640px;
   margin: 0 auto;
-}
-.about-intro {
   text-align: center;
-  max-width: 560px;
-  margin: 0 auto 34px;
 }
 .about-tag {
   display: inline-block;
@@ -1623,88 +1619,53 @@ button.submit-btn { border: none; cursor: pointer; }
 }
 .about-band h2 {
   margin: 0 0 14px;
-  font-size: clamp(1.45rem, 4vw, 1.95rem);
-  line-height: 1.2;
+  font-size: clamp(1.5rem, 4.2vw, 2rem);
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 .about-lead {
-  margin: 0 0 18px;
+  margin: 0 0 28px;
   color: var(--text-dim);
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   line-height: 1.65;
 }
-.about-meta {
+.about-outils {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 10px;
+  gap: 10px 22px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.about-meta li {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
+.about-outils li {
+  position: relative;
+}
+.about-outils li + li::before {
+  content: '·';
+  position: absolute;
+  left: -13px;
+  color: color-mix(in srgb, var(--violet) 55%, var(--text-dim));
+  font-weight: 700;
+  pointer-events: none;
+}
+@media (max-width: 520px) {
+  .about-outils {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .about-outils li + li::before { display: none; }
+}
+.about-outils a {
+  font-family: var(--font-display);
   font-weight: 600;
-  color: var(--text-dim);
-  padding: 6px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 70%, transparent);
-}
-.about-meta li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--grad);
-  flex-shrink: 0;
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-@media (max-width: 680px) {
-  .about-grid { grid-template-columns: 1fr; }
-}
-.about-feat {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 16px 18px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 55%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-.about-feat-icon {
-  flex-shrink: 0;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: color-mix(in srgb, var(--tint, var(--blue)) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--tint, var(--blue)) 28%, transparent);
-}
-.about-feat-icon .icon {
-  width: 1.15rem;
-  height: 1.15rem;
-}
-.about-feat h3 {
-  margin: 0 0 5px;
   font-size: 0.92rem;
-  line-height: 1.25;
+  color: var(--text);
+  transition: opacity 0.2s ease;
 }
-.about-feat p {
-  margin: 0;
-  color: var(--text-dim);
-  font-size: 0.82rem;
-  line-height: 1.55;
+.about-outils a:hover {
+  opacity: 0.75;
 }
 
 /* ---------- icon chips on feature cards ---------- */
