@@ -1421,14 +1421,20 @@ button.submit-btn { border: none; cursor: pointer; }
   to { transform: translateY(-15px) rotate(-2.5deg); }
 }
 
+@keyframes floatMobile {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
 @media (max-width: 760px) {
   .hero-visual {
     position: static;
     min-height: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 12px;
     margin-top: 10px;
+    padding-bottom: 8px;
   }
 
   .float-card {
@@ -1438,16 +1444,14 @@ button.submit-btn { border: none; cursor: pointer; }
     bottom: auto;
     left: auto;
     z-index: auto;
-    animation: none;
-    transform: none;
     padding: 14px 14px 12px;
     background: color-mix(in srgb, var(--surface-2) 92%, var(--bg));
   }
 
-  .float-card:nth-child(n) {
-    animation: none;
-    transform: none;
-  }
+  .float-card:nth-child(1) { animation: floatMobile 5.2s ease-in-out infinite alternate; animation-delay: 0s; }
+  .float-card:nth-child(2) { animation: floatMobile 6.4s ease-in-out infinite alternate; animation-delay: -1.6s; }
+  .float-card:nth-child(3) { animation: floatMobile 5.8s ease-in-out infinite alternate; animation-delay: -0.9s; }
+  .float-card:nth-child(4) { animation: floatMobile 6.8s ease-in-out infinite alternate; animation-delay: -2.4s; }
 
   .float-card .fc-value {
     font-size: 1.2rem;
@@ -1463,7 +1467,8 @@ button.submit-btn { border: none; cursor: pointer; }
 @media (max-width: 420px) {
   .hero-visual {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 12px;
+    padding-bottom: 10px;
   }
 
   .float-card .fc-value { font-size: 1.35rem; }
