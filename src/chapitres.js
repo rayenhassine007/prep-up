@@ -123,8 +123,8 @@ function presentYears(c, years) {
   return new Set(c.annees_presentes.map(Number));
 }
 
-// Dépliant « sessions » : animation type menu déroulant (panneau scale/fade +
-// glissement, puis cellules en cascade). Pilotée par la classe `.is-animating`.
+// Dépliant « sessions » : panneau scale/fade/glisse (`.is-animating`). Les années
+// apparaissent avec le panneau, pas en cascade.
 function closePanel(detail, toggle) {
   detail.classList.remove('open', 'is-animating', 'is-closing');
   toggle.classList.remove('open');
@@ -178,7 +178,7 @@ function wirePanelToggle(detail, toggle) {
 }
 
 // Trois niveaux côté CSS : `.chap-detail` (hauteur), `.chap-detail-clip` (rogne),
-// `.chap-detail-box` + `.chap-year` (menu déroulant en cascade). Cf. main.css.
+// `.chap-detail-box` (menu déroulant). Cf. main.css.
 function buildDetail(c, years, present) {
   const wrap = el('div', 'chap-detail');
   const clip = el('div', 'chap-detail-clip');
@@ -186,10 +186,9 @@ function buildDetail(c, years, present) {
   box.appendChild(el('div', 'chap-detail-title', 'Sessions où le chapitre a été rencontré'));
 
   const grid = el('div', 'chap-years');
-  years.forEach((y, i) => {
+  years.forEach((y) => {
     const on = present.has(y);
     const cell = el('div', 'chap-year' + (on ? ' is-on' : ''));
-    cell.style.setProperty('--i', String(i));
     cell.setAttribute('aria-label', on ? `${y} : rencontré` : `${y} : non rencontré`);
     const mark = el('span', 'cy-mark', on ? '✓' : '–');
     mark.setAttribute('aria-hidden', 'true');

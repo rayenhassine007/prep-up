@@ -1720,8 +1720,8 @@ main.home { max-width: 1060px; }
 .chap-toggle:hover { color: var(--accent); border-color: var(--accent); }
 .chap-toggle.open { color: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
 
-/* Menu déroulant « sessions » : le panneau scale/fade/glisse, puis les années
-   arrivent en cascade (style menu déroulant Dribbble). Classe `.is-animating`. */
+/* Menu déroulant « sessions » : le panneau scale/fade/glisse ; les années
+   apparaissent avec lui, en bloc. Classe `.is-animating`. */
 .chap-detail {
   grid-area: det;
   min-width: 0;
@@ -1765,15 +1765,9 @@ main.home { max-width: 1060px; }
   animation: chap-drop-close 0.24s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
-.chap-detail.open:not(.is-animating) .chap-year {
+.chap-detail.open .chap-year {
   opacity: 1;
   transform: none;
-}
-.chap-detail.open.is-animating .chap-year {
-  opacity: 0;
-  transform: translateY(14px);
-  animation: chap-drop-item 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(70ms + var(--i, 0) * 36ms);
 }
 
 @keyframes chap-drop-open {
@@ -1792,17 +1786,6 @@ main.home { max-width: 1060px; }
   100% {
     opacity: 1;
     transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes chap-drop-item {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
