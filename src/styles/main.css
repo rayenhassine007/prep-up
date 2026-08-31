@@ -1584,6 +1584,58 @@ button.submit-btn { border: none; cursor: pointer; }
   margin: 0 auto;
 }
 
+/* ---------- homepage: about ---------- */
+.about {
+  margin: 8px 0 40px;
+}
+.about-lead {
+  max-width: 620px;
+}
+.about-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (max-width: 640px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+.about-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 20px 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.about-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 12px;
+  background: color-mix(in srgb, var(--violet) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--violet) 28%, transparent);
+  color: var(--violet);
+}
+.about-icon .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.about-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+}
+.about-item p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
 /* ---------- icon chips on feature cards ---------- */
 .icon-chip {
   width: 48px;

@@ -17,7 +17,7 @@ document.documentElement.dataset.theme = 'dark';
 // ---------- scroll reveal (site-wide) ----------
 // Les éléments apparaissent en fondu quand on scrolle jusqu'à eux.
 // S'applique aux .reveal explicites + aux cartes générées dynamiquement.
-const AUTO_REVEAL = '.res-group, .news-item, .reach-card, .submit-card, .disclaimer, .result-card, .rank-card, .feature-card';
+const AUTO_REVEAL = '.res-group, .news-item, .reach-card, .submit-card, .disclaimer, .result-card, .rank-card, .feature-card, .about-item';
 
 const io = new IntersectionObserver(
   (entries) => {
