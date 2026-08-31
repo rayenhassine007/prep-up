@@ -201,7 +201,6 @@ html[data-theme='light'] .theme-toggle .icon-moon { display: inline-block; }
   place-items: center;
 }
 .icon-chip .icon { width: 1.35rem; height: 1.35rem; vertical-align: middle; }
-.section-pill .icon,
 .fc-label .icon { width: 1em; height: 1em; vertical-align: -0.15em; }
 .spl-icon .icon { width: 1.35rem; height: 1.35rem; }
 .disclaimer.sources .icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 4px; }
@@ -1564,17 +1563,23 @@ button.submit-btn { border: none; cursor: pointer; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-size: 0.75rem;
+  gap: 8px;
+  font-size: 0.84rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: color-mix(in srgb, var(--violet) 82%, var(--text));
-  margin: 0 0 14px;
-  padding: 0 0 10px;
+  letter-spacing: 0.11em;
+  color: color-mix(in srgb, var(--text) 72%, var(--violet));
+  margin: 0 0 16px;
+  padding: 0 0 12px;
   position: relative;
   background: none;
   border: none;
+}
+.section-pill .icon {
+  width: 1.15em;
+  height: 1.15em;
+  color: color-mix(in srgb, var(--text) 55%, var(--violet));
+  flex-shrink: 0;
 }
 .section-pill::after,
 .about-tag::after {
@@ -1583,11 +1588,12 @@ button.submit-btn { border: none; cursor: pointer; }
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 1.75rem;
-  height: 2px;
-  border-radius: 2px;
+  width: 3rem;
+  height: 3px;
+  border-radius: 999px;
   background: var(--grad);
-  opacity: 0.75;
+  opacity: 1;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--violet) 55%, transparent);
 }
 .section-head h2 {
   font-size: 1.7rem;
