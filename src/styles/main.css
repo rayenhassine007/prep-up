@@ -1355,9 +1355,6 @@ button.submit-btn { border: none; cursor: pointer; }
   position: relative;
   min-height: 380px;
 }
-@media (max-width: 760px) {
-  .hero-visual { min-height: 340px; }
-}
 
 .float-card {
   position: absolute;
@@ -1370,12 +1367,20 @@ button.submit-btn { border: none; cursor: pointer; }
   -webkit-backdrop-filter: blur(12px);
 }
 .float-card .fc-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text-dim);
   margin-bottom: 4px;
+}
+.float-card .fc-label .icon {
+  width: 0.95em;
+  height: 0.95em;
+  flex-shrink: 0;
 }
 .float-card .fc-value {
   font-family: var(--font-display);
@@ -1414,6 +1419,54 @@ button.submit-btn { border: none; cursor: pointer; }
 @keyframes floatD {
   from { transform: translateY(0) rotate(2deg); }
   to { transform: translateY(-15px) rotate(-2.5deg); }
+}
+
+@media (max-width: 760px) {
+  .hero-visual {
+    position: static;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .float-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: auto;
+    animation: none;
+    transform: none;
+    padding: 14px 14px 12px;
+    background: color-mix(in srgb, var(--surface-2) 92%, var(--bg));
+  }
+
+  .float-card:nth-child(n) {
+    animation: none;
+    transform: none;
+  }
+
+  .float-card .fc-value {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .float-card .fc-sub {
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-visual {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .float-card .fc-value { font-size: 1.35rem; }
 }
 
 /* ---------- stats band ---------- */
