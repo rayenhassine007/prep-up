@@ -133,17 +133,16 @@ function buildDetail(c, years, present) {
   box.appendChild(el('div', 'chap-detail-title', 'Sessions où le chapitre a été rencontré'));
 
   const grid = el('div', 'chap-years');
-  years.forEach((y, i) => {
+  for (const y of years) {
     const on = present.has(y);
     const cell = el('div', 'chap-year' + (on ? ' is-on' : ''));
-    cell.style.setProperty('--i', String(i)); // décalage de la cascade
     cell.setAttribute('aria-label', on ? `${y} : rencontré` : `${y} : non rencontré`);
     const mark = el('span', 'cy-mark', on ? '✓' : '–');
     mark.setAttribute('aria-hidden', 'true');
     cell.appendChild(mark);
     cell.appendChild(el('span', 'cy-num', String(y)));
     grid.appendChild(cell);
-  });
+  }
   box.appendChild(grid);
   clip.appendChild(box);
   wrap.appendChild(clip);

@@ -163,15 +163,15 @@ function buildChapitres() {
     // The per-session panel is emitted with the `open` class: with JS off the
     // toggle is inert, so collapsing it would hide the years from a crawler for
     // no gain. The client collapses it when it re-renders. The three-level
-    // wrapper is what the expand animation needs — mirror src/chapitres.js.
+    // wrapper is what the expand animation needs: mirror src/chapitres.js.
     const detail = years && set && years.some((y) => set.has(y))
       ? `<button type="button" class="chap-toggle open" aria-expanded="true" aria-label="Voir les sessions de « ${esc(nom)} »">▾</button>` +
         `<div class="chap-detail open"><div class="chap-detail-clip"><div class="chap-detail-box">` +
         `<div class="chap-detail-title">Sessions où le chapitre a été rencontré</div>` +
         `<div class="chap-years">` +
-        years.map((y, i) => {
+        years.map((y) => {
           const on = set.has(y);
-          return `<div class="chap-year${on ? ' is-on' : ''}" style="--i:${i}" aria-label="${y} : ${on ? 'rencontré' : 'non rencontré'}">` +
+          return `<div class="chap-year${on ? ' is-on' : ''}" aria-label="${y} : ${on ? 'rencontré' : 'non rencontré'}">` +
             `<span class="cy-mark" aria-hidden="true">${on ? '✓' : '–'}</span>` +
             `<span class="cy-num">${y}</span></div>`;
         }).join('') +
