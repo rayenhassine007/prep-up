@@ -1,8 +1,8 @@
 {
   "session_rangs": 2024,
   "session_capacites": 2026,
-  "source": "Guide des Rangs & Capacites 2025 (Rev03) - compile par The Tunisian Engineers (Amine Bouabid), a partir des resultats officiels d'affectation de la session 2024 et des capacites annoncees pour la session 2025. | Rangs 2024 & 2025 alignes sur les fichiers officiels fournis par l'utilisateur.",
-  "note": "PT = filiere Technologie (T). rang_min = meilleur rang admis dans ce programme en 2024, rang_max = moins bon rang admis en 2024. Ces valeurs servent d'estimation predictive pour les candidats 2025, pas de resultat garanti. | Capacites mises a jour vers la session 2026 (JORT n°35 du 3 avril 2026, total officiel 3238 places). Les rangs restent ceux de 2024 (predicteur). | Rangs 2025 ajoutes (champ r2025) pour ENIT, ENISo, ENSIT, ENICar, Enet'Com, EPT, ENSI (fournis par l'utilisateur, resultats officiels).",
+  "source": "Rangs 2024 et 2025 synchronises avec The Tunisian Engineers (thetunisianengineers.com/data/ranks_2024.json et ranks_2025.json). Capacites session 2026 (JORT n°35 du 3 avril 2026, total officiel 3238 places).",
+  "note": "PT = filiere Technologie (T). rang_min = meilleur rang admis, rang_max = dernier rang admis (annee de reference). r2025 = [rang_min, rang_max] session 2025. Estimation indicative, pas garantie d'affectation.",
   "programmes": [
     {
       "institution": "Ecole Nationale d'Ingénieurs de Tunis (ENIT)",
@@ -380,12 +380,12 @@
       },
       "r2025": {
         "MP": [
-          1149,
+          null,
           1149
         ],
         "PC": null,
         "PT": [
-          342,
+          null,
           342
         ],
         "BG": null
@@ -416,12 +416,12 @@
       },
       "r2025": {
         "MP": [
-          1313,
+          null,
           1313
         ],
         "PC": null,
         "PT": [
-          567,
+          null,
           567
         ],
         "BG": null
@@ -452,12 +452,12 @@
       },
       "r2025": {
         "MP": [
-          1327,
+          null,
           1327
         ],
         "PC": null,
         "PT": [
-          665,
+          null,
           665
         ],
         "BG": null
@@ -488,15 +488,15 @@
       },
       "r2025": {
         "MP": [
-          1153,
+          null,
           1153
         ],
         "PC": [
-          592,
+          null,
           592
         ],
         "PT": [
-          349,
+          null,
           349
         ],
         "BG": null
@@ -602,12 +602,12 @@
       },
       "r2025": {
         "MP": [
-          1274,
+          null,
           1274
         ],
         "PC": null,
         "PT": [
-          424,
+          null,
           424
         ],
         "BG": null
@@ -638,12 +638,12 @@
       },
       "r2025": {
         "MP": [
-          916,
+          null,
           916
         ],
         "PC": null,
         "PT": [
-          265,
+          null,
           265
         ],
         "BG": null
@@ -690,17 +690,17 @@
       "filiere": "Génie Electrique",
       "MP": {
         "capacite": 30,
-        "rang_min": 1100,
+        "rang_min": null,
         "rang_max": 1100
       },
       "PC": {
         "capacite": 22,
-        "rang_min": 620,
+        "rang_min": null,
         "rang_max": 620
       },
       "PT": {
         "capacite": 23,
-        "rang_min": 360,
+        "rang_min": null,
         "rang_max": 360
       },
       "BG": {
@@ -710,12 +710,12 @@
       },
       "r2025": {
         "MP": [
-          1170,
+          null,
           1170
         ],
         "PC": null,
         "PT": [
-          363,
+          null,
           363
         ],
         "BG": null
@@ -726,17 +726,17 @@
       "filiere": "Génie Energétique",
       "MP": {
         "capacite": 45,
-        "rang_min": 1380,
+        "rang_min": null,
         "rang_max": 1380
       },
       "PC": {
         "capacite": 31,
-        "rang_min": 730,
+        "rang_min": null,
         "rang_max": 730
       },
       "PT": {
         "capacite": 9,
-        "rang_min": 500,
+        "rang_min": null,
         "rang_max": 500
       },
       "BG": {
@@ -746,12 +746,12 @@
       },
       "r2025": {
         "MP": [
-          1275,
+          null,
           1275
         ],
         "PC": null,
         "PT": [
-          338,
+          null,
           338
         ],
         "BG": null
@@ -762,17 +762,17 @@
       "filiere": "Génie Mécanique",
       "MP": {
         "capacite": 27,
-        "rang_min": 1172,
+        "rang_min": null,
         "rang_max": 1172
       },
       "PC": {
         "capacite": 12,
-        "rang_min": 778,
+        "rang_min": null,
         "rang_max": 778
       },
       "PT": {
         "capacite": 36,
-        "rang_min": 490,
+        "rang_min": null,
         "rang_max": 490
       },
       "BG": {
@@ -782,12 +782,12 @@
       },
       "r2025": {
         "MP": [
-          1269,
+          null,
           1269
         ],
         "PC": null,
         "PT": [
-          527,
+          null,
           527
         ],
         "BG": null
@@ -818,12 +818,12 @@
       },
       "r2025": {
         "MP": [
-          1302,
+          null,
           1302
         ],
         "PC": null,
         "PT": [
-          690,
+          null,
           690
         ],
         "BG": null
@@ -854,12 +854,12 @@
       },
       "r2025": {
         "MP": [
-          1204,
+          null,
           1204
         ],
         "PC": null,
         "PT": [
-          466,
+          null,
           466
         ],
         "BG": null
@@ -890,12 +890,12 @@
       },
       "r2025": {
         "MP": [
-          1304,
+          null,
           1304
         ],
         "PC": null,
         "PT": [
-          496,
+          null,
           496
         ],
         "BG": null
@@ -926,12 +926,12 @@
       },
       "r2025": {
         "MP": [
-          1305,
+          null,
           1305
         ],
         "PC": null,
         "PT": [
-          596,
+          null,
           596
         ],
         "BG": null
@@ -962,12 +962,12 @@
       },
       "r2025": {
         "MP": [
-          774,
+          null,
           774
         ],
         "PC": null,
         "PT": [
-          203,
+          null,
           203
         ],
         "BG": null
@@ -1001,7 +1001,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          189,
+          null,
           189
         ]
       }
@@ -1034,7 +1034,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          142,
+          null,
           142
         ]
       }
@@ -1064,12 +1064,12 @@
       },
       "r2025": {
         "MP": [
-          1294,
+          null,
           1294
         ],
         "PC": null,
         "PT": [
-          686,
+          null,
           686
         ],
         "BG": null
@@ -1100,12 +1100,12 @@
       },
       "r2025": {
         "MP": [
-          1324,
+          null,
           1324
         ],
         "PC": null,
         "PT": [
-          576,
+          null,
           576
         ],
         "BG": null
@@ -1138,7 +1138,7 @@
         "MP": null,
         "PC": null,
         "PT": [
-          622,
+          null,
           622
         ],
         "BG": null
@@ -1171,7 +1171,7 @@
         "MP": null,
         "PC": null,
         "PT": [
-          690,
+          null,
           690
         ],
         "BG": null
@@ -1202,16 +1202,16 @@
       },
       "r2025": {
         "MP": [
-          1301,
+          null,
           1301
         ],
         "PC": null,
         "PT": [
-          685,
+          null,
           685
         ],
         "BG": [
-          165,
+          null,
           165
         ]
       }
@@ -1241,12 +1241,12 @@
       },
       "r2025": {
         "MP": [
-          1157,
+          null,
           1157
         ],
         "PC": null,
         "PT": [
-          543,
+          null,
           543
         ],
         "BG": null
@@ -1277,13 +1277,13 @@
       },
       "r2025": {
         "MP": [
-          1139,
+          null,
           1139
         ],
         "PC": null,
         "PT": null,
         "BG": [
-          66,
+          null,
           66
         ]
       }
@@ -1316,7 +1316,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          107,
+          null,
           107
         ]
       }
@@ -1448,10 +1448,7 @@
           895,
           1230
         ],
-        "PC": [
-          414,
-          564
-        ],
+        "PC": null,
         "PT": [
           342,
           577
@@ -1484,7 +1481,7 @@
       },
       "r2025": {
         "MP": [
-          1319,
+          null,
           1319
         ],
         "PC": [
@@ -1950,7 +1947,7 @@
           51
         ],
         "PC": [
-          35,
+          null,
           35
         ],
         "PT": [
@@ -1985,15 +1982,15 @@
       },
       "r2025": {
         "MP": [
-          410,
+          null,
           410
         ],
         "PC": [
-          110,
+          null,
           110
         ],
         "PT": [
-          78,
+          null,
           78
         ],
         "BG": null
@@ -2024,7 +2021,7 @@
       },
       "r2025": {
         "MP": [
-          875,
+          null,
           875
         ],
         "PC": null,
@@ -2042,12 +2039,12 @@
       },
       "PC": {
         "capacite": 46,
-        "rang_min": 84,
+        "rang_min": null,
         "rang_max": 84
       },
       "PT": {
         "capacite": 18,
-        "rang_min": 32,
+        "rang_min": null,
         "rang_max": 32
       },
       "BG": {
@@ -2057,12 +2054,12 @@
       },
       "r2025": {
         "MP": [
-          191,
+          null,
           191
         ],
         "PC": null,
         "PT": [
-          31,
+          null,
           31
         ],
         "BG": null
@@ -2096,7 +2093,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          137,
+          null,
           137
         ]
       }
@@ -2129,7 +2126,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          168,
+          null,
           168
         ]
       }
@@ -2162,7 +2159,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          133,
+          null,
           133
         ]
       }
@@ -2192,13 +2189,13 @@
       },
       "r2025": {
         "MP": [
-          1315,
+          null,
           1315
         ],
         "PC": null,
         "PT": null,
         "BG": [
-          43,
+          null,
           43
         ]
       }
@@ -2231,7 +2228,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          48,
+          null,
           48
         ]
       }
@@ -2264,7 +2261,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          60,
+          null,
           60
         ]
       }
@@ -2297,7 +2294,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          192,
+          null,
           192
         ]
       }
@@ -2330,7 +2327,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          119,
+          null,
           119
         ]
       }
@@ -2392,7 +2389,7 @@
         "MP": null,
         "PC": null,
         "PT": [
-          673,
+          null,
           673
         ],
         "BG": null
@@ -2456,7 +2453,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          252,
+          null,
           252
         ]
       }
@@ -2489,7 +2486,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          211,
+          null,
           211
         ]
       }
@@ -2552,7 +2549,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          251,
+          null,
           251
         ]
       }
@@ -2585,7 +2582,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          218,
+          null,
           218
         ]
       }
@@ -2618,7 +2615,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          242,
+          null,
           242
         ]
       }
@@ -2648,12 +2645,12 @@
       },
       "r2025": {
         "MP": [
-          1257,
+          null,
           1257
         ],
         "PC": null,
         "PT": [
-          480,
+          null,
           480
         ],
         "BG": null
@@ -2687,7 +2684,7 @@
         "PC": null,
         "PT": null,
         "BG": [
-          227,
+          null,
           227
         ]
       }
@@ -2719,7 +2716,7 @@
         "MP": null,
         "PC": null,
         "PT": [
-          646,
+          null,
           646
         ],
         "BG": null
@@ -2752,7 +2749,7 @@
         "MP": null,
         "PC": null,
         "PT": [
-          653,
+          null,
           653
         ],
         "BG": null
