@@ -1,4 +1,4 @@
-// 1ère année — moyenne du semestre, et ce qu'il faut pour viser une moyenne.
+// 1ère année : moyenne du semestre, et ce qu'il faut pour viser une moyenne.
 //
 // Unlike the concours tool next to it, there is no rang here: a 1ère année mark
 // does not feed the national ranking. This is the ordinary school arithmetic
@@ -77,7 +77,7 @@ function getRow(m) {
 
 // A matière mark from its components. Components left blank are ignored and the
 // remaining weights renormalised, so a mid-semester student still gets a figure
-// — flagged partial so it is not mistaken for a settled mark.
+// flagged partial so it is not mistaken for a settled mark.
 function moyFromComponents(r) {
   const parts = PONDERATION[r.avecTP ? 'avecTP' : 'sansTP'];
   let sum = 0, weight = 0, filled = 0;
@@ -173,7 +173,7 @@ function renderMatieres(res) {
       label.appendChild(sub);
     }
 
-    // coefficient — editable, the published set is only a starting point
+    // coefficient, editable, the published set is only a starting point
     const coefWrap = document.createElement('span');
     coefWrap.className = 'a1-coef';
     const coefLabel = document.createElement('span');
@@ -202,7 +202,7 @@ function renderMatieres(res) {
       const moyInput = document.createElement('input');
       moyInput.type = 'number';
       moyInput.min = '0'; moyInput.max = '20'; moyInput.step = '0.25';
-      moyInput.placeholder = '—';
+      moyInput.placeholder = '-';
       moyInput.inputMode = 'decimal';
       moyInput.className = 'a1-moy-input';
       moyInput.setAttribute('aria-label', `Moyenne de ${nom}`);
@@ -226,7 +226,7 @@ function renderMatieres(res) {
         const ci = document.createElement('input');
         ci.type = 'number';
         ci.min = '0'; ci.max = '20'; ci.step = '0.25';
-        ci.placeholder = '—';
+        ci.placeholder = '-';
         ci.inputMode = 'decimal';
         if (r[key] != null && r[key] !== '') ci.value = r[key];
         ci.addEventListener('input', () => {
@@ -286,10 +286,10 @@ function renderMatieres(res) {
 }
 
 function renderResult(res) {
-  elMoy.textContent = res.moyenne == null ? '—' : round2(res.moyenne);
+  elMoy.textContent = res.moyenne == null ? '-' : round2(res.moyenne);
   const done = res.totalCoef ? Math.round((res.coefSum / res.totalCoef) * 100) : 0;
   elMoySub.textContent = res.moyenne == null
-    ? `Moyenne du ${state.semestre === 'S1' ? 'semestre 1' : 'semestre 2'} — saisis tes notes`
+    ? `Moyenne du ${state.semestre === 'S1' ? 'semestre 1' : 'semestre 2'}, saisis tes notes`
     : `moyenne du ${state.semestre === 'S1' ? 'semestre 1' : 'semestre 2'} · ${done}% des coefficients saisis`;
 
   let cls = 'obj-verdict', txt = '';
@@ -304,7 +304,7 @@ function renderResult(res) {
       break;
     case 'secured':
       cls += ' good';
-      txt = 'Tes notes actuelles suffisent déjà — la moyenne visée est acquise.';
+      txt = 'Tes notes actuelles suffisent déjà : la moyenne visée est acquise.';
       break;
     case 'reached':
       cls += ' good';
@@ -345,7 +345,7 @@ function renderAnnual(res) {
   inp.type = 'number';
   inp.id = 'a1-other-sem';
   inp.min = '0'; inp.max = '20'; inp.step = '0.25';
-  inp.placeholder = '—';
+  inp.placeholder = '-';
   inp.inputMode = 'decimal';
   if (state.otherSemMoy != null) inp.value = state.otherSemMoy;
   inp.addEventListener('input', () => {
@@ -361,7 +361,7 @@ function renderAnnual(res) {
   const out = document.createElement('div');
   out.className = 'a1-annual-out';
   if (thisSem == null || state.otherSemMoy == null) {
-    out.textContent = `Renseigne les deux semestres pour voir ta moyenne annuelle — (2 × S1 + 3 × S2) / 5.`;
+    out.textContent = `Renseigne les deux semestres pour voir ta moyenne annuelle : (2 × S1 + 3 × S2) / 5.`;
   } else {
     const s1 = state.semestre === 'S1' ? thisSem : state.otherSemMoy;
     const s2 = state.semestre === 'S1' ? state.otherSemMoy : thisSem;
@@ -382,7 +382,7 @@ function render() {
   renderAnnual(res);
 }
 
-// values changed but the structure did not — leave the inputs (and focus) alone
+// values changed but the structure did not, so leave the inputs (and focus) alone
 function update() {
   const res = compute();
   renderResult(res);
@@ -444,7 +444,7 @@ function init() {
   });
 
   elReset.addEventListener('click', () => {
-    // only the semester on screen — the other one is someone else's work
+    // only the semester on screen: the other one is someone else's work
     for (const k of Object.keys(state.rows)) {
       if (k.startsWith(`${state.semestre}|${state.filiere}|`)) delete state.rows[k];
     }

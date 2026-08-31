@@ -18,7 +18,7 @@ const RECENT_MAX = 15;
 
 // A favourite is a *document*, identified by its URL. The same Drive link is
 // deliberately listed under several filières/matières (63 of them are), so
-// starring it once saves it once — and every row pointing at it must show the
+// starring it once saves it once, and every row pointing at it must show the
 // same state, which is what syncStars() below takes care of.
 function keyOf(item) { return item && item.url ? item.url : null; }
 
@@ -211,13 +211,13 @@ function buildRow(item, ctx, opts = {}) {
     star.dataset.url = item.url;
     paintStar(star, isFav(item));
     star.addEventListener('click', (e) => {
-      e.preventDefault();  // the row is a link — don't follow it
+      e.preventDefault();  // the row is a link, so don't follow it
       e.stopPropagation();
       toggleFav(item, ctx);
       if (state.view === 'favoris') {
         renderAll(); // un-starring here removes the row, so rebuild
       } else {
-        // update in place — rebuilding the list would jump the scroll position
+        // update in place: rebuilding the list would jump the scroll position
         syncStars(item.url, isFav(item));
         renderViewButtons();
       }
@@ -335,14 +335,14 @@ function renderList() {
   if (state.view === 'favoris') {
     renderSavedView(state.favoris, {
       title: '★ Mes favoris',
-      emptyText: "Aucun favori pour l'instant — touche l'étoile d'une ressource pour l'ajouter ici.",
+      emptyText: "Aucun favori pour l'instant : touche l'étoile d'une ressource pour l'ajouter ici.",
       clearLabel: 'Tout retirer',
       storageKey: FAV_KEY,
     });
   } else {
     renderSavedView(state.recents, {
       title: 'Récemment ouvert',
-      emptyText: 'Rien pour le moment — les ressources que tu ouvres apparaîtront ici.',
+      emptyText: 'Rien pour le moment : les ressources que tu ouvres apparaîtront ici.',
       clearLabel: 'Effacer',
       storageKey: RECENT_KEY,
     });

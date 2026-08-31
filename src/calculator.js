@@ -96,7 +96,7 @@ function renderMatieres() {
     input.min = '0';
     input.max = '20';
     input.step = '0.25';
-    input.placeholder = '—';
+    input.placeholder = '-';
     input.inputMode = 'decimal';
     input.addEventListener('input', () => {
       const val = parseFloat(input.value);
@@ -176,7 +176,7 @@ function renderReachability(estimatedRank, filiere, yearLabel) {
       tier: computeTier(estimatedRank, p.rang),
     }));
 
-  reachTitleEl.textContent = `Écoles potentiellement accessibles — filière ${filiere}`;
+  reachTitleEl.textContent = `Écoles potentiellement accessibles - filière ${filiere}`;
   renderReachList();
 }
 
@@ -192,7 +192,7 @@ function renderReachList() {
   if (rows.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'reach-empty';
-    empty.textContent = '—';
+    empty.textContent = '-';
     reachListEl.appendChild(empty);
     return;
   }
@@ -207,7 +207,7 @@ function renderReachList() {
 
     const name = document.createElement('span');
     name.className = 'reach-name';
-    name.textContent = `${r.inst} — ${r.spec}`;
+    name.textContent = `${r.inst} - ${r.spec}`;
 
     const range = document.createElement('span');
     range.className = 'reach-range';
@@ -239,10 +239,10 @@ function updateScore() {
   moyCmpEl.textContent = '';
 
   const yearInfo = YEARS.find((y) => y.key === state.year);
-  rankTitleEl.textContent = `Rang estimé — session ${yearInfo.label}${yearInfo.suffix}`;
+  rankTitleEl.textContent = `Rang estimé - session ${yearInfo.label}${yearInfo.suffix}`;
 
   if (!hasAnyNote) {
-    rankValueEl.textContent = '—';
+    rankValueEl.textContent = '-';
     rankSubEl.textContent = 'Entre tes notes pour voir une estimation';
     state.reachRows = [];
     renderReachList();
@@ -259,7 +259,7 @@ function updateScore() {
     rankSubEl.textContent = '';
     renderReachability(estimate.rank, state.filiere, yearInfo.label);
   } else {
-    rankValueEl.textContent = '—';
+    rankValueEl.textContent = '-';
     rankSubEl.textContent = 'Pas de données pour cette filière/année';
     state.reachRows = [];
     renderReachList();

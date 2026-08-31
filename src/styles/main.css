@@ -1,5 +1,5 @@
 /* ============================================================
-   Prep'Up — design system
+   Prep'Up design system
    Dual theme via [data-theme="dark"|"light"] on <html>
    ============================================================ */
 
@@ -66,7 +66,7 @@ body {
   transition: background 0.35s ease, color 0.35s ease;
   /* No overflow-x here: it is already clipped on <html>. Setting it on both
      forces body's overflow-y to compute to `auto`, making body a second scroll
-     container — which renders a second scrollbar next to the page's own. */
+     container, which renders a second scrollbar next to the page's own. */
 }
 
 a { color: inherit; text-decoration: none; }
@@ -1191,7 +1191,7 @@ button.submit-btn { border: none; cursor: pointer; }
 }
 
 /* ============================================================
-   Homepage v2 — hero, floating cards, stats, sections
+   Homepage v2: hero, floating cards, stats, sections
    ============================================================ */
 
 /* ---------- hero ---------- */
@@ -1486,7 +1486,7 @@ main.home > * { animation: none; }
 ::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--accent) 55%, transparent); border-radius: 8px; border: 2px solid transparent; background-clip: padding-box; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); background-clip: padding-box; }
 
-/* theme locked to dark — toggle hidden */
+/* theme locked to dark, toggle hidden */
 .theme-toggle { display: none !important; }
 
 .site-footer {
@@ -1744,15 +1744,40 @@ main.home { max-width: 1060px; }
 .chap-toggle:hover { color: var(--accent); border-color: var(--accent); }
 .chap-toggle.open { color: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
 
+/* Le dépliant s'anime sur sa hauteur réelle : une grille dont la seule rangée
+   passe de 0fr à 1fr. Pas de max-height arbitraire à maintenir, et une ligne
+   à quatre années s'ouvre aussi bien qu'une à douze. */
 .chap-detail {
   grid-area: det;
   min-width: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.chap-detail.open { grid-template-rows: 1fr; }
+
+.chap-detail-clip {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  /* replié, le panneau sort aussi de l'arbre d'accessibilité — mais seulement
+     une fois l'animation finie, sinon il disparaît avant d'avoir glissé */
+  visibility: hidden;
+  transition: visibility 0s linear 0.3s;
+}
+.chap-detail.open .chap-detail-clip { visibility: visible; transition-delay: 0s; }
+
+.chap-detail-box {
   margin-top: 2px;
   padding: 12px 14px;
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.22s ease 0.04s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.04s;
 }
+.chap-detail.open .chap-detail-box { opacity: 1; transform: none; }
 .chap-detail-title {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -1762,7 +1787,7 @@ main.home { max-width: 1060px; }
 }
 .chap-years {
   display: grid;
-  /* 4 colonnes à 320 px, jusqu'à 12 en grand écran — sans jamais déborder */
+  /* 4 colonnes à 320 px, jusqu'à 12 en grand écran, sans jamais déborder */
   grid-template-columns: repeat(auto-fit, minmax(58px, 1fr));
   gap: 6px;
 }
@@ -1778,6 +1803,14 @@ main.home { max-width: 1060px; }
   color: var(--text-dim);
   font-size: 0.72rem;
   min-width: 0;
+}
+/* les années arrivent en cascade, de gauche à droite */
+.chap-detail .chap-year { opacity: 0; transform: scale(0.94); }
+.chap-detail.open .chap-year {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.2s ease, transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(60ms + var(--i, 0) * 16ms);
 }
 .chap-year .cy-mark { font-size: 0.9rem; line-height: 1; }
 .chap-year .cy-num { font-variant-numeric: tabular-nums; }
@@ -1874,9 +1907,22 @@ main.home { max-width: 1060px; }
       'det   det   det';
   }
   .freq-badge { justify-self: start; }
-  .chap-detail { padding: 10px 11px; }
+  .chap-detail-box { padding: 10px 11px; }
   .chap-years { grid-template-columns: repeat(auto-fit, minmax(52px, 1fr)); gap: 5px; }
   .chap-card { padding: 18px 16px 14px; }
   .chap-warning { padding: 14px 16px; }
   .chap-method { padding: 4px 16px; }
+}
+
+/* ---------- animations : respect de « réduire les animations » ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .chap-detail,
+  .chap-detail-clip,
+  .chap-detail-box,
+  .chap-detail .chap-year,
+  .chap-toggle {
+    transition: none !important;
+  }
+  .chap-detail-box { opacity: 1; transform: none; }
+  .chap-detail .chap-year { opacity: 1; transform: none; }
 }

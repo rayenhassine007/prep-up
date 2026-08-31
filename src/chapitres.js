@@ -1,7 +1,7 @@
 import data from './data/chapitres_concours_mp.json' with { type: 'json' };
 
 // ---------------------------------------------------------------------------
-// Chapitres du concours — filière MP.
+// Chapitres du concours : filière MP.
 //
 // Pour mettre à jour : remplace src/data/chapitres_concours_mp.json.
 // Structure : meta + epreuves > <clé> > { epreuve, court, coefficient,
@@ -41,8 +41,8 @@ const panelEl = document.getElementById('chap-panel');
 // Les libellés du programme portent parfois « (1re année) » / « (2e année) »
 // pour distinguer deux chapitres homonymes. On ne les affiche pas. Le nettoyage
 // se fait ici, à l'affichage, et pas dans le fichier de données : celui-ci
-// reste fidèle à la source, et un JSON régénéré depuis les CSV — qui les
-// contiendra de nouveau — sera nettoyé sans intervention.
+// reste fidèle à la source, et un JSON régénéré depuis les CSV, qui les
+// contiendra de nouveau, sera nettoyé sans intervention.
 const ANNEE_SUFFIXE = /\s*\((?:1re|1ère|2e|2ème)\s+ann[ée]e\)/g;
 
 function propre(s) {
@@ -113,23 +113,30 @@ function presentYears(c, years) {
   return new Set(c.annees_presentes.map(Number));
 }
 
+// Trois niveaux, imposés par l'animation : `.chap-detail` porte la hauteur qui
+// s'anime, `.chap-detail-clip` rogne le contenu pendant qu'elle bouge, et
+// `.chap-detail-box` est la carte elle-même. Cf. la feuille de style.
 function buildDetail(c, years, present) {
   const wrap = el('div', 'chap-detail');
-  wrap.hidden = true;
-  wrap.appendChild(el('div', 'chap-detail-title', 'Sessions où le chapitre a été rencontré'));
+  const clip = el('div', 'chap-detail-clip');
+  const box = el('div', 'chap-detail-box');
+  box.appendChild(el('div', 'chap-detail-title', 'Sessions où le chapitre a été rencontré'));
 
   const grid = el('div', 'chap-years');
-  for (const y of years) {
+  years.forEach((y, i) => {
     const on = present.has(y);
     const cell = el('div', 'chap-year' + (on ? ' is-on' : ''));
+    cell.style.setProperty('--i', String(i)); // décalage de la cascade
     cell.setAttribute('aria-label', on ? `${y} : rencontré` : `${y} : non rencontré`);
     const mark = el('span', 'cy-mark', on ? '✓' : '–');
     mark.setAttribute('aria-hidden', 'true');
     cell.appendChild(mark);
     cell.appendChild(el('span', 'cy-num', String(y)));
     grid.appendChild(cell);
-  }
-  wrap.appendChild(grid);
+  });
+  box.appendChild(grid);
+  clip.appendChild(box);
+  wrap.appendChild(clip);
   return wrap;
 }
 
@@ -171,8 +178,8 @@ function buildRow(c, e) {
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', `Voir les sessions de « ${nomDe(c)} »`);
     toggle.addEventListener('click', () => {
-      const open = detail.hidden;
-      detail.hidden = !open;
+      // classe et pas `hidden` : un élément masqué ne s'anime pas
+      const open = detail.classList.toggle('open');
       toggle.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', String(open));
     });

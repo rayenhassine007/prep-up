@@ -1,4 +1,4 @@
-// Objectif — the score calculator in reverse.
+// Objectif: the score calculator in reverse.
 //
 // "Calculer mon rang" goes notes -> score -> rang. This goes the other way:
 // rang visé -> moyenne pondérée nécessaire -> note nécessaire par matière.
@@ -6,7 +6,7 @@
 // Two steps:
 //  1. rang -> moyenne. estimateRank() (src/calculator.js) is monotonically
 //     decreasing in the moyenne, so it can be inverted by bisection on the same
-//     distribution data — no second, drifting copy of the model.
+//     distribution data, so no second drifting copy of the model.
 //  2. moyenne -> notes. A moyenne only fixes the coefficient-weighted total, so
 //     infinitely many note combinations reach it. We resolve that by letting the
 //     student pin the notes they are confident about; the remaining matières
@@ -212,7 +212,7 @@ function renderSchoolPicker() {
   btn.className = 'sim-dd-btn';
   const txt = document.createElement('span');
   txt.textContent = state.school
-    ? `${shortInst(state.school.inst)} — ${state.school.spec}`
+    ? `${shortInst(state.school.inst)} - ${state.school.spec}`
     : (opts.length ? 'Choisir une école / filière…' : 'Aucune donnée pour cette filière');
   const caret = document.createElement('span');
   caret.className = 'sim-dd-caret';
@@ -226,7 +226,7 @@ function renderSchoolPicker() {
   const clear = document.createElement('button');
   clear.type = 'button';
   clear.className = 'sim-dd-option' + (state.school ? '' : ' active');
-  clear.textContent = 'Aucune — je saisis un rang';
+  clear.textContent = 'Aucune, je saisis un rang';
   clear.addEventListener('click', (e) => {
     e.stopPropagation();
     closeSchoolDropdown();
@@ -239,7 +239,7 @@ function renderSchoolPicker() {
     const opt = document.createElement('button');
     opt.type = 'button';
     opt.className = 'sim-dd-option' + (state.school && state.school.key === o.key ? ' active' : '');
-    opt.textContent = `${shortInst(o.inst)} — ${o.spec} · rang ${o.rang}`;
+    opt.textContent = `${shortInst(o.inst)} - ${o.spec} · rang ${o.rang}`;
     opt.addEventListener('click', (e) => {
       e.stopPropagation();
       closeSchoolDropdown();
@@ -277,7 +277,7 @@ function renderYearButtons() {
     btn.className = y.key === state.year ? 'active' : '';
     btn.addEventListener('click', () => {
       state.year = y.key;
-      // the picked programme's last-admitted rang differs per session — re-resolve it
+      // the picked programme's last-admitted rang differs per session, so re-resolve it
       if (state.school) {
         const again = schoolOptions().find((o) => o.key === state.school.key);
         state.school = again || null;
@@ -340,7 +340,7 @@ function renderMatieres(res) {
     input.min = '0';
     input.max = '20';
     input.step = '0.25';
-    input.placeholder = '—';
+    input.placeholder = '-';
     input.inputMode = 'decimal';
     if (filled) input.value = note;
     input.addEventListener('input', () => {
@@ -370,28 +370,28 @@ function renderResult(res) {
   const year = currentYear();
 
   if (res.status === 'no-target') {
-    elMoyValue.textContent = '—';
+    elMoyValue.textContent = '-';
     elMoySub.textContent = 'Entre un rang visé pour voir les notes nécessaires';
     elVerdict.textContent = '';
     elVerdict.className = 'obj-verdict';
     return;
   }
   if (res.status === 'no-data') {
-    elMoyValue.textContent = '—';
+    elMoyValue.textContent = '-';
     elMoySub.textContent = 'Pas de données pour cette filière / année';
     elVerdict.textContent = '';
     elVerdict.className = 'obj-verdict';
     return;
   }
   if (res.status === 'beyond-classes') {
-    elMoyValue.textContent = '—';
-    elMoySub.textContent = `En ${year.label}, seuls ${res.classes} candidats étaient classés en ${state.filiere} — vise un rang entre 1 et ${res.classes}.`;
+    elMoyValue.textContent = '-';
+    elMoySub.textContent = `En ${year.label}, seuls ${res.classes} candidats étaient classés en ${state.filiere} : vise un rang entre 1 et ${res.classes}.`;
     elVerdict.textContent = '';
     elVerdict.className = 'obj-verdict';
     return;
   }
   if (res.status === 'impossible-rank') {
-    elMoyValue.textContent = '—';
+    elMoyValue.textContent = '-';
     elMoySub.textContent = `Ce rang est hors d'atteinte même avec 20/20 (${res.classes} candidats classés en ${year.label})`;
     elVerdict.textContent = '';
     elVerdict.className = 'obj-verdict';
@@ -401,7 +401,7 @@ function renderResult(res) {
   elMoyValue.textContent = round2(res.moyenne);
   elMoySub.innerHTML =
     `moyenne pondérée nécessaire pour viser le rang <strong>${state.targetRank}</strong> ` +
-    `— soit un score de <strong>${round2(res.requiredScore)}</strong> / ${res.maxScore} (session ${year.label})`;
+    `soit un score de <strong>${round2(res.requiredScore)}</strong> / ${res.maxScore} (session ${year.label})`;
 
   let cls = 'obj-verdict', txt = '';
   if (res.status === 'unreachable') {
@@ -409,7 +409,7 @@ function renderResult(res) {
     txt = 'Même avec 20/20 dans toutes les matières restantes, ce rang ne serait pas atteint. Baisse ton objectif ou revois les notes déjà saisies.';
   } else if (res.status === 'already-there') {
     cls += ' good';
-    txt = 'Tes notes saisies suffisent déjà à atteindre ce rang — le reste est du bonus.';
+    txt = 'Tes notes saisies suffisent déjà à atteindre ce rang : le reste est du bonus.';
   } else if (res.status === 'all-filled-ok') {
     cls += ' good';
     txt = `Toutes les matières sont remplies : moyenne ${round2(res.achievedMoyenne)}/20, soit au-dessus des ${round2(res.moyenne)}/20 nécessaires. Objectif atteint.`;

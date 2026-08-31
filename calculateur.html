@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculateur de rang — Prep'Up</title>
+    <title>Calculateur de rang - Prep'Up</title>
     <meta name="description" content="Calcule ton rang au concours d'ingénieur en Tunisie à partir de tes notes, puis simule les filières accessibles selon les rangs des années précédentes (MP, PC, T)." />
     <link rel="canonical" href="https://prep-upp.com/calculateur.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prep'Up" />
-    <meta property="og:title" content="Calculateur de rang — Prep'Up" />
+    <meta property="og:title" content="Calculateur de rang - Prep'Up" />
     <meta property="og:description" content="Calcule ton rang au concours d'ingénieur en Tunisie à partir de tes notes, puis simule les filières accessibles selon les rangs des années précédentes (MP, PC, T)." />
     <meta property="og:url" content="https://prep-upp.com/calculateur.html" />
     <meta property="og:image" content="https://prep-upp.com/og-image.png" />
@@ -16,7 +16,7 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Calculateur de rang — Prep'Up" />
+    <meta name="twitter:title" content="Calculateur de rang - Prep'Up" />
     <meta name="twitter:description" content="Calcule ton rang au concours d'ingénieur en Tunisie à partir de tes notes, puis simule les filières accessibles selon les rangs des années précédentes (MP, PC, T)." />
     <meta name="twitter:image" content="https://prep-upp.com/og-image.png" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
@@ -66,7 +66,7 @@
 
       <div class="rank-card" id="rank-card">
         <div class="rank-title" id="rank-title">Rang estimé</div>
-        <div class="rank-value" id="rank-value">—</div>
+        <div class="rank-value" id="rank-value">-</div>
         <div class="rank-sub" id="rank-sub"></div>
       </div>
 
@@ -78,7 +78,7 @@
       <button class="reset" id="reset-btn">Réinitialiser les notes</button>
 
       <div class="disclaimer">
-        Score = somme des (note × coefficient) pour chaque matière — ce n'est <strong>pas</strong> une moyenne divisée par le total des coefficients. C'est ce score qui sert au classement du concours.
+        Score = somme des (note × coefficient) pour chaque matière : ce n'est <strong>pas</strong> une moyenne divisée par le total des coefficients. C'est ce score qui sert au classement du concours.
         <br /><br />
         2020, 2024 et 2025 ne sont que des estimations.
       </div>
@@ -91,7 +91,7 @@
             <a class="inline-link" href="/sources/rapport_jury_2024.pdf" target="_blank" rel="noopener">2024</a>
             et
             <a class="inline-link" href="/sources/rapport_jury_2020.pdf" target="_blank" rel="noopener">2020</a>
-            — distributions réelles des scores et statistiques du concours
+            : distributions réelles des scores et statistiques du concours
           </li>
         </ul>
       </div>
@@ -112,14 +112,14 @@
           <span class="spl-arrow">→</span>
         </a>
         <div class="disclaimer">
-          Places = capacités <strong>2026</strong> (JORT officiel). Rangs = affectation <strong>2024</strong> (min = meilleur admis, max = dernier admis), utilisés comme <strong>estimation prédictive</strong> — pas une garantie.
+          Places = capacités <strong>2026</strong> (JORT officiel). Rangs = affectation <strong>2024</strong> (min = meilleur admis, max = dernier admis), utilisés comme <strong>estimation prédictive</strong> - pas une garantie.
         </div>
       </div>
 
       <div id="tab-objectif" class="tab-panel">
         <div class="obj-mode-switch" id="obj-mode-switch">
-          <button type="button" data-mode="concours" class="active">2ème année — concours</button>
-          <button type="button" data-mode="annee1">1ère année — moyennes</button>
+          <button type="button" data-mode="concours" class="active">2ème année - concours</button>
+          <button type="button" data-mode="annee1">1ère année - moyennes</button>
         </div>
 
       <div id="obj-mode-concours">
@@ -141,13 +141,13 @@
         <div class="year-select" id="obj-year-select"></div>
 
         <div class="result-card" id="obj-result">
-          <div class="score"><span id="obj-moy-value">—</span><span class="max"> / 20</span></div>
+          <div class="score"><span id="obj-moy-value">-</span><span class="max"> / 20</span></div>
           <div class="pct" id="obj-moy-sub">moyenne pondérée nécessaire</div>
         </div>
 
         <p class="obj-hint" id="obj-hint">
           Une même moyenne s'atteint de plein de façons&nbsp;: les notes ci-dessous sont la version «&nbsp;à effort égal&nbsp;» (la même note partout).
-          <strong>Saisis tes points forts</strong> — par exemple 18 en Physique — et les autres matières se recalculent aussitôt pour compenser.
+          <strong>Saisis tes points forts</strong> (par exemple 18 en Physique) et les autres matières se recalculent aussitôt pour compenser.
         </p>
 
         <div id="obj-matieres"></div>
@@ -162,13 +162,13 @@
       </div><!-- /#obj-mode-concours -->
 
       <div id="obj-mode-annee1" hidden>
-        <p class="subtitle">Calcule ta moyenne du semestre — et vois ce qu'il te faut pour atteindre la moyenne que tu vises.</p>
+        <p class="subtitle">Calcule ta moyenne du semestre, et vois ce qu'il te faut pour atteindre la moyenne que tu vises.</p>
 
         <div class="filiere-select" id="a1-filiere"></div>
         <div class="year-select" id="a1-sem"></div>
 
         <div class="result-card">
-          <div class="score"><span id="a1-moy">—</span><span class="max"> / 20</span></div>
+          <div class="score"><span id="a1-moy">-</span><span class="max"> / 20</span></div>
           <div class="pct" id="a1-moy-sub">moyenne du semestre</div>
         </div>
 
@@ -193,7 +193,7 @@
         <button class="reset" id="a1-reset">Réinitialiser</button>
 
         <div class="disclaimer">
-          Pondération officielle par matière — <strong>sans TP</strong>&nbsp;: tests &amp; oral 15&nbsp;%, devoirs surveillés 35&nbsp;%, examen de fin de semestre 50&nbsp;%.
+          Pondération officielle par matière, <strong>sans TP</strong>&nbsp;: tests &amp; oral 15&nbsp;%, devoirs surveillés 35&nbsp;%, examen de fin de semestre 50&nbsp;%.
           <strong>Avec TP</strong>&nbsp;: tests &amp; oral 15&nbsp;%, devoirs surveillés 25&nbsp;%, TP 20&nbsp;%, examen 40&nbsp;%.
           Moyenne annuelle = (2&nbsp;×&nbsp;S1 + 3&nbsp;×&nbsp;S2) / 5.
         </div>

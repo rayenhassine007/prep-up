@@ -72,7 +72,7 @@ function renderList() {
     const title = document.createElement('div');
     title.className = 'res-matiere';
     const ecoleTotal = specs.reduce((acc, s) => acc + (f === 'Tous' ? specTotal(s) : s[f]), 0);
-    title.textContent = `${ecole.nom} — ${ecoleTotal} places`;
+    title.textContent = `${ecole.nom} - ${ecoleTotal} places`;
     card.appendChild(title);
 
     for (const s of specs) {
@@ -91,7 +91,7 @@ function renderList() {
         if (s.PC) parts.push(`PC ${s.PC}`);
         if (s.T) parts.push(`T ${s.T}`);
         if (s.BG) parts.push(`BG ${s.BG}`);
-        meta.textContent = `${parts.join(' · ')} — Total ${specTotal(s)}`;
+        meta.textContent = `${parts.join(' · ')} - Total ${specTotal(s)}`;
       } else {
         meta.textContent = `${s[f]} places`;
       }

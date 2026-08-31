@@ -1,4 +1,4 @@
-// Simulateur de rang — "avec mon rang, quelles filières ?"
+// Simulateur de rang : "avec mon rang, quelles filières ?"
 // Uses Prep'Up's own data: rangs 2024 (min/max admitted) + capacités 2025.
 import data from './data/rangs_2024_capacites_2025.json' with { type: 'json' };
 import { normalizeText } from './search.js';
@@ -90,10 +90,10 @@ function bandTxt(b) {
 function formatMeta(r) {
   const parts = [`${r.cap} places`];
   if (state.year === 'both') {
-    parts.push(`2024: ${bandTxt(r.b24) || '—'}`);
-    parts.push(`2025: ${bandTxt(r.b25) || '—'}`);
+    parts.push(`2024: ${bandTxt(r.b24) || '-'}`);
+    parts.push(`2025: ${bandTxt(r.b25) || '-'}`);
   } else {
-    parts.push(r.rmax == null ? `rang ${state.year} —` : `rang ${bandTxt([r.rmin, r.rmax])}`);
+    parts.push(r.rmax == null ? `rang ${state.year} -` : `rang ${bandTxt([r.rmin, r.rmax])}`);
   }
   if (state.rank != null && typeof r.margin === 'number') {
     parts.push(r.margin >= 0 ? `+${r.margin}` : `${r.margin}`);
@@ -313,7 +313,7 @@ function renderSummary() {
   const acc = rows.filter((r) => ['sur', 'probable', 'limite'].includes(r.tier));
   const totalSpots = acc.reduce((s, r) => s + r.cap, 0);
   elSummary.innerHTML =
-    `Rang <strong>${state.rank}</strong> en <strong>${TRACK_LABEL[state.track]}</strong> — ` +
+    `Rang <strong>${state.rank}</strong> en <strong>${TRACK_LABEL[state.track]}</strong> - ` +
     `<strong>${acc.length}</strong> programmes potentiellement accessibles (${totalSpots} places).`;
 }
 
@@ -330,11 +330,11 @@ function renderList() {
 
     const badge = document.createElement('span');
     badge.className = `tier-badge ${r.tier || 'na'}`;
-    badge.textContent = state.rank == null ? '—' : (r.tier ? TIER_LABEL[r.tier] : 'Rang N/A');
+    badge.textContent = state.rank == null ? '-' : (r.tier ? TIER_LABEL[r.tier] : 'Rang N/A');
 
     const name = document.createElement('span');
     name.className = 'sim-name';
-    name.textContent = `${shortInst(r.inst)} — ${r.spec}`;
+    name.textContent = `${shortInst(r.inst)} - ${r.spec}`;
 
     const meta = document.createElement('span');
     meta.className = 'sim-meta';
@@ -371,7 +371,7 @@ function renderWishlist() {
     const p = PROGRAMMES.find((x) => x.inst === w.inst && x.spec === w.spec);
     const r = p ? computeRow(p) : { cap: 0 };
     covered += r.cap;
-    html += `<li><span class="wl-order">${i + 1}</span><span class="wl-name">${shortInst(w.inst)} — ${w.spec}</span><span class="wl-meta">${p ? formatMeta(r) : '—'}</span>` +
+    html += `<li><span class="wl-order">${i + 1}</span><span class="wl-name">${shortInst(w.inst)} - ${w.spec}</span><span class="wl-meta">${p ? formatMeta(r) : '-'}</span>` +
             `<span class="wl-actions"><span class="wl-moves"><button class="wl-mv" data-dir="up" data-i="${i}" title="Monter"${i === 0 ? ' disabled' : ''}>↑</button>` +
             `<button class="wl-mv" data-dir="down" data-i="${i}" title="Descendre"${i === state.wishlist.length - 1 ? ' disabled' : ''}>↓</button></span>` +
             `<button class="wl-rm" data-i="${i}" title="Retirer">✕</button></span></li>`;

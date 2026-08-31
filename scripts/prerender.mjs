@@ -10,7 +10,7 @@
 // a fast/first-pass crawl and thin even after render. This script seeds the
 // same containers with the default-state markup at build time. The existing
 // client JS still runs on load and rebuilds the same content on top
-// (progressive enhancement) — filtering/search still work exactly as before,
+// (progressive enhancement): filtering/search still work exactly as before,
 // nothing about the interactive behavior changes.
 //
 // To update: this script mirrors the render logic in src/places.js,
@@ -42,7 +42,7 @@ function esc(str) {
 function injectInto(html, elementIdAttr, innerHtml) {
   const re = new RegExp(`(<[a-zA-Z0-9]+[^>]*id="${elementIdAttr}"[^>]*>)(</[a-zA-Z0-9]+>)`);
   if (!re.test(html)) {
-    console.warn(`[prerender] Could not find empty container for id="${elementIdAttr}" — skipping.`);
+    console.warn(`[prerender] Could not find empty container for id="${elementIdAttr}", skipping.`);
     return html;
   }
   return html.replace(re, `$1${innerHtml}$2`);
@@ -69,10 +69,10 @@ function buildPlaces() {
       if (s.PC) parts.push(`PC ${s.PC}`);
       if (s.T) parts.push(`T ${s.T}`);
       if (s.BG) parts.push(`BG ${s.BG}`);
-      const meta = `${parts.join(' · ')} — Total ${specTotal(s)}`;
+      const meta = `${parts.join(' · ')} - Total ${specTotal(s)}`;
       return `<div class="res-item"><span class="res-name">${esc(s.nom)}</span><span class="res-meta">${esc(meta)}</span></div>`;
     }).join('');
-    return `<div class="res-group"><div class="res-matiere">${esc(ecole.nom)} — ${ecoleTotal} places</div>${rows}</div>`;
+    return `<div class="res-group"><div class="res-matiere">${esc(ecole.nom)} - ${ecoleTotal} places</div>${rows}</div>`;
   }).join('');
 
   return { totauxHtml, listHtml };
@@ -159,20 +159,22 @@ function buildChapitres() {
     const years = sessionYears(c, e);
     const set = Array.isArray(c.annees_presentes) && c.annees_presentes.length
       ? new Set(c.annees_presentes.map(Number)) : null;
-    // The per-session panel is emitted open: with JS off the toggle is inert,
-    // so hiding it would hide the years from a crawler for no gain. The client
-    // collapses it when it re-renders.
+    // The per-session panel is emitted with the `open` class: with JS off the
+    // toggle is inert, so collapsing it would hide the years from a crawler for
+    // no gain. The client collapses it when it re-renders. The three-level
+    // wrapper is what the expand animation needs — mirror src/chapitres.js.
     const detail = years && set && years.some((y) => set.has(y))
-      ? `<button type="button" class="chap-toggle" aria-expanded="true" aria-label="Voir les sessions de « ${esc(nom)} »">▾</button>` +
-        `<div class="chap-detail"><div class="chap-detail-title">Sessions où le chapitre a été rencontré</div>` +
+      ? `<button type="button" class="chap-toggle open" aria-expanded="true" aria-label="Voir les sessions de « ${esc(nom)} »">▾</button>` +
+        `<div class="chap-detail open"><div class="chap-detail-clip"><div class="chap-detail-box">` +
+        `<div class="chap-detail-title">Sessions où le chapitre a été rencontré</div>` +
         `<div class="chap-years">` +
-        years.map((y) => {
+        years.map((y, i) => {
           const on = set.has(y);
-          return `<div class="chap-year${on ? ' is-on' : ''}" aria-label="${y} : ${on ? 'rencontré' : 'non rencontré'}">` +
+          return `<div class="chap-year${on ? ' is-on' : ''}" style="--i:${i}" aria-label="${y} : ${on ? 'rencontré' : 'non rencontré'}">` +
             `<span class="cy-mark" aria-hidden="true">${on ? '✓' : '–'}</span>` +
             `<span class="cy-num">${y}</span></div>`;
         }).join('') +
-        `</div></div>`
+        `</div></div></div></div>`
       : '';
 
     return `<div class="chap-item">` +
@@ -208,7 +210,7 @@ function buildChapitres() {
 
 function run() {
   if (!existsSync(dist)) {
-    console.warn('[prerender] dist/ not found — run `vite build` first. Skipping.');
+    console.warn('[prerender] dist/ not found, run `vite build` first. Skipping.');
     return;
   }
   const placesPath = resolve(dist, 'places-2026.html');

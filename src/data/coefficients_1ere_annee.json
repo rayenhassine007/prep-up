@@ -1,6 +1,6 @@
 {
   "note": "Coefficients de la 1ère année du cycle préparatoire (contrôle continu), distincts des coefficients du concours (voir coefficients.json). Certaines matières regroupent plusieurs éléments notés séparément : le champ 'note' le précise. Le champ 'tp' indique les matières comportant des travaux pratiques, qui suivent la pondération 15/25/20/40 au lieu de 15/35/50. Le Sport est exclu de ce calcul.",
-  "source": "Modalités d'évaluation du cycle préparatoire (IPEIN) — tableaux de coefficients par filière fournis par l'utilisateur.",
+  "source": "Modalités d'évaluation du cycle préparatoire (IPEIN) - tableaux de coefficients par filière fournis par l'utilisateur.",
   "legende": {
     "(*)": "TP annuel",
     "(**)": "TP du semestre 2",

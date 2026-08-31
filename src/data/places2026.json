@@ -9,7 +9,7 @@
   "totaux": { "MP": 1288, "PC": 1025, "T": 636, "BG": 289, "total": 3238 },
   "ecoles": [
     {
-      "nom": "ENIT — École Nationale d'Ingénieurs de Tunis",
+      "nom": "ENIT - École Nationale d'Ingénieurs de Tunis",
       "specialites": [
         { "nom": "Génie électrique", "MP": 39, "PC": 12, "T": 17, "BG": 0 },
         { "nom": "Génie mécanique", "MP": 22, "PC": 11, "T": 19, "BG": 0 },
@@ -23,7 +23,7 @@
       ]
     },
     {
-      "nom": "ENIB — École Nationale d'Ingénieurs de Bizerte",
+      "nom": "ENIB - École Nationale d'Ingénieurs de Bizerte",
       "specialites": [
         { "nom": "Génie industriel", "MP": 25, "PC": 12, "T": 3, "BG": 0 },
         { "nom": "Génie mécanique", "MP": 16, "PC": 16, "T": 8, "BG": 0 },
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "nom": "ENISo — École Nationale d'Ingénieurs de Sousse",
+      "nom": "ENISo - École Nationale d'Ingénieurs de Sousse",
       "specialites": [
         { "nom": "Électronique industrielle", "MP": 22, "PC": 8, "T": 15, "BG": 0 },
         { "nom": "Mécatronique", "MP": 25, "PC": 0, "T": 18, "BG": 0 },
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "nom": "ENIM — École Nationale d'Ingénieurs de Monastir",
+      "nom": "ENIM - École Nationale d'Ingénieurs de Monastir",
       "specialites": [
         { "nom": "Génie électrique", "MP": 30, "PC": 22, "T": 23, "BG": 0 },
         { "nom": "Génie énergétique", "MP": 45, "PC": 31, "T": 9, "BG": 0 },
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "nom": "ENIS — École Nationale d'Ingénieurs de Sfax",
+      "nom": "ENIS - École Nationale d'Ingénieurs de Sfax",
       "specialites": [
         { "nom": "Génie électrique", "MP": 25, "PC": 20, "T": 20, "BG": 0 },
         { "nom": "Génie électromécanique", "MP": 20, "PC": 20, "T": 25, "BG": 0 },
@@ -63,7 +63,7 @@
       ]
     },
     {
-      "nom": "ENIG — École Nationale d'Ingénieurs de Gabès",
+      "nom": "ENIG - École Nationale d'Ingénieurs de Gabès",
       "specialites": [
         { "nom": "Génie électrique-automatique", "MP": 25, "PC": 27, "T": 13, "BG": 0 },
         { "nom": "Génie mécanique", "MP": 1, "PC": 19, "T": 19, "BG": 0 },
@@ -73,14 +73,14 @@
       ]
     },
     {
-      "nom": "FST — Faculté des Sciences de Tunis",
+      "nom": "FST - Faculté des Sciences de Tunis",
       "specialites": [
         { "nom": "Chimie analytique et instrumentale", "MP": 5, "PC": 25, "T": 0, "BG": 5 },
         { "nom": "Sciences géologiques", "MP": 0, "PC": 8, "T": 0, "BG": 22 }
       ]
     },
     {
-      "nom": "ENSIT — École Nationale Supérieure d'Ingénieurs de Tunis",
+      "nom": "ENSIT - École Nationale Supérieure d'Ingénieurs de Tunis",
       "specialites": [
         { "nom": "Génie électrique", "MP": 25, "PC": 6, "T": 24, "BG": 0 },
         { "nom": "Génie mécanique", "MP": 20, "PC": 0, "T": 35, "BG": 0 },
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "nom": "ENICarthage — École Nationale d'Ingénieurs de Carthage",
+      "nom": "ENICarthage - École Nationale d'Ingénieurs de Carthage",
       "specialites": [
         { "nom": "Génie des systèmes industriels et logistique", "MP": 16, "PC": 27, "T": 9, "BG": 0 },
         { "nom": "Mécatronique", "MP": 12, "PC": 18, "T": 19, "BG": 0 },
@@ -100,7 +100,7 @@
       ]
     },
     {
-      "nom": "ENET'COM — École Nationale d'Électronique et des Télécommunications de Sfax",
+      "nom": "ENET'COM - École Nationale d'Électronique et des Télécommunications de Sfax",
       "specialites": [
         { "nom": "Génie des télécommunications", "MP": 25, "PC": 30, "T": 5, "BG": 0 },
         { "nom": "Génie des systèmes électroniques et communication", "MP": 10, "PC": 35, "T": 15, "BG": 0 },
@@ -115,25 +115,25 @@
       ]
     },
     {
-      "nom": "ENSI — École Nationale des Sciences de l'Informatique",
+      "nom": "ENSI - École Nationale des Sciences de l'Informatique",
       "specialites": [
         { "nom": "Informatique", "MP": 150, "PC": 30, "T": 20, "BG": 0 }
       ]
     },
     {
-      "nom": "ESSAI — École Supérieure de la Statistique et de l'Analyse de l'Information",
+      "nom": "ESSAI - École Supérieure de la Statistique et de l'Analyse de l'Information",
       "specialites": [
         { "nom": "Statistique et analyse de l'information", "MP": 55, "PC": 0, "T": 0, "BG": 0 }
       ]
     },
     {
-      "nom": "SUP'COM — École Supérieure des Communications de Tunis",
+      "nom": "SUP'COM - École Supérieure des Communications de Tunis",
       "specialites": [
         { "nom": "Télécommunications", "MP": 98, "PC": 46, "T": 18, "BG": 0 }
       ]
     },
     {
-      "nom": "INAT — Institut National Agronomique de Tunisie",
+      "nom": "INAT - Institut National Agronomique de Tunisie",
       "specialites": [
         { "nom": "Sciences de la production végétale", "MP": 0, "PC": 3, "T": 0, "BG": 12 },
         { "nom": "Protection des plantes", "MP": 0, "PC": 1, "T": 0, "BG": 12 },
@@ -145,13 +145,13 @@
       ]
     },
     {
-      "nom": "ESIAT — École Supérieure des Industries Alimentaires de Tunis",
+      "nom": "ESIAT - École Supérieure des Industries Alimentaires de Tunis",
       "specialites": [
         { "nom": "Industries alimentaires", "MP": 0, "PC": 2, "T": 0, "BG": 15 }
       ]
     },
     {
-      "nom": "ESIM — École Supérieure des Ingénieurs de Medjez El Bab",
+      "nom": "ESIM - École Supérieure des Ingénieurs de Medjez El Bab",
       "specialites": [
         { "nom": "Génie hydraulique et aménagement", "MP": 0, "PC": 10, "T": 0, "BG": 5 },
         { "nom": "Génie mécanique et agro-industriel", "MP": 0, "PC": 10, "T": 5, "BG": 0 },
@@ -159,20 +159,20 @@
       ]
     },
     {
-      "nom": "ESA Mateur — École Supérieure d'Agriculture de Mateur",
+      "nom": "ESA Mateur - École Supérieure d'Agriculture de Mateur",
       "specialites": [
         { "nom": "Production animale et fourragère", "MP": 0, "PC": 0, "T": 0, "BG": 13 }
       ]
     },
     {
-      "nom": "ESA Mograne — École Supérieure d'Agriculture de Mograne",
+      "nom": "ESA Mograne - École Supérieure d'Agriculture de Mograne",
       "specialites": [
         { "nom": "Économie rurale", "MP": 1, "PC": 0, "T": 0, "BG": 11 },
         { "nom": "Production agricole", "MP": 0, "PC": 0, "T": 0, "BG": 11 }
       ]
     },
     {
-      "nom": "ESA Le Kef — École Supérieure d'Agriculture du Kef",
+      "nom": "ESA Le Kef - École Supérieure d'Agriculture du Kef",
       "specialites": [
         { "nom": "Sciences agronomiques", "MP": 0, "PC": 2, "T": 0, "BG": 15 }
       ]
@@ -186,13 +186,13 @@
       ]
     },
     {
-      "nom": "ENSTAB — École Nationale des Sciences et Technologies Avancées à Borj Cédria",
+      "nom": "ENSTAB - École Nationale des Sciences et Technologies Avancées à Borj Cédria",
       "specialites": [
         { "nom": "Technologies avancées", "MP": 50, "PC": 38, "T": 2, "BG": 0 }
       ]
     },
     {
-      "nom": "ENIGa — École Nationale d'Ingénieurs de Gafsa",
+      "nom": "ENIGa - École Nationale d'Ingénieurs de Gafsa",
       "specialites": [
         { "nom": "Génie chimie industrielle et minière", "MP": 2, "PC": 4, "T": 0, "BG": 9 },
         { "nom": "Génie énergie et technologie de l'environnement", "MP": 2, "PC": 16, "T": 2, "BG": 0 },

@@ -1,10 +1,10 @@
 {
   "meta": {
-    "projet": "prep-upp.com — analyse des chapitres du concours national tunisien (filière MP)",
+    "projet": "prep-upp.com - analyse des chapitres du concours national tunisien (filière MP)",
     "description": "Pour chaque épreuve du concours MP, fréquence d'apparition de chaque chapitre du programme, session par session (2015–2026), avec la liste exacte des années où il a été présent. Un chapitre est « présent » dans une session dès qu'il atteint un seuil de questions.",
     "filiere": "MP",
     "genere_le": "2026-08-30",
-    "donnees": "PUBLIQUES — régularité et années de présence uniquement. Aucune donnée de barème ni de pondération interne.",
+    "donnees": "PUBLIQUES - régularité et années de présence uniquement. Aucune donnée de barème ni de pondération interne.",
     "seuil_presence_questions": {
       "Mathematiques I": 3,
       "Mathematiques II": 3,
@@ -42,7 +42,7 @@
       "Historique, pas prédiction : ces tableaux décrivent ce qui est tombé, pas ce qui va tomber. « Jamais rencontré » ne veut pas dire « à ne pas réviser ».",
       "Le seuil de présence diffère selon l'épreuve (≥ 3 questions sauf la chimie, ≥ 2) : à préciser si l'on compare deux épreuves.",
       "Physique : volumes horaires non publiés (estimations internes) ; le tableau est au niveau sous-chapitre. Les autres épreuves sont au niveau chapitre du programme officiel.",
-      "Filière MP uniquement — rien pour PC, T ou BG.",
+      "Filière MP uniquement - rien pour PC, T ou BG.",
       "Chimie 2016 et 2018 étiquetées depuis le corrigé (énoncé absent des archives) ; en 2018 une page du corrigé manque à la source (diagramme binaire solide-liquide possiblement sous-compté).",
       "Ne recopier aucune donnée d'un autre site : ces chiffres proviennent de l'étiquetage manuel des sujets officiels."
     ]
@@ -1489,7 +1489,7 @@
           "regularite": "rare"
         },
         {
-          "chapitre": "Matrices — Opérations sur les matrices",
+          "chapitre": "Matrices - Opérations sur les matrices",
           "annee_programme": 1,
           "annee_label": "1re année",
           "heures": 4,
