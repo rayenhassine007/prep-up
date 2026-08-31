@@ -421,6 +421,7 @@ p.subtitle {
 }
 
 /* ---------- calculator: matières ---------- */
+.matieres-row,
 .matiere-row {
   display: flex;
   align-items: center;
@@ -467,6 +468,23 @@ p.subtitle {
 .matiere-row input.invalid {
   border-color: var(--red);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--red) 22%, transparent);
+}
+
+.bonus-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 16px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+}
+.bonus-row input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  cursor: pointer;
 }
 
 /* ---------- calculator: result ---------- */

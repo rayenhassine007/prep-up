@@ -108,13 +108,19 @@ function tierPass(tier) {
   return tier === state.tier;
 }
 
+function proximiteGroup(row) {
+  if (row.margin == null) return 2; // Rang N/A en dernier
+  if (row.margin >= 0) return 0; // Sûr / Probable d'abord
+  return 1; // Hors de portée (écart négatif)
+}
+
 function compareProximite(a, b) {
-  const ma = a.margin == null ? 1e9 : a.margin;
-  const mb = b.margin == null ? 1e9 : b.margin;
-  const aNeg = ma < 0;
-  const bNeg = mb < 0;
-  if (aNeg !== bNeg) return aNeg ? 1 : -1; // écart ≥ 0 d'abord, négatifs en dessous
-  return ma - mb; // croissant dans chaque groupe (0, 1, 2… puis −1, −2…)
+  const ga = proximiteGroup(a);
+  const gb = proximiteGroup(b);
+  if (ga !== gb) return ga - gb;
+  if (ga === 0) return a.margin - b.margin; // 0, 1, 2…
+  if (ga === 1) return b.margin - a.margin; // −1, −2, −10, −15… (le plus proche de 0 d'abord)
+  return (a.inst + a.spec).localeCompare(b.inst + b.spec);
 }
 
 function filteredSortedRows() {

@@ -17,6 +17,7 @@ const state = {
   filiere: 'MP',
   year: '2025',
   notes: {},
+  bonus: false,
   reachRows: [],
   reachSearch: '',
 };
@@ -29,6 +30,7 @@ const scorePctEl = document.getElementById('score-pct');
 const moyValueEl = document.getElementById('moy-value');
 const moyCmpEl = document.getElementById('moy-cmp');
 const resetBtn = document.getElementById('reset-btn');
+const bonusCheckEl = document.getElementById('bonus-check');
 const yearSelectEl = document.getElementById('year-select');
 const rankTitleEl = document.getElementById('rank-title');
 const rankValueEl = document.getElementById('rank-value');
@@ -41,6 +43,13 @@ if (reachSearchEl) {
   reachSearchEl.addEventListener('input', () => {
     state.reachSearch = reachSearchEl.value;
     renderReachList();
+  });
+}
+
+if (bonusCheckEl) {
+  bonusCheckEl.addEventListener('change', () => {
+    state.bonus = bonusCheckEl.checked;
+    updateScore();
   });
 }
 
@@ -231,6 +240,7 @@ function updateScore() {
       hasAnyNote = true;
     }
   }
+  if (state.bonus) score += 15;
   const max = total * 20;
   const moyenne = hasAnyNote ? score / total : 0;
   moyValueEl.textContent = round2(moyenne);
