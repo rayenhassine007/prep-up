@@ -209,7 +209,6 @@ html[data-theme='light'] .theme-toggle .icon-moon { display: inline-block; }
 .icon-chip .icon { width: 1.35rem; height: 1.35rem; vertical-align: middle; }
 .section-pill .icon,
 .fc-label .icon { width: 1em; height: 1em; vertical-align: -0.15em; }
-.step-icon .icon { width: 1.5rem; height: 1.5rem; }
 .spl-icon .icon { width: 1.35rem; height: 1.35rem; }
 .disclaimer.sources .icon { width: 1em; height: 1em; vertical-align: -0.15em; margin-right: 4px; }
 .chap-toggle .icon { width: 0.85rem; height: 0.85rem; transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1); }
@@ -218,7 +217,7 @@ html[data-theme='light'] .theme-toggle .icon-moon { display: inline-block; }
 .charte li { display: flex; align-items: flex-start; gap: 8px; }
 .charte .icon-li { width: 1rem; height: 1rem; flex-shrink: 0; margin-top: 3px; color: var(--accent); }
 .submit-modal h3 .icon { width: 1.1em; height: 1.1em; vertical-align: -0.15em; margin-right: 4px; }
-.badge .icon { width: 0.85em; height: 0.85em; vertical-align: -0.1em; }
+.badge .icon { width: 0.85em; height: 0.85em; vertical-align: middle; }
 .a1-toggle .icon { width: 0.85em; height: 0.85em; vertical-align: -0.12em; margin-left: 2px; }
 .sim-add .icon { width: 0.9rem; height: 0.9rem; }
 .go-sim-btn .icon { transition: transform 0.22s ease; }
@@ -346,20 +345,24 @@ p.subtitle {
   transition: opacity 0.25s ease;
 }
 .feature-card.live:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow);
   border-color: var(--border-strong);
 }
 .feature-card.live:hover::before { opacity: 1; }
-.feature-card.live:hover .icon { animation: bounce 0.5s ease; }
+.feature-card.live:hover .icon { animation: bounce 0.35s ease; }
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-6px) scale(1.1); }
+  40% { transform: translateY(-3px) scale(1.04); }
 }
 
 .feature-card.disabled { opacity: 0.55; }
 
 .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
   font-size: 0.68rem;
   font-weight: 700;
   padding: 4px 10px;
@@ -1470,7 +1473,7 @@ button.submit-btn { border: none; cursor: pointer; }
   border: 1px solid color-mix(in srgb, var(--tint, var(--blue)) 28%, transparent);
   margin-bottom: 12px;
 }
-.feature-card.live:hover .icon-chip { animation: bounce 0.5s ease; }
+.feature-card.live:hover .icon-chip { animation: bounce 0.35s ease; }
 
 /* ---------- scroll reveal ---------- */
 .reveal {
@@ -1548,67 +1551,6 @@ main.home { max-width: 1060px; }
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
-}
-
-/* ---------- "comment ça marche" steps ---------- */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 20px;
-}
-@media (max-width: 760px) {
-  .steps { grid-template-columns: 1fr; }
-}
-
-.step {
-  position: relative;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px 22px 20px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease;
-}
-.step:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--border-strong);
-}
-
-.step-num {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #fff;
-  background: var(--grad);
-  box-shadow: 0 6px 18px color-mix(in srgb, var(--violet) 40%, transparent);
-  margin-bottom: 14px;
-}
-
-.step-icon {
-  position: absolute;
-  top: 24px;
-  right: 22px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  line-height: 1;
-  opacity: 0.9;
-  color: var(--accent);
-}
-.step h3 {
-  margin: 0 0 8px;
-  font-size: 1.02rem;
-}
-.step p {
-  margin: 0;
 }
 
 /* ---------- chapitres du concours (MP) ---------- */
