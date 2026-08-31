@@ -1744,28 +1744,23 @@ main.home { max-width: 1060px; }
 .chap-toggle:hover { color: var(--accent); border-color: var(--accent); }
 .chap-toggle.open { color: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
 
-/* Le dépliant s'anime sur sa hauteur réelle : une grille dont la seule rangée
-   passe de 0fr à 1fr. À l'ouverture la hauteur saute tout de suite pour que le
-   scale + slide + fade du panneau soient visibles ; à la fermeture elle se
-   replie une fois l'animation terminée. */
+/* Le dépliant s'anime sur sa hauteur réelle (grille 0fr → 1fr). Le scale +
+   slide + fade + ressort du panneau est piloté en JS (Web Animations API). */
 .chap-detail {
   grid-area: det;
   min-width: 0;
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 1, 1) 0.42s;
+  transition: grid-template-rows 0.78s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.chap-detail.open {
-  grid-template-rows: 1fr;
-  transition: grid-template-rows 0s;
-}
+.chap-detail.open { grid-template-rows: 1fr; }
 
 .chap-detail-clip {
   min-width: 0;
   min-height: 0;
   overflow: hidden;
   visibility: hidden;
-  transition: visibility 0s linear 0.82s;
+  transition: visibility 0s linear 0.78s;
 }
 .chap-detail.open .chap-detail-clip {
   visibility: visible;
@@ -1781,40 +1776,14 @@ main.home { max-width: 1060px; }
   box-shadow: none;
   transform-origin: top right;
   opacity: 0;
-  transform: scale(0.86) translateY(-16px);
-  transition:
-    opacity 0.42s cubic-bezier(0.4, 0, 1, 1),
-    transform 0.42s cubic-bezier(0.4, 0, 1, 1),
-    box-shadow 0.42s ease-out;
+  transform: scale(0.84) translateY(-18px);
+  will-change: opacity, transform;
 }
 .chap-detail.open .chap-detail-box {
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
-  animation: chap-menu-in 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
-  transition: none;
 }
-
-/* Ouverture : glisse vers le bas, grandit légèrement, fondu, léger rebond ressort. */
-@keyframes chap-menu-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.86) translateY(-16px);
-  }
-  45% {
-    opacity: 0.85;
-    transform: scale(0.96) translateY(-5px);
-  }
-  68% {
-    opacity: 1;
-    transform: scale(1.028) translateY(3px);
-  }
-  84% {
-    opacity: 1;
-    transform: scale(0.992) translateY(-1px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+.chap-detail.is-closing .chap-detail-box {
+  box-shadow: none;
 }
 .chap-detail-title {
   font-size: 0.72rem;
@@ -1951,8 +1920,7 @@ main.home { max-width: 1060px; }
   .chap-detail-box,
   .chap-toggle {
     transition: none !important;
-    animation: none !important;
   }
-  .chap-detail.open { transition: none !important; }
-  .chap-detail-box { opacity: 1; transform: none; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28); }
+  .chap-detail-box { opacity: 1; transform: none; will-change: auto; }
+  .chap-detail.open .chap-detail-box { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28); }
 }

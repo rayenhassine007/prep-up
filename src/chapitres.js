@@ -123,10 +123,81 @@ function presentYears(c, years) {
   return new Set(c.annees_presentes.map(Number));
 }
 
-// Trois niveaux, imposés par l'animation : `.chap-detail` gère la hauteur
-// (instantanée à l'ouverture), `.chap-detail-clip` rogne le contenu, et
-// `.chap-detail-box` porte le menu déroulant (slide + scale + fade + ressort).
-// Cf. la feuille de style.
+// Dépliant « sessions » : hauteur en CSS, scale + slide + fade + ressort en JS
+// (Web Animations API), pour que le mouvement soit visible à chaque clic.
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const OPEN_MS = 780;
+const CLOSE_MS = 480;
+
+function clearPanelAnim(box) {
+  if (box._anim) {
+    box._anim.cancel();
+    box._anim = null;
+  }
+  box.style.opacity = '';
+  box.style.transform = '';
+}
+
+function closePanel(detail, toggle, box) {
+  clearPanelAnim(box);
+  detail.classList.remove('open', 'is-closing');
+  toggle.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+}
+
+function openPanel(detail, toggle, box) {
+  clearPanelAnim(box);
+  detail.classList.add('open');
+  detail.classList.remove('is-closing');
+  toggle.classList.add('open');
+  toggle.setAttribute('aria-expanded', 'true');
+}
+
+function playOpen(detail, toggle, box) {
+  openPanel(detail, toggle, box);
+  if (REDUCED_MOTION) return;
+  box._anim = box.animate([
+    { opacity: 0, transform: 'scale(0.84) translateY(-18px)' },
+    { opacity: 0.9, transform: 'scale(0.96) translateY(-6px)', offset: 0.4 },
+    { opacity: 1, transform: 'scale(1.03) translateY(4px)', offset: 0.68 },
+    { opacity: 1, transform: 'scale(0.99) translateY(-1px)', offset: 0.86 },
+    { opacity: 1, transform: 'scale(1) translateY(0)' },
+  ], {
+    duration: OPEN_MS,
+    easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+    fill: 'forwards',
+  });
+  box._anim.onfinish = () => { box._anim = null; };
+}
+
+function playClose(detail, toggle, box) {
+  if (REDUCED_MOTION) {
+    closePanel(detail, toggle, box);
+    return;
+  }
+  detail.classList.add('is-closing');
+  clearPanelAnim(box);
+  box._anim = box.animate([
+    { opacity: 1, transform: 'scale(1) translateY(0)' },
+    { opacity: 0, transform: 'scale(0.86) translateY(-14px)' },
+  ], {
+    duration: CLOSE_MS,
+    easing: 'cubic-bezier(0.4, 0, 1, 1)',
+    fill: 'forwards',
+  });
+  box._anim.onfinish = () => closePanel(detail, toggle, box);
+}
+
+function wirePanelToggle(detail, toggle) {
+  const box = detail.querySelector('.chap-detail-box');
+  toggle.addEventListener('click', () => {
+    if (detail.classList.contains('open')) playClose(detail, toggle, box);
+    else playOpen(detail, toggle, box);
+  });
+}
+
+// Trois niveaux côté CSS : `.chap-detail` (hauteur), `.chap-detail-clip` (rogne),
+// `.chap-detail-box` (carte animée en JS). Cf. la feuille de style.
 function buildDetail(c, years, present) {
   const wrap = el('div', 'chap-detail');
   const clip = el('div', 'chap-detail-clip');
@@ -187,12 +258,7 @@ function buildRow(c, e) {
     toggle.type = 'button';
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', `Voir les sessions de « ${nomDe(c)} »`);
-    toggle.addEventListener('click', () => {
-      // classe et pas `hidden` : un élément masqué ne s'anime pas
-      const open = detail.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-    });
+    wirePanelToggle(detail, toggle);
     row.appendChild(toggle);
     row.appendChild(detail);
   }
