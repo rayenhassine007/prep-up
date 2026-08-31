@@ -1739,7 +1739,7 @@ main.home { max-width: 1060px; }
   border: 1px solid var(--border);
   border-radius: 50%;
   cursor: pointer;
-  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .chap-toggle:hover { color: var(--accent); border-color: var(--accent); }
 .chap-toggle.open { color: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
@@ -1752,7 +1752,7 @@ main.home { max-width: 1060px; }
   min-width: 0;
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .chap-detail.open { grid-template-rows: 1fr; }
 
@@ -1763,7 +1763,7 @@ main.home { max-width: 1060px; }
   /* replié, le panneau sort aussi de l'arbre d'accessibilité — mais seulement
      une fois l'animation finie, sinon il disparaît avant d'avoir glissé */
   visibility: hidden;
-  transition: visibility 0s linear 0.3s;
+  transition: visibility 0s linear 0.45s;
 }
 .chap-detail.open .chap-detail-clip { visibility: visible; transition-delay: 0s; }
 
@@ -1774,8 +1774,8 @@ main.home { max-width: 1060px; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   opacity: 0;
-  transform: translateY(-4px);
-  transition: opacity 0.22s ease 0.04s, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.04s;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease 0.05s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
 }
 .chap-detail.open .chap-detail-box { opacity: 1; transform: none; }
 .chap-detail-title {
@@ -1805,12 +1805,12 @@ main.home { max-width: 1060px; }
   min-width: 0;
 }
 /* les années arrivent en cascade, de gauche à droite */
-.chap-detail .chap-year { opacity: 0; transform: scale(0.94); }
+.chap-detail .chap-year { opacity: 0; transform: translateY(8px) scale(0.9); }
 .chap-detail.open .chap-year {
   opacity: 1;
   transform: none;
-  transition: opacity 0.2s ease, transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: calc(60ms + var(--i, 0) * 16ms);
+  transition: opacity 0.26s ease, transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: calc(90ms + var(--i, 0) * 35ms);
 }
 .chap-year .cy-mark { font-size: 0.9rem; line-height: 1; }
 .chap-year .cy-num { font-variant-numeric: tabular-nums; }

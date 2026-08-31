@@ -66,6 +66,16 @@ function sansDoublons(chapitres) {
   });
 }
 
+// Autre conséquence des suffixes retirés : un même nom peut se retrouver à la
+// fois dans la liste et parmi les « jamais rencontrés », avec deux comptes
+// différents. Afficher « Séries numériques 5/12 » puis « Séries numériques
+// 0/12 » ne se comprend plus une fois l'année effacée : on ne garde que la
+// ligne qui a été rencontrée.
+function sansZeroHomonyme(jamais, rencontres) {
+  const noms = new Set(rencontres.map(nomDe));
+  return jamais.filter((c) => !noms.has(nomDe(c)));
+}
+
 function el(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -209,7 +219,10 @@ function renderPanel() {
   card.appendChild(head);
 
   const rencontres = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present > 0));
-  const jamais = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present === 0));
+  const jamais = sansZeroHomonyme(
+    sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present === 0)),
+    rencontres,
+  );
 
   const list = el('div', 'chap-list');
   for (const c of rencontres) list.appendChild(buildRow(c, e));

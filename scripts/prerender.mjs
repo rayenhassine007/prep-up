@@ -124,7 +124,8 @@ function buildChapitres() {
     `<span class="chap-tab-coef">coef ${esc(e.coefficient)}</span></button>`
   ).join('');
 
-  // Mirrors propre()/sansDoublons()/sessionYears() in src/chapitres.js.
+  // Mirrors propre()/sansDoublons()/sansZeroHomonyme()/sessionYears() in
+  // src/chapitres.js.
   const ANNEE_SUFFIXE = /\s*\((?:1re|1ère|2e|2ème)\s+ann[ée]e\)/g;
   const propre = (s) => String(s ?? '').replace(ANNEE_SUFFIXE, '');
   const nomDe = (c) => propre(c.sous_chapitre || c.chapitre);
@@ -194,7 +195,9 @@ function buildChapitres() {
     ].map((b) => `<span class="chap-chip">${esc(b)}</span>`).join('');
 
     const vus = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present > 0));
-    const jamais = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present === 0));
+    const nomsVus = new Set(vus.map(nomDe));
+    const jamais = sansDoublons(e.chapitres.filter((c) => c.sessions_ou_present === 0))
+      .filter((c) => !nomsVus.has(nomDe(c)));
     const neverHtml = jamais.length
       ? `<details class="chap-never"><summary>Voir les ${jamais.length} chapitre${jamais.length > 1 ? 's' : ''} jamais rencontré${jamais.length > 1 ? 's' : ''}</summary>` +
         `<div class="chap-list">${jamais.map((c) => row(c, e)).join('')}</div></details>`
