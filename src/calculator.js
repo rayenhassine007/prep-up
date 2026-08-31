@@ -3,6 +3,12 @@ import distribution2025 from './data/distribution_moyennes_2025.json' with { typ
 import distribution2024 from './data/distribution_moyennes_2024.json' with { type: 'json' };
 import distribution2020 from './data/distribution_moyennes_2020_simulee.json' with { type: 'json' };
 import guideRangsCapacites from './data/guide_rangs_capacites.json' with { type: 'json' };
+import { estimateRank, computeScore, round2 } from './lib/rank.js';
+import {
+  REACH_TIER_LABEL,
+  buildReachRows,
+  filterSortReachRows,
+} from './lib/calculator-reach.js';
 
 const FILIERES = ['MP', 'PC', 'T', 'BG'];
 const YEARS = [
@@ -130,38 +136,11 @@ function renderMatieres() {
 }
 
 // Estimate rank from a Moyenne (/20) using a given year's distribution for this filiere.
-function estimateRank(moyenne, filiere, distribution) {
-  const dist = distribution.filieres[filiere];
-  if (!dist) return null;
-  const bins = dist.bins;
-  let idx = Math.floor(moyenne);
-  if (idx < 0) idx = 0;
-  if (idx > bins.length - 1) idx = bins.length - 1;
-
-  let higher = 0;
-  for (let i = idx + 1; i < bins.length; i++) higher += bins[i];
-
-  const withinBin = bins[idx] || 0;
-  const positionInBin = moyenne - idx;
-  const fractionAbove = withinBin * (1 - positionInBin);
-
-  const rankRaw = Math.max(1, Math.round(higher + fractionAbove + 1));
-  const rank = Math.min(rankRaw, dist.classes);
-  return { rank, classes: dist.classes, stats: dist.stats };
-}
-
 // tier from a single admission-threshold rang (no min/max range available):
 // 'probable' = comfortable margin below the threshold, 'incertain' = close to it,
 // 'impossible' = estimated rank is worse than the threshold.
-function computeTier(rank, seuil) {
-  if (typeof seuil !== 'number') return null;
-  if (rank > seuil) return 'impossible';
-  if (rank <= seuil * 0.8) return 'probable';
-  return 'incertain';
-}
 
-const TIER_LABEL = { probable: 'Probable', incertain: 'Incertain', impossible: 'Hors de portée' };
-const TIER_ORDER = { probable: 0, incertain: 1, impossible: 2 };
+const TIER_LABEL = REACH_TIER_LABEL;
 
 function renderReachability(estimatedRank, filiere, yearLabel) {
   if (!reachListEl) return;
@@ -175,15 +154,7 @@ function renderReachability(estimatedRank, filiere, yearLabel) {
   }
   const programmes = guideData.programmes || [];
 
-  state.reachRows = programmes
-    .filter((p) => p.capacite && typeof p.rang === 'number')
-    .map((p) => ({
-      inst: p.institution,
-      spec: p.filiere,
-      seuil: p.rang,
-      cap: p.capacite,
-      tier: computeTier(estimatedRank, p.rang),
-    }));
+  state.reachRows = buildReachRows(programmes, estimatedRank);
 
   reachTitleEl.textContent = `Écoles potentiellement accessibles - filière ${filiere}`;
   renderReachList();
@@ -191,10 +162,7 @@ function renderReachability(estimatedRank, filiere, yearLabel) {
 
 function renderReachList() {
   if (!reachListEl) return;
-  const term = (state.reachSearch || '').trim().toLowerCase();
-  const rows = (state.reachRows || [])
-    .filter((r) => !term || r.inst.toLowerCase().includes(term) || r.spec.toLowerCase().includes(term))
-    .sort((a, b) => (TIER_ORDER[a.tier] - TIER_ORDER[b.tier]) || (a.seuil - b.seuil));
+  const rows = filterSortReachRows(state.reachRows || [], state.reachSearch || '');
 
   reachListEl.innerHTML = '';
 
@@ -231,19 +199,8 @@ function renderReachList() {
 
 function updateScore() {
   const { matieres, total } = coefficients.filieres[state.filiere];
-  let score = 0;
-  let hasAnyNote = false;
-  for (const [nom, coef] of Object.entries(matieres)) {
-    const note = state.notes[nom];
-    if (typeof note === 'number' && !isNaN(note)) {
-      score += note * coef;
-      hasAnyNote = true;
-    }
-  }
-  if (state.bonus) score += 15;
-  const max = total * 20;
-  const moyenne = hasAnyNote ? score / total : 0;
-  moyValueEl.textContent = round2(moyenne);
+  const { score, max, moyenne, hasAnyNote } = computeScore(state.notes, matieres, total, state.bonus);
+  moyValueEl.textContent = round2(moyenne ?? 0);
   scoreValueEl.textContent = round2(score);
   scoreMaxEl.textContent = max;
   moyCmpEl.textContent = '';
@@ -274,10 +231,6 @@ function updateScore() {
     state.reachRows = [];
     renderReachList();
   }
-}
-
-function round2(n) {
-  return Math.round(n * 100) / 100;
 }
 
 resetBtn.addEventListener('click', () => {

@@ -1,5 +1,16 @@
 import data from './data/chapitres_concours_mp.json' with { type: 'json' };
 import { iconEl } from './icons.js';
+import {
+  ANNEE_SUFFIXE,
+  BANDES,
+  nomDe,
+  presentYears,
+  propre,
+  sansDoublons,
+  sansZeroHomonyme,
+  sessionYears,
+  sortEpreuves,
+} from './lib/chapitres-logic.js';
 
 // ---------------------------------------------------------------------------
 // Chapitres du concours : filière MP.
@@ -20,19 +31,10 @@ import { iconEl } from './icons.js';
 // ---------------------------------------------------------------------------
 
 // Coefficient décroissant ; à égalité, l'ordre du fichier est conservé.
-const EPREUVES = Object.entries(data.epreuves)
-  .sort((a, b) => b[1].coefficient - a[1].coefficient);
+const EPREUVES = sortEpreuves(data.epreuves);
 
 // Une classe CSS par bande, pour éviter de fabriquer un nom à partir d'un
 // libellé accentué.
-const BANDES = {
-  'incontournable': 'b-incontournable',
-  'très régulier': 'b-tres-regulier',
-  'régulier': 'b-regulier',
-  'variable': 'b-variable',
-  'rare': 'b-rare',
-  'jamais rencontré': 'b-jamais',
-};
 
 const state = { epreuve: EPREUVES[0][0] };
 
@@ -44,38 +46,6 @@ const panelEl = document.getElementById('chap-panel');
 // se fait ici, à l'affichage, et pas dans le fichier de données : celui-ci
 // reste fidèle à la source, et un JSON régénéré depuis les CSV, qui les
 // contiendra de nouveau, sera nettoyé sans intervention.
-const ANNEE_SUFFIXE = /\s*\((?:1re|1ère|2e|2ème)\s+ann[ée]e\)/g;
-
-function propre(s) {
-  return String(s ?? '').replace(ANNEE_SUFFIXE, '');
-}
-
-function nomDe(c) {
-  return propre(c.sous_chapitre || c.chapitre);
-}
-
-// Une fois les suffixes retirés, deux chapitres distincts peuvent porter le
-// même nom. Quand tout ce qui est affiché est identique, la seconde ligne
-// n'apprendrait rien : on ne la garde pas.
-function sansDoublons(chapitres) {
-  const vus = new Set();
-  return chapitres.filter((c) => {
-    const cle = `${nomDe(c)}|${c.sessions_ou_present}|${c.regularite}|${propre(c.chapitre_parent)}`;
-    if (vus.has(cle)) return false;
-    vus.add(cle);
-    return true;
-  });
-}
-
-// Autre conséquence des suffixes retirés : un même nom peut se retrouver à la
-// fois dans la liste et parmi les « jamais rencontrés », avec deux comptes
-// différents. Afficher « Séries numériques 5/12 » puis « Séries numériques
-// 0/12 » ne se comprend plus une fois l'année effacée : on ne garde que la
-// ligne qui a été rencontrée.
-function sansZeroHomonyme(jamais, rencontres) {
-  const noms = new Set(rencontres.map(nomDe));
-  return jamais.filter((c) => !noms.has(nomDe(c)));
-}
 
 function el(tag, className, text) {
   const node = document.createElement(tag);
@@ -101,27 +71,6 @@ function renderTabs() {
     });
     tabsEl.appendChild(btn);
   }
-}
-
-// L'axe du dépliant : les millésimes analysés, tels que le fichier les donne
-// (`annees_analysees`). À défaut, on les déduit de « 2015–2026 », et seulement
-// si l'intervalle recouvre exactement le nombre de sessions annoncé.
-function sessionYears(c, e) {
-  if (Array.isArray(c.annees_analysees) && c.annees_analysees.length) {
-    return c.annees_analysees.map(Number);
-  }
-  const m = String(e.annees || '').match(/(\d{4})\s*[–—-]\s*(\d{4})/);
-  if (!m) return null;
-  const years = [];
-  for (let y = Number(m[1]); y <= Number(m[2]); y++) years.push(y);
-  return years.length === e.sessions_analysees ? years : null;
-}
-
-// Pas de dépliant sans la liste des millésimes où le chapitre a été rencontré :
-// « 9/12 » ne dit pas *lesquelles* des douze, et on ne les devine pas.
-function presentYears(c, years) {
-  if (!years || !Array.isArray(c.annees_presentes) || !c.annees_presentes.length) return null;
-  return new Set(c.annees_presentes.map(Number));
 }
 
 // Dépliant « sessions » : panneau scale/fade/glisse (`.is-animating`). Les années

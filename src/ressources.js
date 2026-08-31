@@ -1,6 +1,15 @@
 import data from './data/ressources.json' with { type: 'json' };
 import { iconEl } from './icons.js';
-import { normalizeText } from './search.js';
+import {
+  RECENT_MAX,
+  isFavInList,
+  keyOf,
+  matchesSearchItem,
+  noteOpenedInList,
+  parseStoredList,
+  snapshot,
+  toggleFavInList,
+} from './lib/ressources-logic.js';
 
 // ---------------------------------------------------------------------------
 // Pour ajouter des ressources : édite src/data/ressources.json
@@ -15,18 +24,15 @@ const FILIERES = Object.keys(data.filieres);
 // --- favoris & récemment ouverts (localStorage, propre à l'appareil) ---
 const FAV_KEY = 'prepup:favoris';
 const RECENT_KEY = 'prepup:recents';
-const RECENT_MAX = 15;
 
 // A favourite is a *document*, identified by its URL. The same Drive link is
 // deliberately listed under several filières/matières (63 of them are), so
 // starring it once saves it once, and every row pointing at it must show the
 // same state, which is what syncStars() below takes care of.
-function keyOf(item) { return item && item.url ? item.url : null; }
 
 function loadList(storageKey) {
   try {
-    const raw = JSON.parse(localStorage.getItem(storageKey));
-    return Array.isArray(raw) ? raw.filter((e) => e && e.url) : [];
+    return parseStoredList(localStorage.getItem(storageKey));
   } catch (e) { return []; } // private mode / corrupted value: behave as empty
 }
 function saveList(storageKey, list) {
@@ -49,35 +55,16 @@ const VIEWS = [
 ];
 
 function isFav(item) {
-  const k = keyOf(item);
-  return k != null && state.favoris.some((f) => f.url === k);
+  return isFavInList(state.favoris, item);
 }
 
 function toggleFav(item, ctx) {
-  const k = keyOf(item);
-  if (k == null) return;
-  if (isFav(item)) state.favoris = state.favoris.filter((f) => f.url !== k);
-  else state.favoris = [{ ...snapshot(item, ctx) }, ...state.favoris];
+  state.favoris = toggleFavInList(state.favoris, item, ctx);
   saveList(FAV_KEY, state.favoris);
 }
 
-// Store enough to render the entry outside its filière/année context later.
-function snapshot(item, ctx) {
-  return {
-    url: item.url,
-    titre: item.titre,
-    type: item.type || '',
-    matiere: ctx.matiere,
-    filiere: ctx.filiere,
-    annee: ctx.annee,
-  };
-}
-
 function noteOpened(item, ctx) {
-  const k = keyOf(item);
-  if (k == null) return;
-  const entry = { ...snapshot(item, ctx), ts: Date.now() };
-  state.recents = [entry, ...state.recents.filter((r) => r.url !== k)].slice(0, RECENT_MAX);
+  state.recents = noteOpenedInList(state.recents, item, ctx, RECENT_MAX);
   saveList(RECENT_KEY, state.recents);
 }
 
@@ -147,13 +134,7 @@ function renderAnneeButtons() {
 }
 
 function matchesSearch(item, matiere) {
-  const q = normalizeText(state.search.trim());
-  if (!q) return true;
-  return (
-    normalizeText(item.titre).includes(q) ||
-    normalizeText(item.type || '').includes(q) ||
-    normalizeText(matiere).includes(q)
-  );
+  return matchesSearchItem(item, matiere, state.search);
 }
 
 function renderViewButtons() {

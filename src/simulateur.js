@@ -2,7 +2,13 @@
 // Uses Prep'Up's own data: rangs 2024 (min/max admitted) + capacités 2025.
 import data from './data/rangs_2024_capacites_2025.json' with { type: 'json' };
 import { iconEl } from './icons.js';
-import { normalizeText } from './search.js';
+import {
+  SIM_TIER_LABEL,
+  bandTxt,
+  computeSimRow,
+  filteredSortedRows as filterSortSimRows,
+  shortInst,
+} from './lib/simulateur-logic.js';
 
 const TRACKS = ['MP', 'PC', 'PT', 'BG'];
 const TRACK_LABEL = { MP: 'MP', PC: 'PC', PT: 'PT (T)', BG: 'BG' };
@@ -15,12 +21,7 @@ const PROGRAMMES = (data.programmes || []).map((p) => ({
   r2025: p.r2025 || null,
 }));
 
-const TIER_LABEL = {
-  sur: 'Sûr',
-  probable: 'Probable',
-  impossible: 'Hors de portée',
-};
-const MARGIN_SUR = 200;
+const TIER_LABEL = SIM_TIER_LABEL;
 const state = {
   track: 'MP',
   year: '2024', // ranks reference year: '2024' | '2025'
@@ -32,59 +33,27 @@ const state = {
   wishlist: [], // [{inst, spec}]
 };
 
-// ---- reachability tier from écart = dernier rang admis − ton rang ----
-function tierFor(rank, rmax) {
-  if (typeof rmax !== 'number' || rmax <= 0) return null;
-  const margin = rmax - rank;
-  if (margin >= MARGIN_SUR) return 'sur';
-  if (margin >= 0) return 'probable';
-  return 'impossible';
-}
-
 // ---- element refs (created in calculateur.html) ----
 let elControls, elSummary, elList, elWishlist;
 
 function q(id) { return document.getElementById(id); }
 
-function numOrNull(v) { return typeof v === 'number' ? v : null; }
-
-// rank band [min, max] for a program in a given year
-function bandFor(p, year) {
-  if (year === '2025') {
-    const r = p.r2025 && p.r2025[state.track];
-    return r ? [numOrNull(r[0]), numOrNull(r[1])] : [null, null];
-  }
-  const d = p[state.track];
-  return [d ? numOrNull(d.rang_min) : null, d ? numOrNull(d.rang_max) : null];
-}
-
-// compute one display row for the current track / year / rank
-function computeRow(p) {
-  const d = p[state.track];
-  const cap = d && typeof d.capacite === 'number' ? d.capacite : 0;
-  const b24 = bandFor(p, '2024');
-  const b25 = bandFor(p, '2025');
-  let rmin, rmax;
-  if (state.year === 'both') {
-    const mins = [b24[0], b25[0]].filter((x) => x != null);
-    const maxs = [b24[1], b25[1]].filter((x) => x != null);
-    rmin = mins.length ? Math.min(...mins) : null;
-    rmax = maxs.length ? Math.max(...maxs) : null;
-  } else {
-    [rmin, rmax] = state.year === '2025' ? b25 : b24;
-  }
-  const tier = state.rank != null ? tierFor(state.rank, rmax) : null;
-  const margin = state.rank != null && typeof rmax === 'number' ? rmax - state.rank : null;
-  return { inst: p.inst, spec: p.spec, cap, rmin, rmax, tier, margin, open: cap > 0, b24, b25 };
-}
-
 function currentRows() {
-  return PROGRAMMES.map(computeRow).filter((r) => r.open);
+  return PROGRAMMES
+    .map((p) => computeSimRow(p, state.track, state.year, state.rank))
+    .filter((r) => r.open);
 }
 
-function bandTxt(b) {
-  if (!b || b[1] == null) return null;
-  return (b[0] != null && b[0] !== b[1]) ? `${b[0]}–${b[1]}` : `${b[1]}`;
+function filteredSortedRows() {
+  return filterSortSimRows(PROGRAMMES, {
+    track: state.track,
+    year: state.year,
+    rank: state.rank,
+    tierFilter: state.tier,
+    inst: state.inst,
+    sort: state.sort,
+    search: state.search,
+  });
 }
 
 // shared meta line: "15 places · rang 355–718 · +717" (or both years)
@@ -100,46 +69,6 @@ function formatMeta(r) {
     parts.push(`écart ${r.margin >= 0 ? `+${r.margin}` : `${r.margin}`}`);
   }
   return parts.join(' · ');
-}
-
-function tierPass(tier) {
-  if (state.tier === 'all') return true;
-  if (state.tier === 'accessibles') return tier === 'sur' || tier === 'probable';
-  return tier === state.tier;
-}
-
-function proximiteGroup(row) {
-  if (row.margin == null) return 2; // Rang N/A en dernier
-  if (row.margin >= 0) return 0; // Sûr / Probable d'abord
-  return 1; // Hors de portée (écart négatif)
-}
-
-function compareProximite(a, b) {
-  const ga = proximiteGroup(a);
-  const gb = proximiteGroup(b);
-  if (ga !== gb) return ga - gb;
-  if (ga === 0) return a.margin - b.margin; // 0, 1, 2…
-  if (ga === 1) return b.margin - a.margin; // −1, −2, −10, −15… (le plus proche de 0 d'abord)
-  return (a.inst + a.spec).localeCompare(b.inst + b.spec);
-}
-
-function filteredSortedRows() {
-  const term = normalizeText((state.search || '').trim());
-  let rows = currentRows().filter((r) => {
-    if (state.inst !== 'all' && r.inst !== state.inst) return false;
-    if (term && !(normalizeText(r.inst).includes(term) || normalizeText(r.spec).includes(term))) return false;
-    if (state.rank != null && !tierPass(r.tier)) return false;
-    return true;
-  });
-
-  rows.sort((a, b) => {
-    if (state.sort === 'nom') return a.inst.localeCompare(b.inst) || (a.rmax || 1e9) - (b.rmax || 1e9);
-    if (state.sort === 'places') return b.cap - a.cap;
-    // proximité : écart 0 en premier, puis 1, 2… ; écarts négatifs en dessous (−1, −2…)
-    if (state.rank == null) return (a.rmax || 1e9) - (b.rmax || 1e9);
-    return compareProximite(a, b);
-  });
-  return rows;
 }
 
 // ---- build the controls once ----
@@ -297,11 +226,6 @@ function makeDropdown(labelText, options, current, onChange) {
   wrap.appendChild(label);
   wrap.appendChild(dd);
   return wrap;
-}
-
-function shortInst(full) {
-  const m = full.match(/\(([^)]+)\)\s*$/);
-  return m ? m[1] : full;
 }
 
 function inWishlist(r) {

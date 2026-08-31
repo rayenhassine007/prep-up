@@ -18,6 +18,9 @@ import distribution2025 from './data/distribution_moyennes_2025.json' with { typ
 import distribution2024 from './data/distribution_moyennes_2024.json' with { type: 'json' };
 import distribution2020 from './data/distribution_moyennes_2020_simulee.json' with { type: 'json' };
 import { iconEl } from './icons.js';
+import { round2 } from './lib/rank.js';
+import { computeObjectif, schoolOptions as schoolOptionsFor } from './lib/objectif-logic.js';
+import { shortInst } from './lib/simulateur-logic.js';
 
 const FILIERES = ['MP', 'PC', 'T', 'BG'];
 const YEARS = [
@@ -37,89 +40,15 @@ const state = {
   notes: {},    // matière -> note the student expects to get
 };
 
-function shortInst(full) {
-  const m = String(full).match(/\(([^)]+)\)\s*$/);
-  return m ? m[1] : full;
-}
-
-// Programmes open to the current filière whose last-admitted rang is known.
-// The rang comes from the same session as the selected distribution when that
-// session has data for the programme, otherwise from the other one (labelled).
 function schoolOptions() {
   const track = FILIERE_TO_TRACK[state.filiere];
-  const out = [];
-  for (const p of rangsData.programmes || []) {
-    const tr = p[track];
-    if (!tr || !(tr.capacite > 0)) continue;
-    const r24 = typeof tr.rang_max === 'number' ? tr.rang_max : null;
-    const r25 = p.r2025 && p.r2025[track] && typeof p.r2025[track][1] === 'number' ? p.r2025[track][1] : null;
-    const prefer25 = state.year === '2025';
-    let rang = null, srcYear = null;
-    if (prefer25 && r25 != null) { rang = r25; srcYear = '2025'; }
-    else if (!prefer25 && r24 != null) { rang = r24; srcYear = '2024'; }
-    else if (r24 != null) { rang = r24; srcYear = '2024'; }
-    else if (r25 != null) { rang = r25; srcYear = '2025'; }
-    if (rang == null) continue;
-    out.push({ inst: p.institution, spec: p.filiere, rang, srcYear, key: p.institution + '||' + p.filiere });
-  }
-  out.sort((a, b) => a.inst.localeCompare(b.inst) || a.spec.localeCompare(b.spec));
-  return out;
+  return schoolOptionsFor(rangsData.programmes, track, state.year);
 }
 
 let elFiliere, elYear, elRankInput, elMoyValue, elMoySub, elMatieres, elVerdict, elResetBtn, elHint,
     elSchoolDD, elSchoolNote;
 
 function q(id) { return document.getElementById(id); }
-function round2(n) { return Math.round(n * 100) / 100; }
-
-// Same model as the forward calculator: rank of a candidate with this moyenne.
-function estimateRank(moyenne, filiere, distribution) {
-  const dist = distribution.filieres[filiere];
-  if (!dist) return null;
-  const bins = dist.bins;
-  let idx = Math.floor(moyenne);
-  if (idx < 0) idx = 0;
-  if (idx > bins.length - 1) idx = bins.length - 1;
-
-  let higher = 0;
-  for (let i = idx + 1; i < bins.length; i++) higher += bins[i];
-
-  const withinBin = bins[idx] || 0;
-  const positionInBin = moyenne - idx;
-  const fractionAbove = withinBin * (1 - positionInBin);
-
-  const rankRaw = Math.max(1, Math.round(higher + fractionAbove + 1));
-  return Math.min(rankRaw, dist.classes);
-}
-
-// Invert the above: the lowest moyenne that still reaches `target` or better.
-// Bisection is safe here because estimateRank never improves as the moyenne drops.
-function moyenneForRank(target, filiere, distribution) {
-  const dist = distribution.filieres[filiere];
-  if (!dist) return null;
-  let lo = 0, hi = 20;
-  if (estimateRank(hi, filiere, distribution) > target) return null; // unreachable even at 20/20
-  for (let i = 0; i < 60; i++) {
-    const mid = (lo + hi) / 2;
-    if (estimateRank(mid, filiere, distribution) <= target) hi = mid;
-    else lo = mid;
-  }
-  return hi;
-}
-
-// Smallest quarter-point note in every unfilled matière that actually reaches
-// `target` when fed back through estimateRank. Returns null if even 20/20 in all
-// of them falls short. Notes are graded in quarter points, so we walk the 81
-// real options and verify each rather than trusting arithmetic at a step edge.
-function smallestNoteReaching(target, knownScore, remainingCoef, total, distribution) {
-  for (let quarters = 0; quarters <= 80; quarters++) {
-    const note = quarters / 4;
-    const moyenne = (knownScore + remainingCoef * note) / total;
-    const rank = estimateRank(moyenne, state.filiere, distribution);
-    if (rank != null && rank <= target) return note;
-  }
-  return null;
-}
 
 function currentYear() { return YEARS.find((y) => y.key === state.year); }
 function currentCoefs() { return coefficients.filieres[state.filiere]; }
@@ -128,53 +57,14 @@ function currentCoefs() { return coefficients.filieres[state.filiere]; }
 function compute() {
   const { matieres, total } = currentCoefs();
   const year = currentYear();
-  const dist = year.dist.filieres[state.filiere];
-  if (state.targetRank == null) return { status: 'no-target' };
-  if (!dist) return { status: 'no-data' };
-
-  const classes = dist.classes;
-  // a rang worse than the last ranked candidate is not a meaningful objective
-  if (state.targetRank > classes) return { status: 'beyond-classes', classes };
-  const moyenne = moyenneForRank(state.targetRank, state.filiere, year.dist);
-  if (moyenne == null) return { status: 'impossible-rank', classes };
-
-  const requiredScore = moyenne * total;
-
-  let knownScore = 0;
-  let remainingCoef = 0;
-  const rows = [];
-  for (const [nom, coef] of Object.entries(matieres)) {
-    const note = state.notes[nom];
-    const known = typeof note === 'number' && !isNaN(note);
-    if (known) knownScore += note * coef;
-    else remainingCoef += coef;
-    rows.push({ nom, coef, note: known ? note : null, known });
-  }
-
-  // Note every unfilled matière must reach for the total to land on requiredScore.
-  let needed = null;
-  let status = 'ok';
-  if (remainingCoef === 0) {
-    // everything filled: it either clears the bar or it doesn't
-    status = knownScore >= requiredScore - 1e-9 ? 'all-filled-ok' : 'all-filled-short';
-  } else {
-    // Solve for the note directly against the forward model instead of dividing
-    // the required score out. estimateRank is a rounded step function, so a note
-    // derived arithmetically can land a hair under a step and miss the target by
-    // one rank; searching quarter-point notes and checking each one can't.
-    needed = smallestNoteReaching(state.targetRank, knownScore, remainingCoef, total, year.dist);
-    if (needed == null) status = 'unreachable';  // even 20/20 everywhere is not enough
-    else if (needed <= 0) status = 'already-there'; // pinned notes alone already clear it
-  }
-
-  for (const r of rows) if (!r.known) r.needed = needed;
-
-  return {
-    status, moyenne, requiredScore, knownScore, remainingCoef, needed, rows,
-    total, classes,
-    maxScore: total * 20,
-    achievedMoyenne: total ? knownScore / total : 0,
-  };
+  return computeObjectif({
+    filiere: state.filiere,
+    targetRank: state.targetRank,
+    notes: state.notes,
+    matieres,
+    total,
+    distribution: year.dist,
+  });
 }
 
 function renderFiliereButtons() {

@@ -6,10 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/prerender.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "npm run test:unit && npm run test:bdd",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:bdd": "playwright test",
+    "test:bdd:ui": "playwright test --ui"
   },
   "devDependencies": {
-    "vite": "^8.1.1"
+    "@playwright/test": "^1.62.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "vite": "^8.1.1",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

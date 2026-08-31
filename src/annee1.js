@@ -15,6 +15,16 @@
 
 import coefficients from './data/coefficients_1ere_annee.json' with { type: 'json' };
 import { iconEl } from './icons.js';
+import {
+  PONDERATION,
+  computeAnnual,
+  computeSemester,
+  effectiveMoy,
+  fmt,
+  moyFromComponents,
+  num,
+  round2,
+} from './lib/annee1-logic.js';
 
 // The 1ère année tables cover MP, PC and T; BG is not among them.
 const FILIERES = Object.keys(coefficients.filieres);
@@ -22,11 +32,6 @@ const SEMESTRES = ['S1', 'S2'];
 const STORE_KEY = 'prepup:annee1';
 
 // component -> share of the matière mark, per the official modalities
-const PONDERATION = {
-  sansTP: [['tests', 'Tests & oral', 0.15], ['ds', 'Devoirs surveillés', 0.35], ['exam', 'Examen', 0.50]],
-  avecTP: [['tests', 'Tests & oral', 0.15], ['ds', 'Devoirs surveillés', 0.25], ['tp', 'TP', 0.20], ['exam', 'Examen', 0.40]],
-};
-
 const state = {
   filiere: FILIERES[0],
   semestre: 'S1',
@@ -38,8 +43,6 @@ const state = {
 let elFiliere, elSem, elMoy, elMoySub, elTarget, elVerdict, elMatieres, elAnnual, elReset;
 
 function q(id) { return document.getElementById(id); }
-function round2(n) { return Math.round(n * 100) / 100; }
-function num(v) { const n = parseFloat(v); return isNaN(n) ? null : n; }
 
 function load() {
   try {
@@ -76,57 +79,8 @@ function getRow(m) {
   return r;
 }
 
-// A matière mark from its components. Components left blank are ignored and the
-// remaining weights renormalised, so a mid-semester student still gets a figure
-// flagged partial so it is not mistaken for a settled mark.
-function moyFromComponents(r) {
-  const parts = PONDERATION[r.avecTP ? 'avecTP' : 'sansTP'];
-  let sum = 0, weight = 0, filled = 0;
-  for (const [key, , w] of parts) {
-    const v = num(r[key]);
-    if (v == null) continue;
-    sum += v * w; weight += w; filled++;
-  }
-  if (weight === 0) return { moy: null, partial: false, filled: 0, total: parts.length };
-  return { moy: sum / weight, partial: filled < parts.length, filled, total: parts.length };
-}
-
-// The mark actually used for a matière: computed when the row is expanded,
-// typed otherwise.
-function effectiveMoy(r) {
-  if (r.detail) return moyFromComponents(r).moy;
-  return num(r.moy);
-}
-
 function compute() {
-  const ms = matieres();
-  let weighted = 0, coefSum = 0, blankCoef = 0;
-  const rows = [];
-  for (const m of ms) {
-    const r = getRow(m);
-    const moy = effectiveMoy(r);
-    const coef = typeof r.coef === 'number' && r.coef > 0 ? r.coef : 0;
-    if (moy != null) { weighted += moy * coef; coefSum += coef; }
-    else blankCoef += coef;
-    rows.push({ nom: m.nom, note: m.note, r, moy, coef });
-  }
-  const moyenne = coefSum > 0 ? weighted / coefSum : null;
-  const totalCoef = coefSum + blankCoef;
-
-  // What every still-empty matière must average for the whole semester to reach
-  // the target. Only meaningful while something is still blank.
-  let needed = null, verdict = 'none';
-  if (state.target != null && totalCoef > 0) {
-    if (blankCoef === 0) {
-      verdict = moyenne != null && moyenne >= state.target - 1e-9 ? 'reached' : 'short';
-    } else {
-      needed = (state.target * totalCoef - weighted) / blankCoef;
-      if (needed > 20 + 1e-9) verdict = 'impossible';
-      else if (needed <= 1e-9) verdict = 'secured';
-      else verdict = 'need';
-    }
-  }
-  return { rows, moyenne, coefSum, blankCoef, totalCoef, needed, verdict };
+  return computeSemester(matieres(), getRow, state.target);
 }
 
 function renderFiliere() {
@@ -149,10 +103,6 @@ function renderSem() {
     b.addEventListener('click', () => { state.semestre = s; save(); render(); });
     elSem.appendChild(b);
   }
-}
-
-function fmt(n) {
-  return (Math.round(n * 100) / 100).toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1');
 }
 
 function renderMatieres(res) {
@@ -370,7 +320,7 @@ function renderAnnual(res) {
   } else {
     const s1 = state.semestre === 'S1' ? thisSem : state.otherSemMoy;
     const s2 = state.semestre === 'S1' ? state.otherSemMoy : thisSem;
-    const annual = (2 * s1 + 3 * s2) / 5;
+    const annual = computeAnnual(s1, s2);
     out.innerHTML = `S1 <strong>${round2(s1)}</strong> · S2 <strong>${round2(s2)}</strong> → moyenne annuelle <strong>${round2(annual)}</strong>/20`;
   }
   wrap.appendChild(out);
