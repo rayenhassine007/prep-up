@@ -1726,6 +1726,72 @@ main.home > * { animation: none; }
   padding: 14px 20px 26px;
   line-height: 1.7;
 }
+.site-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 16px;
+  margin: 0 0 14px;
+  padding: 0;
+}
+.site-footer-nav a {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+}
+.site-footer-nav a:hover { color: var(--text); }
+
+/* SEO / GEO: crawlable FAQ blocks */
+.seo-faq {
+  margin: 0;
+  padding: 40px 20px 48px;
+  border-top: 1px solid var(--border);
+}
+.seo-faq .about-wrap,
+.seo-faq-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.seo-faq .about-wrap {
+  border: none;
+  background: none;
+  padding: 0;
+}
+.seo-faq-box {
+  margin: 28px 0 0;
+  padding: 24px 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+}
+.seo-faq h2 {
+  margin: 0 0 16px;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+.seo-faq dl { margin: 0; }
+.seo-faq dt {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin: 14px 0 4px;
+}
+.seo-faq dt:first-child { margin-top: 0; }
+.seo-faq dd {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.geo-intro {
+  margin: 0 0 20px;
+  color: var(--text-dim);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  max-width: 42em;
+}
 
 /* homepage is wider for the hero layout */
 main.home {

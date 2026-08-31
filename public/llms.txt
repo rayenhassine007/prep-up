@@ -1,0 +1,41 @@
+# Prep'Up (prep-upp.com)
+
+> Outils gratuits pour les classes préparatoires tunisiennes qui préparent le concours national d'entrée aux cycles de formation d'ingénieurs.
+
+## Audience
+
+- Étudiants en prépa MP, PC, T (PT) et BG en Tunisie
+- Langue : français
+- Pays cible : Tunisie
+
+## Pages principales
+
+- https://prep-upp.com/ — Accueil et présentation des outils
+- https://prep-upp.com/calculateur.html — Calculateur de rang, simulateur de filières, notes à viser
+- https://prep-upp.com/places-2026.html — 3 238 places ouvertes session 2026 (JORT), par école et spécialité
+- https://prep-upp.com/ressources.html — Cours, TD, DS et sujets de concours par filière et matière
+- https://prep-upp.com/chapitres-concours.html — Historique des chapitres du programme MP aux sessions 2015–2026
+
+## Ce que fait Prep'Up
+
+1. **Calculateur de rang** : entre tes notes par matière (coefficients officiels du concours), obtiens une estimation de ton rang à partir des distributions réelles des sessions 2020, 2024 et 2025.
+2. **Simulateur de filières** : avec ton rang, liste les spécialités accessibles classées Sûr / Probable / Hors de portée, d'après les rangs d'affectation 2024 et 2025 et les capacités 2026.
+3. **Notes à viser** : fixe un rang cible et obtiens la moyenne ou les notes nécessaires par matière.
+4. **Places 2026** : tableau des places ouvertes par école (MP 1288, PC 1025, T 636, BG 289, total 3 238) source JORT n°35 du 3 avril 2026.
+5. **Ressources** : liens vers cours, TD, DS et sujets classés par filière (MP, PC, PT, BG) et matière.
+6. **Chapitres concours MP** : fréquence d'apparition de chaque chapitre du programme sur 12 sessions (2015–2026), par épreuve (Maths I, Maths II, Physique, Chimie).
+
+## Règles du simulateur (écart = dernier rang admis − ton rang)
+
+- **Sûr** : écart ≥ 200
+- **Probable** : écart entre 0 et 199
+- **Hors de portée** : écart négatif (ton rang est pire que le dernier admis)
+
+## Noms alternatifs
+
+Prep'Up, Prep Up, Prépa Up, prep up, prepup, prepa up
+
+## Contact / source
+
+Site : https://prep-upp.com/
+Les estimations de rang sont indicatives ; les informations officielles restent celles du ministère et du concours national.

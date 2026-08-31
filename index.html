@@ -3,37 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prep'Up - Outils pour prépas tunisiennes</title>
+    <title>Prep'Up (Prépa Up) – Calculateur de rang &amp; concours ingénieur Tunisie</title>
     <meta name="google-site-verification" content="mqfluba6kWyQpzpYuMQD1x8CD3FIpyOIMfajbPexrdg" />
-    <meta name="description" content="Prep'Up : calculateur de rang, simulateur de filières et ressources pour les concours d'ingénieur en Tunisie (MP, PC, T). Estime ton rang et découvre où tu peux aller selon tes notes." />
+    <meta name="description" content="Prep'Up (Prep Up, Prépa Up) : calculateur de rang, simulateur de filières et ressources pour le concours d'ingénieur en Tunisie. MP, PC, T et BG. Estime ton rang et découvre où tu peux aller." />
     <link rel="canonical" href="https://prep-upp.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prep'Up" />
-    <meta property="og:title" content="Prep'Up - Outils pour prépas tunisiennes" />
-    <meta property="og:description" content="Prep'Up : calculateur de rang, simulateur de filières et ressources pour les concours d'ingénieur en Tunisie (MP, PC, T). Estime ton rang et découvre où tu peux aller selon tes notes." />
+    <meta property="og:title" content="Prep'Up (Prépa Up) – Calculateur de rang &amp; concours ingénieur Tunisie" />
+    <meta property="og:description" content="Prep'Up (Prep Up, Prépa Up) : calculateur de rang, simulateur de filières et ressources pour le concours d'ingénieur en Tunisie. MP, PC, T et BG." />
     <meta property="og:url" content="https://prep-upp.com/" />
     <meta property="og:image" content="https://prep-upp.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Prep'Up - Outils pour prépas tunisiennes" />
-    <meta name="twitter:description" content="Prep'Up : calculateur de rang, simulateur de filières et ressources pour les concours d'ingénieur en Tunisie (MP, PC, T). Estime ton rang et découvre où tu peux aller selon tes notes." />
+    <meta name="twitter:title" content="Prep'Up (Prépa Up) – Calculateur de rang &amp; concours ingénieur Tunisie" />
+    <meta name="twitter:description" content="Prep'Up : calculateur de rang, simulateur de filières et ressources pour le concours d'ingénieur en Tunisie. MP, PC, T et BG." />
     <meta name="twitter:image" content="https://prep-upp.com/og-image.png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Prep'Up",
-        "url": "https://prep-upp.com/",
-        "description": "Calculateur de rang, simulateur de filières et ressources pour le concours d'ingénieur en Tunisie.",
-        "inLanguage": "fr",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Prep'Up",
-          "url": "https://prep-upp.com/",
-          "logo": "https://prep-upp.com/logo.svg"
-        }
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "Prep'Up",
+            "alternateName": ["Prep Up", "Prépa Up", "PrepUp", "prepa up", "prep up"],
+            "url": "https://prep-upp.com/",
+            "description": "Calculateur de rang, simulateur de filières et ressources pour le concours d'ingénieur en Tunisie.",
+            "inLanguage": "fr",
+            "publisher": { "@id": "https://prep-upp.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://prep-upp.com/#organization",
+            "name": "Prep'Up",
+            "alternateName": ["Prep Up", "Prépa Up", "PrepUp", "prepa up", "prep up"],
+            "url": "https://prep-upp.com/",
+            "logo": "https://prep-upp.com/logo.svg",
+            "areaServed": { "@type": "Country", "name": "Tunisia" },
+            "knowsAbout": ["concours d'ingénieur Tunisie", "classes préparatoires MP PC T BG", "calculateur de rang prépa"]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Qu'est-ce que Prep'Up ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Prep'Up est un site gratuit pour les prépas tunisiennes qui préparent le concours national d'entrée aux cycles de formation d'ingénieurs. Il propose un calculateur de rang, un simulateur de filières, des ressources de révision et l'historique des chapitres au concours MP."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Pour quelles filières Prep'Up fonctionne-t-il ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Prep'Up couvre les filières MP, PC, T (PT) et BG du concours d'ingénieur tunisien."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Comment estimer son rang au concours d'ingénieur en Tunisie ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sur prep-upp.com/calculateur.html, entre tes notes par matière avec les coefficients officiels. Prep'Up calcule ta moyenne pondérée puis estime ton rang à partir des distributions réelles des sessions 2020, 2024 et 2025."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
@@ -64,7 +103,8 @@
       <!-- HERO -->
       <section class="hero">
         <div class="hero-text">
-          <h1>Tout pour ton <span class="grad-text">concours prépa</span>, au même endroit</h1>
+          <h1>Prep'Up : tout pour ton <span class="grad-text">concours prépa</span></h1>
+          <p class="geo-intro">Calculateur de rang, simulateur de filières et ressources pour le concours d'ingénieur en Tunisie (MP, PC, T, BG). Gratuit, sans inscription.</p>
           <div class="cta-row">
             <a class="btn-ghost" href="#outils"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-toolbox"/></svg> Découvrir les outils <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-down"/></svg></a>
           </div>
@@ -173,6 +213,7 @@
         <p class="about-lead">Prep'Up est pensé pour les prépas. Estimer ton rang, comparer les filières aux affectations passées, retrouver cours et sujets par matière, ou lire l'historique des chapitres au concours MP : tout est regroupé ici, pour les filières MP, PC, T et BG.</p>
         <ul class="about-outils" aria-label="Outils disponibles">
           <li><a href="/calculateur.html">Rang &amp; filières accessibles</a></li>
+          <li><a href="/places-2026.html">Places 2026</a></li>
           <li><a href="/ressources.html">Ressources</a></li>
           <li><a href="/chapitres-concours.html">Chapitres du concours</a></li>
           <li><a href="https://rakezly.vercel.app/" target="_blank" rel="noopener">Pomodoro</a></li>
@@ -180,7 +221,29 @@
       </div>
     </section>
 
+    <section class="seo-faq reveal" id="faq" aria-labelledby="faq-title">
+      <div class="seo-faq-inner">
+        <div class="seo-faq-box">
+          <h2 id="faq-title">Questions fréquentes</h2>
+          <dl>
+          <dt>Qu'est-ce que Prep'Up ?</dt>
+          <dd>Prep'Up (Prep Up, Prépa Up) regroupe les outils utiles aux classes préparatoires tunisiennes : calculateur de rang, simulateur de filières, places 2026, ressources et historique des chapitres au concours MP.</dd>
+          <dt>Combien de places au concours d'ingénieur en 2026 ?</dt>
+          <dd>3 238 places au total selon le JORT n°35 du 3 avril 2026 : 1 288 MP, 1 025 PC, 636 T et 289 BG. Détail par école sur <a href="/places-2026.html">Places 2026</a>.</dd>
+          <dt>Comment calculer son rang ?</dt>
+          <dd>Entre tes notes par matière sur le <a href="/calculateur.html">calculateur de rang</a>. Prep'Up estime ton rang à partir des distributions réelles des sessions passées.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
     <footer class="site-footer reveal">
+      <nav class="site-footer-nav" aria-label="Outils Prep'Up">
+        <a href="/calculateur.html">Calculateur de rang</a>
+        <a href="/places-2026.html">Places 2026</a>
+        <a href="/ressources.html">Ressources</a>
+        <a href="/chapitres-concours.html">Chapitres MP</a>
+      </nav>
       <span class="grad-text">Prep'Up</span><br />
       Les estimations sont indicatives : vérifie toujours les informations officielles.
     </footer>

@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://prep-upp.com/sitemap.xml
+
+# Generative engine context: https://prep-upp.com/llms.txt

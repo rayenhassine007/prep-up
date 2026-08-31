@@ -3,22 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculateur de rang - Prep'Up</title>
-    <meta name="description" content="Calcule ton rang au concours d'ingénieur en Tunisie à partir de tes notes, puis simule les filières accessibles selon les rangs des années précédentes (MP, PC, T)." />
+    <title>Calculateur de rang concours ingénieur Tunisie (MP, PC, T, BG) | Prep'Up</title>
+    <meta name="description" content="Calcule ton rang au concours d'ingénieur en Tunisie à partir de tes notes. Simulateur de filières (Sûr, Probable, Hors de portée) d'après les rangs 2024–2025. MP, PC, T et BG." />
     <link rel="canonical" href="https://prep-upp.com/calculateur.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prep'Up" />
-    <meta property="og:title" content="Calculateur de rang - Prep'Up" />
-    <meta property="og:description" content="Calcule ton rang au concours d'ingénieur en Tunisie à partir de tes notes, puis simule les filières accessibles selon les rangs des années précédentes (MP, PC, T)." />
+    <meta property="og:title" content="Calculateur de rang concours ingénieur Tunisie | Prep'Up" />
+    <meta property="og:description" content="Calcule ton rang au concours d'ingénieur en Tunisie. Simulateur de filières selon les rangs 2024–2025. MP, PC, T et BG." />
     <meta property="og:url" content="https://prep-upp.com/calculateur.html" />
     <meta property="og:image" content="https://prep-upp.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Calculateur de rang - Prep'Up" />
-    <meta name="twitter:description" content="Calcule ton rang au concours d'ingénieur en Tunisie à partir de tes notes, puis simule les filières accessibles selon les rangs des années précédentes (MP, PC, T)." />
+    <meta name="twitter:title" content="Calculateur de rang concours ingénieur Tunisie | Prep'Up" />
+    <meta name="twitter:description" content="Calcule ton rang au concours d'ingénieur en Tunisie. Simulateur de filières selon les rangs 2024–2025. MP, PC, T et BG." />
     <meta name="twitter:image" content="https://prep-upp.com/og-image.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Calculateur de rang Prep'Up",
+            "url": "https://prep-upp.com/calculateur.html",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "fr",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TND" },
+            "description": "Calcule ton rang au concours d'ingénieur tunisien à partir de tes notes, simule les filières accessibles et fixe les notes à viser.",
+            "areaServed": { "@type": "Country", "name": "Tunisia" }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Comment calculer son rang au concours d'ingénieur en Tunisie ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Entre tes notes par matière avec les coefficients officiels de ta filière (MP, PC, T ou BG). Prep'Up calcule ta moyenne pondérée puis estime ton rang à partir des distributions des sessions 2020, 2024 et 2025."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Que signifient Sûr, Probable et Hors de portée ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Prep'Up compare ton rang au dernier rang admis dans chaque spécialité. Écart = dernier rang admis − ton rang. Sûr si écart ≥ 200, Probable si écart entre 0 et 199, Hors de portée si écart est négatif."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelles données utilise le simulateur de filières ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Rangs d'affectation 2024 et 2025 par spécialité, capacités d'accueil 2026, filtrables par filière MP, PC, PT (T) et BG."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <script>
       try {
@@ -45,7 +92,8 @@
       </nav>
     </header>
     <main>
-      <h1>Calculateur de <span class="grad-text">rang</span> & orientation</h1>
+      <h1>Calculateur de <span class="grad-text">rang</span> &amp; orientation</h1>
+      <p class="geo-intro">Estime ton rang au concours d'ingénieur tunisien à partir de tes notes (MP, PC, T, BG), puis simule les filières accessibles d'après les rangs d'affectation 2024 et 2025. Tu peux aussi fixer un rang cible et voir les notes à viser.</p>
       <div class="calc-tabs" id="calc-tabs">
         <button data-tab="score" class="active">Calculer mon rang</button>
         <button data-tab="rang">Simulateur de rang</button>
@@ -206,6 +254,34 @@
       </div><!-- /#obj-mode-annee1 -->
       </div>
     </main>
+
+    <section class="seo-faq" id="faq" aria-labelledby="calc-faq-title">
+      <div class="seo-faq-inner">
+        <div class="seo-faq-box">
+          <h2 id="calc-faq-title">Comment lire les résultats</h2>
+          <dl>
+            <dt>Calculer mon rang</dt>
+            <dd>Entre tes notes par matière. Prep'Up applique les coefficients officiels du concours et estime ton rang à partir des distributions réelles (sessions 2020, 2024, 2025).</dd>
+            <dt>Simulateur : Sûr, Probable, Hors de portée</dt>
+            <dd>Écart = dernier rang admis − ton rang. <strong>Sûr</strong> si écart ≥ 200. <strong>Probable</strong> si écart entre 0 et 199. <strong>Hors de portée</strong> si ton rang est pire que le dernier admis (écart négatif).</dd>
+            <dt>Notes à viser</dt>
+            <dd>Choisis un rang cible ou une école : Prep'Up calcule la moyenne et les notes nécessaires par matière.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <nav class="site-footer-nav" aria-label="Outils Prep'Up">
+        <a href="/">Accueil</a>
+        <a href="/places-2026.html">Places 2026</a>
+        <a href="/ressources.html">Ressources</a>
+        <a href="/chapitres-concours.html">Chapitres MP</a>
+      </nav>
+      <span class="grad-text">Prep'Up</span><br />
+      Les estimations sont indicatives : vérifie toujours les informations officielles.
+    </footer>
+
     <script type="module" src="/src/analytics.js"></script>
     <script type="module" src="/src/calculator.js"></script>
     <script type="module" src="/src/simulateur.js"></script>
