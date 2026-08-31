@@ -1343,11 +1343,18 @@ button.submit-btn { border: none; cursor: pointer; }
   font-size: 0.95rem;
   padding: 13px 26px;
   border-radius: 999px;
-  transition: border-color 0.22s ease, transform 0.22s ease;
+  transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
 }
 .btn-ghost:hover {
   border-color: var(--border-strong);
   transform: translateY(-2px);
+}
+.cta-row .btn-ghost:hover {
+  border-color: color-mix(in srgb, var(--violet) 40%, var(--border-strong));
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--blue) 38%, transparent),
+    0 0 36px color-mix(in srgb, var(--violet) 28%, transparent),
+    0 10px 28px color-mix(in srgb, var(--blue) 22%, transparent);
 }
 
 /* ---------- hero visual: floating cards ---------- */
