@@ -1376,10 +1376,10 @@ button.submit-btn { border: none; cursor: pointer; }
   margin-top: 3px;
 }
 
-.float-card:nth-child(1) { top: 8%; left: 4%; z-index: 2; animation: floatA 6s ease-in-out infinite alternate; }
-.float-card:nth-child(2) { top: 36%; right: 0; z-index: 3; animation: floatB 7.5s ease-in-out infinite alternate; animation-delay: -2s; }
-.float-card:nth-child(3) { top: 50%; left: 0; z-index: 2; animation: floatD 7s ease-in-out infinite alternate; animation-delay: -1s; }
-.float-card:nth-child(4) { bottom: 4%; left: 10%; z-index: 1; animation: floatC 8.5s ease-in-out infinite alternate; animation-delay: -4s; }
+.float-card:nth-child(1) { top: 6%; left: 4%; z-index: 2; animation: floatA 6s ease-in-out infinite alternate; }
+.float-card:nth-child(2) { top: 32%; right: 0; z-index: 3; animation: floatB 7.5s ease-in-out infinite alternate; animation-delay: -2s; }
+.float-card:nth-child(3) { top: 44%; left: 0; z-index: 2; animation: floatD 7s ease-in-out infinite alternate; animation-delay: -1s; }
+.float-card:nth-child(4) { bottom: 6%; right: 4%; z-index: 1; animation: floatC 8.5s ease-in-out infinite alternate; animation-delay: -4s; }
 
 @keyframes floatA {
   from { transform: translateY(0) rotate(-3deg); }
