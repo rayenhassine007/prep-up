@@ -741,47 +741,6 @@ p.subtitle {
 .sim-summary { margin: 8px 0 14px; color: var(--text); font-size: 0.92rem; }
 .sim-summary .sim-hint { color: var(--text-dim); }
 
-.sim-tier-legend {
-  margin: 0 0 14px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface-2);
-  font-size: 0.85rem;
-  color: var(--text-dim);
-}
-.sim-tier-legend > summary {
-  cursor: pointer;
-  padding: 12px 14px;
-  font-weight: 600;
-  color: var(--text);
-  list-style: none;
-}
-.sim-tier-legend > summary::-webkit-details-marker { display: none; }
-.sim-tier-legend > summary::after {
-  content: '▾';
-  float: right;
-  color: var(--text-dim);
-  transition: transform 0.2s ease;
-}
-.sim-tier-legend[open] > summary::after { transform: rotate(180deg); }
-.sim-tier-legend-body { padding: 0 14px 14px; line-height: 1.6; }
-.sim-tier-legend-body p { margin: 0 0 10px; }
-.sim-tier-legend-body ul {
-  margin: 0 0 10px;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.sim-tier-legend-body li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.sim-tier-legend-sort { margin-bottom: 0 !important; font-size: 0.82rem; }
-
 .tier-badge.sur { background: color-mix(in srgb, var(--blue) 18%, transparent); color: var(--blue); border: 1px solid color-mix(in srgb, var(--blue) 35%, transparent); }
 .tier-badge.limite { background: color-mix(in srgb, var(--orange) 18%, transparent); color: var(--orange); border: 1px solid color-mix(in srgb, var(--orange) 35%, transparent); }
 .tier-badge.na { background: color-mix(in srgb, var(--text-dim) 14%, transparent); color: var(--text-dim); border: 1px solid color-mix(in srgb, var(--text-dim) 30%, transparent); }
