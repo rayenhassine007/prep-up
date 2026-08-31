@@ -1727,12 +1727,12 @@ main.home { max-width: 1060px; }
   min-width: 0;
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .chap-detail.open { grid-template-rows: 1fr; }
 .chap-detail.is-closing {
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.42s cubic-bezier(0.4, 0, 1, 1) 0.34s;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 1, 1) 0.24s;
 }
 
 .chap-detail-clip {
@@ -1758,11 +1758,11 @@ main.home { max-width: 1060px; }
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
 }
 .chap-detail.open.is-animating .chap-detail-box {
-  animation: chap-drop-open 0.62s cubic-bezier(0.34, 1.35, 0.64, 1) forwards;
+  animation: chap-drop-open 0.45s cubic-bezier(0.34, 1.35, 0.64, 1) forwards;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
 }
 .chap-detail.is-closing .chap-detail-box {
-  animation: chap-drop-close 0.34s cubic-bezier(0.4, 0, 1, 1) forwards;
+  animation: chap-drop-close 0.24s cubic-bezier(0.4, 0, 1, 1) forwards;
 }
 
 .chap-detail.open:not(.is-animating) .chap-year {
@@ -1772,8 +1772,8 @@ main.home { max-width: 1060px; }
 .chap-detail.open.is-animating .chap-year {
   opacity: 0;
   transform: translateY(14px);
-  animation: chap-drop-item 0.48s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(110ms + var(--i, 0) * 52ms);
+  animation: chap-drop-item 0.34s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(70ms + var(--i, 0) * 36ms);
 }
 
 @keyframes chap-drop-open {
