@@ -11,17 +11,17 @@
 ## Pages principales
 
 - https://prep-upp.com/ — Accueil et présentation des outils
-- https://prep-upp.com/calculateur — Rang & filières accessibles : calculateur de rang, simulateur de filières, onglet Notes à viser (objectifs en 1ère année ; en 2ème année, rang cible ou filière d'école)
-- https://prep-upp.com/places-2026 — 3 238 places ouvertes session 2026 (JORT), par école et spécialité
-- https://prep-upp.com/ressources — Cours, TD, DS et sujets de concours par filière et matière
-- https://prep-upp.com/chapitres-concours — Historique des chapitres du programme MP aux sessions 2015–2026
+- https://prep-upp.com/calculateur — Simulateur de rang prépa : calcule ton rang, simule les filières accessibles (Sûr / Probable / Hors de portée), onglet Notes à viser
+- https://prep-upp.com/places-2026 — Places 2026 prépa : 3 238 places ouvertes session 2026 (JORT), par école et spécialité MP, PC, T, BG
+- https://prep-upp.com/ressources — Ressources prépa : cours, TD, DS et sujets de concours par filière et matière
+- https://prep-upp.com/chapitres-concours — Chapitres concours prépa Tunisie : historique des chapitres MP aux sessions 2015–2026
 
 ## Ce que fait Prep'Up
 
-1. **Rang & filières accessibles** : calcule ton rang ou entre-le directement, simule les filières (Sûr / Probable / Hors de portée) d'après les rangs 2024–2025 et les places 2026. L'onglet **Notes à viser** t'aide en 1ère année à fixer tes objectifs, et en 2ème année à choisir un rang cible ou une filière d'école et connaître les notes à obtenir pour l'atteindre.
-2. **Places 2026** : tableau des places ouvertes par école (MP 1288, PC 1025, T 636, BG 289, total 3 238) source JORT n°35 du 3 avril 2026.
-3. **Ressources** : liens vers cours, TD, DS et sujets classés par filière (MP, PC, PT, BG) et matière, en 1ère et 2ème année.
-4. **Chapitres concours MP** : fréquence d'apparition de chaque chapitre du programme sur 12 sessions (2015–2026), par épreuve (Maths I, Maths II, Physique, Chimie).
+1. **Simulateur de rang prépa** : calcule ton rang ou entre-le directement, simule les filières (Sûr / Probable / Hors de portée) d'après les rangs 2024–2025 et les places 2026. L'onglet **Notes à viser** t'aide en 1ère année à fixer tes objectifs, et en 2ème année à choisir un rang cible ou une filière d'école et connaître les notes à obtenir pour l'atteindre.
+2. **Places 2026 prépa** : tableau des places ouvertes par école (MP 1288, PC 1025, T 636, BG 289, total 3 238) source JORT n°35 du 3 avril 2026.
+3. **Ressources prépa** : liens vers cours, TD, DS et sujets classés par filière (MP, PC, PT, BG) et matière, en 1ère et 2ème année.
+4. **Chapitres concours prépa Tunisie** : fréquence d'apparition de chaque chapitre du programme MP sur 12 sessions (2015–2026), par épreuve (Maths I, Maths II, Physique, Chimie).
 
 ## Règles du simulateur (écart = dernier rang admis − ton rang)
 
