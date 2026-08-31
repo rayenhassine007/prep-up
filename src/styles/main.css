@@ -1559,18 +1559,35 @@ button.submit-btn { border: none; cursor: pointer; }
   text-align: center;
   margin: 10px 0 26px;
 }
-.section-pill {
-  display: inline-block;
+.section-pill,
+.about-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--violet) 14%, transparent);
-  color: var(--violet);
-  border: 1px solid color-mix(in srgb, var(--violet) 30%, transparent);
-  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+  color: color-mix(in srgb, var(--violet) 82%, var(--text));
+  margin: 0 0 14px;
+  padding: 0 0 10px;
+  position: relative;
+  background: none;
+  border: none;
+}
+.section-pill::after,
+.about-tag::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 1.75rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--grad);
+  opacity: 0.75;
 }
 .section-head h2 {
   font-size: 1.7rem;
@@ -1610,13 +1627,7 @@ button.submit-btn { border: none; cursor: pointer; }
   text-align: center;
 }
 .about-tag {
-  display: inline-block;
-  margin: 0 0 14px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-dim);
+  display: inline-flex;
 }
 .about-band h2 {
   margin: 0 0 14px;
