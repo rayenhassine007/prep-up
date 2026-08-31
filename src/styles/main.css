@@ -1744,27 +1744,25 @@ main.home { max-width: 1060px; }
 .chap-toggle:hover { color: var(--accent); border-color: var(--accent); }
 .chap-toggle.open { color: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
 
-/* Le dépliant s'anime sur sa hauteur réelle (grille 0fr → 1fr). Le scale +
-   slide + fade + ressort du panneau est piloté en JS (Web Animations API). */
+/* Menu déroulant « sessions » : le panneau scale/fade/glisse, puis les années
+   arrivent en cascade (style menu déroulant Dribbble). Classe `.is-animating`. */
 .chap-detail {
   grid-area: det;
   min-width: 0;
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.78s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: grid-template-rows 0.62s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .chap-detail.open { grid-template-rows: 1fr; }
+.chap-detail.is-closing {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.42s cubic-bezier(0.4, 0, 1, 1) 0.34s;
+}
 
 .chap-detail-clip {
   min-width: 0;
   min-height: 0;
   overflow: hidden;
-  visibility: hidden;
-  transition: visibility 0s linear 0.78s;
-}
-.chap-detail.open .chap-detail-clip {
-  visibility: visible;
-  transition-delay: 0s;
 }
 
 .chap-detail-box {
@@ -1776,14 +1774,71 @@ main.home { max-width: 1060px; }
   box-shadow: none;
   transform-origin: top right;
   opacity: 0;
-  transform: scale(0.84) translateY(-18px);
-  will-change: opacity, transform;
+  transform: scale(0.92) translateY(-12px);
 }
-.chap-detail.open .chap-detail-box {
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+.chap-detail.open:not(.is-closing):not(.is-animating) .chap-detail-box {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
+}
+.chap-detail.open.is-animating .chap-detail-box {
+  animation: chap-drop-open 0.62s cubic-bezier(0.34, 1.35, 0.64, 1) forwards;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
 }
 .chap-detail.is-closing .chap-detail-box {
-  box-shadow: none;
+  animation: chap-drop-close 0.34s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.chap-detail.open:not(.is-animating) .chap-year {
+  opacity: 1;
+  transform: none;
+}
+.chap-detail.open.is-animating .chap-year {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: chap-drop-item 0.48s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(110ms + var(--i, 0) * 52ms);
+}
+
+@keyframes chap-drop-open {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(-12px);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.02) translateY(3px);
+  }
+  78% {
+    opacity: 1;
+    transform: scale(0.995) translateY(-1px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes chap-drop-item {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes chap-drop-close {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.94) translateY(-10px);
+  }
 }
 .chap-detail-title {
   font-size: 0.72rem;
@@ -1918,9 +1973,15 @@ main.home { max-width: 1060px; }
   .chap-detail,
   .chap-detail-clip,
   .chap-detail-box,
+  .chap-detail .chap-year,
   .chap-toggle {
     transition: none !important;
+    animation: none !important;
   }
-  .chap-detail-box { opacity: 1; transform: none; will-change: auto; }
-  .chap-detail.open .chap-detail-box { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28); }
+  .chap-detail.open .chap-detail-box {
+    opacity: 1;
+    transform: none;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
+  }
+  .chap-detail.open .chap-year { opacity: 1; transform: none; }
 }

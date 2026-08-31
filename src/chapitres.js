@@ -123,81 +123,71 @@ function presentYears(c, years) {
   return new Set(c.annees_presentes.map(Number));
 }
 
-// Dépliant « sessions » : hauteur en CSS, scale + slide + fade + ressort en JS
-// (Web Animations API), pour que le mouvement soit visible à chaque clic.
-const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const OPEN_MS = 780;
-const CLOSE_MS = 480;
-
-function clearPanelAnim(box) {
-  if (box._anim) {
-    box._anim.cancel();
-    box._anim = null;
-  }
-  box.style.opacity = '';
-  box.style.transform = '';
+// Dépliant « sessions » : animation type menu déroulant (panneau scale/fade +
+// glissement, puis cellules en cascade). Pilotée par la classe `.is-animating`.
+function reducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-function closePanel(detail, toggle, box) {
-  clearPanelAnim(box);
-  detail.classList.remove('open', 'is-closing');
+function closePanel(detail, toggle) {
+  detail.classList.remove('open', 'is-animating', 'is-closing');
   toggle.classList.remove('open');
   toggle.setAttribute('aria-expanded', 'false');
 }
 
-function openPanel(detail, toggle, box) {
-  clearPanelAnim(box);
-  detail.classList.add('open');
+function openPanel(detail, toggle) {
   detail.classList.remove('is-closing');
+  detail.classList.add('open');
   toggle.classList.add('open');
   toggle.setAttribute('aria-expanded', 'true');
 }
 
+function replayOpenAnim(detail, box) {
+  detail.classList.remove('is-animating');
+  void box.offsetWidth;
+  detail.classList.add('is-animating');
+  const done = (e) => {
+    if (e.target !== box || e.animationName !== 'chap-drop-open') return;
+    box.removeEventListener('animationend', done);
+    detail.classList.remove('is-animating');
+  };
+  box.addEventListener('animationend', done);
+}
+
 function playOpen(detail, toggle, box) {
-  openPanel(detail, toggle, box);
-  if (REDUCED_MOTION) return;
-  box._anim = box.animate([
-    { opacity: 0, transform: 'scale(0.84) translateY(-18px)' },
-    { opacity: 0.9, transform: 'scale(0.96) translateY(-6px)', offset: 0.4 },
-    { opacity: 1, transform: 'scale(1.03) translateY(4px)', offset: 0.68 },
-    { opacity: 1, transform: 'scale(0.99) translateY(-1px)', offset: 0.86 },
-    { opacity: 1, transform: 'scale(1) translateY(0)' },
-  ], {
-    duration: OPEN_MS,
-    easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
-    fill: 'forwards',
-  });
-  box._anim.onfinish = () => { box._anim = null; };
+  openPanel(detail, toggle);
+  if (reducedMotion()) return;
+  replayOpenAnim(detail, box);
 }
 
 function playClose(detail, toggle, box) {
-  if (REDUCED_MOTION) {
-    closePanel(detail, toggle, box);
+  if (reducedMotion()) {
+    closePanel(detail, toggle);
     return;
   }
+  detail.classList.remove('is-animating');
   detail.classList.add('is-closing');
-  clearPanelAnim(box);
-  box._anim = box.animate([
-    { opacity: 1, transform: 'scale(1) translateY(0)' },
-    { opacity: 0, transform: 'scale(0.86) translateY(-14px)' },
-  ], {
-    duration: CLOSE_MS,
-    easing: 'cubic-bezier(0.4, 0, 1, 1)',
-    fill: 'forwards',
-  });
-  box._anim.onfinish = () => closePanel(detail, toggle, box);
+  const done = (e) => {
+    if (e.target !== box || e.animationName !== 'chap-drop-close') return;
+    box.removeEventListener('animationend', done);
+    closePanel(detail, toggle);
+  };
+  box.addEventListener('animationend', done);
 }
 
 function wirePanelToggle(detail, toggle) {
   const box = detail.querySelector('.chap-detail-box');
   toggle.addEventListener('click', () => {
-    if (detail.classList.contains('open')) playClose(detail, toggle, box);
-    else playOpen(detail, toggle, box);
+    if (detail.classList.contains('open') && !detail.classList.contains('is-closing')) {
+      playClose(detail, toggle, box);
+    } else if (!detail.classList.contains('open')) {
+      playOpen(detail, toggle, box);
+    }
   });
 }
 
 // Trois niveaux côté CSS : `.chap-detail` (hauteur), `.chap-detail-clip` (rogne),
-// `.chap-detail-box` (carte animée en JS). Cf. la feuille de style.
+// `.chap-detail-box` + `.chap-year` (menu déroulant en cascade). Cf. main.css.
 function buildDetail(c, years, present) {
   const wrap = el('div', 'chap-detail');
   const clip = el('div', 'chap-detail-clip');
@@ -205,16 +195,17 @@ function buildDetail(c, years, present) {
   box.appendChild(el('div', 'chap-detail-title', 'Sessions où le chapitre a été rencontré'));
 
   const grid = el('div', 'chap-years');
-  for (const y of years) {
+  years.forEach((y, i) => {
     const on = present.has(y);
     const cell = el('div', 'chap-year' + (on ? ' is-on' : ''));
+    cell.style.setProperty('--i', String(i));
     cell.setAttribute('aria-label', on ? `${y} : rencontré` : `${y} : non rencontré`);
     const mark = el('span', 'cy-mark', on ? '✓' : '–');
     mark.setAttribute('aria-hidden', 'true');
     cell.appendChild(mark);
     cell.appendChild(el('span', 'cy-num', String(y)));
     grid.appendChild(cell);
-  }
+  });
   box.appendChild(grid);
   clip.appendChild(box);
   wrap.appendChild(clip);
