@@ -123,9 +123,9 @@ function presentYears(c, years) {
   return new Set(c.annees_presentes.map(Number));
 }
 
-// Trois niveaux, imposés par l'animation : `.chap-detail` porte la hauteur qui
-// s'anime, `.chap-detail-clip` porte le fondu et le scale du menu déroulant,
-// et `.chap-detail-box` est la carte elle-même. Cf. la feuille de style.
+// Trois niveaux, imposés par l'animation : `.chap-detail` gère la hauteur
+// (instantanée à l'ouverture), `.chap-detail-clip` rogne le contenu, et
+// `.chap-detail-box` porte le scale-fade du menu déroulant. Cf. la feuille de style.
 function buildDetail(c, years, present) {
   const wrap = el('div', 'chap-detail');
   const clip = el('div', 'chap-detail-clip');

@@ -1745,36 +1745,29 @@ main.home { max-width: 1060px; }
 .chap-toggle.open { color: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
 
 /* Le dépliant s'anime sur sa hauteur réelle : une grille dont la seule rangée
-   passe de 0fr à 1fr. Pas de max-height arbitraire à maintenir, et une ligne
-   à quatre années s'ouvre aussi bien qu'une à douze. */
+   passe de 0fr à 1fr. À l'ouverture la hauteur saute tout de suite pour que le
+   scale-fade du panneau soit visible ; à la fermeture elle se replie après. */
 .chap-detail {
   grid-area: det;
   min-width: 0;
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
 }
-.chap-detail.open { grid-template-rows: 1fr; }
+.chap-detail.open {
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0s;
+}
 
 .chap-detail-clip {
   min-width: 0;
   min-height: 0;
   overflow: hidden;
-  /* replié, le panneau sort aussi de l'arbre d'accessibilité, mais seulement
-     une fois l'animation finie : sinon il disparaît avant de s'être refermé */
   visibility: hidden;
-  opacity: 0;
-  transform: scale(0.94);
-  transform-origin: top right;
-  transition:
-    opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    visibility 0s linear 0.28s;
+  transition: visibility 0s linear 0.44s;
 }
 .chap-detail.open .chap-detail-clip {
   visibility: visible;
-  opacity: 1;
-  transform: scale(1);
   transition-delay: 0s;
 }
 
@@ -1784,10 +1777,32 @@ main.home { max-width: 1060px; }
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
-  transition: box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: none;
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(0.82);
+  transition:
+    opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.chap-detail:not(.open) .chap-detail-box { box-shadow: none; }
+.chap-detail.open .chap-detail-box {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  animation: chap-menu-in 0.48s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes chap-menu-in {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .chap-detail-title {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -1923,7 +1938,8 @@ main.home { max-width: 1060px; }
   .chap-detail-box,
   .chap-toggle {
     transition: none !important;
+    animation: none !important;
   }
-  .chap-detail-clip { opacity: 1; transform: none; }
-  .chap-detail-box { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28); }
+  .chap-detail.open { transition: none !important; }
+  .chap-detail-box { opacity: 1; transform: none; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28); }
 }
