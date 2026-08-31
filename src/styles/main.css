@@ -121,16 +121,16 @@ header.site {
 header.site .brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 11px;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   letter-spacing: -0.01em;
 }
 
 .brand-logo {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
   object-fit: contain;
   box-shadow: 0 4px 14px color-mix(in srgb, var(--violet) 45%, transparent);
   transition: transform 0.25s ease;
