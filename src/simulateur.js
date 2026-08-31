@@ -18,27 +18,28 @@ const PROGRAMMES = (data.programmes || []).map((p) => ({
 const TIER_LABEL = {
   sur: 'Sûr',
   probable: 'Probable',
-  limite: 'Limite',
   impossible: 'Hors de portée',
 };
+const MARGIN_SUR = 200;
+const MARGIN_PROBABLE_MIN = -20;
 const state = {
   track: 'MP',
   year: '2024', // ranks reference year: '2024' | '2025'
   rank: null,
-  tier: 'accessibles', // all | accessibles | sur | probable | limite | impossible
+  tier: 'accessibles', // all | accessibles | sur | probable | impossible
   inst: 'all',
   sort: 'proximite', // proximite | places | nom
   search: '',
   wishlist: [], // [{inst, spec}]
 };
 
-// ---- reachability tier from a rank vs last year's admitted band ----
-function tierFor(rank, rmin, rmax) {
-  if (typeof rmax !== 'number' || rmax <= 0) return null; // track not open / no data
-  if (typeof rmin !== 'number') rmin = rmax;
-  if (rank <= rmin) return 'sur';        // better than everyone admitted last year
-  if (rank <= rmax) return 'probable';   // within last year's admitted range
-  return 'impossible';                   // beyond the last admitted rank
+// ---- reachability tier from écart = dernier rang admis − ton rang ----
+function tierFor(rank, rmax) {
+  if (typeof rmax !== 'number' || rmax <= 0) return null;
+  const margin = rmax - rank;
+  if (margin >= MARGIN_SUR) return 'sur';
+  if (margin >= MARGIN_PROBABLE_MIN) return 'probable';
+  return 'impossible';
 }
 
 // ---- element refs (created in calculateur.html) ----
@@ -73,7 +74,7 @@ function computeRow(p) {
   } else {
     [rmin, rmax] = state.year === '2025' ? b25 : b24;
   }
-  const tier = state.rank != null ? tierFor(state.rank, rmin, rmax) : null;
+  const tier = state.rank != null ? tierFor(state.rank, rmax) : null;
   const margin = state.rank != null && typeof rmax === 'number' ? rmax - state.rank : null;
   return { inst: p.inst, spec: p.spec, cap, rmin, rmax, tier, margin, open: cap > 0, b24, b25 };
 }
@@ -97,14 +98,14 @@ function formatMeta(r) {
     parts.push(r.rmax == null ? `rang ${state.year} -` : `rang ${bandTxt([r.rmin, r.rmax])}`);
   }
   if (state.rank != null && typeof r.margin === 'number') {
-    parts.push(r.margin >= 0 ? `+${r.margin}` : `${r.margin}`);
+    parts.push(`écart ${r.margin >= 0 ? `+${r.margin}` : `${r.margin}`}`);
   }
   return parts.join(' · ');
 }
 
 function tierPass(tier) {
   if (state.tier === 'all') return true;
-  if (state.tier === 'accessibles') return tier === 'sur' || tier === 'probable' || tier === 'limite';
+  if (state.tier === 'accessibles') return tier === 'sur' || tier === 'probable';
   return tier === state.tier;
 }
 
@@ -120,7 +121,7 @@ function filteredSortedRows() {
   rows.sort((a, b) => {
     if (state.sort === 'nom') return a.inst.localeCompare(b.inst) || (a.rmax || 1e9) - (b.rmax || 1e9);
     if (state.sort === 'places') return b.cap - a.cap;
-    // proximité: closest to my rank first, by |margin| only (tier is not a tiebreaker)
+    // proximité : filières les plus proches de la limite (|écart| le plus petit)
     if (state.rank == null) return (a.rmax || 1e9) - (b.rmax || 1e9);
     const ma = a.margin == null ? 1e9 : Math.abs(a.margin);
     const mb = b.margin == null ? 1e9 : Math.abs(b.margin);
@@ -309,7 +310,7 @@ function renderSummary() {
     return;
   }
   const rows = currentRows();
-  const acc = rows.filter((r) => ['sur', 'probable', 'limite'].includes(r.tier));
+  const acc = rows.filter((r) => r.tier === 'sur' || r.tier === 'probable');
   const totalSpots = acc.reduce((s, r) => s + r.cap, 0);
   elSummary.innerHTML =
     `Rang <strong>${state.rank}</strong> en <strong>${TRACK_LABEL[state.track]}</strong> - ` +

@@ -101,6 +101,18 @@
       <div id="tab-rang" class="tab-panel">
         <p class="subtitle">Entre ton rang → vois les filières où tu peux aller.</p>
         <div class="sim-controls" id="sim-controls"></div>
+        <details class="sim-tier-legend">
+          <summary>Comment lire Sûr / Probable / Hors de portée ?</summary>
+          <div class="sim-tier-legend-body">
+            <p>Pour chaque filière, on calcule l'<strong>écart</strong> = <em>dernier rang admis</em> − <em>ton rang</em>. Un écart positif veut dire que tu es mieux classé que le dernier admis l'année de référence.</p>
+            <ul>
+              <li><span class="tier-badge sur">Sûr</span> écart ≥ 200</li>
+              <li><span class="tier-badge probable">Probable</span> écart entre −20 et 199 (y compris si tu es légèrement au-delà du dernier admis, jusqu'à 20 rangs)</li>
+              <li><span class="tier-badge impossible">Hors de portée</span> écart &lt; −20</li>
+            </ul>
+            <p class="sim-tier-legend-sort"><strong>Trier · Proche de mon rang</strong> : les filières où l'écart (en valeur absolue) est le plus petit apparaissent en premier, donc celles les plus proches de la limite d'admission.</p>
+          </div>
+        </details>
         <div class="sim-summary" id="sim-summary"></div>
         <div class="sim-list" id="sim-list"></div>
         <div class="sim-wishlist-wrap" id="sim-wishlist"></div>
@@ -113,7 +125,7 @@
           <span class="spl-arrow">→</span>
         </a>
         <div class="disclaimer">
-          Places = capacités <strong>2026</strong> (JORT officiel). Rangs = affectation <strong>2024</strong> (min = meilleur admis, max = dernier admis), utilisés comme <strong>estimation prédictive</strong> - pas une garantie.
+          Places = capacités <strong>2026</strong> (JORT officiel). Rangs = affectation <strong>2024</strong> ou <strong>2025</strong> (min = meilleur admis, max = dernier admis). Les badges Sûr / Probable reposent sur l'écart entre ton rang et le <strong>dernier admis</strong> - estimation indicative, pas une garantie.
         </div>
       </div>
 
