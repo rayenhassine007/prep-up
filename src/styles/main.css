@@ -1586,54 +1586,119 @@ button.submit-btn { border: none; cursor: pointer; }
 
 /* ---------- homepage: about ---------- */
 .about {
-  margin: 8px 0 40px;
+  margin: 44px 0 12px;
 }
-.about-lead {
-  max-width: 620px;
+.about-panel {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 36px;
+  align-items: start;
+  padding: 32px 30px;
+  border-radius: calc(var(--radius) + 4px);
+  border: 1px solid color-mix(in srgb, var(--violet) 28%, var(--border));
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--violet) 10%, transparent), transparent 55%),
+    color-mix(in srgb, var(--surface-2) 88%, var(--bg));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 6%, transparent);
 }
-.about-grid {
+.about-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 3px;
+  background: var(--grad);
+  opacity: 0.85;
+}
+@media (max-width: 760px) {
+  .about-panel {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 26px 22px;
+  }
+}
+.about-header {
+  text-align: left;
+}
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--violet);
+}
+.about-eyebrow .icon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.about-header h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.35rem, 3.5vw, 1.65rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.about-header p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  max-width: 36em;
+}
+.about-points {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1px solid color-mix(in srgb, var(--violet) 22%, var(--border));
+}
+@media (max-width: 760px) {
+  .about-points {
+    border-left: none;
+    border-top: 1px solid color-mix(in srgb, var(--violet) 22%, var(--border));
+    padding-top: 4px;
+  }
+}
+.about-points li {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 4px;
+  padding: 14px 0 14px 20px;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
 }
-@media (max-width: 640px) {
-  .about-grid { grid-template-columns: 1fr; }
+@media (max-width: 760px) {
+  .about-points li {
+    padding-left: 0;
+  }
 }
-.about-item {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px 20px 18px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+.about-points li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
-.about-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 12px;
-  background: color-mix(in srgb, var(--violet) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--violet) 28%, transparent);
+.about-point-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.about-point-title::before {
+  content: '→';
+  margin-right: 8px;
   color: var(--violet);
+  font-weight: 700;
 }
-.about-icon .icon {
-  width: 1.2rem;
-  height: 1.2rem;
-}
-.about-item h3 {
-  margin: 0 0 8px;
-  font-size: 1.02rem;
-}
-.about-item p {
-  margin: 0;
+.about-point-text {
+  display: block;
+  padding-left: 1.35rem;
   color: var(--text-dim);
-  font-size: 0.88rem;
-  line-height: 1.6;
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
 /* ---------- icon chips on feature cards ---------- */
