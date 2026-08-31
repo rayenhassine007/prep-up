@@ -84,54 +84,58 @@ h1, h2, h3, .brand { font-family: var(--font-display); }
 .bg-blobs span {
   position: absolute;
   border-radius: 50%;
+  will-change: transform;
+}
+.bg-blobs span::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
   filter: blur(90px);
   opacity: var(--glow-opacity);
-  will-change: transform;
 }
 .bg-blobs span:nth-child(1) {
   width: 520px; height: 520px;
   background: var(--violet);
   top: -180px; left: -140px;
-  animation: blobDriftPurple 42s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation: blobDriftPurple 32s ease-in-out infinite;
 }
 .bg-blobs span:nth-child(2) {
-  width: 460px; height: 460px;
+  width: 480px; height: 480px;
   background: var(--cyan);
-  top: 28%; right: -180px;
-  animation: blobDriftPink 48s cubic-bezier(0.42, 0, 0.58, 1) infinite;
-  animation-delay: -14s;
+  top: 22%; right: -200px;
+  animation: blobDriftPink 36s ease-in-out infinite;
+  animation-delay: -11s;
 }
 .bg-blobs span:nth-child(3) {
-  width: 380px; height: 380px;
+  width: 420px; height: 420px;
   background: var(--blue);
-  bottom: -140px; left: 30%;
-  animation: blobDriftBlue 36s ease-in-out infinite alternate;
-  animation-delay: -16s;
+  bottom: -160px; left: 26%;
+  animation: blobDriftBlue 40s ease-in-out infinite;
+  animation-delay: -19s;
 }
 @keyframes blobDriftPurple {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(95px, 70px) scale(1.1); }
-  50% { transform: translate(55px, 155px) scale(1.16); }
-  75% { transform: translate(-35px, 95px) scale(1.08); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  25% { transform: translate3d(140px, 90px, 0) scale(1.12); }
+  50% { transform: translate3d(70px, 220px, 0) scale(1.2); }
+  75% { transform: translate3d(-60px, 120px, 0) scale(1.1); }
 }
 @keyframes blobDriftPink {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  20% { transform: translate(-85px, 75px) scale(1.12); }
-  45% { transform: translate(-130px, 30px) scale(1.18); }
-  70% { transform: translate(-60px, 140px) scale(1.1); }
-  90% { transform: translate(-20px, 55px) scale(1.06); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  20% { transform: translate3d(-120px, 80px, 0) scale(1.14); }
+  45% { transform: translate3d(-200px, 20px, 0) scale(1.22); }
+  70% { transform: translate3d(-90px, 180px, 0) scale(1.12); }
+  90% { transform: translate3d(-40px, 60px, 0) scale(1.06); }
 }
 @keyframes blobDriftBlue {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(50px, 35px) scale(1.1); }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(90px, -120px, 0) scale(1.15); }
+  66% { transform: translate3d(-70px, -200px, 0) scale(1.2); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .bg-blobs span:nth-child(1),
-  .bg-blobs span:nth-child(2) {
-    animation-duration: 80s;
-  }
-  .bg-blobs span:nth-child(3) {
-    animation: none;
+  .bg-blobs span {
+    animation-duration: 55s !important;
   }
 }
 
