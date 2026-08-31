@@ -39,7 +39,8 @@
       <nav>
         <a class="back" href="/">&larr; Accueil</a>
         <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
-          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/icons.svg#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/icons.svg#i-moon"/></svg>
         </button>
       </nav>
     </header>
@@ -64,16 +65,16 @@
       </div>
 
       <dialog id="submit-modal" class="submit-modal">
-        <h3>📤 Proposer une ressource</h3>
+        <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-upload"/></svg> Proposer une ressource</h3>
         <ul class="charte">
-          <li>✅ <strong>Contenu prépa uniquement</strong> : cours, TD, DS, sujets de concours, résumés (MP / PC / PT / BG).</li>
-          <li>🔍 Chaque document est <strong>vérifié manuellement</strong> avant d'être publié sur le site : rien n'apparaît automatiquement.</li>
-          <li>🔗 Partage de préférence un <strong>lien Drive ou MEGA public</strong>, ou le fichier directement.</li>
-          <li>🚫 Tout contenu hors sujet, incomplet ou inapproprié sera rejeté.</li>
+          <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><span><strong>Contenu prépa uniquement</strong> : cours, TD, DS, sujets de concours, résumés (MP / PC / PT / BG).</span></li>
+          <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-search"/></svg><span>Chaque document est <strong>vérifié manuellement</strong> avant d'être publié sur le site : rien n'apparaît automatiquement.</span></li>
+          <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-link"/></svg><span>Partage de préférence un <strong>lien Drive ou MEGA public</strong>, ou le fichier directement.</span></li>
+          <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-ban"/></svg><span>Tout contenu hors sujet, incomplet ou inapproprié sera rejeté.</span></li>
         </ul>
         <div class="modal-actions">
           <button id="modal-cancel" class="btn-ghost">Annuler</button>
-          <a id="modal-continue" class="submit-btn" href="#" target="_blank" rel="noopener">Continuer vers le formulaire →</a>
+          <a id="modal-continue" class="submit-btn" href="#" target="_blank" rel="noopener">Continuer vers le formulaire <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-right"/></svg></a>
         </div>
       </dialog>
     </main>

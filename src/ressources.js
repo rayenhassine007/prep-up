@@ -1,4 +1,5 @@
 import data from './data/ressources.json' with { type: 'json' };
+import { iconEl } from './icons.js';
 import { normalizeText } from './search.js';
 
 // ---------------------------------------------------------------------------
@@ -194,12 +195,16 @@ function buildRow(item, ctx, opts = {}) {
 
   const meta = document.createElement('span');
   meta.className = 'res-meta';
-  const base = isLive
-    ? (item.type ? item.type + ' ↗' : '↗')
-    : [item.type, 'Bientôt'].filter(Boolean).join(' · ');
-  meta.textContent = opts.withContext
-    ? [ctx.filiere, ctx.annee, ctx.matiere, base].filter(Boolean).join(' · ')
-    : base;
+  if (opts.withContext) {
+    const bits = [ctx.filiere, ctx.annee, ctx.matiere].filter(Boolean);
+    if (bits.length) meta.append(document.createTextNode(bits.join(' · ') + ' · '));
+  }
+  if (isLive) {
+    if (item.type) meta.append(document.createTextNode(item.type + ' '));
+    meta.appendChild(iconEl('i-external', 'icon'));
+  } else {
+    meta.append(document.createTextNode([item.type, 'Bientôt'].filter(Boolean).join(' · ')));
+  }
 
   row.appendChild(name);
   row.appendChild(meta);

@@ -55,7 +55,8 @@
       <a class="brand" href="/"><img class="brand-logo" src="/logo.svg" alt="Prep'Up" />Prep<span>'Up</span></a>
       <nav>
         <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
-          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/icons.svg#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/icons.svg#i-moon"/></svg>
         </button>
       </nav>
     </header>
@@ -64,34 +65,24 @@
       <section class="hero">
         <div class="hero-text">
           <h1>Tout pour ton <span class="grad-text">concours prépa</span>, au même endroit</h1>
-          <p class="lead">
-            Estime ton rang au concours à partir de tes notes, puis simule les filières où
-            tu peux aller selon ton rang, d'après les données réelles des années précédentes.
-            Révise avec des centaines de ressources classées, et garde le rythme avec le
-            minuteur Pomodoro.
-          </p>
-          <ul class="check-list">
-            <li>MP / PC / T / BG</li>
-            <li>Résultats instantanés</li>
-          </ul>
           <div class="cta-row">
-            <a class="btn-primary" href="/calculateur.html">Rang &amp; filières accessibles <span class="arrow">→</span></a>
-            <a class="btn-ghost" href="#outils">🧰 Découvrir les outils ↓</a>
+            <a class="btn-primary" href="/calculateur.html">Rang &amp; filières accessibles <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-right"/></svg></a>
+            <a class="btn-ghost" href="#outils"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-toolbox"/></svg> Découvrir les outils <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-down"/></svg></a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
           <div class="float-card">
-            <div class="fc-label">🧮 Calculateur</div>
+            <div class="fc-label"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-calculator"/></svg> Calculateur</div>
             <div class="fc-value grad">38.54 <span style="font-size:0.9rem">/ 44</span></div>
             <div class="fc-sub">rang estimé + filières accessibles</div>
           </div>
           <div class="float-card">
-            <div class="fc-label">📚 Ressources</div>
+            <div class="fc-label"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-book"/></svg> Ressources</div>
             <div class="fc-value">300+ docs</div>
             <div class="fc-sub">cours, TD, DS et concours par filière</div>
           </div>
           <div class="float-card">
-            <div class="fc-label">⏱️ Pomodoro</div>
+            <div class="fc-label"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-timer"/></svg> Pomodoro</div>
             <div class="fc-value">25:00</div>
             <div class="fc-sub">minuteur de révision, sur Rakezly</div>
           </div>
@@ -126,13 +117,13 @@
 
       <!-- FEATURES -->
       <div class="section-head reveal" id="outils">
-        <span class="section-pill">🧰 La boîte à outils</span>
+        <span class="section-pill"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-toolbox"/></svg> La boîte à outils</span>
         <h2>Tout ce qu'il te faut pour le concours</h2>
       </div>
 
       <div class="feature-grid">
         <a class="feature-card live reveal" href="/calculateur.html" style="--tint: var(--blue)">
-          <div class="icon-chip">🧮</div>
+          <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-calculator"/></svg></div>
           <div class="title-row">
             <h3>Rang &amp; filières accessibles</h3>
             <span class="badge">Disponible</span>
@@ -141,7 +132,7 @@
         </a>
 
         <a class="feature-card live reveal d1" href="/ressources.html" style="--tint: var(--violet)">
-          <div class="icon-chip">📚</div>
+          <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-book"/></svg></div>
           <div class="title-row">
             <h3>Ressources</h3>
             <span class="badge">Disponible</span>
@@ -150,7 +141,7 @@
         </a>
 
         <a class="feature-card live reveal d2" href="/chapitres-concours.html" style="--tint: var(--green)">
-          <div class="icon-chip">📈</div>
+          <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-chart"/></svg></div>
           <div class="title-row">
             <h3>Chapitres du concours</h3>
             <span class="badge">MP</span>
@@ -159,36 +150,36 @@
         </a>
 
         <a class="feature-card live reveal d3" href="https://rakezly.vercel.app/" target="_blank" rel="noopener" style="--tint: var(--orange)">
-          <div class="icon-chip">⏱️</div>
+          <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-timer"/></svg></div>
           <div class="title-row">
             <h3>Pomodoro</h3>
-            <span class="badge external">Rakezly ↗</span>
+            <span class="badge external">Rakezly <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-external"/></svg></span>
           </div>
           <p>Minuteur de travail avec musique, thèmes et statistiques, sur Rakezly.</p>
         </a>
       </div>
     <!-- COMMENT ÇA MARCHE -->
       <div class="section-head reveal">
-        <span class="section-pill">⚡ Simple et rapide</span>
+        <span class="section-pill"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-zap"/></svg> Simple et rapide</span>
         <h2>Comment ça marche ?</h2>
-        <p>Trois étapes, moins d'une minute, aucune inscription. Et pour t'accompagner : ressources et minuteur pomodoro.</p>
+        <p>Trois étapes, moins d'une minute, aucune inscription. Et pour t'accompagner : ressources et minuteur pomodoro.</p>
       </div>
 
       <div class="steps">
         <div class="step reveal">
-          <span class="step-emoji">✏️</span>
+          <span class="step-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-pencil"/></svg></span>
           <div class="step-num">1</div>
           <h3>Entre tes notes</h3>
           <p>Choisis ta filière et saisis tes notes par matière : les coefficients officiels sont déjà intégrés.</p>
         </div>
         <div class="step reveal d1">
-          <span class="step-emoji">📊</span>
+          <span class="step-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-barchart"/></svg></span>
           <div class="step-num">2</div>
           <h3>Vois ton rang</h3>
           <p>Ton rang au concours s'estime instantanément à partir des données réelles des années précédentes. C'est une estimation, pas ton rang exact.</p>
         </div>
         <div class="step reveal d2">
-          <span class="step-emoji">🎯</span>
+          <span class="step-icon"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-target"/></svg></span>
           <div class="step-num">3</div>
           <h3>Découvre tes filières</h3>
           <p>Entre ton rang (ou reprends celui calculé) et vois chaque filière classée : Sûr, Probable ou Hors de portée, d'après les rangs réels 2024 &amp; 2025.</p>

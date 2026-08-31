@@ -17,6 +17,7 @@ import rangsData from './data/rangs_2024_capacites_2025.json' with { type: 'json
 import distribution2025 from './data/distribution_moyennes_2025.json' with { type: 'json' };
 import distribution2024 from './data/distribution_moyennes_2024.json' with { type: 'json' };
 import distribution2020 from './data/distribution_moyennes_2020_simulee.json' with { type: 'json' };
+import { iconEl } from './icons.js';
 
 const FILIERES = ['MP', 'PC', 'T', 'BG'];
 const YEARS = [
@@ -216,7 +217,7 @@ function renderSchoolPicker() {
     : (opts.length ? 'Choisir une école / filière…' : 'Aucune donnée pour cette filière');
   const caret = document.createElement('span');
   caret.className = 'sim-dd-caret';
-  caret.textContent = '▾';
+  caret.appendChild(iconEl('i-chevron-down', 'icon'));
   btn.appendChild(txt);
   btn.appendChild(caret);
 

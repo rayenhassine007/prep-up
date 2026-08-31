@@ -39,6 +39,10 @@ function esc(str) {
     .replace(/'/g, '&#39;');
 }
 
+function iconHtml(id, className = 'icon') {
+  return `<svg class="${className}" aria-hidden="true"><use href="/icons.svg#${id}"/></svg>`;
+}
+
 function injectInto(html, elementIdAttr, innerHtml) {
   const re = new RegExp(`(<[a-zA-Z0-9]+[^>]*id="${elementIdAttr}"[^>]*>)(</[a-zA-Z0-9]+>)`);
   if (!re.test(html)) {
@@ -92,8 +96,10 @@ function buildRessources() {
       const tag = isLive ? 'a' : 'div';
       const attrs = isLive ? ` href="${esc(item.url)}" target="_blank" rel="noopener"` : '';
       const cls = 'res-item' + (isLive ? ' live' : '');
-      const meta = isLive ? (item.type ? item.type + ' ↗' : '↗') : [item.type, 'Bientôt'].filter(Boolean).join(' · ');
-      return `<${tag} class="${cls}"${attrs}><span class="res-name">${esc(item.titre)}</span><span class="res-meta">${esc(meta)}</span></${tag}>`;
+      const meta = isLive
+        ? `${item.type ? esc(item.type) + ' ' : ''}${iconHtml('i-external')}`
+        : esc([item.type, 'Bientôt'].filter(Boolean).join(' · '));
+      return `<${tag} class="${cls}"${attrs}><span class="res-name">${esc(item.titre)}</span><span class="res-meta">${meta}</span></${tag}>`;
     }).join('');
     return `<div class="res-group"><div class="res-matiere">${esc(group.matiere)}</div>${rows}</div>`;
   }).join('');
@@ -165,14 +171,14 @@ function buildChapitres() {
     // no gain. The client collapses it when it re-renders. The three-level
     // wrapper is what the expand animation needs: mirror src/chapitres.js.
     const detail = years && set && years.some((y) => set.has(y))
-      ? `<button type="button" class="chap-toggle open" aria-expanded="true" aria-label="Voir les sessions de « ${esc(nom)} »">▾</button>` +
+      ? `<button type="button" class="chap-toggle open" aria-expanded="true" aria-label="Voir les sessions de « ${esc(nom)} »">${iconHtml('i-chevron-down')}</button>` +
         `<div class="chap-detail open"><div class="chap-detail-clip"><div class="chap-detail-box">` +
         `<div class="chap-detail-title">Sessions où le chapitre a été rencontré</div>` +
         `<div class="chap-years">` +
         years.map((y) => {
           const on = set.has(y);
           return `<div class="chap-year${on ? ' is-on' : ''}" aria-label="${y} : ${on ? 'rencontré' : 'non rencontré'}">` +
-            `<span class="cy-mark" aria-hidden="true">${on ? '✓' : '–'}</span>` +
+            `<span class="cy-mark" aria-hidden="true">${on ? iconHtml('i-check') : '–'}</span>` +
             `<span class="cy-num">${y}</span></div>`;
         }).join('') +
         `</div></div></div></div>`

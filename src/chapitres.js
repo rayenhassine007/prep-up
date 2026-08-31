@@ -1,4 +1,5 @@
 import data from './data/chapitres_concours_mp.json' with { type: 'json' };
+import { iconEl } from './icons.js';
 
 // ---------------------------------------------------------------------------
 // Chapitres du concours : filière MP.
@@ -190,7 +191,9 @@ function buildDetail(c, years, present) {
     const on = present.has(y);
     const cell = el('div', 'chap-year' + (on ? ' is-on' : ''));
     cell.setAttribute('aria-label', on ? `${y} : rencontré` : `${y} : non rencontré`);
-    const mark = el('span', 'cy-mark', on ? '✓' : '–');
+    const mark = el('span', 'cy-mark');
+    if (on) mark.appendChild(iconEl('i-check', 'icon'));
+    else mark.textContent = '–';
     mark.setAttribute('aria-hidden', 'true');
     cell.appendChild(mark);
     cell.appendChild(el('span', 'cy-num', String(y)));
@@ -235,8 +238,9 @@ function buildRow(c, e) {
   const present = presentYears(c, years);
   if (present) {
     const detail = buildDetail(c, years, present);
-    const toggle = el('button', 'chap-toggle', '▾');
+    const toggle = el('button', 'chap-toggle');
     toggle.type = 'button';
+    toggle.appendChild(iconEl('i-chevron-down', 'icon'));
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', `Voir les sessions de « ${nomDe(c)} »`);
     wirePanelToggle(detail, toggle);

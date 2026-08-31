@@ -1,6 +1,7 @@
 // Simulateur de rang : "avec mon rang, quelles filières ?"
 // Uses Prep'Up's own data: rangs 2024 (min/max admitted) + capacités 2025.
 import data from './data/rangs_2024_capacites_2025.json' with { type: 'json' };
+import { iconEl } from './icons.js';
 import { normalizeText } from './search.js';
 
 const TRACKS = ['MP', 'PC', 'PT', 'BG'];
@@ -258,7 +259,7 @@ function makeDropdown(labelText, options, current, onChange) {
   txtSpan.textContent = curTxt;
   const caret = document.createElement('span');
   caret.className = 'sim-dd-caret';
-  caret.textContent = '▾';
+  caret.appendChild(iconEl('i-chevron-down', 'icon'));
   btn.appendChild(txtSpan);
   btn.appendChild(caret);
 
@@ -342,7 +343,8 @@ function renderList() {
 
     const add = document.createElement('button');
     add.className = 'sim-add' + (inWishlist(r) ? ' added' : '');
-    add.textContent = inWishlist(r) ? '✓' : '+';
+    if (inWishlist(r)) add.appendChild(iconEl('i-check', 'icon'));
+    else add.textContent = '+';
     add.title = inWishlist(r) ? 'Retirer de mes vœux' : 'Ajouter à mes vœux';
     add.addEventListener('click', () => {
       if (inWishlist(r)) state.wishlist = state.wishlist.filter((w) => !(w.inst === r.inst && w.spec === r.spec));

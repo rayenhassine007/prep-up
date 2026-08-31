@@ -14,6 +14,7 @@
 // year differently.
 
 import coefficients from './data/coefficients_1ere_annee.json' with { type: 'json' };
+import { iconEl } from './icons.js';
 
 // The 1ère année tables cover MP, PC and T; BG is not among them.
 const FILIERES = Object.keys(coefficients.filieres);
@@ -248,7 +249,11 @@ function renderMatieres(res) {
     const toggle = document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'a1-toggle';
-    toggle.textContent = r.detail ? '← Saisir la moyenne' : 'Détailler ▾';
+    if (r.detail) {
+      toggle.textContent = '← Saisir la moyenne';
+    } else {
+      toggle.append(document.createTextNode('Détailler '), iconEl('i-chevron-down', 'icon'));
+    }
     toggle.addEventListener('click', () => { r.detail = !r.detail; save(); render(); });
     foot.appendChild(toggle);
 

@@ -1,6 +1,8 @@
 // Shared UI: theme toggle, scroll reveal (site-wide), count-up stats.
 // The initial theme is set by the inline snippet in each page's <head>.
 
+import { iconEl } from './icons.js';
+
 // ---------- Vercel Web Analytics ----------
 import { inject } from '@vercel/analytics';
 inject();
@@ -85,3 +87,10 @@ const ioCount = new IntersectionObserver(
   { threshold: 0.5 }
 );
 countEls.forEach((el) => ioCount.observe(el));
+
+// Icônes dans la bande des écoles (évite 22 emojis en dur).
+document.querySelectorAll('.marquee-item').forEach((el) => {
+  if (el.dataset.iconReady) return;
+  el.dataset.iconReady = '1';
+  el.prepend(iconEl('i-graduation', 'icon'));
+});
