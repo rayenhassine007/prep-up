@@ -1166,30 +1166,6 @@ button.submit-btn { border: none; cursor: pointer; }
   line-height: 1.6;
 }
 
-/* ---------- accessibility ---------- */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  /* keep the écoles marquee moving for everyone */
-  .marquee-track {
-    animation-duration: 22s !important;
-    animation-iteration-count: infinite !important;
-  }
-  /* keep the hero floating cards moving for everyone */
-  .float-card:nth-child(1) { animation-duration: 6s !important; animation-iteration-count: infinite !important; }
-  .float-card:nth-child(2) { animation-duration: 7.5s !important; animation-iteration-count: infinite !important; }
-  .float-card:nth-child(3) { animation-duration: 8.5s !important; animation-iteration-count: infinite !important; }
-  /* keep the background glow drifting for everyone */
-  .bg-blobs span { animation-duration: 24s !important; animation-iteration-count: infinite !important; }
-  /* keep the scroll-reveal fade for everyone */
-  .reveal { transition-duration: 0.65s !important; }
-  /* keep the page-load entrance animation for everyone */
-  main > * { animation-duration: 0.55s !important; }
-}
-
 /* ============================================================
    Homepage v2: hero, floating cards, stats, sections
    ============================================================ */
@@ -1966,22 +1942,4 @@ main.home { max-width: 1060px; }
   .chap-card { padding: 18px 16px 14px; }
   .chap-warning { padding: 14px 16px; }
   .chap-method { padding: 4px 16px; }
-}
-
-/* ---------- animations : respect de « réduire les animations » ---------- */
-@media (prefers-reduced-motion: reduce) {
-  .chap-detail,
-  .chap-detail-clip,
-  .chap-detail-box,
-  .chap-detail .chap-year,
-  .chap-toggle {
-    transition: none !important;
-    animation: none !important;
-  }
-  .chap-detail.open .chap-detail-box {
-    opacity: 1;
-    transform: none;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32);
-  }
-  .chap-detail.open .chap-year { opacity: 1; transform: none; }
 }

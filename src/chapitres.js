@@ -125,10 +125,6 @@ function presentYears(c, years) {
 
 // Dépliant « sessions » : animation type menu déroulant (panneau scale/fade +
 // glissement, puis cellules en cascade). Pilotée par la classe `.is-animating`.
-function reducedMotion() {
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-}
-
 function closePanel(detail, toggle) {
   detail.classList.remove('open', 'is-animating', 'is-closing');
   toggle.classList.remove('open');
@@ -156,15 +152,10 @@ function replayOpenAnim(detail, box) {
 
 function playOpen(detail, toggle, box) {
   openPanel(detail, toggle);
-  if (reducedMotion()) return;
   replayOpenAnim(detail, box);
 }
 
 function playClose(detail, toggle, box) {
-  if (reducedMotion()) {
-    closePanel(detail, toggle);
-    return;
-  }
   detail.classList.remove('is-animating');
   detail.classList.add('is-closing');
   const done = (e) => {
