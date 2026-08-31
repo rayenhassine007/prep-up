@@ -27,7 +27,7 @@ const state = {
   rank: null,
   tier: 'accessibles', // all | accessibles | sur | probable | limite | impossible
   inst: 'all',
-  sort: 'proximite', // proximite | selectivite | places
+  sort: 'proximite', // proximite | places | nom
   search: '',
   wishlist: [], // [{inst, spec}]
 };
@@ -120,7 +120,6 @@ function filteredSortedRows() {
   rows.sort((a, b) => {
     if (state.sort === 'nom') return a.inst.localeCompare(b.inst) || (a.rmax || 1e9) - (b.rmax || 1e9);
     if (state.sort === 'places') return b.cap - a.cap;
-    if (state.sort === 'selectivite') return (a.rmax || 1e9) - (b.rmax || 1e9);
     // proximité: closest to my rank first, by |margin| only (tier is not a tiebreaker)
     if (state.rank == null) return (a.rmax || 1e9) - (b.rmax || 1e9);
     const ma = a.margin == null ? 1e9 : Math.abs(a.margin);
@@ -196,7 +195,6 @@ function buildControls() {
   // Trier (chips)
   const sortField = makeChips('Trier', [
     ['proximite', 'Proche de mon rang'],
-    ['selectivite', 'Sélectivité'],
     ['places', 'Nombre de places'],
     ['nom', 'Université (A→Z)'],
   ], state.sort, (v) => { state.sort = v; buildControls(); render(); });
