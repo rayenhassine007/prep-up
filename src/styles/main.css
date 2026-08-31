@@ -131,6 +131,7 @@ header.site .brand {
   width: 30px;
   height: 30px;
   border-radius: 9px;
+  object-fit: contain;
   box-shadow: 0 4px 14px color-mix(in srgb, var(--violet) 45%, transparent);
   transition: transform 0.25s ease;
 }
