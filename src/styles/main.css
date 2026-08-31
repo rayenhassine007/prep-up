@@ -1752,7 +1752,7 @@ main.home { max-width: 1060px; }
   min-width: 0;
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.24s ease-out;
+  transition: grid-template-rows 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .chap-detail.open { grid-template-rows: 1fr; }
 
@@ -1763,9 +1763,20 @@ main.home { max-width: 1060px; }
   /* replié, le panneau sort aussi de l'arbre d'accessibilité, mais seulement
      une fois l'animation finie : sinon il disparaît avant de s'être refermé */
   visibility: hidden;
-  transition: visibility 0s linear 0.24s;
+  opacity: 0;
+  transform: scale(0.94);
+  transform-origin: top right;
+  transition:
+    opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0s linear 0.28s;
 }
-.chap-detail.open .chap-detail-clip { visibility: visible; transition-delay: 0s; }
+.chap-detail.open .chap-detail-clip {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition-delay: 0s;
+}
 
 .chap-detail-box {
   margin-top: 2px;
@@ -1773,14 +1784,10 @@ main.home { max-width: 1060px; }
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  /* le panneau grandit depuis son bord haut en apparaissant, comme un menu
-     déroulant : c'est un seul mouvement, pas une entrée par éléments */
-  opacity: 0;
-  transform: scale(0.96);
-  transform-origin: top center;
-  transition: opacity 0.24s ease-out, transform 0.24s ease-out;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  transition: box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.chap-detail.open .chap-detail-box { opacity: 1; transform: scale(1); }
+.chap-detail:not(.open) .chap-detail-box { box-shadow: none; }
 .chap-detail-title {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -1917,5 +1924,6 @@ main.home { max-width: 1060px; }
   .chap-toggle {
     transition: none !important;
   }
-  .chap-detail-box { opacity: 1; transform: none; }
+  .chap-detail-clip { opacity: 1; transform: none; }
+  .chap-detail-box { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28); }
 }
