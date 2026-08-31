@@ -11,10 +11,10 @@
 ## Pages principales
 
 - https://prep-upp.com/ — Accueil et présentation des outils
-- https://prep-upp.com/calculateur.html — Calculateur de rang, simulateur de filières, notes à viser
-- https://prep-upp.com/places-2026.html — 3 238 places ouvertes session 2026 (JORT), par école et spécialité
-- https://prep-upp.com/ressources.html — Cours, TD, DS et sujets de concours par filière et matière
-- https://prep-upp.com/chapitres-concours.html — Historique des chapitres du programme MP aux sessions 2015–2026
+- https://prep-upp.com/calculateur — Calculateur de rang, simulateur de filières, notes à viser
+- https://prep-upp.com/places-2026 — 3 238 places ouvertes session 2026 (JORT), par école et spécialité
+- https://prep-upp.com/ressources — Cours, TD, DS et sujets de concours par filière et matière
+- https://prep-upp.com/chapitres-concours — Historique des chapitres du programme MP aux sessions 2015–2026
 
 ## Ce que fait Prep'Up
 

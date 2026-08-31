@@ -32,7 +32,7 @@ test.describe('Feature: Homepage', () => {
 
 test.describe('Feature: Calculateur de rang', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/calculateur.html');
+    await page.goto('/calculateur');
   });
 
   test('Scenario: Student estimates rank from notes', async ({ page }) => {
@@ -75,14 +75,14 @@ test.describe('Feature: Calculateur de rang', () => {
 
 test.describe('Feature: Ressources', () => {
   test('Scenario: Student browses resources by filière', async ({ page }) => {
-    await page.goto('/ressources.html');
+    await page.goto('/ressources');
 
     await expect(page.locator('#filiere-select button').first()).toBeVisible();
     await expect(page.locator('.res-group, .res-item').first()).toBeVisible();
   });
 
   test('Scenario: Search filters resource list', async ({ page }) => {
-    await page.goto('/ressources.html');
+    await page.goto('/ressources');
     await page.locator('#res-search').fill('math');
 
     // At least the search input works; groups may hide if no match
@@ -92,7 +92,7 @@ test.describe('Feature: Ressources', () => {
 
 test.describe('Feature: Chapitres du concours MP', () => {
   test('Scenario: Student switches between épreuves', async ({ page }) => {
-    await page.goto('/chapitres-concours.html');
+    await page.goto('/chapitres-concours');
 
     const tabs = page.locator('#chap-tabs button');
     await expect(tabs.first()).toBeVisible();
@@ -102,5 +102,16 @@ test.describe('Feature: Chapitres du concours MP', () => {
       await expect(tabs.nth(1)).toHaveClass(/active/);
     }
     await expect(page.locator('#chap-panel .chap-row, #chap-panel [class*="chap"]').first()).toBeVisible();
+  });
+});
+
+test.describe('Feature: Clean URLs', () => {
+  test('Scenario: Legacy .html URLs redirect to clean paths', async ({ page, request }) => {
+    const response = await request.get('/calculateur.html', { maxRedirects: 0 });
+    expect(response.status()).toBe(301);
+    expect(response.headers().location).toMatch(/\/calculateur$/);
+
+    await page.goto('/calculateur.html');
+    await expect(page).toHaveURL(/\/calculateur$/);
   });
 });

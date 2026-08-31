@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    { "source": "/calculateur", "destination": "/calculateur.html" },
+    { "source": "/ressources", "destination": "/ressources.html" },
+    { "source": "/places-2026", "destination": "/places-2026.html" },
+    { "source": "/chapitres-concours", "destination": "/chapitres-concours.html" }
+  ],
+  "redirects": [
+    { "source": "/calculateur.html", "destination": "/calculateur", "permanent": true },
+    { "source": "/ressources.html", "destination": "/ressources", "permanent": true },
+    { "source": "/places-2026.html", "destination": "/places-2026", "permanent": true },
+    { "source": "/chapitres-concours.html", "destination": "/chapitres-concours", "permanent": true }
+  ]
+}
