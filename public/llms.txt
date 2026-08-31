@@ -1,12 +1,12 @@
 # Prep'Up (prep-upp.com)
 
-> Outils gratuits pour les classes préparatoires tunisiennes qui préparent le concours national d'entrée aux cycles de formation d'ingénieurs.
+> Outils gratuits pour les classes préparatoires de 1ère et 2ème année (MP, PC, T, BG).
 
 ## Audience
 
-- Étudiants en prépa MP, PC, T (PT) et BG en Tunisie
+- Étudiants en prépa MP, PC, T (PT) et BG, 1ère et 2ème année
 - Langue : français
-- Pays cible : Tunisie
+- Pays cible : Maroc, France, Tunisie
 
 ## Pages principales
 
@@ -33,9 +33,10 @@
 
 ## Noms alternatifs
 
-Prep'Up, Prep Up, Prépa Up, prep up, prepup, prepa up
+Prep'Up, Prep Up, Prépa Up, prep up, prepup, prepa up, prep-up, prepa-up, prep-upp, prepa-upp
 
 ## Contact / source
 
 Site : https://prep-upp.com/
-Les estimations de rang sont indicatives ; les informations officielles restent celles du ministère et du concours national.
+Email : contact.prep.upp@gmail.com
+Les estimations de rang sont indicatives ; vérifie toujours les informations officielles.
