@@ -350,7 +350,6 @@ p.subtitle {
   border-color: var(--border-strong);
 }
 .feature-card.live:hover::before { opacity: 1; }
-.feature-card.live:hover .icon { animation: bounce 0.35s ease; }
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   40% { transform: translateY(-3px) scale(1.04); }
@@ -1336,10 +1335,10 @@ button.submit-btn { border: none; cursor: pointer; }
 /* ---------- hero visual: floating cards ---------- */
 .hero-visual {
   position: relative;
-  min-height: 340px;
+  min-height: 380px;
 }
 @media (max-width: 760px) {
-  .hero-visual { min-height: 300px; }
+  .hero-visual { min-height: 340px; }
 }
 
 .float-card {
@@ -1378,8 +1377,9 @@ button.submit-btn { border: none; cursor: pointer; }
 }
 
 .float-card:nth-child(1) { top: 8%; left: 4%; z-index: 2; animation: floatA 6s ease-in-out infinite alternate; }
-.float-card:nth-child(2) { top: 42%; right: 0; z-index: 3; animation: floatB 7.5s ease-in-out infinite alternate; animation-delay: -2s; }
-.float-card:nth-child(3) { bottom: 4%; left: 12%; z-index: 2; animation: floatC 8.5s ease-in-out infinite alternate; animation-delay: -4s; }
+.float-card:nth-child(2) { top: 38%; right: 0; z-index: 3; animation: floatB 7.5s ease-in-out infinite alternate; animation-delay: -2s; }
+.float-card:nth-child(3) { bottom: 6%; right: 6%; z-index: 2; animation: floatD 7s ease-in-out infinite alternate; animation-delay: -1s; }
+.float-card:nth-child(4) { bottom: 4%; left: 10%; z-index: 1; animation: floatC 8.5s ease-in-out infinite alternate; animation-delay: -4s; }
 
 @keyframes floatA {
   from { transform: translateY(0) rotate(-3deg); }
@@ -1392,6 +1392,10 @@ button.submit-btn { border: none; cursor: pointer; }
 @keyframes floatC {
   from { transform: translateY(0) rotate(-2deg); }
   to { transform: translateY(-13px) rotate(3deg); }
+}
+@keyframes floatD {
+  from { transform: translateY(0) rotate(2deg); }
+  to { transform: translateY(-15px) rotate(-2.5deg); }
 }
 
 /* ---------- stats band ---------- */
@@ -1474,6 +1478,7 @@ button.submit-btn { border: none; cursor: pointer; }
   margin-bottom: 12px;
 }
 .feature-card.live:hover .icon-chip { animation: bounce 0.35s ease; }
+.feature-card.live:hover .badge .icon { animation: none; }
 
 /* ---------- scroll reveal ---------- */
 .reveal {
