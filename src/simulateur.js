@@ -21,7 +21,6 @@ const TIER_LABEL = {
   impossible: 'Hors de portée',
 };
 const MARGIN_SUR = 200;
-const MARGIN_PROBABLE_MIN = -20;
 const state = {
   track: 'MP',
   year: '2024', // ranks reference year: '2024' | '2025'
@@ -38,7 +37,7 @@ function tierFor(rank, rmax) {
   if (typeof rmax !== 'number' || rmax <= 0) return null;
   const margin = rmax - rank;
   if (margin >= MARGIN_SUR) return 'sur';
-  if (margin >= MARGIN_PROBABLE_MIN) return 'probable';
+  if (margin >= 0) return 'probable';
   return 'impossible';
 }
 
@@ -109,6 +108,15 @@ function tierPass(tier) {
   return tier === state.tier;
 }
 
+function compareProximite(a, b) {
+  const ma = a.margin == null ? 1e9 : a.margin;
+  const mb = b.margin == null ? 1e9 : b.margin;
+  const aNeg = ma < 0;
+  const bNeg = mb < 0;
+  if (aNeg !== bNeg) return aNeg ? 1 : -1; // écart ≥ 0 d'abord, négatifs en dessous
+  return ma - mb; // croissant dans chaque groupe (0, 1, 2… puis −1, −2…)
+}
+
 function filteredSortedRows() {
   const term = normalizeText((state.search || '').trim());
   let rows = currentRows().filter((r) => {
@@ -121,11 +129,9 @@ function filteredSortedRows() {
   rows.sort((a, b) => {
     if (state.sort === 'nom') return a.inst.localeCompare(b.inst) || (a.rmax || 1e9) - (b.rmax || 1e9);
     if (state.sort === 'places') return b.cap - a.cap;
-    // proximité : filières les plus proches de la limite (|écart| le plus petit)
+    // proximité : écart 0 en premier, puis 1, 2… ; écarts négatifs en dessous (−1, −2…)
     if (state.rank == null) return (a.rmax || 1e9) - (b.rmax || 1e9);
-    const ma = a.margin == null ? 1e9 : Math.abs(a.margin);
-    const mb = b.margin == null ? 1e9 : Math.abs(b.margin);
-    return ma - mb;
+    return compareProximite(a, b);
   });
   return rows;
 }
