@@ -1208,11 +1208,13 @@ button.submit-btn { border: none; cursor: pointer; }
 }
 .submit-field select {
   cursor: pointer;
-  color-scheme: light;
+  color: #ffffff;
+  background: #000000;
+  color-scheme: dark;
 }
 .submit-field select option {
-  color: #171c28;
-  background: #ffffff;
+  color: #ffffff;
+  background: #000000;
 }
 .submit-field input[type='text']:focus,
 .submit-field select:focus {
