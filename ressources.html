@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ressources prépa – cours, TD, DS et concours (MP, PC, T, BG) | Prep'Up</title>
+    <title>Ressources prépa - cours, TD, DS et concours (MP, PC, T, BG) | Prep'Up</title>
     <meta name="description" content="Ressources prépa : cours, TD, DS et sujets de concours pour les prépas tunisiennes. Classées par filière MP, PC, T (PT) et BG, par matière et par année." />
     <link rel="canonical" href="https://prep-upp.com/ressources" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prep'Up" />
-    <meta property="og:title" content="Ressources prépa – cours, TD, DS et concours | Prep'Up" />
+    <meta property="og:title" content="Ressources prépa - cours, TD, DS et concours | Prep'Up" />
     <meta property="og:description" content="Ressources prépa : cours, TD, DS et sujets de concours classés par filière MP, PC, T (PT) et BG pour les prépas tunisiennes." />
     <meta property="og:url" content="https://prep-upp.com/ressources" />
     <meta property="og:image" content="https://prep-upp.com/og-image.png" />
@@ -16,7 +16,7 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ressources prépa – cours, TD, DS et concours | Prep'Up" />
+    <meta name="twitter:title" content="Ressources prépa - cours, TD, DS et concours | Prep'Up" />
     <meta name="twitter:description" content="Ressources prépa : cours, TD, DS et sujets de concours classés par filière MP, PC, T (PT) et BG." />
     <meta name="twitter:image" content="https://prep-upp.com/og-image.png" />
     <script type="application/ld+json">
@@ -60,6 +60,11 @@
       <h1><span class="grad-text">Ressources prépa</span></h1>
       <p class="subtitle">Cours, TD, DS et sujets de concours classés par année et par matière pour MP, PC, T (PT) et BG, en 1ère et 2ème année.</p>
 
+      <div class="submit-card">
+        <div class="submit-text">Tu as un document utile (sujet, cours, TD) à partager avec les autres prépas&nbsp;?</div>
+        <button id="submit-link" class="submit-btn">Proposer une ressource</button>
+      </div>
+
       <div class="res-views" id="res-views"></div>
 
       <div class="filiere-select" id="filiere-select"></div>
@@ -71,11 +76,6 @@
 
       <div id="res-list"></div>
 
-      <div class="submit-card">
-        <div class="submit-text">Tu as un document utile (sujet, cours, TD) à partager avec les autres prépas&nbsp;?</div>
-        <button id="submit-link" class="submit-btn">Proposer une ressource</button>
-      </div>
-
       <dialog id="submit-modal" class="submit-modal">
         <h3><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-upload"/></svg> Proposer une ressource</h3>
         <ul class="charte">
@@ -85,14 +85,32 @@
           <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-ban"/></svg><span>Tout contenu hors sujet, incomplet ou inapproprié sera rejeté.</span></li>
         </ul>
         <form id="submit-form" class="submit-form" method="POST" enctype="multipart/form-data" novalidate>
-          <input type="hidden" name="_subject" value="Prep'Up – nouvelle ressource proposée" />
+          <input type="hidden" name="_subject" value="Prep'Up : nouvelle ressource proposée" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://prep-upp.com/ressources?envoye=1" />
           <label class="submit-field">
             <span>Titre du document</span>
-            <input id="submit-titre" name="titre" type="text" required maxlength="200" placeholder="Ex. TD Analyse – suites" />
+            <input id="submit-titre" name="titre" type="text" required maxlength="200" placeholder="Ex. TD Analyse : suites" />
           </label>
+          <div class="submit-row">
+            <label class="submit-field">
+              <span>Filière</span>
+              <select id="submit-filiere" name="filiere" required>
+                <option value="MP">MP</option>
+                <option value="PC">PC</option>
+                <option value="PT">PT (T)</option>
+                <option value="BG">BG</option>
+              </select>
+            </label>
+            <label class="submit-field">
+              <span>Année</span>
+              <select id="submit-annee" name="annee" required>
+                <option value="1ère année">1ère année</option>
+                <option value="2ème année">2ème année</option>
+              </select>
+            </label>
+          </div>
           <label class="submit-field">
             <span>Lien Drive / MEGA <em>(optionnel si tu envoies un PDF)</em></span>
             <input id="submit-lien" name="lien" type="text" inputmode="url" autocomplete="url" placeholder="https://drive.google.com/..." />

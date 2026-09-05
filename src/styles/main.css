@@ -1088,7 +1088,7 @@ p.subtitle {
 
 .submit-card {
   padding: 22px;
-  margin-top: 24px;
+  margin: 6px 0 22px;
   text-align: center;
 }
 .submit-card .submit-text {
@@ -1168,11 +1168,19 @@ button.submit-btn { border: none; cursor: pointer; }
   padding: 10px 20px;
   font-size: 0.88rem;
 }
+.submit-card {
+  margin: 8px 0 22px;
+}
 .submit-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 4px;
+}
+.submit-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 .submit-field {
   display: flex;
@@ -1188,7 +1196,8 @@ button.submit-btn { border: none; cursor: pointer; }
   color: var(--text-dim);
 }
 .submit-field input[type='text'],
-.submit-field input[type='file'] {
+.submit-field input[type='file'],
+.submit-field select {
   font: inherit;
   font-weight: 500;
   color: var(--text);
@@ -1197,9 +1206,16 @@ button.submit-btn { border: none; cursor: pointer; }
   border-radius: 10px;
   padding: 10px 12px;
 }
-.submit-field input[type='text']:focus {
+.submit-field select {
+  cursor: pointer;
+}
+.submit-field input[type='text']:focus,
+.submit-field select:focus {
   outline: 2px solid color-mix(in srgb, var(--violet) 45%, transparent);
   outline-offset: 1px;
+}
+@media (max-width: 520px) {
+  .submit-row { grid-template-columns: 1fr; }
 }
 .submit-or {
   margin: 0;

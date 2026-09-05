@@ -82,10 +82,18 @@ const modalCancelEl = document.getElementById('modal-cancel');
 const submitFormEl = document.getElementById('submit-form');
 const submitLienEl = document.getElementById('submit-lien');
 const submitFichierEl = document.getElementById('submit-fichier');
+const submitFiliereEl = document.getElementById('submit-filiere');
+const submitAnneeEl = document.getElementById('submit-annee');
 const submitErrorEl = document.getElementById('submit-error');
 
 submitLinkEl.addEventListener('click', () => {
   submitErrorEl.hidden = true;
+  if (submitFiliereEl && FILIERES.includes(state.filiere)) {
+    submitFiliereEl.value = state.filiere;
+  }
+  if (submitAnneeEl && state.annee) {
+    submitAnneeEl.value = state.annee;
+  }
   modalEl.showModal();
 });
 modalCancelEl.addEventListener('click', () => modalEl.close());
