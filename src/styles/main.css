@@ -1239,6 +1239,14 @@ button.submit-btn { border: none; cursor: pointer; }
   font-weight: 600;
   color: #f87171;
 }
+.submit-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 .submit-thanks {
   margin: 0 0 12px;
   padding: 10px 14px;

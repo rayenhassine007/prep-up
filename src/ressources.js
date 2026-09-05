@@ -102,9 +102,8 @@ modalEl.addEventListener('click', (e) => {
 });
 
 if (data.submitEmail) {
-  submitFormEl.action = `https://formsubmit.co/${encodeURIComponent(data.submitEmail)}`;
+  submitFormEl.dataset.endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(data.submitEmail)}`;
 } else {
-  submitFormEl.addEventListener('submit', (e) => e.preventDefault());
   const btn = document.getElementById('modal-submit');
   if (btn) {
     btn.disabled = true;
@@ -120,36 +119,92 @@ submitFichierEl.addEventListener('change', clearSubmitError);
 submitFiliereEl?.addEventListener('change', clearSubmitError);
 submitAnneeEl?.addEventListener('change', clearSubmitError);
 
-submitFormEl.addEventListener('submit', (e) => {
-  const result = validateProposal(submitLienEl.value, submitFichierEl.files, {
-    filiere: submitFiliereEl?.value,
-    annee: submitAnneeEl?.value,
-  });
-  if (result.ok) return;
-
-  e.preventDefault();
-  const messages = {
-    'missing-meta': 'Choisis une filière et une année.',
-    'invalid-link': 'Le lien doit être une URL valide (Drive, MEGA, etc.).',
-    missing: 'Ajoute un lien valide ou un fichier PDF pour pouvoir envoyer.',
-  };
-  submitErrorEl.textContent = messages[result.reason] || messages.missing;
-  submitErrorEl.hidden = false;
-  if (result.reason === 'missing-meta') {
-    (submitFiliereEl?.value ? submitAnneeEl : submitFiliereEl)?.focus();
-  } else {
-    submitLienEl.focus();
-  }
-});
-
-if (new URLSearchParams(location.search).get('envoye') === '1') {
+function showSubmitThanks() {
+  submitLinkEl.closest('.submit-card')?.querySelector('.submit-thanks')?.remove();
   const note = document.createElement('p');
   note.className = 'submit-thanks';
   note.setAttribute('role', 'status');
   note.textContent = 'Merci : ta proposition a bien été envoyée. Elle sera vérifiée avant publication.';
   submitLinkEl.closest('.submit-card')?.prepend(note);
-  history.replaceState({}, '', location.pathname);
 }
+
+const submitBtnEl = document.getElementById('modal-submit');
+
+submitFormEl.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const result = validateProposal(submitLienEl.value, submitFichierEl.files, {
+    filiere: submitFiliereEl?.value,
+    annee: submitAnneeEl?.value,
+  });
+  if (!result.ok) {
+    const messages = {
+      'missing-meta': 'Choisis une filière et une année.',
+      'invalid-link': 'Le lien doit être une URL valide (Drive, MEGA, etc.).',
+      missing: 'Ajoute un lien valide ou un fichier PDF pour pouvoir envoyer.',
+    };
+    submitErrorEl.textContent = messages[result.reason] || messages.missing;
+    submitErrorEl.hidden = false;
+    if (result.reason === 'missing-meta') {
+      (submitFiliereEl?.value ? submitAnneeEl : submitFiliereEl)?.focus();
+    } else {
+      submitLienEl.focus();
+    }
+    return;
+  }
+
+  const endpoint = submitFormEl.dataset.endpoint;
+  if (!endpoint) return;
+
+  const titreEl = document.getElementById('submit-titre');
+  if (titreEl && !String(titreEl.value || '').trim()) {
+    submitErrorEl.textContent = 'Indique le titre du document.';
+    submitErrorEl.hidden = false;
+    titreEl.focus();
+    return;
+  }
+
+  if (submitBtnEl) {
+    submitBtnEl.disabled = true;
+    submitBtnEl.textContent = 'Envoi...';
+  }
+  submitErrorEl.hidden = true;
+
+  try {
+    const body = new FormData(submitFormEl);
+    body.delete('_next');
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      body,
+      headers: { Accept: 'application/json' },
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    // FormSubmit returns JSON like { success: "..." } on success
+    try {
+      const payload = await res.json();
+      if (payload && payload.success === false) throw new Error('submit failed');
+    } catch (parseErr) {
+      if (parseErr instanceof SyntaxError) {
+        // some responses may be empty/non-JSON but still OK
+      } else {
+        throw parseErr;
+      }
+    }
+
+    submitFormEl.reset();
+    modalEl.close();
+    showSubmitThanks();
+  } catch {
+    submitErrorEl.textContent = "L'envoi a échoué. Réessaie dans un instant.";
+    submitErrorEl.hidden = false;
+  } finally {
+    if (submitBtnEl) {
+      submitBtnEl.disabled = false;
+      submitBtnEl.textContent = 'Envoyer';
+    }
+  }
+});
+
 
 searchEl.addEventListener('input', () => {
   state.search = searchEl.value;
