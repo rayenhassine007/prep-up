@@ -102,7 +102,8 @@ modalEl.addEventListener('click', (e) => {
 });
 
 if (data.submitEmail) {
-  submitFormEl.dataset.endpoint = `https://formsubmit.co/ajax/${encodeURIComponent(data.submitEmail)}`;
+  submitFormEl.dataset.ajaxEndpoint = `https://formsubmit.co/ajax/${encodeURIComponent(data.submitEmail)}`;
+  submitFormEl.dataset.postEndpoint = `https://formsubmit.co/${encodeURIComponent(data.submitEmail)}`;
 } else {
   const btn = document.getElementById('modal-submit');
   if (btn) {
@@ -129,6 +130,7 @@ function showSubmitThanks() {
 }
 
 const submitBtnEl = document.getElementById('modal-submit');
+const MAX_PDF_BYTES = 10 * 1024 * 1024;
 
 submitFormEl.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -153,9 +155,6 @@ submitFormEl.addEventListener('submit', async (e) => {
     return;
   }
 
-  const endpoint = submitFormEl.dataset.endpoint;
-  if (!endpoint) return;
-
   const titreEl = document.getElementById('submit-titre');
   if (titreEl && !String(titreEl.value || '').trim()) {
     submitErrorEl.textContent = 'Indique le titre du document.';
@@ -164,31 +163,49 @@ submitFormEl.addEventListener('submit', async (e) => {
     return;
   }
 
+  const hasFile = !!(submitFichierEl.files && submitFichierEl.files.length > 0);
+  if (hasFile && submitFichierEl.files[0].size > MAX_PDF_BYTES) {
+    submitErrorEl.textContent = 'Le PDF doit faire moins de 10 Mo. Mets-le sur Drive/MEGA et colle le lien.';
+    submitErrorEl.hidden = false;
+    submitFichierEl.focus();
+    return;
+  }
+
+  const ajaxEndpoint = submitFormEl.dataset.ajaxEndpoint;
+  const postEndpoint = submitFormEl.dataset.postEndpoint;
+  if (!ajaxEndpoint || !postEndpoint) return;
+
   if (submitBtnEl) {
     submitBtnEl.disabled = true;
     submitBtnEl.textContent = 'Envoi...';
   }
   submitErrorEl.hidden = true;
 
+  // FormSubmit's AJAX endpoint often drops file attachments.
+  // Classic POST keeps the PDF attached, then _next brings the user back here.
+  if (hasFile) {
+    submitFormEl.action = postEndpoint;
+    submitFormEl.method = 'POST';
+    submitFormEl.enctype = 'multipart/form-data';
+    submitFormEl.submit(); // native submit: does not re-fire this listener
+    return;
+  }
+
   try {
     const body = new FormData(submitFormEl);
     body.delete('_next');
-    const res = await fetch(endpoint, {
+    body.delete('attachment'); // empty file field not needed for link-only
+    const res = await fetch(ajaxEndpoint, {
       method: 'POST',
       body,
       headers: { Accept: 'application/json' },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    // FormSubmit returns JSON like { success: "..." } on success
     try {
       const payload = await res.json();
       if (payload && payload.success === false) throw new Error('submit failed');
     } catch (parseErr) {
-      if (parseErr instanceof SyntaxError) {
-        // some responses may be empty/non-JSON but still OK
-      } else {
-        throw parseErr;
-      }
+      if (!(parseErr instanceof SyntaxError)) throw parseErr;
     }
 
     submitFormEl.reset();
@@ -205,6 +222,10 @@ submitFormEl.addEventListener('submit', async (e) => {
   }
 });
 
+if (new URLSearchParams(location.search).get('envoye') === '1') {
+  showSubmitThanks();
+  history.replaceState({}, '', location.pathname);
+}
 
 searchEl.addEventListener('input', () => {
   state.search = searchEl.value;

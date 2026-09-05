@@ -88,6 +88,7 @@
           <input type="hidden" name="_subject" value="Prep'Up : nouvelle ressource proposée" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://prep-upp.com/ressources?envoye=1" />
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="submit-honey" aria-hidden="true" />
           <label class="submit-field">
             <span>Titre du document</span>
@@ -119,8 +120,8 @@
           </label>
           <p class="submit-or" aria-hidden="true">ou</p>
           <label class="submit-field">
-            <span>Fichier PDF <em>(optionnel si tu mets un lien)</em></span>
-            <input id="submit-fichier" name="fichier" type="file" accept=".pdf,application/pdf" />
+            <span>Fichier PDF <em>(max 10 Mo, optionnel si tu mets un lien)</em></span>
+            <input id="submit-fichier" name="attachment" type="file" accept=".pdf,application/pdf" />
           </label>
           <p id="submit-error" class="submit-error" hidden role="alert"></p>
           <div class="modal-actions">
