@@ -1168,6 +1168,63 @@ button.submit-btn { border: none; cursor: pointer; }
   padding: 10px 20px;
   font-size: 0.88rem;
 }
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+.submit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.submit-field em {
+  font-weight: 500;
+  font-style: normal;
+  color: var(--text-dim);
+}
+.submit-field input[type='text'],
+.submit-field input[type='file'] {
+  font: inherit;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.submit-field input[type='text']:focus {
+  outline: 2px solid color-mix(in srgb, var(--violet) 45%, transparent);
+  outline-offset: 1px;
+}
+.submit-or {
+  margin: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.submit-error {
+  margin: 0;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #f87171;
+}
+.submit-thanks {
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  background: color-mix(in srgb, var(--green, #34d399) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--green, #34d399) 35%, transparent);
+  color: var(--text);
+}
 
 /* ---------- news page ---------- */
 .news-item { padding: 18px 22px; margin-bottom: 14px; }

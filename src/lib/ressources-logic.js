@@ -56,3 +56,10 @@ export function parseStoredList(raw) {
     return [];
   }
 }
+
+/** True if the proposal has a non-empty link and/or at least one selected file. */
+export function hasLinkOrFile(link, files) {
+  const hasLink = String(link || '').trim().length > 0;
+  const hasFile = !!(files && files.length > 0);
+  return hasLink || hasFile;
+}

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   isFavInList,
+  hasLinkOrFile,
   matchesSearchItem,
   noteOpenedInList,
   parseStoredList,
@@ -58,5 +59,23 @@ describe('parseStoredList', () => {
 
   it('returns empty array on invalid JSON', () => {
     expect(parseStoredList('not json')).toEqual([]);
+  });
+});
+
+describe('hasLinkOrFile', () => {
+  it('accepts a non-empty link alone', () => {
+    expect(hasLinkOrFile('https://drive.google.com/x', null)).toBe(true);
+    expect(hasLinkOrFile('  https://mega.nz/x  ', [])).toBe(true);
+  });
+
+  it('accepts a selected file alone', () => {
+    expect(hasLinkOrFile('', { length: 1 })).toBe(true);
+    expect(hasLinkOrFile('   ', { length: 2 })).toBe(true);
+  });
+
+  it('rejects when both link and file are empty', () => {
+    expect(hasLinkOrFile('', null)).toBe(false);
+    expect(hasLinkOrFile('   ', [])).toBe(false);
+    expect(hasLinkOrFile(undefined, undefined)).toBe(false);
   });
 });

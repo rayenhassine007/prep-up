@@ -4,6 +4,7 @@ import {
   RECENT_MAX,
   isFavInList,
   keyOf,
+  hasLinkOrFile,
   matchesSearchItem,
   noteOpenedInList,
   parseStoredList,
@@ -16,7 +17,7 @@ import {
 // Structure : filieres > MP/PC/PT/BG > "1ère année"/"2ème année" > [ { matiere, items } ]
 // Chaque item : { "titre": "...", "type": "Drive|MEGA|PDF",
 //                 "url": "https://..." ou "/sources/fichier.pdf" }
-// Le lien du formulaire de proposition : champ "formUrl" en haut du JSON.
+// Email de réception des propositions : champ "submitEmail" en haut du JSON.
 // ---------------------------------------------------------------------------
 
 const FILIERES = Object.keys(data.filieres);
@@ -75,23 +76,55 @@ const searchEl = document.getElementById('res-search');
 const submitLinkEl = document.getElementById('submit-link');
 const viewsEl = document.getElementById('res-views');
 
-// --- modal de proposition (charte + formulaire) ---
+// --- modal de proposition (charte + formulaire lien OU PDF) ---
 const modalEl = document.getElementById('submit-modal');
 const modalCancelEl = document.getElementById('modal-cancel');
-const modalContinueEl = document.getElementById('modal-continue');
+const submitFormEl = document.getElementById('submit-form');
+const submitLienEl = document.getElementById('submit-lien');
+const submitFichierEl = document.getElementById('submit-fichier');
+const submitErrorEl = document.getElementById('submit-error');
 
-submitLinkEl.addEventListener('click', () => modalEl.showModal());
+submitLinkEl.addEventListener('click', () => {
+  submitErrorEl.hidden = true;
+  modalEl.showModal();
+});
 modalCancelEl.addEventListener('click', () => modalEl.close());
 modalEl.addEventListener('click', (e) => {
   if (e.target === modalEl) modalEl.close();
 });
 
-if (data.formUrl) {
-  modalContinueEl.href = data.formUrl;
+if (data.submitEmail) {
+  submitFormEl.action = `https://formsubmit.co/${encodeURIComponent(data.submitEmail)}`;
 } else {
-  modalContinueEl.classList.add('disabled');
-  modalContinueEl.textContent = 'Formulaire bientôt disponible';
-  modalContinueEl.addEventListener('click', (e) => e.preventDefault());
+  submitFormEl.addEventListener('submit', (e) => e.preventDefault());
+  const btn = document.getElementById('modal-submit');
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'Formulaire bientôt disponible';
+  }
+}
+
+function clearSubmitError() {
+  submitErrorEl.hidden = true;
+}
+submitLienEl.addEventListener('input', clearSubmitError);
+submitFichierEl.addEventListener('change', clearSubmitError);
+
+submitFormEl.addEventListener('submit', (e) => {
+  if (!hasLinkOrFile(submitLienEl.value, submitFichierEl.files)) {
+    e.preventDefault();
+    submitErrorEl.hidden = false;
+    submitLienEl.focus();
+  }
+});
+
+if (new URLSearchParams(location.search).get('envoye') === '1') {
+  const note = document.createElement('p');
+  note.className = 'submit-thanks';
+  note.setAttribute('role', 'status');
+  note.textContent = 'Merci — ta proposition a bien été envoyée. Elle sera vérifiée avant publication.';
+  submitLinkEl.closest('.submit-card')?.prepend(note);
+  history.replaceState({}, '', location.pathname);
 }
 
 searchEl.addEventListener('input', () => {

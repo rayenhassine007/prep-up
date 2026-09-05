@@ -81,13 +81,33 @@
         <ul class="charte">
           <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-check"/></svg><span><strong>Contenu prépa uniquement</strong> : cours, TD, DS, sujets de concours, résumés (MP / PC / PT / BG).</span></li>
           <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-search"/></svg><span>Chaque document est <strong>vérifié manuellement</strong> avant d'être publié sur le site : rien n'apparaît automatiquement.</span></li>
-          <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-link"/></svg><span>Partage de préférence un <strong>lien Drive ou MEGA public</strong>, ou le fichier directement.</span></li>
+          <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-link"/></svg><span>Il faut <strong>au moins un lien</strong> (Drive / MEGA) <strong>ou un fichier PDF</strong> pour envoyer.</span></li>
           <li><svg class="icon icon-li" aria-hidden="true"><use href="/icons.svg#i-ban"/></svg><span>Tout contenu hors sujet, incomplet ou inapproprié sera rejeté.</span></li>
         </ul>
-        <div class="modal-actions">
-          <button id="modal-cancel" class="btn-ghost">Annuler</button>
-          <a id="modal-continue" class="submit-btn" href="#" target="_blank" rel="noopener">Continuer vers le formulaire <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-right"/></svg></a>
-        </div>
+        <form id="submit-form" class="submit-form" method="POST" enctype="multipart/form-data" novalidate>
+          <input type="hidden" name="_subject" value="Prep'Up – nouvelle ressource proposée" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://prep-upp.com/ressources?envoye=1" />
+          <label class="submit-field">
+            <span>Titre du document</span>
+            <input id="submit-titre" name="titre" type="text" required maxlength="200" placeholder="Ex. TD Analyse – suites" />
+          </label>
+          <label class="submit-field">
+            <span>Lien Drive / MEGA <em>(optionnel si tu envoies un PDF)</em></span>
+            <input id="submit-lien" name="lien" type="text" inputmode="url" autocomplete="url" placeholder="https://drive.google.com/..." />
+          </label>
+          <p class="submit-or" aria-hidden="true">ou</p>
+          <label class="submit-field">
+            <span>Fichier PDF <em>(optionnel si tu mets un lien)</em></span>
+            <input id="submit-fichier" name="fichier" type="file" accept=".pdf,application/pdf" />
+          </label>
+          <p id="submit-error" class="submit-error" hidden role="alert">Ajoute un lien ou un fichier PDF pour pouvoir envoyer.</p>
+          <div class="modal-actions">
+            <button id="modal-cancel" type="button" class="btn-ghost">Annuler</button>
+            <button id="modal-submit" type="submit" class="submit-btn">Envoyer</button>
+          </div>
+        </form>
       </dialog>
     </main>
     <footer class="site-footer">
