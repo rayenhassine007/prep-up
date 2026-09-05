@@ -122,7 +122,7 @@ if (new URLSearchParams(location.search).get('envoye') === '1') {
   const note = document.createElement('p');
   note.className = 'submit-thanks';
   note.setAttribute('role', 'status');
-  note.textContent = 'Merci — ta proposition a bien été envoyée. Elle sera vérifiée avant publication.';
+  note.textContent = 'Merci : ta proposition a bien été envoyée. Elle sera vérifiée avant publication.';
   submitLinkEl.closest('.submit-card')?.prepend(note);
   history.replaceState({}, '', location.pathname);
 }
