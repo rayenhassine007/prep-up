@@ -97,6 +97,7 @@
             <label class="submit-field">
               <span>Filière</span>
               <select id="submit-filiere" name="filiere" required>
+                <option value="" disabled selected>Choisir...</option>
                 <option value="MP">MP</option>
                 <option value="PC">PC</option>
                 <option value="PT">PT (T)</option>
@@ -106,6 +107,7 @@
             <label class="submit-field">
               <span>Année</span>
               <select id="submit-annee" name="annee" required>
+                <option value="" disabled selected>Choisir...</option>
                 <option value="1ère année">1ère année</option>
                 <option value="2ème année">2ème année</option>
               </select>
@@ -120,7 +122,7 @@
             <span>Fichier PDF <em>(optionnel si tu mets un lien)</em></span>
             <input id="submit-fichier" name="fichier" type="file" accept=".pdf,application/pdf" />
           </label>
-          <p id="submit-error" class="submit-error" hidden role="alert">Ajoute un lien ou un fichier PDF pour pouvoir envoyer.</p>
+          <p id="submit-error" class="submit-error" hidden role="alert"></p>
           <div class="modal-actions">
             <button id="modal-cancel" type="button" class="btn-ghost">Annuler</button>
             <button id="modal-submit" type="submit" class="submit-btn">Envoyer</button>

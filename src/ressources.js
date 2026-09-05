@@ -4,7 +4,7 @@ import {
   RECENT_MAX,
   isFavInList,
   keyOf,
-  hasLinkOrFile,
+  validateProposal,
   matchesSearchItem,
   noteOpenedInList,
   parseStoredList,
@@ -117,11 +117,27 @@ function clearSubmitError() {
 }
 submitLienEl.addEventListener('input', clearSubmitError);
 submitFichierEl.addEventListener('change', clearSubmitError);
+submitFiliereEl?.addEventListener('change', clearSubmitError);
+submitAnneeEl?.addEventListener('change', clearSubmitError);
 
 submitFormEl.addEventListener('submit', (e) => {
-  if (!hasLinkOrFile(submitLienEl.value, submitFichierEl.files)) {
-    e.preventDefault();
-    submitErrorEl.hidden = false;
+  const result = validateProposal(submitLienEl.value, submitFichierEl.files, {
+    filiere: submitFiliereEl?.value,
+    annee: submitAnneeEl?.value,
+  });
+  if (result.ok) return;
+
+  e.preventDefault();
+  const messages = {
+    'missing-meta': 'Choisis une filière et une année.',
+    'invalid-link': 'Le lien doit être une URL valide (Drive, MEGA, etc.).',
+    missing: 'Ajoute un lien valide ou un fichier PDF pour pouvoir envoyer.',
+  };
+  submitErrorEl.textContent = messages[result.reason] || messages.missing;
+  submitErrorEl.hidden = false;
+  if (result.reason === 'missing-meta') {
+    (submitFiliereEl?.value ? submitAnneeEl : submitFiliereEl)?.focus();
+  } else {
     submitLienEl.focus();
   }
 });

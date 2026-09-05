@@ -2,10 +2,12 @@ import { describe, expect, it } from 'vitest';
 import {
   isFavInList,
   hasLinkOrFile,
+  isValidResourceLink,
   matchesSearchItem,
   noteOpenedInList,
   parseStoredList,
   toggleFavInList,
+  validateProposal,
 } from '../../src/lib/ressources-logic.js';
 
 const item = { titre: 'DS Algèbre', type: 'PDF', url: 'https://example.com/a' };
@@ -63,9 +65,10 @@ describe('parseStoredList', () => {
 });
 
 describe('hasLinkOrFile', () => {
-  it('accepts a non-empty link alone', () => {
+  it('accepts a valid link alone', () => {
     expect(hasLinkOrFile('https://drive.google.com/x', null)).toBe(true);
     expect(hasLinkOrFile('  https://mega.nz/x  ', [])).toBe(true);
+    expect(hasLinkOrFile('drive.google.com/file/d/abc', null)).toBe(true);
   });
 
   it('accepts a selected file alone', () => {
@@ -77,5 +80,37 @@ describe('hasLinkOrFile', () => {
     expect(hasLinkOrFile('', null)).toBe(false);
     expect(hasLinkOrFile('   ', [])).toBe(false);
     expect(hasLinkOrFile(undefined, undefined)).toBe(false);
+  });
+
+  it('rejects nonsense that is not a URL', () => {
+    expect(hasLinkOrFile('asdf', null)).toBe(false);
+    expect(hasLinkOrFile('hello world', { length: 1 })).toBe(false);
+  });
+});
+
+describe('isValidResourceLink', () => {
+  it('accepts http(s) URLs', () => {
+    expect(isValidResourceLink('https://drive.google.com/file/d/x')).toBe(true);
+    expect(isValidResourceLink('http://mega.nz/file/x')).toBe(true);
+  });
+
+  it('rejects empty or garbage values', () => {
+    expect(isValidResourceLink('')).toBe(false);
+    expect(isValidResourceLink('   ')).toBe(false);
+    expect(isValidResourceLink('nimp')).toBe(false);
+    expect(isValidResourceLink('ftp://files.example.com/a')).toBe(false);
+  });
+});
+
+describe('validateProposal', () => {
+  it('requires filière and année', () => {
+    expect(validateProposal('https://a.com/x', null, { filiere: '', annee: '1ère année' }).reason).toBe('missing-meta');
+    expect(validateProposal('https://a.com/x', null, { filiere: 'MP', annee: '' }).reason).toBe('missing-meta');
+  });
+
+  it('requires a valid link or a PDF', () => {
+    expect(validateProposal('', null, { filiere: 'MP', annee: '1ère année' }).reason).toBe('missing');
+    expect(validateProposal('nimp', null, { filiere: 'MP', annee: '1ère année' }).reason).toBe('invalid-link');
+    expect(validateProposal('https://drive.google.com/x', null, { filiere: 'MP', annee: '1ère année' }).ok).toBe(true);
   });
 });

@@ -59,7 +59,43 @@ export function parseStoredList(raw) {
 
 /** True if the proposal has a non-empty link and/or at least one selected file. */
 export function hasLinkOrFile(link, files) {
-  const hasLink = String(link || '').trim().length > 0;
+  const result = validateProposal(link, files);
+  return result.ok;
+}
+
+/** True for http(s) URLs (with or without a protocol prefix). */
+export function isValidResourceLink(link) {
+  const raw = String(link || '').trim();
+  if (!raw) return false;
+  const candidate = /^[a-z][a-z0-9+.-]*:\/\//i.test(raw) ? raw : `https://${raw}`;
+  try {
+    const url = new URL(candidate);
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+    // Need a real host, not just "https://foo" with no dot / localhost-only junk
+    const host = url.hostname;
+    return host.includes('.') || host === 'localhost';
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Validate link-or-PDF rule.
+ * - empty link + no file -> missing
+ * - non-empty but invalid link (even with a file) -> invalid-link
+ * - valid link and/or file -> ok
+ */
+export function validateProposal(link, files, { filiere = 'x', annee = 'x' } = {}) {
+  if (!String(filiere || '').trim() || !String(annee || '').trim()) {
+    return { ok: false, reason: 'missing-meta' };
+  }
+  const trimmed = String(link || '').trim();
   const hasFile = !!(files && files.length > 0);
-  return hasLink || hasFile;
+  if (trimmed && !isValidResourceLink(trimmed)) {
+    return { ok: false, reason: 'invalid-link' };
+  }
+  if (!trimmed && !hasFile) {
+    return { ok: false, reason: 'missing' };
+  }
+  return { ok: true };
 }
