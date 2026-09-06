@@ -3,28 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chapitres concours prépa Tunisie – historique MP 2015–2026 | Prep'Up</title>
-    <meta name="description" content="Chapitres concours prépa Tunisie : fréquence d'apparition de chaque chapitre du programme MP sur 12 sessions (2015–2026), par épreuve (Maths, Physique, Chimie)." />
+    <title>Chapitres concours prépa Tunisie – historique MP et T 2015–2026 | Prep'Up</title>
+    <meta name="description" content="Chapitres concours prépa Tunisie : fréquence d'apparition de chaque chapitre des programmes MP et T sur 12 sessions (2015–2026), par épreuve (Maths, Physique, Chimie)." />
     <link rel="canonical" href="https://prep-upp.com/chapitres-concours" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Prep'Up" />
-    <meta property="og:title" content="Chapitres concours prépa Tunisie – historique MP 2015–2026 | Prep'Up" />
-    <meta property="og:description" content="Chapitres concours prépa Tunisie : dans combien des 12 sessions 2015–2026 chaque chapitre MP est apparu au concours d'ingénieur, par épreuve." />
+    <meta property="og:title" content="Chapitres concours prépa Tunisie – historique MP et T 2015–2026 | Prep'Up" />
+    <meta property="og:description" content="Chapitres concours prépa Tunisie : dans combien des 12 sessions 2015–2026 chaque chapitre MP ou T est apparu au concours d'ingénieur, par épreuve." />
     <meta property="og:url" content="https://prep-upp.com/chapitres-concours" />
     <meta property="og:image" content="https://prep-upp.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="fr_FR" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Chapitres concours prépa Tunisie – historique MP 2015–2026 | Prep'Up" />
-    <meta name="twitter:description" content="Chapitres concours prépa Tunisie : fréquence des chapitres MP sur 12 sessions du concours d'ingénieur (2015–2026)." />
+    <meta name="twitter:title" content="Chapitres concours prépa Tunisie – historique MP et T 2015–2026 | Prep'Up" />
+    <meta name="twitter:description" content="Chapitres concours prépa Tunisie : fréquence des chapitres MP et T sur 12 sessions du concours d'ingénieur (2015–2026)." />
     <meta name="twitter:image" content="https://prep-upp.com/og-image.png" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Dataset",
-        "name": "Chapitres concours prépa Tunisie – programme MP 2015–2026",
-        "description": "Chapitres concours prépa Tunisie : fréquence d'apparition de chaque chapitre du programme MP aux sessions du concours d'ingénieur de 2015 à 2026, par épreuve.",
+        "name": "Chapitres concours prépa Tunisie – programmes MP et T 2015–2026",
+        "description": "Chapitres concours prépa Tunisie : fréquence d'apparition de chaque chapitre des programmes MP et T aux sessions du concours d'ingénieur de 2015 à 2026, par épreuve.",
         "url": "https://prep-upp.com/chapitres-concours",
         "inLanguage": "fr",
         "creator": { "@type": "Organization", "name": "Prep'Up", "url": "https://prep-upp.com/" },
@@ -60,7 +60,7 @@
     <main>
       <h1>Chapitres concours <span class="grad-text">prépa Tunisie</span></h1>
       <p class="subtitle">
-        Historique des chapitres du programme MP au concours d'ingénieur tunisien : fréquence sur les 12 sessions 2015–2026.
+        Historique des chapitres des programmes MP et T au concours d'ingénieur tunisien : fréquence sur les 12 sessions 2015–2026.
         Chiffres établis en étiquetant à la main, question par question, les sujets officiels.
       </p>
 
@@ -69,8 +69,13 @@
         Ces chiffres décrivent ce qui est tombé, pas ce qui va tomber. « Jamais rencontré » ne veut pas
         dire « à ne pas réviser » : le jury peut changer d'avis, et un chapitre récemment ajouté au
         programme est mécaniquement sous-évalué. Le seuil de présence n'est pas le même dans toutes les
-        épreuves : voir la méthodologie en bas de page. <strong>Filière MP uniquement.</strong>
+        épreuves : il est rappelé au-dessus de chaque liste.
       </div>
+
+      <section class="chap-picker" aria-labelledby="chap-filiere-label">
+        <div class="chap-picker-label" id="chap-filiere-label">Filière</div>
+        <div class="filiere-select" id="chap-filieres"></div>
+      </section>
 
       <section class="chap-picker" aria-labelledby="chap-picker-label">
         <div class="chap-picker-label" id="chap-picker-label">Épreuves</div>
@@ -85,8 +90,9 @@
           <p>
             <strong>Ce que « présent » veut dire.</strong> Pour chaque chapitre et chaque session, on
             compte le nombre de questions qui le mobilisent ; le chapitre est déclaré présent dans cette
-            session dès qu'il atteint un seuil. <strong>Ce seuil vaut ≥ 3 questions en Maths I, Maths II
-            et Physique, mais ≥ 2 questions en Chimie</strong>, épreuve plus courte et plus découpée. Un
+            session dès qu'il atteint un seuil. <strong>Ce seuil n'est pas le même partout</strong> : il
+            vaut ≥ 3 questions dans les épreuves de maths et de physique, mais ≥ 2 en chimie, épreuve
+            plus courte et plus découpée. Le seuil retenu est rappelé au-dessus de chaque liste. Un
             lecteur qui compare deux épreuves doit le savoir.
           </p>
           <p><strong>Les bandes de régularité</strong> traduisent la fréquence obtenue :</p>

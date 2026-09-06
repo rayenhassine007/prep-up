@@ -108,11 +108,15 @@ function buildRessources() {
 }
 
 // Deliberate divergence #2: the static copy of chapitres-concours.html carries
-// all four épreuves stacked, where the client shows one at a time behind the
-// "Épreuves" buttons. A crawler (and a reader with JS off) then gets the whole
-// dataset instead of a quarter of it; the client replaces the block on load.
+// every épreuve of every filière stacked, where the client shows one at a time
+// behind the "Filière" and "Épreuves" buttons. A crawler (and a reader with JS
+// off) then gets the whole dataset instead of a slice of it; the client
+// replaces the block on load.
 function buildChapitres() {
-  const data = JSON.parse(readFileSync(resolve(root, 'src/data/chapitres_concours_mp.json'), 'utf8'));
+  const FILIERES = [
+    ['MP', 'src/data/chapitres_concours_mp.json'],
+    ['T', 'src/data/chapitres_concours_t.json'],
+  ].map(([nom, file]) => [nom, JSON.parse(readFileSync(resolve(root, file), 'utf8'))]);
   const BANDES = {
     'incontournable': 'b-incontournable',
     'très régulier': 'b-tres-regulier',
@@ -121,10 +125,15 @@ function buildChapitres() {
     'rare': 'b-rare',
     'jamais rencontré': 'b-jamais',
   };
-  const epreuves = Object.entries(data.epreuves)
+  const epreuvesDe = (data) => Object.entries(data.epreuves)
     .sort((a, b) => b[1].coefficient - a[1].coefficient);
 
-  const tabsHtml = epreuves.map(([, e], i) =>
+  const filieresHtml = FILIERES.map(([nom], i) =>
+    `<button type="button" class="${i === 0 ? 'active' : ''}" aria-pressed="${i === 0}">${esc(nom)}</button>`
+  ).join('');
+
+  // les onglets d'épreuve correspondent à la filière affichée par défaut
+  const tabsHtml = epreuvesDe(FILIERES[0][1]).map(([, e], i) =>
     `<button type="button" class="chap-tab${i === 0 ? ' active' : ''}" role="tab" aria-selected="${i === 0}">` +
     `<span class="chap-tab-name">${esc(e.court)}</span>` +
     `<span class="chap-tab-coef">coef ${esc(e.coefficient)}</span></button>`
@@ -193,7 +202,7 @@ function buildChapitres() {
       `</div>`;
   };
 
-  const panelHtml = epreuves.map(([, e]) => {
+  const carteEpreuve = ([, e]) => {
     const chips = [
       `coefficient ${e.coefficient}`,
       `${e.sessions_analysees} sessions (${e.annees})`,
@@ -212,9 +221,16 @@ function buildChapitres() {
     return `<section class="chap-card"><div class="chap-head"><h2 class="chap-title">${esc(e.epreuve)}</h2>` +
       `<div class="chap-meta">${chips}</div></div>` +
       `<div class="chap-list">${vus.map((c) => row(c, e)).join('')}</div>${neverHtml}</section>`;
-  }).join('');
+  };
 
-  return { tabsHtml, panelHtml };
+  // Sans JS, les deux filières s'empilent : chacune est annoncée par son nom,
+  // sans quoi on ne saurait pas à qui appartient quelle épreuve.
+  const panelHtml = FILIERES.map(([nom, data]) =>
+    `<p class="chap-picker-label">Filière ${esc(nom)}</p>` +
+    epreuvesDe(data).map(carteEpreuve).join('')
+  ).join('');
+
+  return { filieresHtml, tabsHtml, panelHtml };
 }
 
 function run() {
@@ -242,7 +258,8 @@ function run() {
   const chapitresPath = resolve(dist, 'chapitres-concours.html');
   if (existsSync(chapitresPath)) {
     let html = readFileSync(chapitresPath, 'utf8');
-    const { tabsHtml, panelHtml } = buildChapitres();
+    const { filieresHtml, tabsHtml, panelHtml } = buildChapitres();
+    html = injectInto(html, 'chap-filieres', filieresHtml);
     html = injectInto(html, 'chap-tabs', tabsHtml);
     html = injectInto(html, 'chap-panel', panelHtml);
     writeFileSync(chapitresPath, html);
