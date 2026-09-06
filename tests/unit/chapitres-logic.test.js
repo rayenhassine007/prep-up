@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import data from '../../src/data/chapitres_concours_mp.json' with { type: 'json' };
+import dataT from '../../src/data/chapitres_concours_t.json' with { type: 'json' };
 import {
   barWidth,
   nomDe,
@@ -52,10 +53,48 @@ describe('sessionYears', () => {
 });
 
 describe('sortEpreuves', () => {
-  it('sorts by coefficient descending', () => {
-    const sorted = sortEpreuves(data.epreuves);
+  it.each([['MP', data], ['T', dataT]])('sorts %s épreuves by coefficient descending', (_, set) => {
+    const sorted = sortEpreuves(set.epreuves);
     for (let i = 1; i < sorted.length; i++) {
       expect(sorted[i - 1][1].coefficient).toBeGreaterThanOrEqual(sorted[i][1].coefficient);
+    }
+  });
+});
+
+// Every filière file is rendered by the same code, so it has to satisfy the
+// same shape. A file that fails these would render silently wrong rows.
+describe.each([['MP', data], ['T', dataT]])('%s dataset integrity', (_, set) => {
+  const chapitres = Object.values(set.epreuves).flatMap((e) => e.chapitres);
+
+  it('gives every épreuve a short label and a coefficient', () => {
+    for (const e of Object.values(set.epreuves)) {
+      expect(typeof e.court).toBe('string');
+      expect(e.court.length).toBeGreaterThan(0);
+      expect(typeof e.coefficient).toBe('number');
+      expect(typeof e.seuil_presence_questions).toBe('number');
+    }
+  });
+
+  it('lists exactly as many years as the session count claims', () => {
+    for (const c of chapitres) {
+      expect(c.annees_presentes).toHaveLength(c.sessions_ou_present);
+    }
+  });
+
+  it('keeps every present year inside the analysed range, sorted and unique', () => {
+    for (const c of chapitres) {
+      const analysed = new Set(c.annees_analysees);
+      expect(c.annees_analysees).toHaveLength(c.sessions_analysees);
+      for (const y of c.annees_presentes) expect(analysed.has(y)).toBe(true);
+      expect(c.annees_presentes).toEqual([...new Set(c.annees_presentes)].sort((a, b) => a - b));
+    }
+  });
+
+  it('has no unaccented physics label left', () => {
+    const physique = Object.values(set.epreuves).find((e) => e.epreuve === 'Physique');
+    if (!physique) return;
+    for (const c of physique.chapitres) {
+      expect(nomDe(c)).not.toMatch(/electro|mecanique|energie|geometrique/i);
     }
   });
 });
