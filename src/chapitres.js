@@ -1,5 +1,6 @@
 import mp from './data/chapitres_concours_mp.json' with { type: 'json' };
 import t from './data/chapitres_concours_t.json' with { type: 'json' };
+import bg from './data/chapitres_concours_bg.json' with { type: 'json' };
 import { iconEl } from './icons.js';
 import {
   ANNEE_SUFFIXE,
@@ -37,6 +38,7 @@ import {
 const FILIERES = [
   ['MP', mp],
   ['T', t],
+  ['BG', bg],
 ];
 
 // Coefficient décroissant ; à égalité, l'ordre du fichier est conservé.

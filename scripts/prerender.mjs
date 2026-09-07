@@ -116,6 +116,7 @@ function buildChapitres() {
   const FILIERES = [
     ['MP', 'src/data/chapitres_concours_mp.json'],
     ['T', 'src/data/chapitres_concours_t.json'],
+    ['BG', 'src/data/chapitres_concours_bg.json'],
   ].map(([nom, file]) => [nom, JSON.parse(readFileSync(resolve(root, file), 'utf8'))]);
   const BANDES = {
     'incontournable': 'b-incontournable',
@@ -223,7 +224,7 @@ function buildChapitres() {
       `<div class="chap-list">${vus.map((c) => row(c, e)).join('')}</div>${neverHtml}</section>`;
   };
 
-  // Sans JS, les deux filières s'empilent : chacune est annoncée par son nom,
+  // Sans JS, les filières s'empilent : chacune est annoncée par son nom,
   // sans quoi on ne saurait pas à qui appartient quelle épreuve.
   const panelHtml = FILIERES.map(([nom, data]) =>
     `<p class="chap-picker-label">Filière ${esc(nom)}</p>` +

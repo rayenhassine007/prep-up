@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import data from '../../src/data/chapitres_concours_mp.json' with { type: 'json' };
 import dataT from '../../src/data/chapitres_concours_t.json' with { type: 'json' };
+import dataBG from '../../src/data/chapitres_concours_bg.json' with { type: 'json' };
+
+const FILIERES = [
+  ['MP', data],
+  ['T', dataT],
+  ['BG', dataBG],
+];
 import {
   barWidth,
   nomDe,
@@ -53,7 +60,7 @@ describe('sessionYears', () => {
 });
 
 describe('sortEpreuves', () => {
-  it.each([['MP', data], ['T', dataT]])('sorts %s épreuves by coefficient descending', (_, set) => {
+  it.each(FILIERES)('sorts %s épreuves by coefficient descending', (_, set) => {
     const sorted = sortEpreuves(set.epreuves);
     for (let i = 1; i < sorted.length; i++) {
       expect(sorted[i - 1][1].coefficient).toBeGreaterThanOrEqual(sorted[i][1].coefficient);
@@ -63,7 +70,7 @@ describe('sortEpreuves', () => {
 
 // Every filière file is rendered by the same code, so it has to satisfy the
 // same shape. A file that fails these would render silently wrong rows.
-describe.each([['MP', data], ['T', dataT]])('%s dataset integrity', (_, set) => {
+describe.each(FILIERES)('%s dataset integrity', (_, set) => {
   const chapitres = Object.values(set.epreuves).flatMap((e) => e.chapitres);
 
   it('gives every épreuve a short label and a coefficient', () => {
@@ -87,6 +94,42 @@ describe.each([['MP', data], ['T', dataT]])('%s dataset integrity', (_, set) => 
       expect(c.annees_analysees).toHaveLength(c.sessions_analysees);
       for (const y of c.annees_presentes) expect(analysed.has(y)).toBe(true);
       expect(c.annees_presentes).toEqual([...new Set(c.annees_presentes)].sort((a, b) => a - b));
+    }
+  });
+
+  it('gives the band the count actually earns', () => {
+    for (const c of chapitres) {
+      const f = c.sessions_ou_present / c.sessions_analysees;
+      let attendue = 'rare';
+      if (c.sessions_ou_present === 0) attendue = 'jamais rencontré';
+      else if (f >= 1) attendue = 'incontournable';
+      else if (f >= 0.8) attendue = 'très régulier';
+      else if (f >= 0.6) attendue = 'régulier';
+      else if (f >= 0.4) attendue = 'variable';
+      expect(c.regularite).toBe(attendue);
+    }
+  });
+
+  // Le chapitre parent est la seconde ligne de la rangée. Une épreuve qui n'en
+  // nomme que sur une partie de ses chapitres afficherait une liste bancale ;
+  // n'en nommer aucun est permis (la source T n'en donne pas pour la physique).
+  it('names a parent chapter on all of a sub-chapter épreuve or on none', () => {
+    for (const e of Object.values(set.epreuves)) {
+      if (e.niveau !== 'sous-chapitre') continue;
+      const avec = e.chapitres.filter((c) => c.chapitre_parent).length;
+      expect([0, e.chapitres.length]).toContain(avec);
+    }
+  });
+
+  // Règle du site : aucun tiret cadratin dans un texte publié.
+  it('carries no em dash in any displayed label', () => {
+    for (const e of Object.values(set.epreuves)) {
+      expect(e.epreuve).not.toMatch(/—/);
+      expect(e.court).not.toMatch(/—/);
+    }
+    for (const c of chapitres) {
+      expect(nomDe(c)).not.toMatch(/—/);
+      expect(String(c.chapitre_parent ?? '')).not.toMatch(/—/);
     }
   });
 
