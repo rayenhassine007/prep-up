@@ -1,4 +1,6 @@
-import data from './data/chapitres_concours_mp.json' with { type: 'json' };
+import mp from './data/chapitres_concours_mp.json' with { type: 'json' };
+import t from './data/chapitres_concours_t.json' with { type: 'json' };
+import bg from './data/chapitres_concours_bg.json' with { type: 'json' };
 import { iconEl } from './icons.js';
 import {
   ANNEE_SUFFIXE,
@@ -13,9 +15,11 @@ import {
 } from './lib/chapitres-logic.js';
 
 // ---------------------------------------------------------------------------
-// Chapitres du concours : filière MP.
+// Chapitres du concours : une filière à la fois.
 //
-// Pour mettre à jour : remplace src/data/chapitres_concours_mp.json.
+// Pour ajouter une filière : dépose son JSON dans src/data/, importe-le et
+// ajoute une entrée à FILIERES. Rien d'autre à toucher.
+// Pour mettre à jour une filière : remplace son fichier de données.
 // Structure : meta + epreuves > <clé> > { epreuve, court, coefficient,
 //   sessions_analysees, annees, seuil_presence_questions, niveau, chapitres: [...] }
 // Chaque chapitre : { chapitre | sous_chapitre, chapitre_parent?, annee_programme,
@@ -30,14 +34,28 @@ import {
 // décroissante) : ni tri ni filtre, la liste se lit telle quelle.
 // ---------------------------------------------------------------------------
 
+// L'ordre des boutons de filière est celui de cette liste.
+const FILIERES = [
+  ['MP', mp],
+  ['T', t],
+  ['BG', bg],
+];
+
 // Coefficient décroissant ; à égalité, l'ordre du fichier est conservé.
-const EPREUVES = sortEpreuves(data.epreuves);
+function epreuvesDe(filiere) {
+  return sortEpreuves(dataDe(filiere).epreuves);
+}
+
+function dataDe(filiere) {
+  return FILIERES.find(([nom]) => nom === filiere)[1];
+}
 
 // Une classe CSS par bande, pour éviter de fabriquer un nom à partir d'un
 // libellé accentué.
 
-const state = { epreuve: EPREUVES[0][0] };
+const state = { filiere: FILIERES[0][0], epreuve: epreuvesDe(FILIERES[0][0])[0][0] };
 
+const filieresEl = document.getElementById('chap-filieres');
 const tabsEl = document.getElementById('chap-tabs');
 const panelEl = document.getElementById('chap-panel');
 
@@ -54,9 +72,29 @@ function el(tag, className, text) {
   return node;
 }
 
+function renderFilieres() {
+  if (!filieresEl) return;
+  filieresEl.innerHTML = '';
+  for (const [nom] of FILIERES) {
+    const btn = el('button', nom === state.filiere ? 'active' : '', nom);
+    btn.type = 'button';
+    btn.setAttribute('aria-pressed', String(nom === state.filiere));
+    btn.addEventListener('click', () => {
+      if (state.filiere === nom) return;
+      state.filiere = nom;
+      // chaque filière a ses propres épreuves : on repart de la première
+      state.epreuve = epreuvesDe(nom)[0][0];
+      renderFilieres();
+      renderTabs();
+      renderPanel();
+    });
+    filieresEl.appendChild(btn);
+  }
+}
+
 function renderTabs() {
   tabsEl.innerHTML = '';
-  for (const [key, e] of EPREUVES) {
+  for (const [key, e] of epreuvesDe(state.filiere)) {
     const btn = el('button', 'chap-tab' + (key === state.epreuve ? ' active' : ''));
     btn.type = 'button';
     btn.setAttribute('role', 'tab');
@@ -129,7 +167,7 @@ function wirePanelToggle(detail, toggle) {
 
 // Trois niveaux côté CSS : `.chap-detail` (hauteur), `.chap-detail-clip` (rogne),
 // `.chap-detail-box` (menu déroulant). Cf. main.css.
-function buildDetail(c, years, present) {
+function buildDetail(c, years, present, absentes) {
   const wrap = el('div', 'chap-detail');
   const clip = el('div', 'chap-detail-clip');
   const box = el('div', 'chap-detail-box');
@@ -137,12 +175,18 @@ function buildDetail(c, years, present) {
 
   const grid = el('div', 'chap-years');
   years.forEach((y) => {
-    const on = present.has(y);
-    const cell = el('div', 'chap-year' + (on ? ' is-on' : ''));
-    cell.setAttribute('aria-label', on ? `${y} : rencontré` : `${y} : non rencontré`);
+    // Une session dont le sujet manque aux archives n'a pas été analysée : sa
+    // case reste vide, pour ne pas la confondre avec une absence constatée.
+    const absente = absentes.has(y);
+    const on = !absente && present.has(y);
+    const cell = el('div', 'chap-year' + (on ? ' is-on' : '') + (absente ? ' is-absent' : ''));
+    cell.setAttribute(
+      'aria-label',
+      absente ? `${y} : session non analysée` : on ? `${y} : rencontré` : `${y} : non rencontré`,
+    );
     const mark = el('span', 'cy-mark');
     if (on) mark.appendChild(iconEl('i-check', 'icon'));
-    else mark.textContent = '–';
+    else if (!absente) mark.textContent = '–';
     mark.setAttribute('aria-hidden', 'true');
     cell.appendChild(mark);
     cell.appendChild(el('span', 'cy-num', String(y)));
@@ -183,10 +227,15 @@ function buildRow(c, e) {
   bar.setAttribute('aria-hidden', 'true'); // le compte X/N dit déjà la même chose
   row.appendChild(bar);
 
-  const years = sessionYears(c, e);
-  const present = presentYears(c, years);
+  const analysees = sessionYears(c, e);
+  const present = presentYears(c, analysees);
   if (present) {
-    const detail = buildDetail(c, years, present);
+    // Les sessions non analysées de l'épreuve reprennent leur place dans la
+    // grille, sans quoi deux chapitres de filière identique auraient des
+    // grilles de largeurs différentes.
+    const absentes = new Set((e.annees_absentes || []).map(Number));
+    const years = [...analysees, ...absentes].sort((a, b) => a - b);
+    const detail = buildDetail(c, years, present, absentes);
     const toggle = el('button', 'chap-toggle');
     toggle.type = 'button';
     toggle.appendChild(iconEl('i-chevron-down', 'icon'));
@@ -201,7 +250,7 @@ function buildRow(c, e) {
 }
 
 function renderPanel() {
-  const e = data.epreuves[state.epreuve];
+  const e = dataDe(state.filiere).epreuves[state.epreuve];
   panelEl.innerHTML = '';
 
   const card = el('section', 'chap-card');
@@ -242,5 +291,6 @@ function renderPanel() {
   panelEl.appendChild(card);
 }
 
+renderFilieres();
 renderTabs();
 renderPanel();
