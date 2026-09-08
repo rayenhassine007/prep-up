@@ -1,10 +1,10 @@
 {
   "meta": {
-    "projet": "prep-upp.com — analyse des chapitres du concours national tunisien (filière T / Technologique)",
+    "projet": "prep-upp.com : analyse des chapitres du concours national tunisien (filière T / Technologique)",
     "description": "Pour chaque épreuve de la filière T, fréquence d'apparition de chaque chapitre du programme, session par session (2017–2026), avec la liste exacte des années où il a été présent. Un chapitre est « présent » dans une session dès qu'il atteint un seuil de questions.",
     "filiere": "T (Technologique)",
     "genere_le": "2026-09-06",
-    "donnees": "PUBLIQUES — régularité et années de présence uniquement. Aucune donnée de barème ni de pondération interne.",
+    "donnees": "PUBLIQUES : régularité et années de présence uniquement. Aucune donnée de barème ni de pondération interne.",
     "seuil_presence_questions": {
       "Physique": 3,
       "Chimie inorganique": 2,
@@ -36,21 +36,24 @@
         "regle": "0 %"
       }
     ],
-    "couverture": "Physique, Chimie inorganique et Mathématiques (commune PC+T) sur 2015–2026 (12 sessions chacune). Non couvertes : STA, Informatique, CFM, Français, Anglais.",
+    "couverture": "Physique, Chimie inorganique et Mathématiques (commune PC+T) sur 2017–2026 (10 sessions chacune ; 2015-2016 exclues). Non couvertes : STA, Informatique, CFM, Français, Anglais.",
     "avertissements": [
       "Historique, pas prédiction : ces tableaux décrivent ce qui est tombé, pas ce qui va tomber. « Jamais rencontré » ne veut pas dire « à ne pas réviser ».",
       "Le seuil de présence diffère selon l'épreuve (≥ 3 questions sauf la chimie, ≥ 2) : à préciser si l'on compare deux épreuves.",
       "Physique : volumes horaires non publiés (estimations internes) ; les autres épreuves sont au niveau chapitre du programme officiel.",
       "Mathématiques est une épreuve COMMUNE aux filières PC et T (même sujet) : les chiffres reflètent le sujet commun, pas une spécificité T.",
-      "Physique : sujet commun MP+T depuis 2024 (mêmes tags que MP repris tels quels). 2023 T est PARTIEL (seule la 1re partie du sujet est disponible, ~23 questions sur ~59 attendues).",
+      "Physique : sujet commun MP+T depuis 2024 (mêmes tags que MP repris tels quels).",
       "Chimie 2018 et 2026 sont des sujets communs MP+T (mêmes tags que MP, remappés). Les autres sessions de chimie ont un sujet propre à T.",
-      "Filière T uniquement — rien pour MP, PC ou BG dans ce fichier (voir les fichiers équivalents MP si besoin).",
+      "2015 et 2016 sont exclues de l'analyse (demande utilisateur) : 10 sessions (2017-2026) au lieu de 12.",
+      "Filière T uniquement : rien pour MP, PC ou BG dans ce fichier (voir les fichiers équivalents MP si besoin).",
       "Ne recopier aucune donnée d'un autre site : ces chiffres proviennent de l'étiquetage manuel des sujets officiels."
     ]
   },
   "epreuves": {
     "physique": {
       "epreuve": "Physique",
+      "court": "Physique",
+      "coefficient": 10,
       "sessions_analysees": 10,
       "annees": "2017–2026",
       "seuil_presence_questions": 3,
@@ -61,14 +64,44 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": null,
-          "sessions_ou_present": 7,
+          "sessions_ou_present": 8,
           "sessions_analysees": 10,
           "annees_presentes": [
             2018,
             2020,
             2021,
             2022,
+            2023,
             2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Induction électromagnétique, circuits fixes et mobiles",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2019,
+            2021,
+            2022,
             2025,
             2026
           ],
@@ -113,62 +146,6 @@
             2026
           ],
           "regularite": "variable"
-        },
-        {
-          "chapitre": "Diffusion thermique (conduction) et bilans d'énergie",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2019,
-            2021,
-            2024,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
-          "chapitre": "Induction électromagnétique, circuits fixes et mobiles",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 6,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2019,
-            2021,
-            2022,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
         },
         {
           "chapitre": "Filtrage linéaire, diagramme de Bode, régimes transitoires",
@@ -226,6 +203,33 @@
           "regularite": "variable"
         },
         {
+          "chapitre": "Diffusion thermique (conduction) et bilans d'énergie",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2019,
+            2021,
+            2024,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
           "chapitre": "Thermodynamique statistique : facteur de Boltzmann, systèmes à deux niveaux",
           "annee_programme": 2,
           "annee_label": "2e année",
@@ -253,63 +257,16 @@
           "regularite": "variable"
         },
         {
-          "chapitre": "Guides d'ondes et cavités",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
           "chapitre": "Physique quantique : dualité, Schrödinger, puits, effet tunnel",
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": null,
-          "sessions_ou_present": 2,
+          "sessions_ou_present": 3,
           "sessions_analysees": 10,
           "annees_presentes": [
             2017,
-            2021
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
             2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "chapitre": "Rayonnement thermique, corps noir, loi de Stefan",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2025
+            2023
           ],
           "annees_analysees": [
             2017,
@@ -351,14 +308,14 @@
           "regularite": "rare"
         },
         {
-          "chapitre": "Optique géométrique (lentilles, miroirs, instruments)",
-          "annee_programme": 1,
-          "annee_label": "1re année",
+          "chapitre": "Guides d'ondes et cavités",
+          "annee_programme": 2,
+          "annee_label": "2e année",
           "heures": null,
           "sessions_ou_present": 1,
           "sessions_analysees": 10,
           "annees_presentes": [
-            2024
+            2018
           ],
           "annees_analysees": [
             2017,
@@ -455,6 +412,54 @@
           "sessions_analysees": 10,
           "annees_presentes": [
             2021
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Rayonnement thermique, corps noir, loi de Stefan",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Optique géométrique (lentilles, miroirs, instruments)",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2024
           ],
           "annees_analysees": [
             2017,
@@ -602,12 +607,403 @@
           ],
           "regularite": "jamais rencontré"
         }
-      ],
-      "court": "Physique",
-      "coefficient": 10
+      ]
+    },
+    "chimie": {
+      "epreuve": "Chimie inorganique",
+      "court": "Chimie",
+      "coefficient": 4,
+      "sessions_analysees": 10,
+      "annees": "2017–2026",
+      "seuil_presence_questions": 2,
+      "niveau": "chapitre",
+      "chapitres": [
+        {
+          "chapitre": "Diagramme de Pourbaix (E-pH)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 9,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Cristaux métalliques",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2020,
+            2021,
+            2022,
+            2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Diagrammes de phase de corps purs",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 4,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2024,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Atomistique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 10,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2018,
+            2019,
+            2021,
+            2023,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Diagrammes binaires d'équilibre isobare de phase solide-liquide",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 8,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2019,
+            2022,
+            2023,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Équilibres d’oxydo-réduction",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 4.5,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2021,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Liaison chimique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2019,
+            2021,
+            2023,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Cristaux ioniques",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 4,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2019,
+            2023,
+            2024
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Diagrammes binaires d'équilibre de phases liquide-vapeur",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2020,
+            2022,
+            2024
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Courbes intensité-potentiel",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 8,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2019,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Introduction et notions de base de la cristallographie",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Thermodynamique chimique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Cinétique chimique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 10,
+          "annees_presentes": [],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Étude des cristaux macrocovalents",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 2,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 10,
+          "annees_presentes": [],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "jamais rencontré"
+        }
+      ]
     },
     "mathematiques": {
       "epreuve": "Mathématiques (commune PC+T)",
+      "court": "Maths",
+      "coefficient": 10,
       "sessions_analysees": 10,
       "annees": "2017–2026",
       "seuil_presence_questions": 3,
@@ -678,17 +1074,21 @@
           "regularite": "très régulier"
         },
         {
-          "chapitre": "Algèbre linéaire",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 45,
-          "sessions_ou_present": 5,
+          "chapitre": "Probabilités",
+          "annee_programme": [
+            1,
+            2
+          ],
+          "annee_label": "1re année et 2e année",
+          "heures": 65,
+          "sessions_ou_present": 6,
           "sessions_analysees": 10,
           "annees_presentes": [
+            2017,
+            2018,
             2019,
-            2021,
+            2020,
             2024,
-            2025,
             2026
           ],
           "annees_analysees": [
@@ -703,7 +1103,7 @@
             2025,
             2026
           ],
-          "regularite": "variable"
+          "regularite": "régulier"
         },
         {
           "chapitre": "Intégration sur un intervalle quelconque",
@@ -735,18 +1135,17 @@
           "regularite": "régulier"
         },
         {
-          "chapitre": "Probabilités",
+          "chapitre": "Algèbre linéaire",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": 40,
-          "sessions_ou_present": 6,
+          "heures": 45,
+          "sessions_ou_present": 5,
           "sessions_analysees": 10,
           "annees_presentes": [
-            2017,
-            2018,
             2019,
-            2020,
+            2021,
             2024,
+            2025,
             2026
           ],
           "annees_analysees": [
@@ -761,7 +1160,7 @@
             2025,
             2026
           ],
-          "regularite": "régulier"
+          "regularite": "variable"
         },
         {
           "chapitre": "Suites et séries de fonctions",
@@ -815,9 +1214,12 @@
         },
         {
           "chapitre": "Séries numériques",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 10,
+          "annee_programme": [
+            1,
+            2
+          ],
+          "annee_label": "1re année et 2e année",
+          "heures": 25,
           "sessions_ou_present": 1,
           "sessions_analysees": 10,
           "annees_presentes": [
@@ -1128,54 +1530,10 @@
           "regularite": "jamais rencontré"
         },
         {
-          "chapitre": "Séries numériques",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 15,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
           "chapitre": "Espaces vectoriels et applications linéaires",
           "annee_programme": 1,
           "annee_label": "1re année",
           "heures": 40,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Probabilités",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 25,
           "sessions_ou_present": 0,
           "sessions_analysees": 10,
           "annees_presentes": [],
@@ -1281,400 +1639,7 @@
           ],
           "regularite": "jamais rencontré"
         }
-      ],
-      "court": "Maths",
-      "coefficient": 10
-    },
-    "chimie": {
-      "epreuve": "Chimie inorganique",
-      "sessions_analysees": 10,
-      "annees": "2017–2026",
-      "seuil_presence_questions": 2,
-      "niveau": "chapitre",
-      "chapitres": [
-        {
-          "chapitre": "Diagramme de Pourbaix (E-pH)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 6,
-          "sessions_ou_present": 9,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "très régulier"
-        },
-        {
-          "chapitre": "Atomistique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 10,
-          "sessions_ou_present": 7,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2018,
-            2019,
-            2021,
-            2023,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "chapitre": "Diagrammes de phase de corps purs",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 4,
-          "sessions_ou_present": 7,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2024,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "chapitre": "Cristaux métalliques",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 6,
-          "sessions_ou_present": 7,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2020,
-            2021,
-            2022,
-            2024,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "chapitre": "Diagrammes binaires d'équilibre isobare de phase solide-liquide",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 8,
-          "sessions_ou_present": 6,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2019,
-            2022,
-            2023,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "chapitre": "Équilibres d’oxydo-réduction",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 4.5,
-          "sessions_ou_present": 6,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2021,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "chapitre": "Liaison chimique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 6,
-          "sessions_ou_present": 5,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2019,
-            2021,
-            2023,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
-          "chapitre": "Cristaux ioniques",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 4,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2019,
-            2023,
-            2024
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
-          "chapitre": "Diagrammes binaires d'équilibre de phases liquide-vapeur",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 6,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2020,
-            2022,
-            2024
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "chapitre": "Thermodynamique chimique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 12,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "chapitre": "Courbes intensité-potentiel",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 8,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2019,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "chapitre": "Introduction et notions de base de la cristallographie",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 6,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "chapitre": "Cinétique chimique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 6,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Étude des cristaux macrocovalents",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 2,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        }
-      ],
-      "court": "Chimie",
-      "coefficient": 4
+      ]
     }
   }
 }

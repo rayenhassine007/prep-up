@@ -1,10 +1,10 @@
 {
   "meta": {
-    "projet": "prep-upp.com - analyse des chapitres du concours national tunisien (filière MP)",
+    "projet": "prep-upp.com : analyse des chapitres du concours national tunisien (filière MP)",
     "description": "Pour chaque épreuve du concours MP, fréquence d'apparition de chaque chapitre du programme, session par session (2017–2026), avec la liste exacte des années où il a été présent. Un chapitre est « présent » dans une session dès qu'il atteint un seuil de questions.",
     "filiere": "MP",
     "genere_le": "2026-08-30",
-    "donnees": "PUBLIQUES - régularité et années de présence uniquement. Aucune donnée de barème ni de pondération interne.",
+    "donnees": "PUBLIQUES : régularité et années de présence uniquement. Aucune donnée de barème ni de pondération interne.",
     "seuil_presence_questions": {
       "Mathematiques I": 3,
       "Mathematiques II": 3,
@@ -37,12 +37,13 @@
         "regle": "0 %"
       }
     ],
-    "couverture": "30 des 44 coefficients du concours MP (68 %). Non couvertes : Informatique (4), STA (4), Français (3), Anglais (3).",
+    "couverture": "30 des 44 coefficients du concours MP (68 %), sur 2017-2026 (2015-2016 exclues). Non couvertes : Informatique (4), STA (4), Français (3), Anglais (3).",
     "avertissements": [
       "Historique, pas prédiction : ces tableaux décrivent ce qui est tombé, pas ce qui va tomber. « Jamais rencontré » ne veut pas dire « à ne pas réviser ».",
       "Le seuil de présence diffère selon l'épreuve (≥ 3 questions sauf la chimie, ≥ 2) : à préciser si l'on compare deux épreuves.",
       "Physique : volumes horaires non publiés (estimations internes) ; le tableau est au niveau sous-chapitre. Les autres épreuves sont au niveau chapitre du programme officiel.",
-      "Filière MP uniquement - rien pour PC, T ou BG.",
+      "Filière MP uniquement : rien pour PC, T ou BG.",
+      "2015 et 2016 sont exclues de l'analyse (demande utilisateur) : 10 sessions (2017-2026) au lieu de 12.",
       "Chimie 2018 étiquetée depuis le corrigé (énoncé absent des archives) ; une page du corrigé manque à la source (diagramme binaire solide-liquide possiblement sous-compté).",
       "Ne recopier aucune donnée d'un autre site : ces chiffres proviennent de l'étiquetage manuel des sujets officiels."
     ]
@@ -50,6 +51,7 @@
   "epreuves": {
     "mathematiques-1": {
       "epreuve": "Mathématiques I",
+      "court": "Maths I",
       "coefficient": 10,
       "sessions_analysees": 10,
       "annees": "2017–2026",
@@ -69,37 +71,6 @@
             2020,
             2021,
             2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "très régulier"
-        },
-        {
-          "chapitre": "Topologie des espaces vectoriels normés",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 26,
-          "sessions_ou_present": 8,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2019,
-            2020,
-            2021,
             2023,
             2024,
             2025,
@@ -182,17 +153,19 @@
           "regularite": "très régulier"
         },
         {
-          "chapitre": "Séries entières",
+          "chapitre": "Topologie des espaces vectoriels normés",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": 12,
-          "sessions_ou_present": 6,
+          "heures": 26,
+          "sessions_ou_present": 8,
           "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2019,
             2020,
-            2022,
+            2021,
+            2023,
+            2024,
             2025,
             2026
           ],
@@ -208,7 +181,7 @@
             2025,
             2026
           ],
-          "regularite": "régulier"
+          "regularite": "très régulier"
         },
         {
           "chapitre": "Dérivation",
@@ -240,34 +213,6 @@
           "regularite": "régulier"
         },
         {
-          "chapitre": "Intégrales à paramètre",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 18,
-          "sessions_ou_present": 5,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2019,
-            2021,
-            2022,
-            2024,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
           "chapitre": "Intégration",
           "annee_programme": 1,
           "annee_label": "1re année",
@@ -297,16 +242,46 @@
           "regularite": "régulier"
         },
         {
-          "chapitre": "Séries numériques (2e année)",
+          "chapitre": "Séries entières",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": 10,
-          "sessions_ou_present": 4,
+          "heures": 12,
+          "sessions_ou_present": 6,
           "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2019,
             2020,
+            2022,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Intégrales à paramètre",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 18,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2019,
+            2021,
+            2022,
+            2024,
             2025
           ],
           "annees_analysees": [
@@ -379,15 +354,20 @@
           "regularite": "variable"
         },
         {
-          "chapitre": "Probabilités",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 26,
-          "sessions_ou_present": 2,
+          "chapitre": "Séries numériques",
+          "annee_programme": [
+            1,
+            2
+          ],
+          "annee_label": "1re année et 2e année",
+          "heures": 28,
+          "sessions_ou_present": 4,
           "sessions_analysees": 10,
           "annees_presentes": [
             2017,
-            2018
+            2019,
+            2020,
+            2025
           ],
           "annees_analysees": [
             2017,
@@ -401,17 +381,18 @@
             2025,
             2026
           ],
-          "regularite": "rare"
+          "regularite": "variable"
         },
         {
-          "chapitre": "Équations différentielles linéaires",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 16,
-          "sessions_ou_present": 1,
+          "chapitre": "Probabilités",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 26,
+          "sessions_ou_present": 2,
           "sessions_analysees": 10,
           "annees_presentes": [
-            2024
+            2017,
+            2018
           ],
           "annees_analysees": [
             2017,
@@ -478,6 +459,30 @@
           "regularite": "rare"
         },
         {
+          "chapitre": "Équations différentielles linéaires",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 16,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2024
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
           "chapitre": "Familles sommables de nombres complexes",
           "annee_programme": 2,
           "annee_label": "2e année",
@@ -502,51 +507,7 @@
           "regularite": "rare"
         },
         {
-          "chapitre": "Calcul différentiel",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 24,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
           "chapitre": "Nombres réels et suites numériques",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 18,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Séries numériques (1re année)",
           "annee_programme": 1,
           "annee_label": "1re année",
           "heures": 18,
@@ -610,587 +571,12 @@
             2026
           ],
           "regularite": "jamais rencontré"
-        }
-      ],
-      "court": "Maths I"
-    },
-    "physique": {
-      "epreuve": "Physique",
-      "coefficient": 10,
-      "sessions_analysees": 10,
-      "annees": "2017–2026",
-      "seuil_presence_questions": 3,
-      "niveau": "sous-chapitre",
-      "chapitres": [
+        },
         {
-          "sous_chapitre": "Ondes électromagnétiques dans le vide et dans les milieux",
-          "chapitre_parent": "Électromagnétisme (2e année)",
+          "chapitre": "Calcul différentiel",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 7,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "sous_chapitre": "Optique ondulatoire : interférences, cohérence, diffraction, réseaux",
-          "chapitre_parent": "Optique",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 7,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2018,
-            2020,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "sous_chapitre": "Diffusion thermique (conduction) et bilans d'énergie",
-          "chapitre_parent": "Thermodynamique (2e année)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 6,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2020,
-            2022,
-            2023,
-            2024,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "sous_chapitre": "Thermodynamique statistique : facteur de Boltzmann, systèmes à deux niveaux",
-          "chapitre_parent": "Éléments de thermodynamique statistique",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 7,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2019,
-            2020,
-            2021,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "régulier"
-        },
-        {
-          "sous_chapitre": "Physique quantique : dualité, Schrödinger, puits, effet tunnel",
-          "chapitre_parent": "Physique quantique",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 5,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2019,
-            2021,
-            2022,
-            2023
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
-          "sous_chapitre": "Induction électromagnétique, circuits fixes et mobiles",
-          "chapitre_parent": "Électromagnétisme (2e année)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2021,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
-          "sous_chapitre": "Équations de Maxwell, énergie électromagnétique (Poynting)",
-          "chapitre_parent": "Électromagnétisme (2e année)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2020,
-            2021,
-            2022,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
-          "sous_chapitre": "Électrostatique et magnétostatique, dipôles",
-          "chapitre_parent": "Électromagnétisme (1re année)",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2021,
-            2024
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Rayonnement thermique, corps noir, loi de Stefan",
-          "chapitre_parent": "Thermodynamique (2e année)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2022,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Rayonnement dipolaire",
-          "chapitre_parent": "Électromagnétisme (2e année)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2020,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Filtrage linéaire, diagramme de Bode, régimes transitoires",
-          "chapitre_parent": "Électrocinétique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2021,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Premier et second principes, machines thermiques, changements d'état",
-          "chapitre_parent": "Thermodynamique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2019
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Réflexion et transmission à une interface, conducteur parfait",
-          "chapitre_parent": "Électromagnétisme (2e année)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2019,
-            2022
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Optique géométrique (lentilles, miroirs, instruments)",
-          "chapitre_parent": "Signaux physiques",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2024
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Oscillateur harmonique, résonance, amortissement",
-          "chapitre_parent": "Signaux physiques",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2021,
-            2023
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Ondes mécaniques et acoustiques, équation de d'Alembert",
-          "chapitre_parent": "Signaux physiques",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2019,
-            2022
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Mécanique du point : cinématique, dynamique, énergie",
-          "chapitre_parent": "Mécanique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2019,
-            2021
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Guides d'ondes et cavités",
-          "chapitre_parent": "Électromagnétisme (2e année)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2022
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "sous_chapitre": "Analyse de Fourier, échantillonnage et filtrage numérique",
-          "chapitre_parent": "Éléments de traitement du signal",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": null,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "sous_chapitre": "Référentiels non inertiels, forces d'inertie",
-          "chapitre_parent": "Mécanique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "sous_chapitre": "Mécanique du solide, rotation autour d'un axe fixe",
-          "chapitre_parent": "Mécanique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "sous_chapitre": "Forces centrales, mouvement newtonien, particules chargées",
-          "chapitre_parent": "Mécanique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": null,
+          "heures": 24,
           "sessions_ou_present": 0,
           "sessions_analysees": 10,
           "annees_presentes": [],
@@ -1208,11 +594,11 @@
           ],
           "regularite": "jamais rencontré"
         }
-      ],
-      "court": "Physique"
+      ]
     },
     "mathematiques-2": {
       "epreuve": "Mathématiques II",
+      "court": "Maths II",
       "coefficient": 6,
       "sessions_analysees": 10,
       "annees": "2017–2026",
@@ -1365,7 +751,7 @@
           "regularite": "rare"
         },
         {
-          "chapitre": "Matrices - Opérations sur les matrices",
+          "chapitre": "Matrices : Opérations sur les matrices",
           "annee_programme": 1,
           "annee_label": "1re année",
           "heures": 4,
@@ -1414,6 +800,31 @@
           "regularite": "rare"
         },
         {
+          "chapitre": "Structures algébriques usuelles",
+          "annee_programme": [
+            1,
+            2
+          ],
+          "annee_label": "1re année et 2e année",
+          "heures": 26,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 10,
+          "annees_presentes": [],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "jamais rencontré"
+        },
+        {
           "chapitre": "Changements de bases, équivalence et similitude",
           "annee_programme": 1,
           "annee_label": "1re année",
@@ -1440,72 +851,6 @@
           "annee_programme": 1,
           "annee_label": "1re année",
           "heures": 8,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Structures algébriques usuelles (1re année)",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 6,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Calculs algébriques",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 6,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Vocabulaire ensembliste",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 12,
           "sessions_ou_present": 0,
           "sessions_analysees": 10,
           "annees_presentes": [],
@@ -1568,10 +913,10 @@
           "regularite": "jamais rencontré"
         },
         {
-          "chapitre": "Structures algébriques usuelles (2e année)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 20,
+          "chapitre": "Calculs algébriques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 6,
           "sessions_ou_present": 0,
           "sessions_analysees": 10,
           "annees_presentes": [],
@@ -1613,6 +958,28 @@
         },
         {
           "chapitre": "Arithmétique dans l’ensemble des entiers relatifs",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 10,
+          "annees_presentes": [],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "jamais rencontré"
+        },
+        {
+          "chapitre": "Vocabulaire ensembliste",
           "annee_programme": 1,
           "annee_label": "1re année",
           "heures": 12,
@@ -1721,11 +1088,608 @@
           ],
           "regularite": "jamais rencontré"
         }
-      ],
-      "court": "Maths II"
+      ]
+    },
+    "physique": {
+      "epreuve": "Physique",
+      "court": "Physique",
+      "coefficient": 10,
+      "sessions_analysees": 10,
+      "annees": "2017–2026",
+      "seuil_presence_questions": 3,
+      "niveau": "sous-chapitre",
+      "chapitres": [
+        {
+          "sous_chapitre": "Optique ondulatoire : interférences, cohérence, diffraction, réseaux",
+          "chapitre_parent": "Optique",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2018,
+            2020,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "sous_chapitre": "Ondes électromagnétiques dans le vide et dans les milieux",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "sous_chapitre": "Thermodynamique statistique : facteur de Boltzmann, systèmes à deux niveaux",
+          "chapitre_parent": "Éléments de thermodynamique statistique",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2019,
+            2020,
+            2021,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "sous_chapitre": "Diffusion thermique (conduction) et bilans d'énergie",
+          "chapitre_parent": "Thermodynamique (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2020,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "sous_chapitre": "Physique quantique : dualité, Schrödinger, puits, effet tunnel",
+          "chapitre_parent": "Physique quantique",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2019,
+            2021,
+            2022,
+            2023
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
+          "sous_chapitre": "Induction électromagnétique, circuits fixes et mobiles",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2021,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
+          "sous_chapitre": "Équations de Maxwell, énergie électromagnétique (Poynting)",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2020,
+            2021,
+            2022,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
+          "sous_chapitre": "Électrostatique et magnétostatique, dipôles",
+          "chapitre_parent": "Électromagnétisme (1re année)",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2021,
+            2024
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Filtrage linéaire, diagramme de Bode, régimes transitoires",
+          "chapitre_parent": "Électrocinétique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2021,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Premier et second principes, machines thermiques, changements d'état",
+          "chapitre_parent": "Thermodynamique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2019
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Rayonnement dipolaire",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2020,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Rayonnement thermique, corps noir, loi de Stefan",
+          "chapitre_parent": "Thermodynamique (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2022,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Réflexion et transmission à une interface, conducteur parfait",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2019,
+            2022
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Oscillateur harmonique, résonance, amortissement",
+          "chapitre_parent": "Signaux physiques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2021,
+            2023
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Ondes mécaniques et acoustiques, équation de d'Alembert",
+          "chapitre_parent": "Signaux physiques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2019,
+            2022
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Mécanique du point : cinématique, dynamique, énergie",
+          "chapitre_parent": "Mécanique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2019,
+            2021
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Optique géométrique (lentilles, miroirs, instruments)",
+          "chapitre_parent": "Signaux physiques",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2024
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Guides d'ondes et cavités",
+          "chapitre_parent": "Électromagnétisme (2e année)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2022
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "sous_chapitre": "Analyse de Fourier, échantillonnage et filtrage numérique",
+          "chapitre_parent": "Éléments de traitement du signal",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": null,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 10,
+          "annees_presentes": [],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "jamais rencontré"
+        },
+        {
+          "sous_chapitre": "Référentiels non inertiels, forces d'inertie",
+          "chapitre_parent": "Mécanique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 10,
+          "annees_presentes": [],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "jamais rencontré"
+        },
+        {
+          "sous_chapitre": "Mécanique du solide, rotation autour d'un axe fixe",
+          "chapitre_parent": "Mécanique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 10,
+          "annees_presentes": [],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "jamais rencontré"
+        },
+        {
+          "sous_chapitre": "Forces centrales, mouvement newtonien, particules chargées",
+          "chapitre_parent": "Mécanique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": null,
+          "sessions_ou_present": 0,
+          "sessions_analysees": 10,
+          "annees_presentes": [],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "jamais rencontré"
+        }
+      ]
     },
     "chimie": {
       "epreuve": "Chimie inorganique",
+      "court": "Chimie",
       "coefficient": 4,
       "sessions_analysees": 10,
       "annees": "2017–2026",
@@ -1798,10 +1762,10 @@
           "regularite": "très régulier"
         },
         {
-          "chapitre": "Équilibres d’oxydo-réduction",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 4.5,
+          "chapitre": "Diagramme de Pourbaix (E-pH)",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
           "sessions_ou_present": 9,
           "sessions_analysees": 10,
           "annees_presentes": [
@@ -1830,10 +1794,10 @@
           "regularite": "très régulier"
         },
         {
-          "chapitre": "Diagramme de Pourbaix (E-pH)",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 6,
+          "chapitre": "Équilibres d’oxydo-réduction",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 4.5,
           "sessions_ou_present": 9,
           "sessions_analysees": 10,
           "annees_presentes": [
@@ -1923,34 +1887,6 @@
           "regularite": "régulier"
         },
         {
-          "chapitre": "Cristaux ioniques",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 4,
-          "sessions_ou_present": 5,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2017,
-            2018,
-            2019,
-            2023,
-            2024
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
           "chapitre": "Liaison chimique",
           "annee_programme": 1,
           "annee_label": "1re année",
@@ -2010,15 +1946,17 @@
           "regularite": "régulier"
         },
         {
-          "chapitre": "Diagrammes binaires d'équilibre de phases liquide-vapeur",
+          "chapitre": "Cristaux ioniques",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": 6,
-          "sessions_ou_present": 3,
+          "heures": 4,
+          "sessions_ou_present": 5,
           "sessions_analysees": 10,
           "annees_presentes": [
-            2020,
-            2022,
+            2017,
+            2018,
+            2019,
+            2023,
             2024
           ],
           "annees_analysees": [
@@ -2033,7 +1971,7 @@
             2025,
             2026
           ],
-          "regularite": "rare"
+          "regularite": "variable"
         },
         {
           "chapitre": "Cristaux métalliques",
@@ -2061,6 +1999,32 @@
             2026
           ],
           "regularite": "variable"
+        },
+        {
+          "chapitre": "Diagrammes binaires d'équilibre de phases liquide-vapeur",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2020,
+            2022,
+            2024
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
         },
         {
           "chapitre": "Courbes intensité-potentiel",
@@ -2135,8 +2099,7 @@
           ],
           "regularite": "jamais rencontré"
         }
-      ],
-      "court": "Chimie"
+      ]
     }
   }
 }

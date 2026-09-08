@@ -61,8 +61,11 @@
       "chapitres": [
         {
           "chapitre": "Probabilités",
-          "annee_programme": 2,
-          "annee_label": "2e année",
+          "annee_programme": [
+            1,
+            2
+          ],
+          "annee_label": "1re année et 2e année",
           "heures": 0,
           "sessions_ou_present": 10,
           "sessions_analysees": 10,
@@ -149,28 +152,6 @@
             2026
           ],
           "regularite": "variable"
-        },
-        {
-          "chapitre": "Probabilités",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 0,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
         },
         {
           "chapitre": "Algèbre et géométrie 1 : Notions élémentaires",
@@ -339,13 +320,17 @@
       "chapitres": [
         {
           "chapitre": "Électrocinétique - Électronique",
-          "annee_programme": 2,
-          "annee_label": "2e année",
+          "annee_programme": [
+            1,
+            2
+          ],
+          "annee_label": "1re année et 2e année",
           "heures": 0,
-          "sessions_ou_present": 8,
+          "sessions_ou_present": 9,
           "sessions_analysees": 10,
           "annees_presentes": [
             2017,
+            2018,
             2019,
             2021,
             2022,
@@ -367,6 +352,38 @@
             2026
           ],
           "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Thermodynamique",
+          "annee_programme": [
+            1,
+            2
+          ],
+          "annee_label": "1re année et 2e année",
+          "heures": 0,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2019,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
         },
         {
           "chapitre": "Mécanique des fluides",
@@ -398,34 +415,6 @@
           "regularite": "régulier"
         },
         {
-          "chapitre": "Thermodynamique",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 0,
-          "sessions_ou_present": 5,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
           "chapitre": "Mécanique Newtonienne du point matériel",
           "annee_programme": 1,
           "annee_label": "1re année",
@@ -453,31 +442,6 @@
           "regularite": "variable"
         },
         {
-          "chapitre": "Thermodynamique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 0,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018,
-            2019
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
           "chapitre": "Physique des ondes",
           "annee_programme": 2,
           "annee_label": "2e année",
@@ -486,30 +450,6 @@
           "sessions_analysees": 10,
           "annees_presentes": [
             2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "rare"
-        },
-        {
-          "chapitre": "Électrocinétique - Électronique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 0,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 10,
-          "annees_presentes": [
-            2018
           ],
           "annees_analysees": [
             2017,
@@ -879,7 +819,7 @@
           "chapitre": "Diversité des Parazoaires aux Protostomiens",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": 18.5,
+          "heures": 37,
           "sessions_ou_present": 6,
           "sessions_analysees": 10,
           "annees_presentes": [
@@ -966,7 +906,7 @@
           "chapitre": "Phylogénie des Vertébrés",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": 4,
+          "heures": 8,
           "sessions_ou_present": 4,
           "sessions_analysees": 10,
           "annees_presentes": [
@@ -1042,7 +982,7 @@
           "chapitre": "Les protistes à affinités animales",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": 10,
+          "heures": 20,
           "sessions_ou_present": 0,
           "sessions_analysees": 10,
           "annees_presentes": [],
@@ -1086,51 +1026,7 @@
           "chapitre": "La Polyphylie des Vertébrés",
           "annee_programme": 2,
           "annee_label": "2e année",
-          "heures": 3,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Les protistes à affinités animales",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 10,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Diversité des Parazoaires aux Protostomiens",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 18.5,
+          "heures": 6,
           "sessions_ou_present": 0,
           "sessions_analysees": 10,
           "annees_presentes": [],
@@ -1153,50 +1049,6 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 1,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Phylogénie des Vertébrés",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 4,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 10,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "La Polyphylie des Vertébrés",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 3,
           "sessions_ou_present": 0,
           "sessions_analysees": 10,
           "annees_presentes": [],
