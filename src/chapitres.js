@@ -167,7 +167,7 @@ function wirePanelToggle(detail, toggle) {
 
 // Trois niveaux côté CSS : `.chap-detail` (hauteur), `.chap-detail-clip` (rogne),
 // `.chap-detail-box` (menu déroulant). Cf. main.css.
-function buildDetail(c, years, present) {
+function buildDetail(c, years, present, absentes) {
   const wrap = el('div', 'chap-detail');
   const clip = el('div', 'chap-detail-clip');
   const box = el('div', 'chap-detail-box');
@@ -175,12 +175,18 @@ function buildDetail(c, years, present) {
 
   const grid = el('div', 'chap-years');
   years.forEach((y) => {
-    const on = present.has(y);
-    const cell = el('div', 'chap-year' + (on ? ' is-on' : ''));
-    cell.setAttribute('aria-label', on ? `${y} : rencontré` : `${y} : non rencontré`);
+    // Une session dont le sujet manque aux archives n'a pas été analysée : sa
+    // case reste vide, pour ne pas la confondre avec une absence constatée.
+    const absente = absentes.has(y);
+    const on = !absente && present.has(y);
+    const cell = el('div', 'chap-year' + (on ? ' is-on' : '') + (absente ? ' is-absent' : ''));
+    cell.setAttribute(
+      'aria-label',
+      absente ? `${y} : session non analysée` : on ? `${y} : rencontré` : `${y} : non rencontré`,
+    );
     const mark = el('span', 'cy-mark');
     if (on) mark.appendChild(iconEl('i-check', 'icon'));
-    else mark.textContent = '–';
+    else if (!absente) mark.textContent = '–';
     mark.setAttribute('aria-hidden', 'true');
     cell.appendChild(mark);
     cell.appendChild(el('span', 'cy-num', String(y)));
@@ -221,10 +227,15 @@ function buildRow(c, e) {
   bar.setAttribute('aria-hidden', 'true'); // le compte X/N dit déjà la même chose
   row.appendChild(bar);
 
-  const years = sessionYears(c, e);
-  const present = presentYears(c, years);
+  const analysees = sessionYears(c, e);
+  const present = presentYears(c, analysees);
   if (present) {
-    const detail = buildDetail(c, years, present);
+    // Les sessions non analysées de l'épreuve reprennent leur place dans la
+    // grille, sans quoi deux chapitres de filière identique auraient des
+    // grilles de largeurs différentes.
+    const absentes = new Set((e.annees_absentes || []).map(Number));
+    const years = [...analysees, ...absentes].sort((a, b) => a - b);
+    const detail = buildDetail(c, years, present, absentes);
     const toggle = el('button', 'chap-toggle');
     toggle.type = 'button';
     toggle.appendChild(iconEl('i-chevron-down', 'icon'));

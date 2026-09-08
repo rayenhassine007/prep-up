@@ -173,7 +173,10 @@ function buildChapitres() {
     const parent = e.niveau === 'sous-chapitre' && c.chapitre_parent
       ? `<span class="chap-sub"><span class="chap-parent">${esc(propre(c.chapitre_parent))}</span></span>` : '';
 
-    const years = sessionYears(c, e);
+    const analysees = sessionYears(c, e);
+    // Les sessions que l'épreuve n'a pas pu analyser gardent leur case, vide.
+    const absentes = new Set((e.annees_absentes || []).map(Number));
+    const years = analysees && [...analysees, ...absentes].sort((a, b) => a - b);
     const set = Array.isArray(c.annees_presentes) && c.annees_presentes.length
       ? new Set(c.annees_presentes.map(Number)) : null;
     // The per-session panel is emitted with the `open` class: with JS off the
@@ -186,9 +189,11 @@ function buildChapitres() {
         `<div class="chap-detail-title">Sessions où le chapitre a été rencontré</div>` +
         `<div class="chap-years">` +
         years.map((y) => {
-          const on = set.has(y);
-          return `<div class="chap-year${on ? ' is-on' : ''}" aria-label="${y} : ${on ? 'rencontré' : 'non rencontré'}">` +
-            `<span class="cy-mark" aria-hidden="true">${on ? iconHtml('i-check') : '–'}</span>` +
+          const absente = absentes.has(y);
+          const on = !absente && set.has(y);
+          const label = absente ? 'session non analysée' : on ? 'rencontré' : 'non rencontré';
+          return `<div class="chap-year${on ? ' is-on' : ''}${absente ? ' is-absent' : ''}" aria-label="${y} : ${label}">` +
+            `<span class="cy-mark" aria-hidden="true">${on ? iconHtml('i-check') : absente ? '' : '–'}</span>` +
             `<span class="cy-num">${y}</span></div>`;
         }).join('') +
         `</div></div></div></div>`

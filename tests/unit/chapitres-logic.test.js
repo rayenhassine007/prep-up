@@ -121,6 +121,21 @@ describe.each(FILIERES)('%s dataset integrity', (_, set) => {
     }
   });
 
+  // Une session non analysée garde sa case dans la grille : elle doit donc
+  // rester hors des années analysées, sinon elle serait comptée deux fois.
+  it('keeps unanalysed sessions out of the analysed years', () => {
+    for (const e of Object.values(set.epreuves)) {
+      if (!e.annees_absentes) continue;
+      expect(e.annees_absentes).toEqual([...new Set(e.annees_absentes)].sort((a, b) => a - b));
+      for (const c of e.chapitres) {
+        for (const y of e.annees_absentes) {
+          expect(c.annees_analysees).not.toContain(y);
+          expect(c.annees_presentes).not.toContain(y);
+        }
+      }
+    }
+  });
+
   // Règle du site : aucun tiret cadratin dans un texte publié.
   it('carries no em dash in any displayed label', () => {
     for (const e of Object.values(set.epreuves)) {
