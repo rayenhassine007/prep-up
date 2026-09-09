@@ -41,10 +41,9 @@
         "regle": "0 %"
       }
     ],
-    "couverture": "Les 8 matieres scientifiques BG (Maths, Physique, Geologie, Biologie animale, Biologie vegetale, Biochimie/Genetique, Chimie inorganique, Chimie organique). Maths/Physique/Geologie/Biologie animale/Biologie vegetale/Biochimie/Chimie inorganique : 2017–2026 (10 sessions, 2015-2016 indisponibles). Chimie organique : 2017–2026 SAUF 2020 (9 sessions, 2015-2016 et 2020 indisponibles). Non couvertes : Anglais, Francais, Informatique.",
+    "couverture": "Les 8 matieres scientifiques BG (Maths, Physique, Geologie, Biologie animale, Biologie vegetale, Biochimie/Genetique, Chimie inorganique, Chimie organique), toutes sur 2017–2026 (10 sessions, 2015-2016 indisponibles). Non couvertes : Anglais, Francais, Informatique.",
     "avertissements": [
       "Historique, pas prédiction : ces tableaux décrivent ce qui est tombé, pas ce qui va tomber.",
-      "Chimie organique : la session 2020 est absente (le sujet de Chimie 2020 disponible ne couvre que la Chimie inorganique, aucun sujet de Chimie organique n'a ete trouve pour cette annee) : 9 sessions analysees au lieu de 10.",
       "Biochimie/Biologie cellulaire/Genetique : AUCUNE question de Biologie cellulaire n'est tombée sur les sessions disponibles (uniquement Biochimie et Génétique), malgré l'intitulé officiel de l'épreuve.",
       "Ne recopier aucune donnée d'un autre site : ces chiffres proviennent de l'étiquetage manuel des sujets officiels."
     ]
@@ -2721,24 +2720,22 @@
       "epreuve": "Chimie organique",
       "court": "Chimie orga.",
       "coefficient": 2,
-      "sessions_analysees": 9,
-      "annees_absentes": [
-        2020
-      ],
-      "annees": "2017–2026 sauf 2020",
+      "sessions_analysees": 10,
+      "annees": "2017–2026",
       "seuil_presence_questions": 2,
       "niveau": "chapitre",
       "chapitres": [
         {
-          "chapitre": "Stéréoisomérie en chimie organique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 10,
-          "sessions_ou_present": 8,
-          "sessions_analysees": 9,
+          "chapitre": "Les alcènes",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 3,
+          "sessions_ou_present": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -2750,6 +2747,7 @@
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -2760,12 +2758,12 @@
           "regularite": "très régulier"
         },
         {
-          "chapitre": "Les alcènes",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 3,
+          "chapitre": "Stéréoisomérie en chimie organique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 10,
           "sessions_ou_present": 8,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2018,
             2019,
@@ -2780,6 +2778,7 @@
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -2794,12 +2793,13 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 1.5,
-          "sessions_ou_present": 7,
-          "sessions_analysees": 9,
+          "sessions_ou_present": 8,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2024,
@@ -2809,6 +2809,36 @@
             2017,
             2018,
             2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Les dérivés carbonylés : cétones et aldéhydes",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 3,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2018,
+            2020,
+            2021,
+            2022,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
             2021,
             2022,
             2023,
@@ -2819,39 +2849,12 @@
           "regularite": "régulier"
         },
         {
-          "chapitre": "Les dérivés carbonylés : cétones et aldéhydes",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 3,
-          "sessions_ou_present": 5,
-          "sessions_analysees": 9,
-          "annees_presentes": [
-            2017,
-            2018,
-            2021,
-            2022,
-            2026
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
           "chapitre": "Les dérivés halogénés",
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 3,
           "sessions_ou_present": 5,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2018,
@@ -2863,6 +2866,7 @@
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -2877,11 +2881,12 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 3,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 9,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2018,
+            2020,
             2021,
             2022
           ],
@@ -2889,6 +2894,35 @@
             2017,
             2018,
             2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Le benzène et ses dérivés",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 2.25,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2020,
+            2021,
+            2022,
+            2023,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
             2021,
             2022,
             2023,
@@ -2904,7 +2938,7 @@
           "annee_label": "1re année",
           "heures": 4.5,
           "sessions_ou_present": 4,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2021,
             2022,
@@ -2915,32 +2949,7 @@
             2017,
             2018,
             2019,
-            2021,
-            2022,
-            2023,
-            2024,
-            2025,
-            2026
-          ],
-          "regularite": "variable"
-        },
-        {
-          "chapitre": "Le benzène et ses dérivés",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 2.25,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 9,
-          "annees_presentes": [
-            2021,
-            2022,
-            2023,
-            2025
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
+            2020,
             2021,
             2022,
             2023,
@@ -2956,7 +2965,7 @@
           "annee_label": "2e année",
           "heures": 2.25,
           "sessions_ou_present": 2,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2024,
             2026
@@ -2965,6 +2974,7 @@
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -2980,7 +2990,7 @@
           "annee_label": "1re année",
           "heures": 3,
           "sessions_ou_present": 1,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2024
           ],
@@ -2988,6 +2998,7 @@
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -3003,7 +3014,7 @@
           "annee_label": "1re année",
           "heures": 6,
           "sessions_ou_present": 1,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2019
           ],
@@ -3011,6 +3022,7 @@
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -3026,12 +3038,13 @@
           "annee_label": "1re année",
           "heures": 5,
           "sessions_ou_present": 0,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -3047,12 +3060,13 @@
           "annee_label": "2e année",
           "heures": 1.5,
           "sessions_ou_present": 0,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,
@@ -3068,12 +3082,13 @@
           "annee_label": "2e année",
           "heures": 1.5,
           "sessions_ou_present": 0,
-          "sessions_analysees": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
             2018,
             2019,
+            2020,
             2021,
             2022,
             2023,

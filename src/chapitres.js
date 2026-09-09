@@ -1,4 +1,5 @@
 import mp from './data/chapitres_concours_mp.json' with { type: 'json' };
+import pc from './data/chapitres_concours_pc.json' with { type: 'json' };
 import t from './data/chapitres_concours_t.json' with { type: 'json' };
 import bg from './data/chapitres_concours_bg.json' with { type: 'json' };
 import { iconEl } from './icons.js';
@@ -37,6 +38,7 @@ import {
 // L'ordre des boutons de filière est celui de cette liste.
 const FILIERES = [
   ['MP', mp],
+  ['PC', pc],
   ['T', t],
   ['BG', bg],
 ];
