@@ -115,6 +115,7 @@ function buildRessources() {
 function buildChapitres() {
   const FILIERES = [
     ['MP', 'src/data/chapitres_concours_mp.json'],
+    ['PC', 'src/data/chapitres_concours_pc.json'],
     ['T', 'src/data/chapitres_concours_t.json'],
     ['BG', 'src/data/chapitres_concours_bg.json'],
   ].map(([nom, file]) => [nom, JSON.parse(readFileSync(resolve(root, file), 'utf8'))]);

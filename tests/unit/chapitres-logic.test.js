@@ -1,10 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import data from '../../src/data/chapitres_concours_mp.json' with { type: 'json' };
+import dataPC from '../../src/data/chapitres_concours_pc.json' with { type: 'json' };
 import dataT from '../../src/data/chapitres_concours_t.json' with { type: 'json' };
 import dataBG from '../../src/data/chapitres_concours_bg.json' with { type: 'json' };
 
 const FILIERES = [
   ['MP', data],
+  ['PC', dataPC],
   ['T', dataT],
   ['BG', dataBG],
 ];
