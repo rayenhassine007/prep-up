@@ -3,7 +3,7 @@
     "projet": "prep-upp.com : analyse des chapitres du concours national tunisien (filière PC)",
     "description": "Pour chaque épreuve de la filière PC, fréquence d'apparition de chaque chapitre du programme, session par session, avec la liste exacte des années où il a été présent. Un chapitre est « présent » dans une session dès qu'il atteint un seuil de questions.",
     "filiere": "PC (Physique-Chimie)",
-    "genere_le": "2026-09-08",
+    "genere_le": "2026-09-09",
     "donnees": "PUBLIQUES : régularité et années de présence uniquement. Aucune donnée de barème ni de pondération interne.",
     "seuil_presence_questions": {
       "Mathematiques": 3,
@@ -37,10 +37,9 @@
         "regle": "0 %"
       }
     ],
-    "couverture": "Mathematiques (epreuve commune PC+T) sur 2017-2026 (10 sessions). Physique, Chimie inorganique et Chimie organique sur 2017-2022 uniquement (aucune archive PC trouvee pour 2015-2016 ni 2023-2026). Non couvertes : Informatique, STA, Francais, Anglais.",
+    "couverture": "Mathematiques (epreuve commune PC+T), Physique, Chimie inorganique et Chimie organique sur 2017-2026 (10 sessions ; aucune archive PC trouvee pour 2015-2016). Non couvertes : Informatique, STA, Francais, Anglais.",
     "avertissements": [
       "Historique, pas prédiction : ces tableaux décrivent ce qui est tombé, pas ce qui va tomber. « Jamais rencontré » ne veut pas dire « à ne pas réviser ».",
-      "Couverture inégale selon la matière : Mathematiques couvre 10 sessions (2017-2026, épreuve commune PC+T, tags réutilisés depuis la filière T sans re-lecture de PDF PC), mais Physique/Chimie inorganique/Chimie organique ne couvrent que 6 sessions (2017-2022) : les bandes de régularité de ces trois dernières sont statistiquement moins fiables et pourraient changer si des sessions 2023-2026 étaient trouvées.",
       "Le seuil de présence diffère selon l'épreuve (≥ 3 questions pour Maths/Physique, ≥ 2 pour la Chimie) : à préciser si l'on compare deux épreuves.",
       "Filière PC uniquement : rien pour MP, T ou BG dans ce fichier (voir les fichiers équivalents si besoin).",
       "Ne recopier aucune donnée d'un autre site : ces chiffres proviennent de l'étiquetage manuel des sujets officiels."
@@ -670,28 +669,28 @@
       "epreuve": "Physique",
       "court": "Physique",
       "coefficient": 12,
-      "sessions_analysees": 6,
-      "annees_absentes": [
-        2023,
-        2024,
-        2025,
-        2026
-      ],
-      "annees": "2017–2022",
+      "sessions_analysees": 10,
+      "annees": "2017–2026",
       "seuil_presence_questions": 3,
       "niveau": "chapitre",
       "chapitres": [
         {
-          "chapitre": "Physique des ondes",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 30,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 6,
+          "chapitre": "Électromagnétisme",
+          "annee_programme": [
+            1,
+            2
+          ],
+          "annee_label": "1re année et 2e année",
+          "heures": 80,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [
-            2017,
+            2018,
             2019,
-            2020
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -699,9 +698,13 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
-          "regularite": "variable"
+          "regularite": "régulier"
         },
         {
           "chapitre": "Thermodynamique",
@@ -711,12 +714,15 @@
           ],
           "annee_label": "1re année et 2e année",
           "heures": 50,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2018,
-            2019
+            2019,
+            2023,
+            2025,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -724,23 +730,27 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
-          "regularite": "variable"
+          "regularite": "régulier"
         },
         {
-          "chapitre": "Électromagnétisme",
-          "annee_programme": [
-            1,
-            2
-          ],
-          "annee_label": "1re année et 2e année",
-          "heures": 80,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 6,
+          "chapitre": "Physique des ondes",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 30,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 10,
           "annees_presentes": [
-            2018,
-            2019
+            2017,
+            2019,
+            2020,
+            2023,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -748,20 +758,27 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
-          "regularite": "rare"
+          "regularite": "variable"
         },
         {
           "chapitre": "Introduction à la physique du laser",
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 0,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
-            2019
+            2019,
+            2023,
+            2024,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -769,39 +786,26 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
-          "regularite": "rare"
-        },
-        {
-          "chapitre": "Optique",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 30,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 6,
-          "annees_presentes": [
-            2018
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022
-          ],
-          "regularite": "rare"
+          "regularite": "variable"
         },
         {
           "chapitre": "Approche ondulatoire de la physique quantique",
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 0,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 10,
           "annees_presentes": [
-            2018
+            2018,
+            2024,
+            2025,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -809,7 +813,37 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Optique",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 30,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2018,
+            2024,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
@@ -818,10 +852,11 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 0,
-          "sessions_ou_present": 1,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
           "annees_presentes": [
-            2019
+            2019,
+            2025
           ],
           "annees_analysees": [
             2017,
@@ -829,7 +864,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
@@ -839,7 +878,7 @@
           "annee_label": "1re année",
           "heures": 0,
           "sessions_ou_present": 1,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2018
           ],
@@ -849,7 +888,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
@@ -859,7 +902,7 @@
           "annee_label": "1re année",
           "heures": 30,
           "sessions_ou_present": 0,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
@@ -867,7 +910,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "jamais rencontré"
         },
@@ -877,7 +924,7 @@
           "annee_label": "1re année",
           "heures": 30,
           "sessions_ou_present": 0,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
@@ -885,7 +932,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "jamais rencontré"
         }
@@ -895,52 +946,27 @@
       "epreuve": "Chimie inorganique",
       "court": "Chimie inorg.",
       "coefficient": 4,
-      "sessions_analysees": 6,
-      "annees_absentes": [
-        2023,
-        2024,
-        2025,
-        2026
-      ],
-      "annees": "2017–2022",
+      "sessions_analysees": 10,
+      "annees": "2017–2026",
       "seuil_presence_questions": 2,
       "niveau": "chapitre",
       "chapitres": [
-        {
-          "chapitre": "Diagrammes binaires d'équilibre isobare de phase solide-liquide",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 8,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 6,
-          "annees_presentes": [
-            2017,
-            2018,
-            2019,
-            2022
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022
-          ],
-          "regularite": "régulier"
-        },
         {
           "chapitre": "Diagramme de Pourbaix (E-pH)",
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 6,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 8,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2018,
             2020,
-            2021
+            2021,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -948,7 +974,100 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "très régulier"
+        },
+        {
+          "chapitre": "Diagrammes binaires d'équilibre isobare de phase solide-liquide",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 8,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2018,
+            2019,
+            2022,
+            2023,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Atomistique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 10,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2018,
+            2021,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "régulier"
+        },
+        {
+          "chapitre": "Cristaux métalliques",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 6,
+          "sessions_ou_present": 6,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "régulier"
         },
@@ -957,12 +1076,13 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 4,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2018,
             2020,
-            2022
+            2022,
+            2024
           ],
           "annees_analysees": [
             2017,
@@ -970,7 +1090,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "variable"
         },
@@ -979,12 +1103,13 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 4,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 4,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2018,
-            2019
+            2019,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -992,29 +1117,11 @@
             2019,
             2020,
             2021,
-            2022
-          ],
-          "regularite": "variable"
-        },
-        {
-          "chapitre": "Atomistique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 10,
-          "sessions_ou_present": 3,
-          "sessions_analysees": 6,
-          "annees_presentes": [
-            2017,
-            2018,
-            2021
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "variable"
         },
@@ -1023,11 +1130,12 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 6,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2020,
-            2022
+            2022,
+            2024
           ],
           "annees_analysees": [
             2017,
@@ -1035,20 +1143,25 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
         {
-          "chapitre": "Cristaux métalliques",
-          "annee_programme": 2,
-          "annee_label": "2e année",
+          "chapitre": "Liaison chimique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
           "heures": 6,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
-            2022
+            2024,
+            2025
           ],
           "annees_analysees": [
             2017,
@@ -1056,7 +1169,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
@@ -1066,7 +1183,7 @@
           "annee_label": "2e année",
           "heures": 2,
           "sessions_ou_present": 1,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2020
           ],
@@ -1076,7 +1193,35 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Thermodynamique chimique",
+          "annee_programme": 1,
+          "annee_label": "1re année",
+          "heures": 12,
+          "sessions_ou_present": 1,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
@@ -1086,7 +1231,7 @@
           "annee_label": "1re année",
           "heures": 4.5,
           "sessions_ou_present": 1,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2022
           ],
@@ -1096,7 +1241,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
@@ -1106,7 +1255,7 @@
           "annee_label": "2e année",
           "heures": 8,
           "sessions_ou_present": 1,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2022
           ],
@@ -1116,19 +1265,23 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
         {
-          "chapitre": "Liaison chimique",
+          "chapitre": "Cinétique chimique",
           "annee_programme": 1,
           "annee_label": "1re année",
           "heures": 6,
           "sessions_ou_present": 1,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [
-            2017
+            2025
           ],
           "annees_analysees": [
             2017,
@@ -1136,7 +1289,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
@@ -1146,7 +1303,7 @@
           "annee_label": "2e année",
           "heures": 6,
           "sessions_ou_present": 0,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
@@ -1154,43 +1311,11 @@
             2019,
             2020,
             2021,
-            2022
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Thermodynamique chimique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 12,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 6,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Cinétique chimique",
-          "annee_programme": 1,
-          "annee_label": "1re année",
-          "heures": 6,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 6,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "jamais rencontré"
         }
@@ -1200,14 +1325,8 @@
       "epreuve": "Chimie organique",
       "court": "Chimie orga.",
       "coefficient": 3,
-      "sessions_analysees": 6,
-      "annees_absentes": [
-        2023,
-        2024,
-        2025,
-        2026
-      ],
-      "annees": "2017–2022",
+      "sessions_analysees": 10,
+      "annees": "2017–2026",
       "seuil_presence_questions": 2,
       "niveau": "chapitre",
       "chapitres": [
@@ -1216,14 +1335,18 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 6,
-          "sessions_ou_present": 5,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 9,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -1231,7 +1354,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "très régulier"
         },
@@ -1240,13 +1367,17 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 5,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 8,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2018,
             2019,
             2020,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -1254,22 +1385,29 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
-          "regularite": "régulier"
+          "regularite": "très régulier"
         },
         {
           "chapitre": "Les alcools",
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 4,
-          "sessions_ou_present": 4,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 7,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2017,
             2018,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025
           ],
           "annees_analysees": [
             2017,
@@ -1277,41 +1415,27 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "régulier"
-        },
-        {
-          "chapitre": "Les amines",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 4,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 6,
-          "annees_presentes": [
-            2017,
-            2021
-          ],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022
-          ],
-          "regularite": "rare"
         },
         {
           "chapitre": "Les dérivés carbonylés : cétones et aldéhydes",
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 7,
-          "sessions_ou_present": 2,
-          "sessions_analysees": 6,
+          "sessions_ou_present": 5,
+          "sessions_analysees": 10,
           "annees_presentes": [
             2018,
-            2022
+            2022,
+            2023,
+            2025,
+            2026
           ],
           "annees_analysees": [
             2017,
@@ -1319,7 +1443,37 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "variable"
+        },
+        {
+          "chapitre": "Les amines",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 4,
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2017,
+            2021,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "rare"
         },
@@ -1328,18 +1482,76 @@
           "annee_programme": 2,
           "annee_label": "2e année",
           "heures": 7,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 6,
-          "annees_presentes": [],
+          "sessions_ou_present": 3,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2023,
+            2025,
+            2026
+          ],
           "annees_analysees": [
             2017,
             2018,
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
-          "regularite": "jamais rencontré"
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Les composés aromatiques. La substitution électrophile (SEAr) sur le benzène et ses dérivés",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 3,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2024,
+            2025
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
+        },
+        {
+          "chapitre": "Les organomagnésiens",
+          "annee_programme": 2,
+          "annee_label": "2e année",
+          "heures": 3,
+          "sessions_ou_present": 2,
+          "sessions_analysees": 10,
+          "annees_presentes": [
+            2025,
+            2026
+          ],
+          "annees_analysees": [
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
+          ],
+          "regularite": "rare"
         },
         {
           "chapitre": "Spectroscopies IR et RMN ¹H",
@@ -1347,7 +1559,7 @@
           "annee_label": "2e année",
           "heures": 6,
           "sessions_ou_present": 0,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
@@ -1355,25 +1567,11 @@
             2019,
             2020,
             2021,
-            2022
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Les composés aromatiques. La substitution électrophile (SEAr) sur le benzène et ses dérivés",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 3,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 6,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "jamais rencontré"
         },
@@ -1383,7 +1581,7 @@
           "annee_label": "2e année",
           "heures": 3,
           "sessions_ou_present": 0,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
@@ -1391,25 +1589,11 @@
             2019,
             2020,
             2021,
-            2022
-          ],
-          "regularite": "jamais rencontré"
-        },
-        {
-          "chapitre": "Les organomagnésiens",
-          "annee_programme": 2,
-          "annee_label": "2e année",
-          "heures": 3,
-          "sessions_ou_present": 0,
-          "sessions_analysees": 6,
-          "annees_presentes": [],
-          "annees_analysees": [
-            2017,
-            2018,
-            2019,
-            2020,
-            2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "jamais rencontré"
         },
@@ -1419,7 +1603,7 @@
           "annee_label": "2e année",
           "heures": 4,
           "sessions_ou_present": 0,
-          "sessions_analysees": 6,
+          "sessions_analysees": 10,
           "annees_presentes": [],
           "annees_analysees": [
             2017,
@@ -1427,7 +1611,11 @@
             2019,
             2020,
             2021,
-            2022
+            2022,
+            2023,
+            2024,
+            2025,
+            2026
           ],
           "regularite": "jamais rencontré"
         }
