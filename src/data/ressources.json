@@ -241,9 +241,49 @@
           "matiere": "Informatique",
           "items": [
             {
-              "titre": "Programme complet - Mementos et fiches (Python, SQL, matplotlib, numpy, algos) - MP",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1hKZB0wzYbPlIKYQKPeZJo71o2yuEjdsR"
+              "titre": "Algorithmes à connaître - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1mu01J4B4P4uuo_aPNwL_iprSVgwy4LJP/view"
+            },
+            {
+              "titre": "Mémento Python (ENSAM) - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1WyP2FobPPlnjWb615GtVL5BJARBIUE8-/view"
+            },
+            {
+              "titre": "Fiches Centrale 2017 (Informatique) - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1TPRXOmRLDZ1qY7z66oPnYLcupq53i9_Z/view"
+            },
+            {
+              "titre": "Cours Informatique (Masséna) - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1YyI5j42h3KguB8ebOwXvuHBMeRXktRze/view"
+            },
+            {
+              "titre": "Cours Informatique (Vassal) - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/10o6n076ii-IvLA1OY7zFcBRRuSf8r1BN/view"
+            },
+            {
+              "titre": "Mémento Python 3 (v1) - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1iC9JuW3zUAdBAW-FwXO_mF4uwqHOzKTr/view"
+            },
+            {
+              "titre": "Mémento Python (Banque PT) - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1JocwIaJDDYSYFDGs5ya3fQ5u0gZDA87Z/view"
+            },
+            {
+              "titre": "Mémento Python 3 - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1L4hGaMhj9nJAmkRfsNk48QmN_UQ2JTrX/view"
+            },
+            {
+              "titre": "Mémento Python - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/13BIqsv8xBrFa9aekIbyt5ZAb2tL844QM/view"
             },
             {
               "titre": "Informatique - 1er prépa",
@@ -735,6 +775,16 @@
               "titre": "Informatique - 2ème PT (2)",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1-4YRUZIF_38f5R2cTDeCCRa6UQLKhIdW"
+            },
+            {
+              "titre": "Mémento NumPy / Matplotlib - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1SfhvHgLrKBi6rEUNNT1IBU6GI1hmi_lM/view"
+            },
+            {
+              "titre": "Mémento SQL - Fiche (Mementos) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1obYR6evuJM1msdpIMsC2Z5IAIT_GOFa-/view"
             }
           ]
         },
