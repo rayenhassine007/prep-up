@@ -6,49 +6,90 @@
         {
           "matiere": "Maths - Algèbre",
           "items": [
-            { "titre": "ALGÈBRE - 1ère MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1IABRuZ73rGSs2WFAqJFum2nJKFQXuJg1" },
-            { "titre": "Cours d'algèbre par chapitre (complexes, polynômes, espaces vectoriels...)", "type": "Drive", "url": "https://drive.google.com/drive/folders/18GG9V3-xlmI63XllAja2JKaqmmbm0aFP" },
-            { "titre": "MATH - 1ère prépa (exos, oraux X-ENS, Exo7)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1e3CBshB-in-Y2VnKikXzNeJWXRVLhkXu" }
+            { "titre": "Programme complet - Cours (toutes chapitres, Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1dXR54afbd9qWOjqZ2hdmgCUbxIcy2jJa" },
+            { "titre": "Programme complet - TD (toutes chapitres, Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1OrKfOEMDHqcTyL88ikLS8wI53CSFxBT9" },
+            { "titre": "Calcul matriciel - Cours vidéo (Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1aEid1epyqqHB_M4w0NUSEYnmVr3jyLWX" },
+            { "titre": "Programme complet - Examens corrigés IPEIB (Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ubykaLQUsPGh5bJyMO8YqJ2aPGnhlPpm" },
+            { "titre": "Nombres complexes et trigonométrie - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/18u7ie4GHsw7fJ3y3rlwzD4CqtQuotpZb" },
+            { "titre": "Nombres complexes et trigonométrie - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1h_Sy4gTKzHk13ydZkhsVLzY18JHgD_60" },
+            { "titre": "Nombres complexes et trigonométrie - Problèmes (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1nTem68cnMtr-WWDXID3uxWzPwwrUIuH4" },
+            { "titre": "Vocabulaire ensembliste - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1qDoI6NUA2TLAmAtwmbp7T-XUH4XnAphJ" },
+            { "titre": "Vocabulaire ensembliste - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/14iM092Xa-ucv3AIjA5klZdiSla2k2m9h" },
+            { "titre": "Vocabulaire ensembliste - Problèmes (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1yPBkaskwAWYT8waSdy68NUJyjMOZkKDn" },
+            { "titre": "Arithmétique - Entiers naturels, dénombrement - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1TAmgrLDpBsNAa1kr0NQXJ8Y9OKeAWGdi" },
+            { "titre": "Arithmétique - Entiers naturels, dénombrement - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1JRecPI5KAjSdB1bRrSDOisQzu10V8PJb" },
+            { "titre": "Arithmétique - Entiers naturels, dénombrement - Problèmes (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1tj-VjjSoiKnICTdKUsHCBHk0gAh7EkA4" },
+            { "titre": "Structures algébriques usuelles - Groupes, anneaux, corps - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SGOkxU7kwPj43AjBIktVa_JSKkhDjnF0" },
+            { "titre": "Structures algébriques usuelles - Groupes, anneaux, corps - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-VBjaMLjFwV2kdDKmjM6_wZvLnc1l1jt" },
+            { "titre": "Structures algébriques usuelles - Groupes, anneaux, corps - Problèmes (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CUOgaiLLcOT20Moi3DbCn_ZovP9YpFd7" },
+            { "titre": "Espaces vectoriels, applications linéaires - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1bUQKAMMfUsjrIrQjpj7JPDsjjbJnW-uE" },
+            { "titre": "Espaces vectoriels, applications linéaires - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1bUQKAMMfUsjrIrQjpj7JPDsjjbJnW-uE" },
+            { "titre": "Espaces vectoriels, applications linéaires - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1O4Mkvo8-6K_uIxRn0M50WG8F34ErAetV" },
+            { "titre": "Espaces vectoriels, applications linéaires - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1O4Mkvo8-6K_uIxRn0M50WG8F34ErAetV" },
+            { "titre": "Espaces vectoriels, applications linéaires - Problèmes (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1o2pCHKtnAwQeOkma5oyAHILmGxPzRElu" },
+            { "titre": "Polynômes et fractions rationnelles - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1j_N0-EXBouQK_Hs0Id9nw4C_wCFW44lH" },
+            { "titre": "Polynômes et fractions rationnelles - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1xfzSHW3PxETZ-gjpNQl85DwTpaAJuGTR" },
+            { "titre": "Polynômes et fractions rationnelles - Problèmes (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1_vbpq2WaRaifaEL9bGIuE_xEMvJYepCp" },
+            { "titre": "Calcul matriciel, systèmes linéaires - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1BLwz6SGdbRaLLYSCItVX1Bny7NlRDb3Q" },
+            { "titre": "Calcul matriciel, systèmes linéaires - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1E-HyEou4PIypB7GFCXrIKg3mvmLXca4R" },
+            { "titre": "Calcul matriciel, systèmes linéaires - Problèmes (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Yx5yKOnZEa0qfBar1OaS0kwhHc9GkHS2" },
+            { "titre": "Déterminants - Cours (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1sDxwKH1B5-THfOMhwRaP_3HG9Efcbuog" },
+            { "titre": "Déterminants - Exercices (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/12qUcpJMVSbq8QtdjEizeeLoKd_DUFEJI" },
+            { "titre": "Déterminants - Problèmes (KlubPrepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1vw2iqzzGFNQYjht8NFiCxBGz5KQI6cb5" },
+            { "titre": "Espaces préhilbertiens et euclidiens - Cours (KlubPrepa, 2ème année) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/115C34AlQO-4OQmQ7Q_aW9Bz4ihDdMb88" },
+            { "titre": "Espaces préhilbertiens et euclidiens - Exercices (KlubPrepa, 2ème année) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1msHbfInZfR0QWAnse0VyBb9QzqIiFw0y" },
+            { "titre": "Espaces préhilbertiens et euclidiens - Problèmes (KlubPrepa, 2ème année) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Kfvhmr8KuF0oZDK4RtsUQatFCaaOhlcH" }
           ]
         },
         {
           "matiere": "Maths - Analyse",
           "items": [
-            { "titre": "ANALYSE - 1ère MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1oLxAHclMNdQqYXJR__8GdMYa6ZmqXq_K" },
+            { "titre": "Programme complet - Cours (toutes chapitres, Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1I0ZEYRB607q8UH9yqhfLXnnW8iKCr41l" },
+            { "titre": "Programme complet - Cours vidéo (Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1RI3n6V_oeV-vN6Oyw8TH4p942QJhrbdN" },
+            { "titre": "Programme complet - TD IPEIT/IPEIB (Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/16bo1ESo42wyfjQA6bAFUTtERJYYFgKkZ" },
+            { "titre": "Programme complet - DS et Examens IPEIT/IPEIB/IPEIS (Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1MQFY4T21XSLVEvND0CLWzJi3SpuOivG9" },
             { "titre": "MATH - 1ère prépa (exos, oraux X-ENS, Exo7)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1e3CBshB-in-Y2VnKikXzNeJWXRVLhkXu" }
           ]
         },
         {
           "matiere": "Physique",
           "items": [
-            { "titre": "PHYSIQUE - 1ère MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1zoBu7YqYQULr_PymB8yfvoImu88EU5so" },
-            { "titre": "PHYS - 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1bqUtm2PfEshpU8Ma6tAPuk51xYgBkhtY" },
-            { "titre": "DS et DM Physique - 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1UpmpXPa3eSE-Rl7gvRSlbZBhllc0T1MJ" }
+            { "titre": "Programme complet - Cours (toutes chapitres, Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ZPzsTrfJrx9uCtnewBCMh6ra4XoLjw8i" },
+            { "titre": "Optique - Cours vidéo (Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1HrnqyVK2Ej42k3-XDKDi26Vii1TOsQw-" },
+            { "titre": "Programme complet - Cours vidéo (filtres, mécanique non galiléenne, électrostatique, force centrale, révision, Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ymk1hwwrS7vXqBDbglXnx19YWD6eMPjP" },
+            { "titre": "Programme complet - TD IPEIT (toutes chapitres, Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1PQUb0s1E1VjRq3sDEemvuo30VeXtMCfl" },
+            { "titre": "Programme complet - DS et Examens IPEIB (Wworldprepa) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1nJD2rTMnEjb9njdaahpfEBGPjCfdc8VW" },
+            { "titre": "Programme complet - Cours, TD et TP (Lalande, Langevin, Martin) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1bqUtm2PfEshpU8Ma6tAPuk51xYgBkhtY" },
+            { "titre": "Programme complet - DS et DM corrigés (Louis le Grand, Henri Poincaré, Saint Exupéry) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1UpmpXPa3eSE-Rl7gvRSlbZBhllc0T1MJ" }
           ]
         },
         {
           "matiere": "Chimie",
           "items": [
-            { "titre": "Chimie Tout-en-un MPSI-PTSI (livre)", "type": "PDF", "url": "https://drive.google.com/file/d/1wP2sgaOoa_iO4-WohkXyzIQqpUMkg92a/view" }
+            { "titre": "Programme complet - Chimie Tout-en-un MPSI-PTSI (livre) - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1wP2sgaOoa_iO4-WohkXyzIQqpUMkg92a/view" }
           ]
         },
         {
           "matiere": "Informatique",
           "items": [
-            { "titre": "Info - 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hKZB0wzYbPlIKYQKPeZJo71o2yuEjdsR" },
-            { "titre": "Info - 1ère PT (commun)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1xfP9OxompkJbVG9A2Nz8E3PJHmLZup0b" },
+            { "titre": "Programme complet - Mementos et fiches (Python, SQL, matplotlib, numpy, algos) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hKZB0wzYbPlIKYQKPeZJo71o2yuEjdsR" },
             { "titre": "Informatique - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1mvI3QZrdM0epdEWQDmH8Aob0RLIV-meG" },
-            { "titre": "Cours Info (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/14TDuhs7eg0ltv9mcJUvIhnMawYDpcsgw/view" },
-            { "titre": "Cours info 1ère année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1DmoHrfmeLeie7MRY8K-B85MNDhGT7ju3/view" }
+            { "titre": "Programme complet - Cours Info (PDF) - MP", "type": "PDF", "url": "https://drive.google.com/file/d/14TDuhs7eg0ltv9mcJUvIhnMawYDpcsgw/view" },
+            { "titre": "Programme complet - Cours info 1ère année (PDF) - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1DmoHrfmeLeie7MRY8K-B85MNDhGT7ju3/view" }
           ]
         },
-        { "matiere": "STA", "items": [] },
+        {
+          "matiere": "STA",
+          "items": []
+        },
         {
           "matiere": "Français",
           "items": [
-            { "titre": "Fr - 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CHmcL6Zuza_yEc7sMHNhOOa7L1BE3ux6" },
-            { "titre": "Thème : Le Travail", "type": "Drive", "url": "https://drive.google.com/drive/folders/1XEMav_yJpcZeRBNGZTMdwtny4j9vnVCt" },
-            { "titre": "Thème : L'enfance", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z7ICU8PCRKC5WCJUqoc95K_90wZa0vuz" },
+            { "titre": "Lecture - Thème La Force de Vivre (3 oeuvres, dissertations, fiches) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CHmcL6Zuza_yEc7sMHNhOOa7L1BE3ux6" },
+            { "titre": "Thème Le Travail - Dissertations - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1s_ikw4PSHkeRvq8XgBLY3nphewwss1xQ" },
+            { "titre": "Thème Le Travail - Cours - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/15dhL6yX09-zIMqJySnw7QqVOiHigN-rO" },
+            { "titre": "Thème L'enfance - Dissertations corrigées - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Vbw-lkrKaPybNlZSfeOKdBvySnqjD3v3" },
+            { "titre": "Thème L'enfance - Oeuvres et fiches (Soyinka, Emile, Andersen) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z7ICU8PCRKC5WCJUqoc95K_90wZa0vuz" },
             { "titre": "Français - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1la_fPf4Dl1Zi8I0L1Rq788lCm2gGon4i" }
           ]
         },
@@ -61,19 +102,54 @@
         {
           "matiere": "Livres",
           "items": [
-            { "titre": "Livres tout-en-un - maths, physique, SI (MPSI/PCSI/PTSI)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1V59dHenc08KjsdhB6UrD9UiTQOqA3_v2" },
-            { "titre": "Les Maths en tête", "type": "Drive", "url": "https://drive.google.com/drive/folders/1TdLr5Q5LZYKsMsb_dxrNsujZIi5c6JBl" }
+            { "titre": "Programme complet - Bibliothèque de livres tout-en-un (maths, physique, SI) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1V59dHenc08KjsdhB6UrD9UiTQOqA3_v2" },
+            { "titre": "Programme complet - Les Maths en tête, Analyse (livre) - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1XvphfSypAPABN90xXGPkW6WdL5uoj2i3/view" },
+            { "titre": "Programme complet - Les Maths en tête, Algèbre (livre) - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1IUKMzD_L3wKBuCnS-pjsQag3Sxs2lrvd/view" }
           ]
         },
         {
           "matiere": "Packs complets (toutes matières)",
           "items": [
-            { "titre": "Pack Taki - 1ère MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1A_LiGctRdfL5qXMGOX3hYT23OnyiaaPg" },
-            { "titre": "Documents MP1 - IPEIM", "type": "PDF", "url": "https://drive.google.com/file/d/1E83ijUA6wCX7rJ3ZCPueBTnXWrSzY8mE/view" },
-            { "titre": "TIPE - conseils et exemples de sujets", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Af4BRu-zNh8Qu5C_64ugFp6Y6c2Fi_Gu" },
-            { "titre": "MP1 - IPEIT 2016", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CV1yj-yWJyDWdIJ7lkGWvqbmFAM2AWfp" },
-            { "titre": "MP1 + MP2 - 2018", "type": "Drive", "url": "https://drive.google.com/drive/folders/1cgd05GllPzkp1ZDL-zGUVjzUoQ-rAV8M" },
-            { "titre": "Cours + TD - IPEIM 2017", "type": "Drive", "url": "https://drive.google.com/drive/folders/1YSe18PM8Idcor18Tvi5mw7wlweEXvXpa" },
+            { "titre": "Programme complet - Pack Taki, Physique - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1fOE0rHilTSKmiC3xV8CNo01u5WtEwgac" },
+            { "titre": "Programme complet - Pack Taki, Sciences industrielles - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1mgGyS0uImuW5R2boVLSbUpxBKJ69bjLO" },
+            { "titre": "Programme complet - Pack Taki, Chimie Inorganique - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/15wW8FQqBxHww2EuaJBbE_ZSwgp-PYws5" },
+            { "titre": "Programme complet - Pack Taki, Sciences industrielles - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hmMu5MPDTzE9Vgu4pVk7BlHHBJcWZWFj" },
+            { "titre": "Programme complet - Pack Taki, Mathématiques I — Analyse - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1TOWbMuK8vy2_KQedqcQvxQrYc5D5c8ZI" },
+            { "titre": "Programme complet - Pack Taki, Mathématiques II — Algèbre - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/19vAjJDH0XocHrkpl0E_PcN0QEBAF8He6" },
+            { "titre": "Programme complet - Documents MP1 IPEIM (PDF) - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1E83ijUA6wCX7rJ3ZCPueBTnXWrSzY8mE/view" },
+            { "titre": "TIPE - Exemples de sujets - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hP9dRnZH9ikc843xYasVxy-5gp_lZf9z" },
+            { "titre": "TIPE - Conseils généraux et idées de développement - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1f3YFz__lAhBYtTPxpmqkUW7xxhOour6j" },
+            { "titre": "Programme complet - Cours Sciences industrielles IPEIT 2016 - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1e6hOTGmOv99G2-LEFFf_n55vsXw5frcA/view" },
+            { "titre": "Programme complet - Cours Physique IPEIT 2016 - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1sSWtV_gUGGXURa9nwE7tIQo4Nk6PYiqs/view" },
+            { "titre": "Programme complet - Cours Informatique IPEIT 2016 - MP", "type": "PDF", "url": "https://drive.google.com/file/d/14TDuhs7eg0ltv9mcJUvIhnMawYDpcsgw/view" },
+            { "titre": "Programme complet - Cours Chimie Inorganique IPEIT 2016 - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1ws6voG4WON2o9qg4fMlW5B-JvdbFJcAa/view" },
+            { "titre": "Programme complet - Cours Mathématiques I — Analyse IPEIT 2016 - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1u51gA2bY2-nY4-mK14Fsux5PYXh-YvLp/view" },
+            { "titre": "Programme complet - Cours Mathématiques II — Algèbre IPEIT 2016 - MP", "type": "PDF", "url": "https://drive.google.com/file/d/1sE-kDUX5bMlY041novOlGuF7TBjWcQZb/view" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Traduction (Anglais) (1ere annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1wku7aZbnkiCpCKzEE6DdPnKstbJE5siF" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, TIPE (1ere annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/138NWyQFmN6SCs6whTHXMyFV9mHq4wox7" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Sciences industrielles (1ere annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1VkzZxJ0f-NMpUXyWKF3Hju3762s0BP_6" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Physique (1ere annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SiV9RlfVfYbffG2KLhs3HUN5ib-z2ZtX" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Chimie Inorganique (1ere annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SiV9RlfVfYbffG2KLhs3HUN5ib-z2ZtX" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Informatique (1ere annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1oyC3JdmTco6sBxEjSQmtxcF8sHpMycIJ" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Traduction (Anglais) (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1SFC2zhN-i-bW25A5x0Nz2ZMET1ib0bnE" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Physique (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1BBcOXlwLXNG5SJ2lW4zuljFIJ39I9-sn" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Sciences industrielles (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1uHFSkSuXl5uGmetft8f6chostqDTHBSX" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Physique (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Ba-daqBBlfN49Yg0rNGi5qEz5Txuzekn" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Physique (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-vN_9_j_xtimVpRzke2yZMaNUMq55cOi" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Chimie Inorganique (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1-vN_9_j_xtimVpRzke2yZMaNUMq55cOi" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Mathématiques (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z12nI4jyMsmDfHKwo2K-JzN6s4iSIXMa" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Mathématiques (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1ER2U-hzORzdaSZPKktyJc_4Mn6pKe0SQ" },
+            { "titre": "Programme complet - Pack MP1+MP2 2018, Informatique (2eme annee) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/1L_aeBPDa4F3271Lw1YTAVaxGz44qIYnO" },
+            { "titre": "Programme complet - Anglais (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-b0RuRDJjSC1qM2s" },
+            { "titre": "Programme complet - Français (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-S09LUnRyOXliTG8" },
+            { "titre": "Programme complet - Informatique (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-TERVc21yWmRjdU0" },
+            { "titre": "Programme complet - Chimie Inorganique (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-cjd0bkpJM0NpOUE" },
+            { "titre": "Programme complet - Mathématiques (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-S3FWR2c2Ykd5aWc" },
+            { "titre": "Programme complet - Physique (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-MERBR1JzUFdyVDg" },
+            { "titre": "Programme complet - Sciences industrielles (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-QUlPV1BYX2JQY1U" },
+            { "titre": "Programme complet - Divers (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-amg0NDVEYkRGOHc" },
+            { "titre": "Programme complet - Divers (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-OGR4M3JJODY5OVU" },
+            { "titre": "Programme complet - Divers (Walid library, IPEIM 2017) - MP", "type": "Drive", "url": "https://drive.google.com/drive/folders/0ByjIZpCr_ia-WjBHaGIwWXRpd0U" },
             { "titre": "IPEIM 2017", "type": "Drive", "url": "https://drive.google.com/drive/folders/1zzQd24hnaTUqJSL_mkiDjYsnGPAwfSqe" }
           ]
         }
@@ -226,39 +302,62 @@
             { "titre": "TD, DS et examens Math - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1icXhLOfegbi6QBijG70Siw1CLm4ZKdbm" },
             { "titre": "J'intègre - Méthodes et exercices PCSI-PTSI (livre)", "type": "PDF", "url": "https://drive.google.com/file/d/1iXHkM1wSOUxCqyz5s0H5LaiqkDAF1uyn/view" },
             { "titre": "Fiches Daniel Fredon - algèbre & analyse (livres)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1WmlNmhl57hxqlJOGmVycsvePsgZ2_K7Y" },
-            { "titre": "Cours d'algèbre par chapitre", "type": "Drive", "url": "https://drive.google.com/drive/folders/18GG9V3-xlmI63XllAja2JKaqmmbm0aFP" },
             { "titre": "Cours Algèbre (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1sE-kDUX5bMlY041novOlGuF7TBjWcQZb/view" },
             { "titre": "Cours Analyse (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1u51gA2bY2-nY4-mK14Fsux5PYXh-YvLp/view" },
             { "titre": "Algèbre - pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/19vAjJDH0XocHrkpl0E_PcN0QEBAF8He6" },
             { "titre": "Analyse - pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/1TOWbMuK8vy2_KQedqcQvxQrYc5D5c8ZI" }
           ]
         },
-        { "matiere": "Physique", "items": [] },
-        { "matiere": "Chimie", "items": [] },
+        {
+          "matiere": "Physique",
+          "items": []
+        },
+        {
+          "matiere": "Chimie",
+          "items": []
+        },
         {
           "matiere": "Informatique",
           "items": [
             { "titre": "Info - 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hKZB0wzYbPlIKYQKPeZJo71o2yuEjdsR" },
-            { "titre": "Info - 1ère PT (commun)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1xfP9OxompkJbVG9A2Nz8E3PJHmLZup0b" },
-            { "titre": "Informatique - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1mvI3QZrdM0epdEWQDmH8Aob0RLIV-meG" },
+            { "titre": "Simulation numérique - Tkinter (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1L4R2BECDBL8CXVZs7XeeL6v9vQjBpQ3j/view" },
+            { "titre": "Simulation numérique - Pandas (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MjBYOxKI513GmT0KnljjRuuJ7uC51eeh/view" },
+            { "titre": "Programme complet - Programmation orientée objet (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MgWHOOB2pamNospOzq5Tmex7XU7zb95p/view" },
+            { "titre": "Simulation numérique - Matplotlib (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1KuXMrXH7LN5myM9D2lOzriNJV_PbXiFr/view" },
+            { "titre": "Simulation numérique - Les matrices (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1KxAL7BLsq9wE29kRnzn6IWxNJHbDZf1e/view" },
+            { "titre": "Programme complet - Informatique 2ème semestre (1ère année) - PC/PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1KuNVBMZU6ugjPEpxBXBM9GgiUM1YpnR2" },
+            { "titre": "Programme complet - Informatique Pour Tous en CPGE - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MqJEk3NWknjD5kvXQwFBXEXX8drfR_s/view" },
+            { "titre": "Environnement de développement Python 3 - Exercices Python (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1L69lXwdyvDgi8I4Rnh3-p84hkS3ZMpeB/view" },
             { "titre": "Cours Info (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/14TDuhs7eg0ltv9mcJUvIhnMawYDpcsgw/view" },
             { "titre": "Cours info 1ère année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1DmoHrfmeLeie7MRY8K-B85MNDhGT7ju3/view" }
           ]
         },
-        { "matiere": "STA", "items": [] },
+        {
+          "matiere": "STA",
+          "items": []
+        },
         {
           "matiere": "Français",
           "items": [
             { "titre": "Fr - 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CHmcL6Zuza_yEc7sMHNhOOa7L1BE3ux6" },
             { "titre": "Thème : Le Travail", "type": "Drive", "url": "https://drive.google.com/drive/folders/1XEMav_yJpcZeRBNGZTMdwtny4j9vnVCt" },
             { "titre": "Thème : L'enfance", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z7ICU8PCRKC5WCJUqoc95K_90wZa0vuz" },
-            { "titre": "Français - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1la_fPf4Dl1Zi8I0L1Rq788lCm2gGon4i" }
+            { "titre": "Langue - Les rapports logiques (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1ldSln0UlHhCLB390fyjRxs7RuoTI0R4K/view" },
+            { "titre": "Programme complet - DS2 révision Français (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1ljFs10u8O-SiDD207xcsBjs94kLS8v76/view" },
+            { "titre": "Langue - Les pronoms relatifs (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1lg2gCaui_b837RruLqzqEhefz7uBPIlb/view" },
+            { "titre": "Langue - Le Subjonctif (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1lebmudrVCZ6dTAS-DJR7FmV3E0nYzVup/view" },
+            { "titre": "Programme complet - Correction révision Français (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1lpLpp5VCwyYzUR2xmKSzZF9DDjDmhpbS/view" }
           ]
         },
         {
           "matiere": "Anglais",
           "items": [
-            { "titre": "English - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1pNuD7xqmpjn5_2u6UqeWvxkLgGr75Bz6" }
+            { "titre": "Objectifs et Méthodologie générale - Compound adjective (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MDch2sCxXQ8AE1npC8tQHYEW5udCWwdD/view" },
+            { "titre": "Objectifs et Méthodologie générale - Tenses (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MEOjM0ljwXTDQnjEmOrerAnqFKJGVhE1/view" },
+            { "titre": "Objectifs et Méthodologie générale - Irregular verbs mnemonic (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1M9weGX9vZmwjpUdc91cHlXxoqMY39OAi/view" },
+            { "titre": "Objectifs et Méthodologie générale - Inversion (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MWwGTdicgFVCZaERtc4b_Asg84O398it/view" },
+            { "titre": "Objectifs et Méthodologie générale - Exercice inversion (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MDVnAzWPLJX1DKhVvDTLJHivusG0BRIV/view" },
+            { "titre": "Objectifs et Méthodologie générale - All conditionals mixed exercises (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MPlnuSUo8-L0O6sO9d6FXS0EOIMdrmmd/view" }
           ]
         },
         {
@@ -290,8 +389,14 @@
             { "titre": "Cours Analyse (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1ZLTQ7L0lCAx0mLQQ6h8X3wt_68xeYymq/view" }
           ]
         },
-        { "matiere": "Physique", "items": [] },
-        { "matiere": "Chimie", "items": [] },
+        {
+          "matiere": "Physique",
+          "items": []
+        },
+        {
+          "matiere": "Chimie",
+          "items": []
+        },
         {
           "matiere": "Informatique",
           "items": [
@@ -357,7 +462,6 @@
             { "titre": "TD, DS et examens Math - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1icXhLOfegbi6QBijG70Siw1CLm4ZKdbm" },
             { "titre": "J'intègre - Méthodes et exercices PCSI-PTSI (livre)", "type": "PDF", "url": "https://drive.google.com/file/d/1iXHkM1wSOUxCqyz5s0H5LaiqkDAF1uyn/view" },
             { "titre": "Fiches Daniel Fredon - algèbre & analyse (livres)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1WmlNmhl57hxqlJOGmVycsvePsgZ2_K7Y" },
-            { "titre": "Cours d'algèbre par chapitre", "type": "Drive", "url": "https://drive.google.com/drive/folders/18GG9V3-xlmI63XllAja2JKaqmmbm0aFP" },
             { "titre": "Cours Algèbre (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1sE-kDUX5bMlY041novOlGuF7TBjWcQZb/view" },
             { "titre": "Cours Analyse (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1u51gA2bY2-nY4-mK14Fsux5PYXh-YvLp/view" },
             { "titre": "Algèbre - pack Taki", "type": "Drive", "url": "https://drive.google.com/drive/folders/19vAjJDH0XocHrkpl0E_PcN0QEBAF8He6" },
@@ -406,8 +510,14 @@
           "matiere": "Informatique",
           "items": [
             { "titre": "Info - 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1hKZB0wzYbPlIKYQKPeZJo71o2yuEjdsR" },
-            { "titre": "Info - 1ère PT (commun)", "type": "Drive", "url": "https://drive.google.com/drive/folders/1xfP9OxompkJbVG9A2Nz8E3PJHmLZup0b" },
-            { "titre": "Informatique - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1mvI3QZrdM0epdEWQDmH8Aob0RLIV-meG" },
+            { "titre": "Simulation numérique - Tkinter (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1L4R2BECDBL8CXVZs7XeeL6v9vQjBpQ3j/view" },
+            { "titre": "Simulation numérique - Pandas (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MjBYOxKI513GmT0KnljjRuuJ7uC51eeh/view" },
+            { "titre": "Programme complet - Programmation orientée objet (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MgWHOOB2pamNospOzq5Tmex7XU7zb95p/view" },
+            { "titre": "Simulation numérique - Matplotlib (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1KuXMrXH7LN5myM9D2lOzriNJV_PbXiFr/view" },
+            { "titre": "Simulation numérique - Les matrices (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1KxAL7BLsq9wE29kRnzn6IWxNJHbDZf1e/view" },
+            { "titre": "Programme complet - Informatique 2ème semestre (1ère année) - PC/PT", "type": "Drive", "url": "https://drive.google.com/drive/folders/1KuNVBMZU6ugjPEpxBXBM9GgiUM1YpnR2" },
+            { "titre": "Programme complet - Informatique Pour Tous en CPGE - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MqJEk3NWknjD5kvXQwFBXEXX8drfR_s/view" },
+            { "titre": "Environnement de développement Python 3 - Exercices Python (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1L69lXwdyvDgi8I4Rnh3-p84hkS3ZMpeB/view" },
             { "titre": "Cours Info (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/14TDuhs7eg0ltv9mcJUvIhnMawYDpcsgw/view" },
             { "titre": "Cours info 1ère année (PDF)", "type": "PDF", "url": "https://drive.google.com/file/d/1DmoHrfmeLeie7MRY8K-B85MNDhGT7ju3/view" }
           ]
@@ -418,13 +528,22 @@
             { "titre": "Fr - 1ère prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1CHmcL6Zuza_yEc7sMHNhOOa7L1BE3ux6" },
             { "titre": "Thème : Le Travail", "type": "Drive", "url": "https://drive.google.com/drive/folders/1XEMav_yJpcZeRBNGZTMdwtny4j9vnVCt" },
             { "titre": "Thème : L'enfance", "type": "Drive", "url": "https://drive.google.com/drive/folders/1Z7ICU8PCRKC5WCJUqoc95K_90wZa0vuz" },
-            { "titre": "Français - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1la_fPf4Dl1Zi8I0L1Rq788lCm2gGon4i" }
+            { "titre": "Langue - Les rapports logiques (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1ldSln0UlHhCLB390fyjRxs7RuoTI0R4K/view" },
+            { "titre": "Programme complet - DS2 révision Français (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1ljFs10u8O-SiDD207xcsBjs94kLS8v76/view" },
+            { "titre": "Langue - Les pronoms relatifs (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1lg2gCaui_b837RruLqzqEhefz7uBPIlb/view" },
+            { "titre": "Langue - Le Subjonctif (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1lebmudrVCZ6dTAS-DJR7FmV3E0nYzVup/view" },
+            { "titre": "Programme complet - Correction révision Français (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1lpLpp5VCwyYzUR2xmKSzZF9DDjDmhpbS/view" }
           ]
         },
         {
           "matiere": "Anglais",
           "items": [
-            { "titre": "English - 1er prépa", "type": "Drive", "url": "https://drive.google.com/drive/folders/1pNuD7xqmpjn5_2u6UqeWvxkLgGr75Bz6" }
+            { "titre": "Objectifs et Méthodologie générale - Compound adjective (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MDch2sCxXQ8AE1npC8tQHYEW5udCWwdD/view" },
+            { "titre": "Objectifs et Méthodologie générale - Tenses (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MEOjM0ljwXTDQnjEmOrerAnqFKJGVhE1/view" },
+            { "titre": "Objectifs et Méthodologie générale - Irregular verbs mnemonic (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1M9weGX9vZmwjpUdc91cHlXxoqMY39OAi/view" },
+            { "titre": "Objectifs et Méthodologie générale - Inversion (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MWwGTdicgFVCZaERtc4b_Asg84O398it/view" },
+            { "titre": "Objectifs et Méthodologie générale - Exercice inversion (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MDVnAzWPLJX1DKhVvDTLJHivusG0BRIV/view" },
+            { "titre": "Objectifs et Méthodologie générale - All conditionals mixed exercises (1ère année) - PC/PT", "type": "PDF", "url": "https://drive.google.com/file/d/1MPlnuSUo8-L0O6sO9d6FXS0EOIMdrmmd/view" }
           ]
         },
         {
