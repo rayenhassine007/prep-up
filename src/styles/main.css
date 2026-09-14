@@ -2307,6 +2307,14 @@ main.home {
   z-index: 60;
   display: flex;
   align-items: center;
+  /* La pastille respire lentement : assez pour qu'on la remarque du coin de
+     l'oeil, assez peu pour ne pas gêner la lecture. Le mouvement est porté par
+     l'enveloppe, le bouton gardant son propre transform au survol. */
+  animation: fb-flotte 4.5s ease-in-out infinite;
+}
+@keyframes fb-flotte {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 .fb-fab-main {
   display: inline-flex;
@@ -2325,6 +2333,8 @@ main.home {
   transition: transform 0.16s ease-out, border-color 0.16s ease-out;
 }
 .fb-fab-main:hover { transform: translateY(-2px); border-color: var(--accent); }
+/* Viser une cible qui bouge agace : dès qu'on s'en approche, elle se pose. */
+.fb-fab:hover, .fb-fab:focus-within { animation-play-state: paused; }
 .fb-fab-main .icon { width: 1.05rem; height: 1.05rem; color: var(--accent); }
 /* La croix mord sur la pastille : elle reste atteignable au pouce sans
    élargir l'ensemble. */
@@ -2467,6 +2477,7 @@ main.home {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .fb-fab { animation: none; }
   .fb-fab-main { transition: none; }
   .fb-fab-main:hover { transform: none; }
 }
