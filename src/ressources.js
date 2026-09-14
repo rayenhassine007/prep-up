@@ -11,13 +11,15 @@ import {
   snapshot,
   toggleFavInList,
 } from './lib/ressources-logic.js';
+import { CONTACT_EMAIL, endpointAjax, endpointPost } from './lib/contact.js';
 
 // ---------------------------------------------------------------------------
 // Pour ajouter des ressources : édite src/data/ressources.json
 // Structure : filieres > MP/PC/PT/BG > "1ère année"/"2ème année" > [ { matiere, items } ]
 // Chaque item : { "titre": "...", "type": "Drive|MEGA|PDF",
 //                 "url": "https://..." ou "/sources/fichier.pdf" }
-// Email de réception des propositions : champ "submitEmail" en haut du JSON.
+// Email de réception des propositions : src/lib/contact.js (partagé avec le
+// bouton de retour).
 // ---------------------------------------------------------------------------
 
 const FILIERES = Object.keys(data.filieres);
@@ -101,9 +103,9 @@ modalEl.addEventListener('click', (e) => {
   if (e.target === modalEl) modalEl.close();
 });
 
-if (data.submitEmail) {
-  submitFormEl.dataset.ajaxEndpoint = `https://formsubmit.co/ajax/${encodeURIComponent(data.submitEmail)}`;
-  submitFormEl.dataset.postEndpoint = `https://formsubmit.co/${encodeURIComponent(data.submitEmail)}`;
+if (CONTACT_EMAIL) {
+  submitFormEl.dataset.ajaxEndpoint = endpointAjax();
+  submitFormEl.dataset.postEndpoint = endpointPost();
 } else {
   const btn = document.getElementById('modal-submit');
   if (btn) {
