@@ -2295,3 +2295,192 @@ main.home {
   .chap-warning { padding: 14px 16px; }
   .chap-method { padding: 4px 16px; }
 }
+
+/* ---------- bouton de retour + micro-sondage ---------- */
+
+/* La pastille suit le pouce : en bas à droite, au-dessus de la barre système
+   des téléphones (env(safe-area-inset-*)). */
+.fb-fab {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  /* La pastille respire lentement : assez pour qu'on la remarque du coin de
+     l'oeil, assez peu pour ne pas gêner la lecture. Le mouvement est porté par
+     l'enveloppe, le bouton gardant son propre transform au survol. */
+  animation: fb-flotte 3s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes fb-flotte {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+.fb-fab-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.16s ease-out, border-color 0.16s ease-out;
+}
+.fb-fab-main:hover { transform: translateY(-2px); border-color: var(--accent); }
+/* Viser une cible qui bouge agace : dès qu'on s'en approche, elle se pose. */
+.fb-fab:hover, .fb-fab:focus-within { animation-play-state: paused; }
+.fb-fab-main .icon { width: 1.05rem; height: 1.05rem; color: var(--accent); }
+/* La croix mord sur la pastille : elle reste atteignable au pouce sans
+   élargir l'ensemble. */
+.fb-fab-close {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+.fb-fab-close:hover { color: var(--text); border-color: var(--text-dim); }
+
+.fb-footer-link { cursor: pointer; }
+
+.fb-modal { max-width: 520px; }
+.fb-intro {
+  margin: 0 0 18px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+.fb-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.fb-type {
+  padding: 8px 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: color 0.14s ease-out, border-color 0.14s ease-out;
+}
+.fb-type:hover { color: var(--text); }
+.fb-type.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  font-weight: 600;
+}
+.fb-form textarea,
+.fb-form input[type='text'] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+}
+.fb-form textarea { resize: vertical; min-height: 96px; line-height: 1.55; }
+.fb-form textarea:focus,
+.fb-form input[type='text']:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.fb-poll {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 16px;
+  text-align: center;
+}
+.fb-poll-q {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+.fb-poll-actions { display: flex; gap: 8px; }
+.fb-poll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 15px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: border-color 0.14s ease-out;
+}
+.fb-poll-btn:hover { border-color: var(--accent); }
+.fb-poll-btn .icon { width: 0.95rem; height: 0.95rem; }
+.fb-poll-more { display: flex; gap: 8px; flex: 1 1 260px; min-width: 0; }
+.fb-poll-more input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+}
+.fb-poll-more input:focus { outline: none; border-color: var(--accent); }
+.fb-poll-send {
+  padding: 8px 15px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  /* Sur un écran étroit la pastille mange la lecture : on garde l'icône. */
+  .fb-fab-label { display: none; }
+  .fb-fab-main { padding: 12px; }
+  .fb-poll { margin: 0 16px 22px; padding: 14px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Le flottement de la pastille est maintenu ici à la demande : sur les
+     téléphones où « réduire les animations » est actif (mode économie
+     d'énergie, réglage iOS), c'est la règle qui l'éteignait. */
+  .fb-fab-main { transition: none; }
+  .fb-fab-main:hover { transform: none; }
+}
