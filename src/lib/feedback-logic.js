@@ -1,11 +1,10 @@
 // Règles du bouton de retour et du micro-sondage, sans DOM ni réseau, pour
 // qu'elles soient testables telles quelles.
 
-// Les quatre choses qu'un visiteur veut dire. L'ordre est celui des boutons.
+// Ce qu'un visiteur veut dire. L'ordre est celui des boutons.
 export const TYPES = [
   ['idee', 'Une idée'],
   ['changer', 'Quelque chose à changer'],
-  ['erreur', 'Une erreur dans les chiffres'],
   ['bug', 'Un bug'],
 ];
 

@@ -22,7 +22,6 @@ import {
   validerRetour,
 } from './lib/feedback-logic.js';
 
-const CLE_MASQUE = 'pu-feedback-masque';
 const CLE_DERNIER = 'pu-feedback-dernier';
 
 // localStorage jette en navigation privée et quand les cookies sont bloqués :
@@ -248,8 +247,6 @@ export function ouvrirRetour() {
 // ---------------------------------------------------------------------------
 
 function construireBouton() {
-  if (lire(CLE_MASQUE) === '1') return;
-
   const wrap = el('div', 'fb-fab');
   const ouvrir = el('button', 'fb-fab-main');
   ouvrir.type = 'button';
@@ -257,14 +254,14 @@ function construireBouton() {
   ouvrir.append(el('span', 'fb-fab-label', 'Une idée ?'));
   ouvrir.addEventListener('click', ouvrirRetour);
 
+  // Le masquage ne dure que la visite en cours : la pastille revient au
+  // rechargement. Elle sert à dégager la lecture sur le moment, pas à être
+  // désactivée une fois pour toutes.
   const fermer = el('button', 'fb-fab-close', '×');
   fermer.type = 'button';
   fermer.setAttribute('aria-label', 'Masquer ce bouton');
-  fermer.title = 'Masquer ce bouton (il restera dans le pied de page)';
-  fermer.addEventListener('click', () => {
-    ecrire(CLE_MASQUE, '1');
-    wrap.remove();
-  });
+  fermer.title = 'Masquer ce bouton (il revient au prochain chargement)';
+  fermer.addEventListener('click', () => wrap.remove());
 
   wrap.append(ouvrir, fermer);
   document.body.appendChild(wrap);

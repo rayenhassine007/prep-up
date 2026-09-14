@@ -144,6 +144,7 @@ submitFormEl.addEventListener('submit', async (e) => {
   if (!result.ok) {
     const messages = {
       'missing-meta': 'Choisis une filière et une année.',
+      'email-link': 'Ce champ attend un lien vers le document (Drive, MEGA...), pas une adresse mail.',
       'invalid-link': 'Le lien doit être une URL valide (Drive, MEGA, etc.).',
       missing: 'Ajoute un lien valide ou un fichier PDF pour pouvoir envoyer.',
     };
