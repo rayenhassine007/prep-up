@@ -2,6 +2,8 @@
 // The initial theme is set by the inline snippet in each page's <head>.
 
 import { iconEl } from './icons.js';
+// Bouton de retour + micro-sondage : présents sur toutes les pages.
+import './feedback.js';
 
 // ---------- Vercel Web Analytics ----------
 import { inject } from '@vercel/analytics';

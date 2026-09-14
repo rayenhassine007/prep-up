@@ -3,6 +3,7 @@ import {
   isFavInList,
   hasLinkOrFile,
   isValidResourceLink,
+  looksLikeEmail,
   matchesSearchItem,
   noteOpenedInList,
   parseStoredList,
@@ -99,6 +100,32 @@ describe('isValidResourceLink', () => {
     expect(isValidResourceLink('   ')).toBe(false);
     expect(isValidResourceLink('nimp')).toBe(false);
     expect(isValidResourceLink('ftp://files.example.com/a')).toBe(false);
+    expect(isValidResourceLink('deux mots')).toBe(false);
+  });
+
+  // Préfixée par https://, une adresse mail donne une URL valide : le "prenom"
+  // se lit comme un identifiant et "gmail.com" comme hôte. Des visiteurs
+  // collaient donc leur mail dans le champ lien, et ça passait.
+  it('rejects an email address, however it is written', () => {
+    expect(isValidResourceLink('Boussaffasabrine7@gmail.com')).toBe(false);
+    expect(isValidResourceLink('prenom.nom@yahoo.fr')).toBe(false);
+    expect(isValidResourceLink('  prenom@gmail.com  ')).toBe(false);
+    expect(isValidResourceLink('mailto:prenom@gmail.com')).toBe(false);
+    expect(isValidResourceLink('https://prenom@gmail.com')).toBe(false);
+  });
+
+  it('still accepts a link whose path happens to contain an @', () => {
+    expect(isValidResourceLink('https://drive.google.com/d/a@b')).toBe(true);
+    expect(isValidResourceLink('drive.google.com/d/a@b')).toBe(true);
+  });
+});
+
+describe('looksLikeEmail', () => {
+  it('separates an address from a link', () => {
+    expect(looksLikeEmail('prenom@gmail.com')).toBe(true);
+    expect(looksLikeEmail('mailto:prenom@gmail.com')).toBe(true);
+    expect(looksLikeEmail('https://drive.google.com/file/d/x')).toBe(false);
+    expect(looksLikeEmail('')).toBe(false);
   });
 });
 
@@ -112,5 +139,12 @@ describe('validateProposal', () => {
     expect(validateProposal('', null, { filiere: 'MP', annee: '1ère année' }).reason).toBe('missing');
     expect(validateProposal('nimp', null, { filiere: 'MP', annee: '1ère année' }).reason).toBe('invalid-link');
     expect(validateProposal('https://drive.google.com/x', null, { filiere: 'MP', annee: '1ère année' }).ok).toBe(true);
+  });
+
+  it('tells an email apart from a bad link, so the message can say so', () => {
+    const meta = { filiere: 'BG', annee: '1ère année' };
+    expect(validateProposal('Boussaffasabrine7@gmail.com', null, meta).reason).toBe('email-link');
+    // même avec un PDF joint : le champ lien reste faux
+    expect(validateProposal('prenom@gmail.com', [{ name: 'x.pdf' }], meta).reason).toBe('email-link');
   });
 });

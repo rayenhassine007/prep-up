@@ -63,14 +63,33 @@ export function hasLinkOrFile(link, files) {
   return result.ok;
 }
 
+/**
+ * True for what people actually paste as an email address.
+ *
+ * Préfixée par https://, « prenom@gmail.com » donne une URL parfaitement
+ * valide : le navigateur lit « prenom » comme identifiant et « gmail.com »
+ * comme hôte. L'hôte ayant un point, la validation la laissait passer. On
+ * refuse donc tout arobase dans la partie qui précède le chemin.
+ */
+export function looksLikeEmail(link) {
+  const raw = String(link || '').trim();
+  if (!raw) return false;
+  if (/^mailto:/i.test(raw)) return true;
+  return raw.split(/[/?#]/)[0].includes('@');
+}
+
 /** True for http(s) URLs (with or without a protocol prefix). */
 export function isValidResourceLink(link) {
   const raw = String(link || '').trim();
   if (!raw) return false;
+  if (/\s/.test(raw)) return false; // un lien n'a pas d'espace
+  if (looksLikeEmail(raw)) return false;
   const candidate = /^[a-z][a-z0-9+.-]*:\/\//i.test(raw) ? raw : `https://${raw}`;
   try {
     const url = new URL(candidate);
     if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;
+    // Personne ne colle un lien Drive avec des identifiants dedans.
+    if (url.username || url.password) return false;
     // Need a real host, not just "https://foo" with no dot / localhost-only junk
     const host = url.hostname;
     return host.includes('.') || host === 'localhost';
@@ -91,6 +110,11 @@ export function validateProposal(link, files, { filiere = 'x', annee = 'x' } = {
   }
   const trimmed = String(link || '').trim();
   const hasFile = !!(files && files.length > 0);
+  // Une adresse mail mérite son propre message : la personne l'a tapée exprès,
+  // il faut lui dire ce qu'on attend à la place.
+  if (trimmed && looksLikeEmail(trimmed)) {
+    return { ok: false, reason: 'email-link' };
+  }
   if (trimmed && !isValidResourceLink(trimmed)) {
     return { ok: false, reason: 'invalid-link' };
   }
