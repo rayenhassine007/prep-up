@@ -6,6 +6,7 @@ import {
   TYPES,
   clePage,
   contexte,
+  estAccueil,
   estType,
   peutEnvoyer,
   validerRetour,
@@ -91,5 +92,19 @@ describe('clePage', () => {
     expect(clePage('/')).toBe('pu-avis:/');
     expect(clePage('')).toBe('pu-avis:/');
     expect(clePage('/calculateur')).not.toBe(clePage('/ressources'));
+  });
+});
+
+describe('estAccueil', () => {
+  it('recognises the homepage whatever the URL shape', () => {
+    for (const p of ['/', '', '/index.html', '//']) {
+      expect(estAccueil(p)).toBe(true);
+    }
+  });
+
+  it('leaves the tools alone', () => {
+    for (const p of ['/calculateur', '/ressources.html', '/chapitres-concours/', '/places-2026']) {
+      expect(estAccueil(p)).toBe(false);
+    }
   });
 });

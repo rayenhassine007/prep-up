@@ -48,8 +48,20 @@ export function contexte({ url, filiere, epreuve, largeur } = {}) {
   ].filter(Boolean).join(' | ');
 }
 
+function normaliser(pathname) {
+  return String(pathname || '/')
+    .replace(/index\.html$/, '')
+    .replace(/\.html$/, '')
+    .replace(/\/+$/, '');
+}
+
 // Le micro-sondage se pose une fois par page, pas une fois par site.
 export function clePage(pathname) {
-  const chemin = String(pathname || '/').replace(/\.html$/, '').replace(/\/+$/, '');
-  return `pu-avis:${chemin || '/'}`;
+  return `pu-avis:${normaliser(pathname) || '/'}`;
+}
+
+// L'accueil est une vitrine, pas un outil : demander « cette page t'a servi ? »
+// à quelqu'un qui vient d'arriver n'apprend rien. Le sondage ne s'y pose pas.
+export function estAccueil(pathname) {
+  return normaliser(pathname) === '';
 }

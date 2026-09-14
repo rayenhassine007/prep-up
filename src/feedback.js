@@ -7,9 +7,9 @@
 // évite que les pages divergent. Le prerender ne l'émet pas, pour la même
 // raison que les étoiles de favori des ressources.
 //
-// Le bouton flottant se referme définitivement si on clique sa croix, mais le
-// lien du pied de page reste : on peut masquer la pastille, pas la
-// fonctionnalité.
+// La croix de la pastille la masque pour la vue en cours seulement : elle
+// revient au rechargement. Le lien du pied de page est là de toute façon, sur
+// toutes les pages. Le micro-sondage, lui, ne se pose pas sur l'accueil.
 
 import { iconEl } from './icons.js';
 import { endpointAjax } from './lib/contact.js';
@@ -18,6 +18,7 @@ import {
   TYPES,
   clePage,
   contexte,
+  estAccueil,
   peutEnvoyer,
   validerRetour,
 } from './lib/feedback-logic.js';
@@ -288,6 +289,7 @@ function lienPiedDePage() {
 function construireSondage() {
   const footer = document.querySelector('.site-footer');
   if (!footer) return;
+  if (estAccueil(location.pathname)) return;
   const cle = clePage(location.pathname);
   if (lire(cle)) return; // déjà répondu sur cette page
 
