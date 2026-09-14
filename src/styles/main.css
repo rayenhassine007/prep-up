@@ -2310,11 +2310,12 @@ main.home {
   /* La pastille respire lentement : assez pour qu'on la remarque du coin de
      l'oeil, assez peu pour ne pas gêner la lecture. Le mouvement est porté par
      l'enveloppe, le bouton gardant son propre transform au survol. */
-  animation: fb-flotte 4.5s ease-in-out infinite;
+  animation: fb-flotte 3s ease-in-out infinite;
+  will-change: transform;
 }
 @keyframes fb-flotte {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-9px); }
 }
 .fb-fab-main {
   display: inline-flex;
@@ -2477,7 +2478,9 @@ main.home {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fb-fab { animation: none; }
+  /* Le flottement de la pastille est maintenu ici à la demande : sur les
+     téléphones où « réduire les animations » est actif (mode économie
+     d'énergie, réglage iOS), c'est la règle qui l'éteignait. */
   .fb-fab-main { transition: none; }
   .fb-fab-main:hover { transform: none; }
 }
