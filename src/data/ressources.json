@@ -1732,11 +1732,6 @@
           "matiere": "CFM",
           "items": [
             {
-              "titre": "CFM - 1ère PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1RaMi8R-u5FVTI3dsgFe-GZP1BvFlIBm-"
-            },
-            {
               "titre": "CFM - 1er prépa",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1M30Sw6bmQzMbZThzl3V3RCQ-4rE7UeeR"
@@ -1980,11 +1975,6 @@
               "titre": "Sources de cours - 1er prépa (PDF)",
               "type": "PDF",
               "url": "https://drive.google.com/file/d/1pP6gIkjuRZWlDyHD2pjw3uYfhYVrSfWy/view"
-            },
-            {
-              "titre": "CDC junior (PDF)",
-              "type": "PDF",
-              "url": "https://drive.google.com/file/d/1cRIO09S4P4hn-rXFi4_MZOwUbqwLTmGC/view"
             }
           ]
         }
