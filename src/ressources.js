@@ -373,7 +373,7 @@ function syncStars(url, on) {
   });
 }
 
-function renderGroupCard(group, ctx, items) {
+function groupCard(group, ctx, items) {
   const card = document.createElement('div');
   card.className = 'res-group';
 
@@ -383,30 +383,64 @@ function renderGroupCard(group, ctx, items) {
   card.appendChild(title);
 
   for (const item of items) card.appendChild(buildRow(item, ctx));
-  listEl.appendChild(card);
+  return card;
 }
 
-// « Tout voir » : chaque filière et chaque année l'une après l'autre, avec un
-// intertitre pour savoir où l'on est en faisant défiler.
+// « Tout voir » : un menu déroulant par filière, qui s'ouvre sur ses deux
+// années, chacune s'ouvrant sur ses matières. Tout est fermé au départ pour
+// qu'on voie d'un coup d'oeil ce qui existe ; pendant une recherche tout est
+// ouvert, sinon les résultats resteraient cachés derrière les menus.
+function accordeon(niveau, libelle, n, ouvert) {
+  const details = document.createElement('details');
+  details.className = `res-acc res-acc-${niveau}`;
+  details.open = ouvert;
+  const summary = document.createElement('summary');
+  const nom = document.createElement('span');
+  nom.className = 'res-acc-nom';
+  nom.textContent = libelle;
+  const compte = document.createElement('span');
+  compte.className = 'res-acc-compte';
+  compte.textContent = `${n} document${n > 1 ? 's' : ''}`;
+  summary.append(nom, compte);
+  details.appendChild(summary);
+  return details;
+}
+
 function renderToutView() {
   const sections = sectionsToutes(data.filieres, state.search);
+  const cherche = state.search.trim() !== '';
   const n = compterDocuments(sections);
-  if (state.search.trim() && n) {
+  if (cherche && n) {
     const compte = document.createElement('p');
     compte.className = 'res-compte';
     compte.setAttribute('role', 'status');
     compte.textContent = `${n} document${n > 1 ? 's' : ''} trouvé${n > 1 ? 's' : ''}, toutes filières confondues.`;
     listEl.appendChild(compte);
   }
+  const parFiliere = new Map();
   for (const section of sections) {
-    const titre = document.createElement('h2');
-    titre.className = 'res-section-titre';
-    titre.textContent = `${section.filiere} · ${section.annee}`;
-    listEl.appendChild(titre);
-    for (const group of section.groups) {
-      const ctx = { matiere: group.matiere, filiere: section.filiere, annee: section.annee };
-      renderGroupCard(group, ctx, group.items);
+    if (!parFiliere.has(section.filiere)) parFiliere.set(section.filiere, []);
+    parFiliere.get(section.filiere).push(section);
+  }
+  for (const [filiere, annees] of parFiliere) {
+    const blocFiliere = accordeon('filiere', filiere, compterDocuments(annees), cherche);
+    for (const section of annees) {
+      const blocAnnee = accordeon('annee', section.annee, compterDocuments([section]), cherche);
+      const corps = document.createElement('div');
+      corps.className = 'res-acc-corps';
+      for (const group of section.groups) {
+        const ctx = { matiere: group.matiere, filiere, annee: section.annee };
+        const card = groupCard(group, ctx, group.items);
+        // Pas de fondu au défilement ici (ui.js) : une carte observée pendant
+        // que son menu est fermé n'est jamais signalée visible à l'ouverture
+        // et resterait transparente. L'ouverture du menu suffit comme effet.
+        card.dataset.revealWatched = '1';
+        corps.appendChild(card);
+      }
+      blocAnnee.appendChild(corps);
+      blocFiliere.appendChild(blocAnnee);
     }
+    listEl.appendChild(blocFiliere);
   }
 }
 
