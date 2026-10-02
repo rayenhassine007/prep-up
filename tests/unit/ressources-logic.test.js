@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  compterDocuments,
   isFavInList,
   hasLinkOrFile,
   isValidResourceLink,
@@ -7,6 +8,7 @@ import {
   matchesSearchItem,
   noteOpenedInList,
   parseStoredList,
+  sectionsToutes,
   toggleFavInList,
   validateProposal,
 } from '../../src/lib/ressources-logic.js';
@@ -146,5 +148,49 @@ describe('validateProposal', () => {
     expect(validateProposal('Boussaffasabrine7@gmail.com', null, meta).reason).toBe('email-link');
     // même avec un PDF joint : le champ lien reste faux
     expect(validateProposal('prenom@gmail.com', [{ name: 'x.pdf' }], meta).reason).toBe('email-link');
+  });
+});
+
+describe('sectionsToutes', () => {
+  const info = { titre: 'Cours Python', type: 'Drive', url: 'https://example.com/py' };
+  const filieres = {
+    MP: {
+      '1ère année': [
+        { matiere: 'Physique', items: [{ titre: 'TD Optique', type: 'PDF', url: 'https://example.com/op' }] },
+        { matiere: 'STA', items: [] },
+        { matiere: 'Informatique', items: [info] },
+      ],
+    },
+    PC: {
+      '1ère année': [
+        { matiere: 'Physique', items: [] },
+        { matiere: 'Informatique', items: [info] },
+      ],
+    },
+  };
+
+  it('keeps every filière and année in order, without empty matières', () => {
+    const sections = sectionsToutes(filieres);
+    expect(sections.map((s) => s.filiere)).toEqual(['MP', 'PC']);
+    expect(sections[0].groups.map((g) => g.matiere)).toEqual(['Physique', 'Informatique']);
+    expect(sections[1].groups.map((g) => g.matiere)).toEqual(['Informatique']);
+    expect(compterDocuments(sections)).toBe(3);
+  });
+
+  it('lists a shared document once per search, at its first place', () => {
+    const sections = sectionsToutes(filieres, 'python');
+    expect(sections).toHaveLength(1);
+    expect(sections[0].filiere).toBe('MP');
+    expect(compterDocuments(sections)).toBe(1);
+  });
+
+  it('searches the matière name too', () => {
+    expect(compterDocuments(sectionsToutes(filieres, 'physique'))).toBe(1);
+    expect(sectionsToutes(filieres, 'chimie')).toEqual([]);
+  });
+
+  it('tolerates missing data', () => {
+    expect(sectionsToutes(undefined)).toEqual([]);
+    expect(sectionsToutes({ MP: { '1ère année': [{ matiere: 'X' }] } })).toEqual([]);
   });
 });

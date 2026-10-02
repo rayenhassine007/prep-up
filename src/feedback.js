@@ -20,8 +20,10 @@ import {
   contexte,
   estAccueil,
   peutEnvoyer,
+  urlSansPisteurs,
   validerRetour,
 } from './lib/feedback-logic.js';
+import { appliIntegree } from './lib/navigateur-integre.js';
 
 const CLE_DERNIER = 'pu-feedback-dernier';
 
@@ -61,10 +63,11 @@ function selectionCourante() {
 function contexteCourant() {
   const { filiere, epreuve } = selectionCourante();
   return contexte({
-    url: location.pathname + location.search,
+    url: urlSansPisteurs(location.pathname, location.search),
     filiere,
     epreuve,
     largeur: window.innerWidth,
+    appli: appliIntegree(navigator.userAgent),
   });
 }
 

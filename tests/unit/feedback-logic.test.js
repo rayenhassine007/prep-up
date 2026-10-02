@@ -9,6 +9,7 @@ import {
   estAccueil,
   estType,
   peutEnvoyer,
+  urlSansPisteurs,
   validerRetour,
 } from '../../src/lib/feedback-logic.js';
 
@@ -106,5 +107,29 @@ describe('estAccueil', () => {
     for (const p of ['/calculateur', '/ressources.html', '/chapitres-concours/', '/places-2026']) {
       expect(estAccueil(p)).toBe(false);
     }
+  });
+});
+
+describe('urlSansPisteurs', () => {
+  it('drops click ids so the rest of the context stays readable', () => {
+    expect(urlSansPisteurs('/ressources', '?fbclid=IwZXh0bgNhZW0CMTEAAR2abc')).toBe('/ressources');
+    expect(urlSansPisteurs('/ressources', '?utm_source=fb&utm_medium=social&gclid=x')).toBe('/ressources');
+  });
+
+  it('keeps the parameters that describe the page', () => {
+    expect(urlSansPisteurs('/chapitres-concours', '?filiere=MP&fbclid=abc')).toBe('/chapitres-concours?filiere=MP');
+  });
+
+  it('handles an empty query string', () => {
+    expect(urlSansPisteurs('/calculateur', '')).toBe('/calculateur');
+    expect(urlSansPisteurs('', undefined)).toBe('/');
+  });
+});
+
+describe('contexte et navigateur intégré', () => {
+  it('names the in-app browser when there is one', () => {
+    expect(contexte({ url: '/ressources', largeur: 390, appli: 'Facebook' }))
+      .toBe('/ressources | 390 px | navigateur Facebook');
+    expect(contexte({ url: '/ressources', largeur: 390, appli: null })).toBe('/ressources | 390 px');
   });
 });

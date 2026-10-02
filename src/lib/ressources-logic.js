@@ -29,6 +29,45 @@ export function matchesSearchItem(item, matiere, query) {
   );
 }
 
+/**
+ * Toute la bibliothèque d'un coup, rangée filière → année → matière, pour le
+ * bouton « Tout voir ». Les matières vides disparaissent : huit cartes « Aucun
+ * document » n'aident personne à parcourir.
+ *
+ * Avec une recherche, chaque document n'apparaît qu'une fois, à sa première
+ * place : le même cours d'informatique figure sous les quatre filières et les
+ * deux années, et le voir huit fois de suite noierait les autres résultats.
+ */
+export function sectionsToutes(filieres, query = '') {
+  const cherche = String(query || '').trim() !== '';
+  const vus = new Set();
+  const sections = [];
+  for (const [filiere, annees] of Object.entries(filieres || {})) {
+    for (const [annee, groupes] of Object.entries(annees || {})) {
+      const groups = [];
+      for (const groupe of groupes || []) {
+        const items = (groupe.items || []).filter((it) => {
+          if (!matchesSearchItem(it, groupe.matiere, query)) return false;
+          if (!cherche || !it.url) return true;
+          if (vus.has(it.url)) return false;
+          vus.add(it.url);
+          return true;
+        });
+        if (items.length) groups.push({ matiere: groupe.matiere, items });
+      }
+      if (groups.length) sections.push({ filiere, annee, groups });
+    }
+  }
+  return sections;
+}
+
+export function compterDocuments(sections) {
+  return sections.reduce(
+    (total, s) => total + s.groups.reduce((n, g) => n + g.items.length, 0),
+    0,
+  );
+}
+
 export function isFavInList(favoris, item) {
   const k = keyOf(item);
   return k != null && favoris.some((f) => f.url === k);
