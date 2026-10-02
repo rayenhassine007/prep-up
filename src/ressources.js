@@ -242,7 +242,7 @@ searchEl.addEventListener('input', () => {
 
 function renderFiliereButtons() {
   filiereSelectEl.innerHTML = '';
-  for (const f of [...FILIERES, TOUT]) {
+  for (const f of [TOUT, ...FILIERES]) {
     const btn = document.createElement('button');
     btn.textContent = f === TOUT ? 'Tout voir' : f;
     btn.className = f === state.filiere ? 'active' : '';
