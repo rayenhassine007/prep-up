@@ -1073,15 +1073,50 @@ p.subtitle {
 .is-hidden { display: none !important; }
 
 /* ---------- ressources: « Tout voir » ---------- */
-.res-section-titre {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 26px 0 12px;
-  color: var(--text);
+.res-acc {
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
 }
-.res-section-titre:first-child,
-.res-compte + .res-section-titre { margin-top: 4px; }
+.res-acc > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 14px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+}
+.res-acc > summary::-webkit-details-marker { display: none; }
+.res-acc > summary:hover { background: var(--surface-2); }
+.res-acc > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.res-acc > summary::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  border-right: 2px solid var(--text-dim);
+  border-bottom: 2px solid var(--text-dim);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.res-acc[open] > summary::after { transform: rotate(-135deg) translate(-2px, -2px); }
+.res-acc-nom { flex: 1; min-width: 0; }
+.res-acc-compte { font-family: var(--font-body, inherit); font-size: 0.8rem; font-weight: 500; color: var(--text-dim); }
+.res-acc-filiere[open] > summary { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.res-acc-filiere > .res-acc { margin: 0 12px 10px; background: var(--input-bg); }
+.res-acc-filiere > .res-acc:first-of-type { margin-top: 2px; }
+.res-acc-annee > summary { padding: 12px 16px; font-size: 0.95rem; font-weight: 600; }
+.res-acc-corps { padding: 2px 10px 10px; }
+.res-acc-corps .res-group { margin-bottom: 10px; padding: 14px 16px; }
+.res-acc-corps .res-group:last-child { margin-bottom: 0; }
 .res-compte { margin: 0 0 12px; font-size: 0.88rem; color: var(--text-dim); }
 .res-elargir {
   display: block;
