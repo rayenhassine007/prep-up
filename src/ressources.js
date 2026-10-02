@@ -8,10 +8,13 @@ import {
   matchesSearchItem,
   noteOpenedInList,
   parseStoredList,
+  compterDocuments,
+  sectionsToutes,
   snapshot,
   toggleFavInList,
 } from './lib/ressources-logic.js';
 import { CONTACT_EMAIL, endpointAjax, endpointPost } from './lib/contact.js';
+import { afficherBandeauNavigateur } from './navigateur.js';
 
 // ---------------------------------------------------------------------------
 // Pour ajouter des ressources : édite src/data/ressources.json
@@ -23,6 +26,8 @@ import { CONTACT_EMAIL, endpointAjax, endpointPost } from './lib/contact.js';
 // ---------------------------------------------------------------------------
 
 const FILIERES = Object.keys(data.filieres);
+// Valeur de state.filiere quand on parcourt toute la bibliothèque à la fois.
+const TOUT = 'tout';
 
 // --- favoris & récemment ouverts (localStorage, propre à l'appareil) ---
 const FAV_KEY = 'prepup:favoris';
@@ -237,25 +242,28 @@ searchEl.addEventListener('input', () => {
 
 function renderFiliereButtons() {
   filiereSelectEl.innerHTML = '';
-  for (const f of FILIERES) {
+  for (const f of [...FILIERES, TOUT]) {
     const btn = document.createElement('button');
-    btn.textContent = f;
+    btn.textContent = f === TOUT ? 'Tout voir' : f;
     btn.className = f === state.filiere ? 'active' : '';
-    btn.addEventListener('click', () => {
-      state.filiere = f;
-      if (!data.filieres[f][state.annee]) {
-        state.annee = Object.keys(data.filieres[f])[0];
-      }
-      renderFiliereButtons();
-      renderAnneeButtons();
-      renderList();
-    });
+    btn.addEventListener('click', () => choisirFiliere(f));
     filiereSelectEl.appendChild(btn);
   }
 }
 
+function choisirFiliere(f) {
+  state.filiere = f;
+  if (f !== TOUT && !data.filieres[f][state.annee]) {
+    state.annee = Object.keys(data.filieres[f])[0];
+  }
+  renderFiliereButtons();
+  renderAnneeButtons();
+  renderList();
+}
+
 function renderAnneeButtons() {
   anneeSelectEl.innerHTML = '';
+  if (state.filiere === TOUT) return;
   for (const a of Object.keys(data.filieres[state.filiere])) {
     const btn = document.createElement('button');
     btn.textContent = a;
@@ -365,7 +373,62 @@ function syncStars(url, on) {
   });
 }
 
+function renderGroupCard(group, ctx, items) {
+  const card = document.createElement('div');
+  card.className = 'res-group';
+
+  const title = document.createElement('div');
+  title.className = 'res-matiere';
+  title.textContent = group.matiere;
+  card.appendChild(title);
+
+  for (const item of items) card.appendChild(buildRow(item, ctx));
+  listEl.appendChild(card);
+}
+
+// « Tout voir » : chaque filière et chaque année l'une après l'autre, avec un
+// intertitre pour savoir où l'on est en faisant défiler.
+function renderToutView() {
+  const sections = sectionsToutes(data.filieres, state.search);
+  const n = compterDocuments(sections);
+  if (state.search.trim() && n) {
+    const compte = document.createElement('p');
+    compte.className = 'res-compte';
+    compte.setAttribute('role', 'status');
+    compte.textContent = `${n} document${n > 1 ? 's' : ''} trouvé${n > 1 ? 's' : ''}, toutes filières confondues.`;
+    listEl.appendChild(compte);
+  }
+  for (const section of sections) {
+    const titre = document.createElement('h2');
+    titre.className = 'res-section-titre';
+    titre.textContent = `${section.filiere} · ${section.annee}`;
+    listEl.appendChild(titre);
+    for (const group of section.groups) {
+      const ctx = { matiere: group.matiere, filiere: section.filiere, annee: section.annee };
+      renderGroupCard(group, ctx, group.items);
+    }
+  }
+}
+
+// Une recherche vide dans une filière ne veut pas dire que le document manque :
+// il est peut-être rangé ailleurs. On propose d'élargir plutôt que de conclure.
+function proposerRechercheGlobale() {
+  if (!state.search.trim() || state.filiere === TOUT) return;
+  const n = compterDocuments(sectionsToutes(data.filieres, state.search));
+  if (!n) return;
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'res-elargir';
+  btn.textContent = `Voir ${n} résultat${n > 1 ? 's' : ''} dans toutes les filières`;
+  btn.addEventListener('click', () => choisirFiliere(TOUT));
+  listEl.appendChild(btn);
+}
+
 function renderBrowseView() {
+  if (state.filiere === TOUT) {
+    renderToutView();
+    return;
+  }
   const groups = data.filieres[state.filiere][state.annee] || [];
   for (const group of groups) {
     const items = (group.items || []).filter((it) => matchesSearch(it, group.matiere));
@@ -441,7 +504,7 @@ function renderList() {
   // the filière/année pickers only make sense while browsing
   const browsing = state.view === 'tous';
   if (filiereSelectEl) filiereSelectEl.classList.toggle('is-hidden', !browsing);
-  if (anneeSelectEl) anneeSelectEl.classList.toggle('is-hidden', !browsing);
+  if (anneeSelectEl) anneeSelectEl.classList.toggle('is-hidden', !browsing || state.filiere === TOUT);
 
   if (browsing) {
     renderBrowseView();
@@ -450,6 +513,7 @@ function renderList() {
       empty.className = 'reach-empty';
       empty.textContent = 'Aucun résultat.';
       listEl.appendChild(empty);
+      proposerRechercheGlobale();
     }
     return;
   }
@@ -478,4 +542,5 @@ function renderAll() {
   renderList();
 }
 
+afficherBandeauNavigateur(document.querySelector('.submit-card'));
 renderAll();
