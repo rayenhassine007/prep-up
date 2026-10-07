@@ -99,8 +99,11 @@ function appliquerLangue() {
   document.querySelectorAll('[data-i18n-aria]').forEach((n) => n.setAttribute('aria-label', tr(n.dataset.i18nAria)));
   document.querySelectorAll('[data-i18n-placeholder]').forEach((n) => { n.placeholder = tr(n.dataset.i18nPlaceholder); });
 
-  // Les boutons sont écrits dans l'autre langue : on le leur dit.
-  boutonsLangue.forEach((b) => { b.lang = langue === 'ar' ? 'fr' : 'ar'; });
+  // Le bouton de l'en-tête est écrit dans l'autre langue (« عربي » /
+  // « Français ») ; le rond, lui, affiche « AR » ou « FR » en lettres latines.
+  boutonsLangue.forEach((b) => {
+    b.lang = b.classList.contains('aa-langue-rond') || langue === 'ar' ? 'fr' : 'ar';
+  });
 
   rendreQuiz();
   rendrePlan();

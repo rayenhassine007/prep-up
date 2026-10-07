@@ -13,7 +13,7 @@ export const TEXTES = {
     'meta.titre': 'Apprendre à apprendre : 7 méthodes de révision pour la prépa | Prep\'Up',
     'nav.accueil': '← Accueil',
     'langue.bouton': 'عربي',
-    'langue.court': 'عربي',
+    'langue.court': 'AR',
 
     'hero.titre': 'Apprendre à apprendre',
     'hero.sous': '7 méthodes prouvées par la science pour retenir plus en travaillant moins.',
