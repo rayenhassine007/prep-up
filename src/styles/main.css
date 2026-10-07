@@ -2452,10 +2452,10 @@ main.home {
    élargir l'ensemble. */
 .fb-fab-close {
   position: absolute;
-  top: -7px;
-  right: -7px;
-  width: 22px;
-  height: 22px;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
   display: grid;
   place-items: center;
   border: 1px solid var(--border-strong);
@@ -2595,3 +2595,482 @@ main.home {
   .fb-fab-main { transition: none; }
   .fb-fab-main:hover { transform: none; }
 }
+
+/* ---------- page « Apprendre à apprendre » ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* les boutons de la page ont un display à eux : l'attribut hidden doit gagner */
+.aa [hidden] { display: none !important; }
+.aa section[id], .aa li[id] { scroll-margin-top: 120px; }
+/* mode arabe : rien ne s'affiche avant la traduction (filet de 2 s dans le HTML) */
+html.aa-attente body { visibility: hidden; }
+
+/* bouton de langue */
+.aa-langue {
+  padding: 6px 14px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.aa-langue:lang(ar) { font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif; }
+.aa-langue:hover { border-color: var(--accent); }
+.aa-langue:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* sur grand écran, le bouton vit dans l'en-tête ; sur téléphone, il devient
+   un rond dans la barre collante, toujours à portée de pouce */
+.aa-langue-rond { display: none; }
+@media (max-width: 640px) {
+  .aa-langue-entete { display: none; }
+  .aa-pilules { justify-content: flex-start; align-items: center; }
+  .aa-langue-rond {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    margin-inline-start: auto;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    border-radius: 50%;
+    border-color: color-mix(in srgb, var(--violet) 55%, var(--border));
+    background: color-mix(in srgb, var(--violet) 14%, var(--surface));
+  }
+}
+
+/* pastilles de navigation, collantes sur téléphone */
+.aa-pilules {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+}
+.aa-pilules a {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.aa-pilules a:hover { border-color: var(--border-strong); }
+@media (max-width: 640px) {
+  .aa-pilules {
+    position: sticky;
+    top: 61px;
+    z-index: 40;
+    background: var(--header-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+.aa { line-height: 1.6; }
+.aa-hero { padding-top: 8px; }
+.aa-hero h1 { font-size: clamp(2rem, 7vw, 2.6rem); line-height: 1.15; margin-bottom: 6px; }
+.aa-lecture {
+  display: inline-block;
+  margin: 0 0 14px;
+  padding: 3px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.aa-hero .subtitle { margin-bottom: 20px; }
+.aa-cta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.aa-cta .btn-ghost { padding: 11px 22px; }
+[dir="rtl"] .aa-cta .icon, [dir="rtl"] .aa-btn .icon { transform: scaleX(-1); }
+
+.aa-section { margin-top: 44px; }
+.aa-section > h2 { font-size: 1.35rem; margin: 0 0 14px; letter-spacing: -0.01em; }
+.aa-petit { font-size: 0.85rem; color: var(--text-dim); margin: 8px 0; }
+.aa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 640px) { .aa-grid { grid-template-columns: 1fr; } }
+.aa-card {
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.aa-card h3 { margin: 0 0 6px; font-size: 1.02rem; }
+.aa-card p { margin: 0; }
+
+/* test rapide */
+.aa-quiz { display: grid; gap: 8px; }
+.aa-q {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  min-width: 0;
+}
+.aa-q legend { float: inline-start; flex: 1 1 220px; padding: 0; font-weight: 500; }
+.aa-choix { display: flex; gap: 8px; }
+.aa-choix label {
+  position: relative;
+  display: inline-flex;
+  min-width: 64px;
+  justify-content: center;
+  padding: 7px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color .15s ease, background .15s ease, border-color .15s ease;
+}
+.aa-choix input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.aa-choix label:hover { color: var(--text); border-color: var(--border-strong); }
+.aa-choix label:has(input:checked) { color: #fff; background: var(--accent); border-color: var(--accent); }
+.aa-choix label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.aa-quiz-reste { margin: 2px 0 0; font-size: 0.85rem; color: var(--text-dim); min-height: 1em; }
+.aa-quiz-resultat {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--violet) 45%, var(--border));
+  background: color-mix(in srgb, var(--violet) 12%, var(--surface));
+}
+.aa-res-ligne { margin: 0; }
+
+/* les 7 méthodes */
+.aa-methodes { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: methode; }
+.aa-methode {
+  position: relative;
+  padding: 14px 16px 12px;
+  padding-inline-start: 58px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  counter-increment: methode;
+  outline: none;
+}
+.aa-methode::before {
+  content: counter(methode);
+  position: absolute;
+  inset-inline-start: 14px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #fff;
+  background: var(--grad);
+  border-radius: 9px;
+}
+.aa-methode h3 { margin: 2px 0 4px; font-size: 1.02rem; line-height: 1.35; }
+.aa-methode > p { margin: 0; }
+/* « Pourquoi ? » et « En prépa » : deux liens côte à côte ; celui qu'on ouvre
+   prend toute la largeur pour que son texte se lise d'un trait. */
+.aa-plus { display: flex; flex-wrap: wrap; gap: 0 18px; margin-top: 4px; }
+.aa-plus details[open] { flex: 1 0 100%; order: 1; }
+.aa-methode summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  cursor: pointer;
+  list-style: none;
+}
+.aa-methode summary::-webkit-details-marker { display: none; }
+.aa-methode summary::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  /* flèche vers le bas : bordures physiques, elle ne doit pas se retourner en RTL */
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.aa-methode details[open] summary { color: var(--text); }
+.aa-methode details[open] summary::after { transform: rotate(-135deg); margin-top: 3px; }
+.aa-methode summary:hover { color: var(--text); }
+.aa-methode summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.aa-methode details p { margin: 2px 0 6px; color: var(--text-dim); font-size: 0.92rem; }
+.aa-methode.aa-eclair { animation: aa-eclair 2s ease-out; }
+@keyframes aa-eclair {
+  0%, 30% { border-color: var(--orange); box-shadow: 0 0 0 3px color-mix(in srgb, var(--orange) 35%, transparent); }
+  100% { border-color: var(--border); box-shadow: 0 0 0 0 transparent; }
+}
+@media (max-width: 400px) {
+  .aa-methode { padding-inline-start: 50px; }
+  .aa-methode::before { inset-inline-start: 12px; width: 28px; height: 28px; }
+}
+
+/* listes à puces courtes */
+.aa-puces { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; }
+.aa-puces li {
+  position: relative;
+  padding: 10px 14px;
+  padding-inline-start: 34px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.aa-puces li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 14px;
+  top: 1.15em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--grad);
+}
+.aa-btn { display: inline-flex; align-items: center; gap: 8px; }
+
+/* cerveau : schéma des deux flippers, étapes du chunking */
+.aa-card + .aa-card { margin: 0; }
+.aa-card p + p, .aa-card p + ol, .aa-card ol + p { margin-top: 10px; }
+.aa-flipper { margin: 4px 0 12px; }
+.aa-flipper svg { width: 100%; max-width: 300px; height: auto; display: block; }
+.aa-fl-cadre { fill: var(--input-bg); stroke: var(--border-strong); stroke-width: 1.5; }
+.aa-fl-plot circle { fill: color-mix(in srgb, var(--blue) 70%, var(--text-dim)); }
+.aa-fl-trace { fill: none; stroke: var(--pink); stroke-width: 2.5; stroke-dasharray: 4 4; stroke-linecap: round; }
+.aa-fl-bille { fill: var(--orange); }
+.aa-flipper figcaption {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 300px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--text);
+  text-align: center;
+}
+.aa-retenir {
+  padding: 10px 14px;
+  border-inline-start: 3px solid var(--violet);
+  background: color-mix(in srgb, var(--violet) 8%, transparent);
+  border-start-end-radius: 10px;
+  border-end-end-radius: 10px;
+}
+.aa-etapes { margin: 0; padding-inline-start: 22px; }
+.aa-etapes li { margin-bottom: 2px; }
+
+/* pièges */
+.aa-pieges { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.aa-pieges li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 8px 18px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.aa-croyance, .aa-realite { display: flex; gap: 10px; align-items: flex-start; }
+.aa-croyance { color: var(--text-dim); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--red) 60%, transparent); }
+.aa-signe {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50%;
+}
+.aa-non { color: var(--red); background: color-mix(in srgb, var(--red) 16%, transparent); }
+.aa-oui { color: var(--green); background: color-mix(in srgb, var(--green) 16%, transparent); }
+@media (max-width: 560px) { .aa-pieges li { grid-template-columns: 1fr; } }
+
+/* spécial concours : une case par conseil, l'explication dans un menu */
+.aa-titre-ligne { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.aa-titre-ligne h2 { margin: 0; font-size: 1.35rem; }
+.aa-imprimer { padding: 8px 16px; font-size: 0.85rem; cursor: pointer; }
+.aa-jourj { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; counter-reset: jourj; }
+.aa-jourj li {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  counter-increment: jourj;
+}
+.aa-jourj li::before {
+  content: counter(jourj);
+  position: absolute;
+  inset-inline-start: 14px;
+  top: 13px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--violet);
+  border: 2px solid color-mix(in srgb, var(--violet) 50%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.aa-jourj summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px 16px;
+  padding-inline-start: 52px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 14px;
+}
+.aa-jourj summary::-webkit-details-marker { display: none; }
+.aa-jourj summary::after {
+  content: '';
+  flex-shrink: 0;
+  margin-inline-start: auto;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--text-dim);
+  border-bottom: 2px solid var(--text-dim);
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.aa-jourj details[open] summary::after { transform: rotate(-135deg); }
+.aa-jourj summary:hover { background: var(--surface-2); }
+.aa-jourj summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.aa-jourj details p { margin: 0; padding: 0 16px 14px; padding-inline-start: 52px; color: var(--text-dim); }
+
+/* FAQ */
+.aa .res-acc { margin-bottom: 8px; }
+.aa .res-acc > summary { font-size: 0.98rem; font-weight: 600; }
+.aa-acc-texte { margin: 0; padding: 0 18px 16px; color: var(--text-dim); }
+
+/* planificateur */
+.aa-plan-form { display: grid; grid-template-columns: 1fr auto auto; gap: 10px 12px; align-items: end; margin: 12px 0 4px; }
+.aa-plan-form .submit-field { margin: 0; }
+.aa-plan-form .submit-btn { border: none; cursor: pointer; }
+.aa-plan-form .submit-error { grid-column: 1 / -1; margin: 0; }
+.aa-plan-form input[type="date"] { color-scheme: dark; }
+@media (max-width: 560px) { .aa-plan-form { grid-template-columns: 1fr; } .aa-plan-form .submit-btn { justify-self: start; } }
+.aa-plan-titre { margin: 18px 0 8px; font-family: var(--font-display); font-size: 0.95rem; }
+.aa-dues { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.aa-dues li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--orange) 9%, var(--input-bg));
+  border: 1px solid color-mix(in srgb, var(--orange) 30%, var(--border));
+}
+.aa-due-texte { min-width: 0; overflow-wrap: anywhere; }
+.aa-fait {
+  flex-shrink: 0;
+  padding: 5px 14px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0b0d13;
+  background: var(--green);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.aa-fait:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.aa-retard { color: var(--red); font-size: 0.82rem; font-weight: 600; }
+.aa-notion { padding: 10px 0; border-top: 1px solid var(--border); }
+.aa-notion-tete { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 12px; margin-bottom: 8px; }
+.aa-notion-nom { margin: 0 !important; font-weight: 600; overflow-wrap: anywhere; }
+.aa-notion-nom .aa-petit { font-weight: 400; margin: 0; }
+.aa-lien-btn {
+  padding: 4px 0;
+  font: inherit;
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--blue) 55%, #fff);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.aa-lien-btn.aa-danger { color: var(--red); }
+.aa-revs { display: flex; flex-wrap: wrap; gap: 6px; }
+.aa-rev {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  font-size: 0.82rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.aa-rev input { width: 16px; height: 16px; margin: 0; accent-color: var(--green); }
+.aa-rev-j { font-family: var(--font-display); font-weight: 700; unicode-bidi: isolate; }
+.aa-rev-date { color: var(--text-dim); }
+.aa-rev.jour { border-color: color-mix(in srgb, var(--orange) 55%, var(--border)); }
+.aa-rev.retard { border-color: color-mix(in srgb, var(--red) 55%, var(--border)); }
+.aa-rev.faite { opacity: 0.6; }
+.aa-rev.faite .aa-rev-date { text-decoration: line-through; }
+.aa-avertissement { color: var(--orange); }
+
+/* le bleu d'accent est trop sombre pour du texte sur fond noir : on l'éclaircit */
+.aa .inline-link { color: color-mix(in srgb, var(--blue) 55%, #fff); }
+
+/* mode arabe : police arabe, interligne plus aéré */
+html[lang="ar"] body,
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3,
+html[lang="ar"] .submit-btn, html[lang="ar"] .btn-ghost, html[lang="ar"] .aa-plan-titre {
+  font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+}
+html[lang="ar"] .aa { line-height: 1.8; }
+html[lang="ar"] .aa h1, html[lang="ar"] .aa h2, html[lang="ar"] .aa h3 { letter-spacing: 0; line-height: 1.5; }
+html[lang="ar"] .aa-langue:lang(fr) { font-family: var(--font-display); }
+
+/* impression : la checklist du jour J seule, ou la page sans ses outils */
+@media print {
+  .bg-blobs, header.site, .aa-pilules, .site-footer, .fb-fab, .fb-poll, .aa-cta,
+  .aa-imprimer, #outil, #test { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .aa-card, .aa-methode, .aa-jourj li, .aa-pieges li, .aa-puces li { border-color: #ccc !important; background: none !important; break-inside: avoid; }
+  .aa-jourj summary::after { display: none; }
+  .aa-jourj details p { color: #000; }
+  body[data-imprimer="concours"] main > *:not(#concours) { display: none !important; }
+  body[data-imprimer="concours"] main > #concours { margin-top: 0; }
+}
+

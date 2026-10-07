@@ -1,0 +1,48 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="0.5" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="0.5" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#ec4899"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ec4899" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#ec4899" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0b0d13"/>
+  <circle cx="1000" cy="80" r="320" fill="url(#glow1)"/>
+  <circle cx="120" cy="560" r="300" fill="url(#glow2)"/>
+  <rect x="1" y="1" width="1198" height="628" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="2"/>
+  <g transform="translate(90, 78) scale(0.5)">
+    <rect x="2" y="2" width="150" height="150" rx="40" fill="url(#logoGrad)"/>
+    <path d="M77 32 L134 55 L77 78 L20 55 Z" fill="#fff"/>
+    <path d="M119 60 v20" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="119" cy="86" r="6" fill="#fff"/>
+    <path d="M77 128 V94 M59 108 L77 90 L95 108" stroke="#fff" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="180" y="120" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#eef0f6">Prep<tspan fill="url(#textGrad)">'Up</tspan></text>
+  <text x="90" y="250" font-family="Arial, sans-serif" font-size="74" font-weight="700" fill="#eef0f6">Apprendre à apprendre</text>
+  <text x="90" y="328" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="url(#textGrad)">Réviser moins, retenir plus</text>
+  <g font-family="Arial, sans-serif" font-size="24" fill="#eef0f6">
+    <rect x="90" y="392" width="200" height="56" rx="28" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="190" y="428" text-anchor="middle">Rappel actif</text>
+    <rect x="306" y="392" width="270" height="56" rx="28" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="441" y="428" text-anchor="middle">Répétition espacée</text>
+    <rect x="592" y="392" width="180" height="56" rx="28" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="682" y="428" text-anchor="middle">Pomodoro</text>
+    <rect x="788" y="392" width="160" height="56" rx="28" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="868" y="428" text-anchor="middle">Sommeil</text>
+  </g>
+  <text x="90" y="530" font-family="Arial, sans-serif" font-size="24" fill="#a9afc0">Les méthodes du cerveau, appliquées à la prépa</text>
+  <text x="90" y="570" font-family="Arial, sans-serif" font-size="24" fill="#6d7488">prep-upp.com/apprendre-a-apprendre</text>
+</svg>
