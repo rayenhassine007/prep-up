@@ -2469,7 +2469,6 @@ main.home {
 }
 .fb-fab-close:hover { color: var(--text); border-color: var(--text-dim); }
 
-.fb-footer-link { cursor: pointer; }
 
 .fb-modal { max-width: 520px; }
 .fb-intro {

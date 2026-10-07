@@ -8,8 +8,9 @@
 // raison que les étoiles de favori des ressources.
 //
 // La croix de la pastille la masque pour la vue en cours seulement : elle
-// revient au rechargement. Le lien du pied de page est là de toute façon, sur
-// toutes les pages. Le micro-sondage, lui, ne se pose pas sur l'accueil.
+// revient au rechargement. Le micro-sondage, lui, ne se pose pas sur
+// l'accueil. Le pied de page est réservé aux outils du site : pas de lien
+// « Une idée ? » à côté d'eux.
 
 import { iconEl } from './icons.js';
 import { endpointAjax } from './lib/contact.js';
@@ -274,20 +275,6 @@ function construireBouton() {
   document.body.appendChild(wrap);
 }
 
-// Le filet de sécurité : masquer la pastille ne doit pas supprimer le moyen de
-// donner son avis.
-function lienPiedDePage() {
-  const nav = document.querySelector('.site-footer-nav');
-  if (!nav || nav.querySelector('.fb-footer-link')) return;
-  const lien = el('a', 'fb-footer-link', 'Une idée ?');
-  lien.href = '#';
-  lien.addEventListener('click', (e) => {
-    e.preventDefault();
-    ouvrirRetour();
-  });
-  nav.appendChild(lien);
-}
-
 // ---------------------------------------------------------------------------
 // Le micro-sondage
 // ---------------------------------------------------------------------------
@@ -376,5 +363,4 @@ function construireSondage() {
 }
 
 construireBouton();
-lienPiedDePage();
 construireSondage();
