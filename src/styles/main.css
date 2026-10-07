@@ -2771,37 +2771,38 @@ html.aa-attente body { visibility: hidden; }
 }
 .aa-methode h3 { margin: 2px 0 4px; font-size: 1.02rem; line-height: 1.35; }
 .aa-methode > p { margin: 0; }
-.aa-methode details { margin-top: 6px; }
+/* « Pourquoi ? » et « En prépa » : deux liens côte à côte ; celui qu'on ouvre
+   prend toute la largeur pour que son texte se lise d'un trait. */
+.aa-plus { display: flex; flex-wrap: wrap; gap: 0 18px; margin-top: 4px; }
+.aa-plus details[open] { flex: 1 0 100%; order: 1; }
 .aa-methode summary {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 5px 12px;
+  gap: 6px;
+  padding: 2px 0;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text);
-  background: var(--input-bg);
-  border: 1px solid var(--border);
-  border-radius: 999px;
+  color: var(--text-dim);
   cursor: pointer;
   list-style: none;
 }
-.aa-methode details[open] summary { border-color: color-mix(in srgb, var(--violet) 50%, var(--border)); }
 .aa-methode summary::-webkit-details-marker { display: none; }
 .aa-methode summary::after {
   content: '';
   width: 6px;
   height: 6px;
+  margin-top: -3px;
   /* flèche vers le bas : bordures physiques, elle ne doit pas se retourner en RTL */
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
   transition: transform .2s ease;
 }
-.aa-methode details[open] summary::after { transform: rotate(-135deg); }
-.aa-methode summary:hover { border-color: var(--border-strong); }
+.aa-methode details[open] summary { color: var(--text); }
+.aa-methode details[open] summary::after { transform: rotate(-135deg); margin-top: 3px; }
+.aa-methode summary:hover { color: var(--text); }
 .aa-methode summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
-.aa-methode details p { margin: 8px 0 4px; color: var(--text-dim); font-size: 0.92rem; }
+.aa-methode details p { margin: 2px 0 6px; color: var(--text-dim); font-size: 0.92rem; }
 .aa-methode.aa-eclair { animation: aa-eclair 2s ease-out; }
 @keyframes aa-eclair {
   0%, 30% { border-color: var(--orange); box-shadow: 0 0 0 3px color-mix(in srgb, var(--orange) 35%, transparent); }
