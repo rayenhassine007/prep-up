@@ -6,6 +6,7 @@ const CLEAN_URL_PAGES = new Set([
   '/ressources',
   '/places-2026',
   '/chapitres-concours',
+  '/apprendre-a-apprendre',
 ]);
 
 function cleanUrlsPlugin() {
@@ -50,6 +51,7 @@ export default defineConfig({
         ressources: resolve(__dirname, 'ressources.html'),
         places: resolve(__dirname, 'places-2026.html'),
         chapitres: resolve(__dirname, 'chapitres-concours.html'),
+        apprendre: resolve(__dirname, 'apprendre-a-apprendre.html'),
       },
     },
   },

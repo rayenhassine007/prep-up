@@ -256,6 +256,9 @@ function construireBouton() {
   ouvrir.type = 'button';
   ouvrir.appendChild(iconEl('i-bulb', 'icon'));
   ouvrir.append(el('span', 'fb-fab-label', 'Une idée ?'));
+  // Sur téléphone le libellé est masqué : sans nom, le bouton serait muet
+  // pour un lecteur d'écran.
+  ouvrir.setAttribute('aria-label', 'Une idée ? Donner ton avis');
   ouvrir.addEventListener('click', ouvrirRetour);
 
   // Le masquage ne dure que la visite en cours : la pastille revient au
