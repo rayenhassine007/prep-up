@@ -3053,10 +3053,3 @@ html[lang="ar"] .aa-langue:lang(fr) { font-family: var(--font-display); }
   body[data-imprimer="concours"] main > #concours { margin-top: 0; }
 }
 
-/* carte « Apprendre à apprendre » de l'accueil : toute la largeur en 2 colonnes
-   (les 4 autres cartes y forment 2 lignes pleines) ; en 3 colonnes, elle prend
-   les 2 places laissées libres à côté de Pomodoro. */
-.feature-card.feature-wide { grid-column: 1 / -1; }
-@media (min-width: 900px) {
-  main.home .feature-card.feature-wide { grid-column: span 2; }
-}
