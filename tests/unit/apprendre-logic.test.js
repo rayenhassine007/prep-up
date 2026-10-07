@@ -106,32 +106,3 @@ describe('langueInitiale', () => {
     expect(langueInitiale('', null)).toBe('fr');
   });
 });
-
-describe('export agenda (.ics)', async () => {
-  const { exporterIcs, plierLigneIcs, revisionsAVenir } = await import('../../src/lib/apprendre-logic.js');
-  const titre = (nom, j) => `Réviser : ${nom} (J+${j})`;
-
-  it('writes one all-day event per pending review, with a 9 am reminder', () => {
-    const n = nouvelleNotion('Séries, suites; limites', '2026-10-07', 'a').notion;
-    const notions = basculerRevision([n], 'a', 1);
-    const ics = exporterIcs(notions, { titre, description: 'Prep\'Up' });
-    expect(ics.startsWith('BEGIN:VCALENDAR\r\n')).toBe(true);
-    expect(ics.endsWith('END:VCALENDAR\r\n')).toBe(true);
-    expect(ics.match(/BEGIN:VEVENT/g)).toHaveLength(4);
-    expect(ics).toContain('UID:a-j3@prep-upp.com');
-    expect(ics).toContain('DTSTART;VALUE=DATE:20261010\r\nDTEND;VALUE=DATE:20261011');
-    expect(ics).toContain('SUMMARY:Réviser : Séries\\, suites\\; limites (J+3)');
-    expect(ics).toContain('TRIGGER;RELATED=START:PT9H');
-    expect(ics).not.toContain('(J+1)');
-    expect(revisionsAVenir(notions)).toBe(4);
-  });
-
-  it('folds long lines at 75 bytes, Arabic included', () => {
-    const longue = 'SUMMARY:' + 'مراجعة: المتسلسلات الصحيحة والتكاملات المعمّمة (J+14)'.repeat(2);
-    const pliee = plierLigneIcs(longue);
-    const enc = new TextEncoder();
-    for (const morceau of pliee.split('\r\n')) expect(enc.encode(morceau).length).toBeLessThanOrEqual(75);
-    expect(pliee.split('\r\n').map((m, i) => (i ? m.slice(1) : m)).join('')).toBe(longue);
-    expect(plierLigneIcs('court')).toBe('court');
-  });
-});

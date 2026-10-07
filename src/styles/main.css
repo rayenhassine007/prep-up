@@ -3024,10 +3024,6 @@ html.aa-attente body { visibility: hidden; }
 .aa-rev.faite { opacity: 0.6; }
 .aa-rev.faite .aa-rev-date { text-decoration: line-through; }
 .aa-avertissement { color: var(--orange); }
-.aa-notion-actions { display: flex; gap: 14px; }
-.aa-agenda { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
-.aa-agenda-btn { padding: 9px 18px; font-size: 0.88rem; cursor: pointer; }
-.aa-agenda .aa-petit { margin-bottom: 0; }
 
 /* crédit */
 .aa-credit { margin: 40px 0 0; font-size: 0.85rem; color: var(--text-dim); }

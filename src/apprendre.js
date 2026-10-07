@@ -17,8 +17,6 @@ import {
   questionsRestantes,
   reponsesValides,
   resultatQuiz,
-  exporterIcs,
-  revisionsAVenir,
 } from './lib/apprendre-logic.js';
 
 const CLE_LANGUE = 'pu-aa-langue';
@@ -208,8 +206,6 @@ const planDate = document.getElementById('aa-plan-date');
 const planErreur = document.getElementById('aa-plan-erreur');
 const planAujourdhui = document.getElementById('aa-plan-aujourdhui');
 const planListe = document.getElementById('aa-plan-liste');
-const agendaBloc = document.getElementById('aa-agenda');
-const agendaBtn = document.getElementById('aa-agenda-btn');
 
 let notions = notionsValides(lireJson(CLE_PLAN));
 let erreurPlan = null;
@@ -294,7 +290,6 @@ function rendrePlan() {
   }
 
   planListe.replaceChildren();
-  agendaBloc.hidden = !revisionsAVenir(notions);
   if (!notions.length) return;
   planListe.appendChild(el('h3', 'aa-plan-titre', tr('plan.chapitres')));
   for (const n of [...notions].sort((a, b) => (a.etude < b.etude ? 1 : -1))) {
@@ -311,58 +306,13 @@ function rendrePlan() {
       sauverPlan();
       rendrePlan();
     });
-    const actions = el('div', 'aa-notion-actions');
-    if (revisionsAVenir([n])) {
-      const agenda = el('button', 'aa-lien-btn', tr('plan.agenda.un'));
-      agenda.type = 'button';
-      agenda.setAttribute('aria-label', `${tr('plan.agenda')} : ${n.nom}`);
-      agenda.addEventListener('click', () => telechargerAgenda([n], n.nom));
-      actions.appendChild(agenda);
-    }
-    actions.appendChild(suppr);
-    tete.append(nom, actions);
+    tete.append(nom, suppr);
     const revs = el('div', 'aa-revs');
     for (const r of n.revisions) revs.appendChild(caseRevision(n, r, aujourdhui));
     bloc.append(tete, revs);
     planListe.appendChild(bloc);
   }
 }
-
-// Export vers l'agenda du téléphone ou de l'ordinateur. Sur iPhone et iPad,
-// Safari ouvre directement un fichier text/calendar dans Calendrier (« Tout
-// ajouter ») ; un téléchargement de blob, lui, finirait dans Fichiers.
-function estIos() {
-  return /iPad|iPhone|iPod/.test(navigator.userAgent)
-    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-}
-
-function nomFichier(nom) {
-  const base = String(nom || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 40);
-  return `revisions-${base || 'prep-up'}.ics`;
-}
-
-function telechargerAgenda(liste, nom) {
-  const horodatage = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-  const ics = exporterIcs(liste, {
-    titre: (nomNotion, j) => tr('plan.agenda.titre', { nom: nomNotion, j }),
-    description: tr('plan.agenda.desc'),
-    horodatage,
-  });
-  if (estIos()) {
-    location.href = `data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`;
-    return;
-  }
-  const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
-  const a = el('a');
-  a.href = url;
-  a.download = nomFichier(nom);
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-agendaBtn.addEventListener('click', () => telechargerAgenda(notions, ''));
 
 planDate.value = dateDuJour();
 planForm.addEventListener('submit', (e) => {
