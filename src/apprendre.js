@@ -342,4 +342,29 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') rendrePlan();
 });
 
+// ---------------------------------------------------------------------------
+// Checklist du jour J à imprimer : tous ses menus ouverts, le reste masqué
+// ---------------------------------------------------------------------------
+
+const imprimer = document.getElementById('aa-imprimer');
+const menusConcours = [...document.querySelectorAll('#concours details')];
+let etatMenus = null;
+if (imprimer && typeof window.print === 'function') {
+  imprimer.hidden = false;
+  imprimer.addEventListener('click', () => {
+    document.body.dataset.imprimer = 'concours';
+    window.print();
+  });
+  // Ctrl+P aussi : on imprime les explications, pas seulement les titres.
+  window.addEventListener('beforeprint', () => {
+    etatMenus = menusConcours.map((d) => d.open);
+    menusConcours.forEach((d) => { d.open = true; });
+  });
+  window.addEventListener('afterprint', () => {
+    if (etatMenus) menusConcours.forEach((d, i) => { d.open = etatMenus[i]; });
+    etatMenus = null;
+    delete document.body.dataset.imprimer;
+  });
+}
+
 appliquerLangue();

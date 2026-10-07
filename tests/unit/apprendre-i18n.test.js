@@ -60,16 +60,27 @@ describe('page HTML', () => {
       expect(decoder(texte), cle).toBe(TEXTES.fr[cle]);
     }
     for (const [, cle, interieur] of html.matchAll(/data-i18n-riche="([^"]+)"[^>]*>(.*?)<\/p>/g)) {
-      const lien = html.match(new RegExp(`data-i18n-riche="${cle}"[^>]*data-lien-cle="([^"]+)"`))[1];
-      const attendu = TEXTES.fr[cle].replace('{lien}', TEXTES.fr[lien]).replace('{cours}', 'Learning How to Learn');
+      const lien = html.match(new RegExp(`data-i18n-riche="${cle}"[^>]*data-lien-cle="([^"]+)"`))?.[1];
+      const attendu = TEXTES.fr[cle].replace('{lien}', lien ? TEXTES.fr[lien] : '').replace('{cours}', 'Learning How to Learn');
       expect(decoder(interieur.replace(/<[^>]+>/g, '')), cle).toBe(attendu);
     }
   });
 
-  it('keeps the page short: 7 methods, 5 questions, no FAQ', () => {
+  it('has its sections in order, with 7 methods, 5 questions and the FAQ', () => {
+    const ordre = ['id="cerveau"', 'id="test"', 'id="methodes"', 'id="pieges"', 'id="concours"', 'id="outil"', 'id="faq"', 'class="aa-credit"'];
+    const positions = ordre.map((m) => html.indexOf(m));
+    expect(positions.every((p) => p > 0)).toBe(true);
+    expect([...positions].sort((a, b) => a - b)).toEqual(positions);
     expect(html.match(/class="aa-methode"/g)).toHaveLength(7);
     expect(html.match(/class="aa-q"/g)).toHaveLength(5);
-    expect(html).not.toMatch(/FAQPage/);
+    expect(html.match(/<details><summary data-i18n="concours\.j\dt"/g)).toHaveLength(4);
     expect(html).not.toMatch(/—/);
+  });
+
+  it('describes the FAQ for search engines, question for question', () => {
+    const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+    const faq = ld['@graph'].find((g) => g['@type'] === 'FAQPage');
+    expect(ld['@graph'].map((g) => g['@type'])).toEqual(['Article', 'FAQPage']);
+    expect(faq.mainEntity.map((q) => q.name)).toEqual([1, 2, 3, 4, 5].map((n) => TEXTES.fr[`faq.q${n}`]));
   });
 });

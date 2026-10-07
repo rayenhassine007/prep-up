@@ -2830,6 +2830,125 @@ html.aa-attente body { visibility: hidden; }
 }
 .aa-btn { display: inline-flex; align-items: center; gap: 8px; }
 
+/* cerveau : schéma des deux flippers, étapes du chunking */
+.aa-card + .aa-card { margin: 0; }
+.aa-card p + p, .aa-card p + ol, .aa-card ol + p { margin-top: 10px; }
+.aa-flipper { margin: 4px 0 12px; }
+.aa-flipper svg { width: 100%; max-width: 300px; height: auto; display: block; }
+.aa-fl-cadre { fill: var(--input-bg); stroke: var(--border-strong); stroke-width: 1.5; }
+.aa-fl-plot circle { fill: color-mix(in srgb, var(--blue) 70%, var(--text-dim)); }
+.aa-fl-trace { fill: none; stroke: var(--pink); stroke-width: 2.5; stroke-dasharray: 4 4; stroke-linecap: round; }
+.aa-fl-bille { fill: var(--orange); }
+.aa-flipper figcaption {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 300px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+.aa-retenir {
+  padding: 10px 14px;
+  border-inline-start: 3px solid var(--violet);
+  background: color-mix(in srgb, var(--violet) 8%, transparent);
+  border-start-end-radius: 10px;
+  border-end-end-radius: 10px;
+}
+.aa-etapes { margin: 0; padding-inline-start: 22px; }
+.aa-etapes li { margin-bottom: 2px; }
+
+/* pièges */
+.aa-pieges { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.aa-pieges li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 8px 18px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.aa-croyance, .aa-realite { display: flex; gap: 10px; align-items: flex-start; }
+.aa-croyance { color: var(--text-dim); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--red) 60%, transparent); }
+.aa-signe {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50%;
+}
+.aa-non { color: var(--red); background: color-mix(in srgb, var(--red) 16%, transparent); }
+.aa-oui { color: var(--green); background: color-mix(in srgb, var(--green) 16%, transparent); }
+@media (max-width: 560px) { .aa-pieges li { grid-template-columns: 1fr; } }
+
+/* spécial concours : une case par conseil, l'explication dans un menu */
+.aa-titre-ligne { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.aa-titre-ligne h2 { margin: 0; font-size: 1.35rem; }
+.aa-imprimer { padding: 8px 16px; font-size: 0.85rem; cursor: pointer; }
+.aa-jourj { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; counter-reset: jourj; }
+.aa-jourj li {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  counter-increment: jourj;
+}
+.aa-jourj li::before {
+  content: counter(jourj);
+  position: absolute;
+  inset-inline-start: 14px;
+  top: 13px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--violet);
+  border: 2px solid color-mix(in srgb, var(--violet) 50%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.aa-jourj summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px 16px;
+  padding-inline-start: 52px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  border-radius: 14px;
+}
+.aa-jourj summary::-webkit-details-marker { display: none; }
+.aa-jourj summary::after {
+  content: '';
+  flex-shrink: 0;
+  margin-inline-start: auto;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--text-dim);
+  border-bottom: 2px solid var(--text-dim);
+  transform: rotate(45deg);
+  transition: transform .2s ease;
+}
+.aa-jourj details[open] summary::after { transform: rotate(-135deg); }
+.aa-jourj summary:hover { background: var(--surface-2); }
+.aa-jourj summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.aa-jourj details p { margin: 0; padding: 0 16px 14px; padding-inline-start: 52px; color: var(--text-dim); }
+
+/* FAQ */
+.aa .res-acc { margin-bottom: 8px; }
+.aa .res-acc > summary { font-size: 0.98rem; font-weight: 600; }
+.aa-acc-texte { margin: 0; padding: 0 18px 16px; color: var(--text-dim); }
+
 /* planificateur */
 .aa-plan-form { display: grid; grid-template-columns: 1fr auto auto; gap: 10px 12px; align-items: end; margin: 12px 0 4px; }
 .aa-plan-form .submit-field { margin: 0; }
@@ -2916,6 +3035,18 @@ html[lang="ar"] .submit-btn, html[lang="ar"] .btn-ghost, html[lang="ar"] .aa-pla
 html[lang="ar"] .aa { line-height: 1.8; }
 html[lang="ar"] .aa h1, html[lang="ar"] .aa h2, html[lang="ar"] .aa h3 { letter-spacing: 0; line-height: 1.5; }
 html[lang="ar"] .aa-langue:lang(fr) { font-family: var(--font-display); }
+
+/* impression : la checklist du jour J seule, ou la page sans ses outils */
+@media print {
+  .bg-blobs, header.site, .aa-pilules, .site-footer, .fb-fab, .fb-poll, .aa-cta,
+  .aa-imprimer, #outil, #test { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .aa-card, .aa-methode, .aa-jourj li, .aa-pieges li, .aa-puces li { border-color: #ccc !important; background: none !important; break-inside: avoid; }
+  .aa-jourj summary::after { display: none; }
+  .aa-jourj details p { color: #000; }
+  body[data-imprimer="concours"] main > *:not(#concours) { display: none !important; }
+  body[data-imprimer="concours"] main > #concours { margin-top: 0; }
+}
 
 /* carte d'accueil sur toute la largeur */
 .feature-card.feature-wide { grid-column: 1 / -1; }
