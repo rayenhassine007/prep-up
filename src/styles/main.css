@@ -2629,6 +2629,26 @@ html.aa-attente body { visibility: hidden; }
 .aa-langue:lang(ar) { font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif; }
 .aa-langue:hover { border-color: var(--accent); }
 .aa-langue:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* sur grand écran, le bouton vit dans l'en-tête ; sur téléphone, il devient
+   un rond dans la barre collante, toujours à portée de pouce */
+.aa-langue-rond { display: none; }
+@media (max-width: 640px) {
+  .aa-langue-entete { display: none; }
+  .aa-langue-rond {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 0.78rem;
+    line-height: 1;
+    border-radius: 50%;
+    border-color: color-mix(in srgb, var(--violet) 55%, var(--border));
+    background: color-mix(in srgb, var(--violet) 14%, var(--surface));
+  }
+  .aa-pilules { align-items: center; }
+}
 
 /* pastilles de navigation, collantes sur téléphone */
 .aa-pilules {

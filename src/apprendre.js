@@ -99,16 +99,18 @@ function appliquerLangue() {
   document.querySelectorAll('[data-i18n-aria]').forEach((n) => n.setAttribute('aria-label', tr(n.dataset.i18nAria)));
   document.querySelectorAll('[data-i18n-placeholder]').forEach((n) => { n.placeholder = tr(n.dataset.i18nPlaceholder); });
 
-  // Le bouton est écrit dans l'autre langue : on le lui dit.
-  boutonLangue.lang = langue === 'ar' ? 'fr' : 'ar';
+  // Les boutons sont écrits dans l'autre langue : on le leur dit.
+  boutonsLangue.forEach((b) => { b.lang = langue === 'ar' ? 'fr' : 'ar'; });
 
   rendreQuiz();
   rendrePlan();
   html.classList.remove('aa-attente');
 }
 
-const boutonLangue = document.getElementById('aa-langue');
-boutonLangue.addEventListener('click', () => {
+// Deux boutons : dans l'en-tête sur grand écran, rond dans la barre collante
+// sur téléphone. Le CSS n'en montre qu'un à la fois.
+const boutonsLangue = document.querySelectorAll('.aa-langue');
+function changerLangue() {
   langue = langue === 'ar' ? 'fr' : 'ar';
   ecrire(CLE_LANGUE, langue);
   // L'adresse suit le choix, pour qu'un lien partagé ouvre la même langue.
@@ -117,7 +119,8 @@ boutonLangue.addEventListener('click', () => {
   else url.searchParams.delete('lang');
   history.replaceState(history.state, '', url);
   appliquerLangue();
-});
+}
+boutonsLangue.forEach((b) => b.addEventListener('click', changerLangue));
 
 // ---------------------------------------------------------------------------
 // Test rapide
