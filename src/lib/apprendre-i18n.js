@@ -159,6 +159,11 @@ export const TEXTES = {
     'plan.erreur.nom': 'Indique le chapitre ou la notion.',
     'plan.erreur.date': 'Choisis une date valide.',
     'plan.bloque': 'Ton navigateur bloque l\'enregistrement : ce que tu notes disparaîtra au rechargement.',
+    'plan.agenda': 'Ajouter à mon agenda',
+    'plan.agenda.un': 'Agenda',
+    'plan.agenda.aide': 'Un fichier .ics s\'ouvre dans l\'agenda de ton téléphone ou de ton ordinateur (iPhone, Android, Google Agenda, Outlook), avec un rappel à 9 h le jour de chaque révision.',
+    'plan.agenda.titre': 'Réviser : {nom} (J+{j})',
+    'plan.agenda.desc': 'Répétition espacée, depuis ton planificateur Prep\'Up : https://prep-upp.com/apprendre-a-apprendre',
     'plan.local': 'Tout reste sur ton appareil : rien n\'est envoyé.',
     'plan.nojs': 'Le planificateur a besoin de JavaScript.',
 
@@ -324,6 +329,11 @@ export const TEXTES = {
     'plan.erreur.nom': 'اكتب الفصل أو المفهوم.',
     'plan.erreur.date': 'اختر تاريخًا صحيحًا.',
     'plan.bloque': 'متصفحك يمنع الحفظ: ما تسجّله سيختفي عند إعادة تحميل الصفحة.',
+    'plan.agenda': 'أضف إلى رزنامتي',
+    'plan.agenda.un': 'الرزنامة',
+    'plan.agenda.aide': 'يُفتح ملف ⁦.ics⁩ في رزنامة هاتفك أو حاسوبك (iPhone، Android، Google Agenda، Outlook)، مع تذكير على الساعة 9 صباحًا يوم كل مراجعة.',
+    'plan.agenda.titre': 'مراجعة: {nom} (J+{j})',
+    'plan.agenda.desc': 'مراجعة متباعدة من مخطّط المراجعة في Prep\'Up: https://prep-upp.com/apprendre-a-apprendre',
     'plan.local': 'كل شيء يبقى على جهازك: لا يُرسل أي شيء.',
     'plan.nojs': 'يحتاج المخطّط إلى JavaScript.',
 
