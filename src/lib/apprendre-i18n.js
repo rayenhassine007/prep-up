@@ -141,7 +141,8 @@ export const TEXTES = {
     'faq.r4': 'Priorise les chapitres les plus fréquents au concours ({lien} t\'aide à les repérer), applique le rappel actif sur ceux-là, et ne sacrifie pas le sommeil.',
     'faq.r4.lien': 'l\'historique des chapitres',
     'faq.q5': 'Où suivre le cours complet ?',
-    'faq.r5': 'Sur Coursera : {cours}. Il est gratuit en mode audit (lien ci-dessous).',
+    'faq.r5': 'Sur Coursera : {lien}, de Barbara Oakley et Terrence Sejnowski. Il est gratuit en mode audit.',
+    'faq.r5.lien': 'Learning How to Learn ↗',
 
     'plan.titre': 'Planificateur de révisions',
     'plan.intro': 'Note un chapitre le jour où tu l\'étudies : ses dates de révision s\'affichent toutes seules.',
@@ -163,8 +164,6 @@ export const TEXTES = {
     'plan.local': 'Tout reste sur ton appareil : rien n\'est envoyé.',
     'plan.nojs': 'Le planificateur a besoin de JavaScript.',
 
-    'credit.texte': 'D\'après le cours {cours} (B. Oakley & T. Sejnowski) sur Coursera, adapté à la prépa par Rayen. Prep\'Up n\'est pas affilié à Coursera. {lien}',
-    'credit.lien': 'Suivre le cours',
 
     'pied.aria': 'Outils Prep\'Up',
     'pied.accueil': 'Accueil',
@@ -307,7 +306,8 @@ export const TEXTES = {
     'faq.r4': 'ابدأ بالفصول الأكثر تكرارًا في المناظرة ({lien} يساعدك على معرفتها)، وطبّق عليها الاسترجاع النشط، ولا تضحِّ بنومك.',
     'faq.r4.lien': 'سجلّ الفصول',
     'faq.q5': 'أين أتابع الدورة كاملة؟',
-    'faq.r5': 'على Coursera: {cours}. وهي مجانية في وضع المستمع (audit)، والرابط في الأسفل.',
+    'faq.r5': 'على Coursera: {lien}، لباربرا أوكلي وتيرنس سيجنوفسكي. وهي مجانية في وضع المستمع (audit).',
+    'faq.r5.lien': 'Learning How to Learn ↗',
 
     'plan.titre': 'مخطّط المراجعة',
     'plan.intro': 'سجّل الفصل يوم دراسته، وستظهر مواعيد مراجعته تلقائيًا.',
@@ -329,8 +329,6 @@ export const TEXTES = {
     'plan.local': 'كل شيء يبقى على جهازك: لا يُرسل أي شيء.',
     'plan.nojs': 'يحتاج المخطّط إلى JavaScript.',
 
-    'credit.texte': 'مستوحاة من دورة {cours} (ب. أوكلي وت. سيجنوفسكي) على Coursera، ومكيّفة للأقسام التحضيرية من طرف ريان. Prep\'Up غير تابع لـCoursera. {lien}',
-    'credit.lien': 'تابع الدورة',
 
     'pied.aria': 'أدوات Prep\'Up',
     'pied.accueil': 'الرئيسية',

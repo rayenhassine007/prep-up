@@ -66,8 +66,8 @@ describe('page HTML', () => {
     }
   });
 
-  it('has its sections in order, with 7 methods, 5 questions and the FAQ', () => {
-    const ordre = ['id="cerveau"', 'id="test"', 'id="methodes"', 'id="pieges"', 'id="concours"', 'id="outil"', 'id="faq"', 'class="aa-credit"'];
+  it('has its sections in order, with 7 methods, 5 questions and the FAQ, and no credit block', () => {
+    const ordre = ['id="cerveau"', 'id="test"', 'id="methodes"', 'id="pieges"', 'id="concours"', 'id="outil"', 'id="faq"'];
     const positions = ordre.map((m) => html.indexOf(m));
     expect(positions.every((p) => p > 0)).toBe(true);
     expect([...positions].sort((a, b) => a - b)).toEqual(positions);
@@ -75,6 +75,7 @@ describe('page HTML', () => {
     expect(html.match(/class="aa-q"/g)).toHaveLength(5);
     expect(html.match(/<details><summary data-i18n="concours\.j\dt"/g)).toHaveLength(4);
     expect(html).not.toMatch(/—/);
+    expect(html).not.toMatch(/aa-credit/);
   });
 
   it('describes the FAQ for search engines, question for question', () => {

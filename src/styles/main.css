@@ -3049,9 +3049,6 @@ html.aa-attente body { visibility: hidden; }
 .aa-rev.faite .aa-rev-date { text-decoration: line-through; }
 .aa-avertissement { color: var(--orange); }
 
-/* crédit */
-.aa-credit { margin: 40px 0 0; font-size: 0.85rem; color: var(--text-dim); }
-
 /* le bleu d'accent est trop sombre pour du texte sur fond noir : on l'éclaircit */
 .aa .inline-link { color: color-mix(in srgb, var(--blue) 55%, #fff); }
 
