@@ -1,54 +1,48 @@
-// Page « Apprendre à apprendre » : le texte est dans le HTML (lisible sans JS et
-// par les moteurs de recherche) ; ce module n'ajoute que l'interactif. Tout ce
-// que la personne note reste dans son navigateur (localStorage), et la page
-// marche quand même si le stockage est bloqué : elle oublie juste au
-// rechargement.
+// Page « Apprendre à apprendre » : le texte français est dans le HTML (lisible
+// sans JS et par les moteurs de recherche). Ce module ajoute le bouton de
+// langue (français / arabe), le test rapide et le planificateur de révisions.
+// Ce que la personne note reste dans son navigateur (localStorage) ; si le
+// stockage est bloqué, la page marche quand même et oublie au rechargement.
 
+import { morceaux, t } from './lib/apprendre-i18n.js';
 import {
-  CHECKLIST,
   QUESTIONS,
   aReviser,
   basculerRevision,
-  checklistDuJour,
   dateDuJour,
   dateLisible,
-  exporterIcs,
-  modifierNotion,
+  langueInitiale,
   notionsValides,
   nouvelleNotion,
+  questionsRestantes,
   reponsesValides,
   resultatQuiz,
 } from './lib/apprendre-logic.js';
 
+const CLE_LANGUE = 'pu-aa-langue';
 const CLE_QUIZ = 'pu-aa-quiz';
-const CLE_REGLES = 'pu-aa-regles';
 const CLE_PLAN = 'pu-aa-plan';
-const CLE_SOIR = 'pu-aa-soir';
 
-function lireJson(cle) {
+function lire(cle) {
   try {
-    return JSON.parse(localStorage.getItem(cle));
+    return localStorage.getItem(cle);
   } catch {
     return null;
   }
 }
-
-function ecrireJson(cle, valeur) {
+function ecrire(cle, valeur) {
   try {
-    localStorage.setItem(cle, JSON.stringify(valeur));
+    localStorage.setItem(cle, valeur);
     return true;
   } catch {
     return false;
   }
 }
-
-function stockageDisponible() {
+function lireJson(cle) {
   try {
-    localStorage.setItem('pu-aa-test', '1');
-    localStorage.removeItem('pu-aa-test');
-    return true;
+    return JSON.parse(lire(cle));
   } catch {
-    return false;
+    return null;
   }
 }
 
@@ -59,172 +53,186 @@ function el(tag, className, text) {
   return node;
 }
 
-function titreRegle(id) {
-  return document.querySelector(`#${id} h3`)?.textContent || '';
-}
+let langue = langueInitiale(location.search, lire(CLE_LANGUE));
+const tr = (cle, vars) => t(langue, cle, vars);
 
 // ---------------------------------------------------------------------------
-// Quiz
+// Langue
+// ---------------------------------------------------------------------------
+
+// La police arabe n'est chargée que si quelqu'un passe en arabe.
+function chargerPoliceArabe() {
+  if (document.getElementById('aa-police-ar')) return;
+  const lien = document.createElement('link');
+  lien.id = 'aa-police-ar';
+  lien.rel = 'stylesheet';
+  lien.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap';
+  document.head.appendChild(lien);
+}
+
+// Un texte à marqueurs devient du texte et de vrais éléments, sans innerHTML.
+function remplirRiche(noeud) {
+  const texte = tr(noeud.dataset.i18nRiche);
+  const enfants = morceaux(texte).map((m) => {
+    if (typeof m === 'string') return document.createTextNode(m);
+    if (m.marqueur === 'cours') return el('em', null, 'Learning How to Learn');
+    const a = el('a', 'inline-link', tr(noeud.dataset.lienCle));
+    a.href = noeud.dataset.lien;
+    if (noeud.dataset.lienExterne) {
+      a.target = '_blank';
+      a.rel = 'noopener';
+    }
+    return a;
+  });
+  noeud.replaceChildren(...enfants);
+}
+
+function appliquerLangue() {
+  const html = document.documentElement;
+  html.lang = langue;
+  html.dir = langue === 'ar' ? 'rtl' : 'ltr';
+  if (langue === 'ar') chargerPoliceArabe();
+  document.title = tr('meta.titre');
+
+  document.querySelectorAll('[data-i18n]').forEach((n) => { n.textContent = tr(n.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-riche]').forEach(remplirRiche);
+  document.querySelectorAll('[data-i18n-aria]').forEach((n) => n.setAttribute('aria-label', tr(n.dataset.i18nAria)));
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((n) => { n.placeholder = tr(n.dataset.i18nPlaceholder); });
+
+  // Le bouton est écrit dans l'autre langue : on le lui dit.
+  boutonLangue.lang = langue === 'ar' ? 'fr' : 'ar';
+
+  rendreQuiz();
+  rendrePlan();
+  html.classList.remove('aa-attente');
+}
+
+const boutonLangue = document.getElementById('aa-langue');
+boutonLangue.addEventListener('click', () => {
+  langue = langue === 'ar' ? 'fr' : 'ar';
+  ecrire(CLE_LANGUE, langue);
+  // L'adresse suit le choix, pour qu'un lien partagé ouvre la même langue.
+  const url = new URL(location.href);
+  if (langue === 'ar') url.searchParams.set('lang', 'ar');
+  else url.searchParams.delete('lang');
+  history.replaceState(history.state, '', url);
+  appliquerLangue();
+});
+
+// ---------------------------------------------------------------------------
+// Test rapide
 // ---------------------------------------------------------------------------
 
 const quizEl = document.getElementById('aa-quiz');
 const resteEl = document.getElementById('aa-quiz-reste');
 const resultatEl = document.getElementById('aa-quiz-resultat');
+let reponses = reponsesValides(lireJson(CLE_QUIZ));
 
-function lireReponses() {
-  const rep = {};
-  for (const q of QUESTIONS) {
-    const coche = quizEl.querySelector(`input[name="${q.id}"]:checked`);
-    if (coche) rep[q.id] = coche.value;
-  }
-  return rep;
+for (const [id, valeur] of Object.entries(reponses)) {
+  const input = quizEl.querySelector(`input[name="${id}"][value="${valeur}"]`);
+  if (input) input.checked = true;
 }
 
-function marquerCibles(cibles) {
-  document.querySelectorAll('.aa-cible').forEach((n) => n.classList.remove('aa-cible'));
-  document.querySelectorAll('.aa-cible-badge').forEach((n) => n.remove());
-  for (const id of cibles) {
-    const bloc = document.getElementById(id);
-    if (!bloc) continue;
-    bloc.classList.add('aa-cible');
-    const badge = el('span', 'aa-cible-badge', 'Priorité pour toi');
-    const titre = bloc.querySelector('h2, h3');
-    titre?.after(badge);
-  }
+// Aller à une méthode et la faire clignoter un instant.
+function montrerMethode(n) {
+  const carte = document.getElementById(`methode-${n}`);
+  if (!carte) return;
+  const doux = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  carte.scrollIntoView({ behavior: doux ? 'smooth' : 'auto', block: 'center' });
+  carte.focus({ preventScroll: true });
+  carte.classList.remove('aa-eclair');
+  void carte.offsetWidth; // relance l'animation si on reclique
+  carte.classList.add('aa-eclair');
+  setTimeout(() => carte.classList.remove('aa-eclair'), 2200);
 }
 
-function afficherQuiz(reponses, { annoncer = false } = {}) {
+function rendreQuiz() {
   const res = resultatQuiz(reponses);
   if (!res) {
-    const manque = QUESTIONS.length - Object.keys(reponses).length;
-    resteEl.textContent = manque < QUESTIONS.length
-      ? `Encore ${manque} question${manque > 1 ? 's' : ''} pour voir ton profil.`
-      : '';
+    const n = questionsRestantes(reponses);
+    resteEl.textContent = n < QUESTIONS.length ? tr(n === 1 ? 'quiz.reste1' : 'quiz.resteN', { n }) : '';
     resultatEl.hidden = true;
-    marquerCibles([]);
     return;
   }
   resteEl.textContent = '';
   resultatEl.replaceChildren();
-  resultatEl.dataset.profil = res.profil.cle;
-
-  resultatEl.appendChild(el('p', 'aa-res-etiquette', 'Ton profil'));
-  const titre = el('p', 'aa-res-nom', res.profil.nom);
-  resultatEl.appendChild(titre);
-  resultatEl.appendChild(el('p', 'aa-res-score', `${res.score} / ${res.max} en mauvaises habitudes`));
-  resultatEl.appendChild(el('p', 'aa-res-texte', res.profil.texte));
-
-  if (res.cibles.length) {
-    resultatEl.appendChild(el('p', 'aa-res-sous-titre', 'D’après tes « Oui », commence par :'));
-    const liste = el('ul', 'aa-res-liens');
-    for (const id of res.cibles) {
-      const li = el('li');
-      const a = el('a', 'inline-link', id === 'procrastination'
-        ? 'Vaincre la procrastination'
-        : `Règle ${id.split('-')[1]} : ${titreRegle(id)}`);
-      a.href = `#${id}`;
-      li.appendChild(a);
-      liste.appendChild(li);
-    }
-    resultatEl.appendChild(liste);
+  const ligne = el('p', 'aa-res-ligne');
+  if (!res.priorites.length) {
+    ligne.textContent = tr('quiz.bravo');
+  } else {
+    ligne.appendChild(el('strong', null, `${tr('quiz.priorites')} `));
+    res.priorites.forEach((n, i) => {
+      if (i) ligne.append(langue === 'ar' ? '، ' : ', ');
+      const a = el('a', 'inline-link', tr('quiz.methode', { n }));
+      a.href = `#methode-${n}`;
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        montrerMethode(n);
+      });
+      ligne.appendChild(a);
+    });
   }
-
-  const refaire = el('button', 'btn-ghost aa-refaire', 'Refaire le test');
+  const refaire = el('button', 'aa-lien-btn', tr('quiz.refaire'));
   refaire.type = 'button';
   refaire.addEventListener('click', () => {
     quizEl.reset();
-    ecrireJson(CLE_QUIZ, {});
-    afficherQuiz({});
+    reponses = {};
+    ecrire(CLE_QUIZ, '{}');
+    rendreQuiz();
     quizEl.querySelector('input')?.focus();
   });
-  resultatEl.appendChild(refaire);
-
+  resultatEl.append(ligne, refaire);
   resultatEl.hidden = false;
-  marquerCibles(res.cibles);
-  if (annoncer) {
-    resultatEl.focus({ preventScroll: true });
-    resultatEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+quizEl.addEventListener('change', () => {
+  reponses = {};
+  for (const q of QUESTIONS) {
+    const coche = quizEl.querySelector(`input[name="${q.id}"]:checked`);
+    if (coche) reponses[q.id] = coche.value;
   }
-}
-
-if (quizEl) {
-  const memo = reponsesValides(lireJson(CLE_QUIZ));
-  for (const [id, valeur] of Object.entries(memo)) {
-    const input = quizEl.querySelector(`input[name="${id}"][value="${valeur}"]`);
-    if (input) input.checked = true;
-  }
-  afficherQuiz(memo);
-
-  quizEl.addEventListener('change', () => {
-    const avant = resultatEl.hidden;
-    const rep = lireReponses();
-    ecrireJson(CLE_QUIZ, rep);
-    afficherQuiz(rep, { annoncer: avant });
-  });
-  quizEl.addEventListener('submit', (e) => e.preventDefault());
-}
-
-// ---------------------------------------------------------------------------
-// Les 10 règles : « Je l'applique »
-// ---------------------------------------------------------------------------
-
-const compteRegles = document.getElementById('aa-regles-compte');
-let appliquees = new Set(Array.isArray(lireJson(CLE_REGLES)) ? lireJson(CLE_REGLES) : []);
-
-function majCompte() {
-  const n = appliquees.size;
-  compteRegles.textContent = n
-    ? `Tu appliques ${n} règle${n > 1 ? 's' : ''} sur 10.`
-    : '';
-}
-
-function peindreBouton(btn, actif) {
-  btn.setAttribute('aria-pressed', String(actif));
-  btn.querySelector('.aa-applique-texte').textContent = actif ? 'Je l’applique' : 'Je l’applique ?';
-  btn.closest('.aa-regle').classList.toggle('aa-appliquee', actif);
-}
-
-document.querySelectorAll('.aa-regle').forEach((carte) => {
-  const id = carte.id;
-  const btn = el('button', 'aa-applique');
-  btn.type = 'button';
-  btn.append(el('span', 'aa-applique-case'), el('span', 'aa-applique-texte'));
-  btn.setAttribute('aria-label', `Je l’applique : règle ${id.split('-')[1]}`);
-  carte.appendChild(btn); // avant de peindre : peindreBouton remonte à la carte
-  peindreBouton(btn, appliquees.has(id));
-  btn.addEventListener('click', () => {
-    if (appliquees.has(id)) appliquees.delete(id);
-    else appliquees.add(id);
-    ecrireJson(CLE_REGLES, [...appliquees]);
-    peindreBouton(btn, appliquees.has(id));
-    majCompte();
-  });
+  ecrire(CLE_QUIZ, JSON.stringify(reponses));
+  rendreQuiz();
 });
-majCompte();
+quizEl.addEventListener('submit', (e) => e.preventDefault());
 
 // ---------------------------------------------------------------------------
-// Planificateur de répétition espacée
+// Planificateur de révisions
 // ---------------------------------------------------------------------------
 
 const planForm = document.getElementById('aa-plan-form');
 const planNom = document.getElementById('aa-plan-nom');
 const planDate = document.getElementById('aa-plan-date');
-const planEnvoyer = document.getElementById('aa-plan-envoyer');
-const planAnnuler = document.getElementById('aa-plan-annuler');
 const planErreur = document.getElementById('aa-plan-erreur');
 const planAujourdhui = document.getElementById('aa-plan-aujourdhui');
 const planListe = document.getElementById('aa-plan-liste');
-const planIcs = document.getElementById('aa-plan-ics');
 
 let notions = notionsValides(lireJson(CLE_PLAN));
-let enEdition = null;
+let erreurPlan = null;
+
+function stockageDisponible() {
+  try {
+    localStorage.setItem('pu-aa-test', '1');
+    localStorage.removeItem('pu-aa-test');
+    return true;
+  } catch {
+    return false;
+  }
+}
+const stockageOk = stockageDisponible();
 
 function sauverPlan() {
-  ecrireJson(CLE_PLAN, notions);
+  ecrire(CLE_PLAN, JSON.stringify(notions));
 }
 
 function nouvelId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
+function basculer(id, j) {
+  notions = basculerRevision(notions, id, j);
+  sauverPlan();
+  rendrePlan();
 }
 
 function caseRevision(notion, r, aujourdhui) {
@@ -235,202 +243,103 @@ function caseRevision(notion, r, aujourdhui) {
   const input = el('input');
   input.type = 'checkbox';
   input.checked = r.faite;
-  input.addEventListener('change', () => {
-    notions = basculerRevision(notions, notion.id, r.j);
-    sauverPlan();
-    rendrePlan();
-  });
-  label.append(input, el('span', 'aa-rev-j', `J+${r.j}`), el('span', 'aa-rev-date', dateLisible(r.date)));
+  input.setAttribute('aria-label', `${tr('plan.fait')} : ${notion.nom}, J+${r.j}, ${dateLisible(r.date, langue)}`);
+  input.addEventListener('change', () => basculer(notion.id, r.j));
+  const j = el('span', 'aa-rev-j', `J+${r.j}`);
+  j.dir = 'ltr';
+  label.append(input, j, el('span', 'aa-rev-date', dateLisible(r.date, langue)));
   return label;
 }
 
 function rendrePlan() {
   const aujourdhui = dateDuJour();
 
-  // « À réviser aujourd'hui »
+  planErreur.hidden = !erreurPlan;
+  planErreur.textContent = erreurPlan ? tr(erreurPlan) : '';
+  document.getElementById('aa-plan-bloque')?.remove();
+  if (!stockageOk) {
+    const note = el('p', 'aa-petit aa-avertissement', tr('plan.bloque'));
+    note.id = 'aa-plan-bloque';
+    planForm.before(note);
+  }
+
   planAujourdhui.replaceChildren();
   if (notions.length) {
+    planAujourdhui.appendChild(el('h3', 'aa-plan-titre', tr('plan.aujourdhui')));
     const dues = aReviser(notions, aujourdhui);
-    const titre = el('h4', 'aa-plan-titre', 'À réviser aujourd’hui');
-    planAujourdhui.appendChild(titre);
     if (!dues.length) {
-      planAujourdhui.appendChild(el('p', 'aa-petit', 'Rien à réviser aujourd’hui. Profite pour avancer.'));
+      planAujourdhui.appendChild(el('p', 'aa-petit', tr('plan.rien')));
     } else {
       const ul = el('ul', 'aa-dues');
       for (const d of dues) {
         const li = el('li');
-        const label = el('label');
-        const input = el('input');
-        input.type = 'checkbox';
-        input.addEventListener('change', () => {
-          notions = basculerRevision(notions, d.id, d.j);
-          sauverPlan();
-          rendrePlan();
-        });
-        const texte = el('span', null, `${d.nom} `);
-        texte.appendChild(el('span', 'aa-rev-j', `J+${d.j}`));
-        if (d.enRetard) texte.appendChild(el('span', 'aa-retard', ` en retard (prévu le ${dateLisible(d.date)})`));
-        label.append(input, texte);
-        li.appendChild(label);
+        const texte = el('span', 'aa-due-texte', `${d.nom} `);
+        const j = el('span', 'aa-rev-j', `J+${d.j}`);
+        j.dir = 'ltr';
+        texte.appendChild(j);
+        if (d.enRetard) texte.append(' ', el('span', 'aa-retard', tr('plan.retard')));
+        const fait = el('button', 'aa-fait', tr('plan.fait'));
+        fait.type = 'button';
+        fait.setAttribute('aria-label', `${tr('plan.fait')} : ${d.nom}, J+${d.j}`);
+        fait.addEventListener('click', () => basculer(d.id, d.j));
+        li.append(texte, fait);
         ul.appendChild(li);
       }
       planAujourdhui.appendChild(ul);
     }
   }
 
-  // Toutes les notions
   planListe.replaceChildren();
-  if (notions.length) planListe.appendChild(el('h4', 'aa-plan-titre', 'Tous mes chapitres'));
+  if (!notions.length) return;
+  planListe.appendChild(el('h3', 'aa-plan-titre', tr('plan.chapitres')));
   for (const n of [...notions].sort((a, b) => (a.etude < b.etude ? 1 : -1))) {
     const bloc = el('div', 'aa-notion');
     const tete = el('div', 'aa-notion-tete');
     const nom = el('p', 'aa-notion-nom', n.nom);
-    nom.appendChild(el('span', 'aa-petit', ` étudié le ${dateLisible(n.etude)}`));
-    const actions = el('div', 'aa-notion-actions');
-    const modif = el('button', 'aa-lien-btn', 'Modifier');
-    modif.type = 'button';
-    modif.setAttribute('aria-label', `Modifier ${n.nom}`);
-    modif.addEventListener('click', () => commencerEdition(n));
-    const suppr = el('button', 'aa-lien-btn aa-danger', 'Supprimer');
+    nom.appendChild(el('span', 'aa-petit', ` ${tr('plan.etudie', { date: dateLisible(n.etude, langue) })}`));
+    const suppr = el('button', 'aa-lien-btn aa-danger', tr('plan.supprimer'));
     suppr.type = 'button';
-    suppr.setAttribute('aria-label', `Supprimer ${n.nom}`);
+    suppr.setAttribute('aria-label', `${tr('plan.supprimer')} : ${n.nom}`);
     suppr.addEventListener('click', () => {
-      if (!window.confirm(`Supprimer « ${n.nom} » et ses révisions ?`)) return;
+      if (!window.confirm(tr('plan.confirmer', { nom: n.nom }))) return;
       notions = notions.filter((x) => x.id !== n.id);
-      if (enEdition === n.id) arreterEdition();
       sauverPlan();
       rendrePlan();
     });
-    actions.append(modif, suppr);
-    tete.append(nom, actions);
+    tete.append(nom, suppr);
     const revs = el('div', 'aa-revs');
     for (const r of n.revisions) revs.appendChild(caseRevision(n, r, aujourdhui));
     bloc.append(tete, revs);
     planListe.appendChild(bloc);
   }
-
-  planIcs.hidden = !notions.some((n) => n.revisions.some((r) => !r.faite));
 }
 
-function commencerEdition(n) {
-  enEdition = n.id;
-  planNom.value = n.nom;
-  planDate.value = n.etude;
-  planEnvoyer.textContent = 'Enregistrer';
-  planAnnuler.hidden = false;
-  planErreur.hidden = true;
-  planNom.focus();
-  planForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-function arreterEdition() {
-  enEdition = null;
-  planNom.value = '';
-  planDate.value = dateDuJour();
-  planEnvoyer.textContent = 'Ajouter';
-  planAnnuler.hidden = true;
-}
-
-if (planForm) {
-  planDate.value = dateDuJour();
-  if (!stockageDisponible()) {
-    const note = el('p', 'aa-petit aa-avertissement', 'Ton navigateur bloque l’enregistrement (navigation privée ?) : ce que tu notes ici disparaîtra au rechargement de la page.');
-    planForm.before(note);
-  }
-
-  planForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const res = enEdition
-      ? modifierNotion(notions.find((n) => n.id === enEdition), planNom.value, planDate.value)
-      : nouvelleNotion(planNom.value, planDate.value, nouvelId());
-    if (!res.ok) {
-      planErreur.textContent = res.raison === 'nom' ? 'Indique le chapitre ou la notion.' : 'Choisis une date valide.';
-      planErreur.hidden = false;
-      (res.raison === 'nom' ? planNom : planDate).focus();
-      return;
-    }
-    planErreur.hidden = true;
-    notions = enEdition
-      ? notions.map((n) => (n.id === enEdition ? res.notion : n))
-      : [...notions, res.notion];
-    sauverPlan();
-    arreterEdition();
+planDate.value = dateDuJour();
+planForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const res = nouvelleNotion(planNom.value, planDate.value, nouvelId());
+  if (!res.ok) {
+    erreurPlan = res.raison === 'nom' ? 'plan.erreur.nom' : 'plan.erreur.date';
     rendrePlan();
-    planNom.focus();
-  });
-  planAnnuler.addEventListener('click', arreterEdition);
-  planNom.addEventListener('input', () => { planErreur.hidden = true; });
-
-  planIcs.addEventListener('click', () => {
-    const horodatage = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-    const blob = new Blob([exporterIcs(notions, horodatage)], { type: 'text/calendar;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = el('a');
-    a.href = url;
-    a.download = 'revisions-prep-up.ics';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  });
-
-  rendrePlan();
-}
-
-// ---------------------------------------------------------------------------
-// Checklist du soir : repart à zéro chaque jour
-// ---------------------------------------------------------------------------
-
-const checklistEl = document.getElementById('aa-checklist');
-const coucherEl = document.getElementById('aa-coucher');
-const bravoEl = document.getElementById('aa-checklist-bravo');
-let soir = checklistDuJour(lireJson(CLE_SOIR), dateDuJour());
-
-function rendreSoir() {
-  checklistEl.querySelectorAll('input[type="checkbox"]').forEach((c) => {
-    c.checked = soir.cochees.includes(c.value);
-  });
-  coucherEl.value = soir.coucher;
-  const complet = soir.cochees.length === CHECKLIST.length && soir.coucher;
-  bravoEl.textContent = complet ? `Tout est prêt pour demain. Bonne nuit, extinction à ${soir.coucher}.` : '';
-}
-
-if (checklistEl) {
-  checklistEl.addEventListener('change', () => {
-    const aujourdhui = dateDuJour();
-    if (soir.date !== aujourdhui) soir = checklistDuJour(null, aujourdhui);
-    soir.cochees = [...checklistEl.querySelectorAll('input[type="checkbox"]:checked')].map((c) => c.value);
-    soir.coucher = coucherEl.value || '';
-    ecrireJson(CLE_SOIR, soir);
-    rendreSoir();
-  });
-  rendreSoir();
-}
-
-// Page laissée ouverte pendant la nuit : la checklist et les révisions du jour
-// doivent suivre la date en revenant dessus.
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState !== 'visible') return;
-  const aujourdhui = dateDuJour();
-  if (soir.date !== aujourdhui) {
-    soir = checklistDuJour(null, aujourdhui);
-    rendreSoir();
+    (res.raison === 'nom' ? planNom : planDate).focus();
+    return;
   }
-  if (planForm) rendrePlan();
+  erreurPlan = null;
+  notions = [...notions, res.notion];
+  sauverPlan();
+  planNom.value = '';
+  rendrePlan();
+  planNom.focus();
+});
+planNom.addEventListener('input', () => {
+  if (!erreurPlan) return;
+  erreurPlan = null;
+  planErreur.hidden = true;
 });
 
-// ---------------------------------------------------------------------------
-// Checklist du jour J à imprimer
-// ---------------------------------------------------------------------------
+// Page laissée ouverte pendant la nuit : « à réviser aujourd'hui » suit la date.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') rendrePlan();
+});
 
-const imprimer = document.getElementById('aa-imprimer');
-if (imprimer && typeof window.print === 'function') {
-  imprimer.hidden = false;
-  imprimer.addEventListener('click', () => {
-    document.body.dataset.imprimer = 'concours';
-    window.print();
-  });
-  window.addEventListener('afterprint', () => {
-    delete document.body.dataset.imprimer;
-  });
-}
+appliquerLangue();

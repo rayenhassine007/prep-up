@@ -15,7 +15,7 @@
 - https://prep-upp.com/places-2026 : Places 2026 prépa : 3 238 places ouvertes session 2026 (JORT), par école et spécialité MP, PC, T, BG
 - https://prep-upp.com/ressources : Ressources prépa : cours, TD, DS et sujets de concours par filière et matière
 - https://prep-upp.com/chapitres-concours : Chapitres concours prépa Tunisie, historique des chapitres MP, PC, T et BG aux sessions 2017–2026
-- https://prep-upp.com/apprendre-a-apprendre : Apprendre à apprendre, méthodes de révision pour la prépa (rappel actif, répétition espacée, Pomodoro, sommeil), avec test de profil, planificateur de révisions et checklist du soir
+- https://prep-upp.com/apprendre-a-apprendre : Apprendre à apprendre, 7 méthodes de révision pour la prépa (rappel actif, répétition espacée, sommeil, Pomodoro), avec test rapide et planificateur de révisions, en français et en arabe (?lang=ar)
 
 ## Ce que fait Prep'Up
 
