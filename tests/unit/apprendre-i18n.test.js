@@ -81,7 +81,7 @@ describe('page HTML', () => {
   it('describes the FAQ for search engines, question for question', () => {
     const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
     const faq = ld['@graph'].find((g) => g['@type'] === 'FAQPage');
-    expect(ld['@graph'].map((g) => g['@type'])).toEqual(['Article', 'FAQPage']);
+    expect(ld['@graph'].map((g) => g['@type'])).toEqual(['Article', 'FAQPage', 'BreadcrumbList']);
     expect(faq.mainEntity.map((q) => q.name)).toEqual([1, 2, 3, 4, 5].map((n) => TEXTES.fr[`faq.q${n}`]));
   });
 });

@@ -2874,7 +2874,7 @@ html.aa-attente body { visibility: hidden; }
   max-width: 300px;
   margin-top: 6px;
   font-size: 0.8rem;
-  color: var(--text-dim);
+  color: var(--text);
   text-align: center;
 }
 .aa-retenir {

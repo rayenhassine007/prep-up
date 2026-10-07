@@ -17,6 +17,19 @@
 - https://prep-upp.com/chapitres-concours : Chapitres concours prépa Tunisie, historique des chapitres MP, PC, T et BG aux sessions 2017–2026
 - https://prep-upp.com/apprendre-a-apprendre : Apprendre à apprendre, 7 méthodes de révision pour la prépa (rappel actif, répétition espacée, sommeil, Pomodoro), avec test rapide et planificateur de révisions, en français et en arabe (?lang=ar)
 
+## Apprendre à apprendre (méthodes de révision pour la prépa)
+
+Page : https://prep-upp.com/apprendre-a-apprendre (français ; version arabe : https://prep-upp.com/apprendre-a-apprendre?lang=ar)
+
+Inspirée du cours Learning How to Learn (Barbara Oakley, Terrence Sejnowski, Coursera), adaptée aux classes préparatoires tunisiennes. Contenu :
+
+- Comment le cerveau apprend : mode concentré et mode diffus (faire une vraie pause quand on bloque), chunking (comprendre, pratiquer seul, savoir quand utiliser une méthode).
+- Les 7 méthodes : 1) refaire l'exercice seul le lendemain, sans la correction ; 2) répétition espacée à J+1, J+3, J+7, J+14 et J+30 ; 3) dormir, car le sommeil consolide ; 4) rappel actif plutôt que relecture ; 5) se tester avec d'anciens sujets de concours ; 6) mélanger les chapitres (interleaving) ; 7) planifier sa journée avec du repos et une heure de fin.
+- Procrastination : Pomodoro version prépa (60 min de travail, 10 min de pause), viser le temps plutôt que le résultat, commencer par la tâche la plus difficile.
+- Illusions de compétence : relire, surligner ou comprendre la correction donnent l'impression de savoir sans savoir refaire.
+- Jour du concours : commencer par une question difficile puis passer à une facile si on bloque, respirer, relire sa copie avec un regard neuf, pas de nouveau chapitre la veille.
+- Outils gratuits sur la page : test rapide en 5 questions qui indique les méthodes prioritaires, planificateur de révisions espacées (données gardées sur l'appareil).
+
 ## Ce que fait Prep'Up
 
 1. **Simulateur de rang prépa** : calcule ton rang ou entre-le directement, simule les filières (Sûr / Probable / Hors de portée) d'après les rangs 2024–2025 et les places 2026. L'onglet **Notes à viser** t'aide en 1ère année à fixer tes objectifs, et en 2ème année à choisir un rang cible ou une filière d'école et connaître les notes à obtenir pour l'atteindre.
