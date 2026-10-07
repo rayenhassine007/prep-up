@@ -171,6 +171,7 @@ export const TEXTES = {
     'pied.places': 'Places 2026',
     'pied.ressources': 'Ressources',
     'pied.chapitres': 'Chapitres du concours',
+    'pied.apprendre': 'Apprendre à apprendre',
     'pied.note': 'Des méthodes d\'apprentissage adaptées à la prépa.',
   },
 
@@ -336,6 +337,7 @@ export const TEXTES = {
     'pied.places': 'مقاعد 2026',
     'pied.ressources': 'الموارد',
     'pied.chapitres': 'فصول المناظرة',
+    'pied.apprendre': 'تعلّم كيف تتعلّم',
     'pied.note': 'طرق تعلّم مكيّفة للأقسام التحضيرية.',
   },
 };
