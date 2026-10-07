@@ -1,0 +1,56 @@
+name: IndexNow
+
+# Après chaque déploiement de production réussi sur Vercel, annonce à IndexNow
+# (Bing et les autres moteurs du protocole) les pages modifiées depuis le
+# déploiement de production précédent. Lancement à la main possible depuis
+# l'onglet Actions, pour tout renvoyer.
+
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      tout:
+        description: Annoncer toutes les pages du sitemap
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  deployments: read
+
+jobs:
+  indexnow:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha || github.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Annoncer les pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.deployment.sha }}
+          TOUT: ${{ inputs.tout }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "$TOUT" = "true" ]; then node scripts/indexnow.mjs --tout; else node scripts/indexnow.mjs; fi
+            exit 0
+          fi
+          # Commit du déploiement de production précédent : un merge peut
+          # apporter plusieurs commits, tous doivent compter.
+          PREC=$(gh api "repos/${{ github.repository }}/deployments?environment=Production&per_page=20" \
+            --jq "[.[] | select(.sha != \"$SHA\")][0].sha")
+          if [ -n "$PREC" ] && git cat-file -e "$PREC^{commit}" 2>/dev/null; then
+            node scripts/indexnow.mjs --depuis "$PREC"
+          else
+            node scripts/indexnow.mjs
+          fi
