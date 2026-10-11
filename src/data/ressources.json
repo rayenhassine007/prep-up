@@ -239,6 +239,11 @@
               "titre": "Programme complet - Chimie Tout-en-un MPSI-PTSI (livre) - MP",
               "type": "PDF",
               "url": "https://drive.google.com/file/d/1wP2sgaOoa_iO4-WohkXyzIQqpUMkg92a/view"
+            },
+            {
+              "titre": "Liaisons chimiques (Lewis, VSEPR, polarité) - Cours à compléter, chapitre 3 (Amani Toumi) - MP",
+              "type": "PDF",
+              "url": "/sources/liaisons-chimiques-ch3-cours-a-completer.pdf"
             }
           ]
         },
@@ -1123,7 +1128,13 @@
         },
         {
           "matiere": "Chimie",
-          "items": []
+          "items": [
+            {
+              "titre": "Liaisons chimiques (Lewis, VSEPR, polarité) - Cours à compléter, chapitre 3 (Amani Toumi) - PC",
+              "type": "PDF",
+              "url": "/sources/liaisons-chimiques-ch3-cours-a-completer.pdf"
+            }
+          ]
         },
         {
           "matiere": "Informatique",
@@ -1670,6 +1681,11 @@
               "titre": "Chimie Tout-en-un MPSI-PTSI (livre)",
               "type": "PDF",
               "url": "https://drive.google.com/file/d/1wP2sgaOoa_iO4-WohkXyzIQqpUMkg92a/view"
+            },
+            {
+              "titre": "Liaisons chimiques (Lewis, VSEPR, polarité) - Cours à compléter, chapitre 3 (Amani Toumi) - PT",
+              "type": "PDF",
+              "url": "/sources/liaisons-chimiques-ch3-cours-a-completer.pdf"
             }
           ]
         },
@@ -2421,6 +2437,11 @@
               "titre": "Chimie inorganique 1 (résumé)",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1vKqk7-wptMHob55sMcYnV2SNHV2_OwDJ"
+            },
+            {
+              "titre": "Liaisons chimiques (Lewis, VSEPR, polarité) - Cours à compléter, chapitre 3 (Amani Toumi) - BG",
+              "type": "PDF",
+              "url": "/sources/liaisons-chimiques-ch3-cours-a-completer.pdf"
             }
           ]
         },
