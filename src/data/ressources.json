@@ -755,6 +755,11 @@
               "titre": "Chimie - cours et TD (prépa)",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1Pl-F9LZTZ35jqw0zc5UYHH-anQuZiBZh"
+            },
+            {
+              "titre": "Cristallographie - Série n°2 : diffraction des rayons X (Mohsen Graia) - MP",
+              "type": "PDF",
+              "url": "/sources/serie-2-cristallographie-diffraction-rx.pdf"
             }
           ]
         },
@@ -1413,7 +1418,13 @@
         },
         {
           "matiere": "Chimie",
-          "items": []
+          "items": [
+            {
+              "titre": "Cristallographie - Série n°2 : diffraction des rayons X (Mohsen Graia) - PC",
+              "type": "PDF",
+              "url": "/sources/serie-2-cristallographie-diffraction-rx.pdf"
+            }
+          ]
         },
         {
           "matiere": "Informatique",
@@ -2078,6 +2089,11 @@
               "titre": "TD Chimie (PDF)",
               "type": "PDF",
               "url": "https://drive.google.com/file/d/1XZbYGbSuxEIsZXCF3noDbv76Gab9yFCL/view"
+            },
+            {
+              "titre": "Cristallographie - Série n°2 : diffraction des rayons X (Mohsen Graia) - PT",
+              "type": "PDF",
+              "url": "/sources/serie-2-cristallographie-diffraction-rx.pdf"
             }
           ]
         },
