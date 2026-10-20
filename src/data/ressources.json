@@ -1366,21 +1366,6 @@
           "matiere": "Mathématiques",
           "items": [
             {
-              "titre": "Algèbre - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/10mizWBzFEgMc4LZk3TplBCAYW_HcmoCS"
-            },
-            {
-              "titre": "Analyse - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1nLCMQSHp7EiAl76vt47fqZS6Klh8-wMh"
-            },
-            {
-              "titre": "Cours complet analyse + exercices",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1DgUJYUhoLFelB65W7o_uu-gAldpOi2IK"
-            },
-            {
               "titre": "Algèbre - 2EME PT",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/12eiR4HhKj3h1j4p2RiReTlT5xPMdpSGc"
@@ -1737,11 +1722,6 @@
               "titre": "CFM - 1er prépa",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1M30Sw6bmQzMbZThzl3V3RCQ-4rE7UeeR"
-            },
-            {
-              "titre": "Cours FM - 1ère année (YAAKOUB)",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1FgaUuYTGrKNNTdh1Ur6YYWMi-p44ks3p"
             }
           ]
         },
@@ -1976,21 +1956,6 @@
           "matiere": "Mathématiques",
           "items": [
             {
-              "titre": "Algèbre - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/10mizWBzFEgMc4LZk3TplBCAYW_HcmoCS"
-            },
-            {
-              "titre": "Analyse - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1nLCMQSHp7EiAl76vt47fqZS6Klh8-wMh"
-            },
-            {
-              "titre": "Cours complet analyse + exercices",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1DgUJYUhoLFelB65W7o_uu-gAldpOi2IK"
-            },
-            {
               "titre": "Algèbre - 2EME PT",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/12eiR4HhKj3h1j4p2RiReTlT5xPMdpSGc"
@@ -2031,16 +1996,6 @@
           "matiere": "Physique",
           "items": [
             {
-              "titre": "Physique - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1sCHq9YctZgin9ouVnlQItEPLx-GHzaIB"
-            },
-            {
-              "titre": "Révision Physique - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1dzPqdXdbqP4To3cHSVEMYHfpW4eOA9ZI"
-            },
-            {
               "titre": "Physique - 2EME PT",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1iDripe13r-lIufhL-4DFM9_xc3mrj_81"
@@ -2065,11 +2020,6 @@
         {
           "matiere": "Chimie",
           "items": [
-            {
-              "titre": "Cours chimie complet - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1aR7EgrHinS1FXhZWBQ2mFd49uFgOHXoP"
-            },
             {
               "titre": "Chimie - 2EME PT",
               "type": "Drive",
@@ -2106,21 +2056,6 @@
           "matiere": "Sciences industrielles (STA)",
           "items": [
             {
-              "titre": "Mécanique Générale MSI - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1vHfYuvjzvByFPfQA_e57DFifHm8zabFW"
-            },
-            {
-              "titre": "Cours MSI complet - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1QZu_bzqDru8V3dc6s25zi0skZOR2aSo9"
-            },
-            {
-              "titre": "Automatique - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/12lTL_aajDVYXX13UUVCkUlwNgyvCn-cs"
-            },
-            {
               "titre": "STA - 2ème PT (2)",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1-EPChDRjGNQfyxovL2pG0voqi3XzZOnI"
@@ -2150,16 +2085,6 @@
         {
           "matiere": "CFM",
           "items": [
-            {
-              "titre": "Fabrication mécanique - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1o3aAe2rrwRHMshPWLLHULeMnsfrsezRu"
-            },
-            {
-              "titre": "Conception mécanique - YAAKOUB PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1pqflMGtk_4M663q8MSQokvXWARwX7GQx"
-            },
             {
               "titre": "CFM - 2ème PT (2)",
               "type": "Drive",
@@ -2294,21 +2219,6 @@
               "titre": "MP2 / PT2 - IPEIS 2022",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/12gxYzBtazeo7ke8Q9dF9mzahoQHm6ITs"
-            },
-            {
-              "titre": "YAAKOUB 2020 - dossier complet (livres, résumés, formulaires)",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/13vVFp8wgaHqcT13EmTJBLOyp17fOPjlN"
-            },
-            {
-              "titre": "Concours nationaux (énoncés)",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1FxrOORdUwkyh7i-QsTIIpT0YUtoFqdtY"
-            },
-            {
-              "titre": "Concours PT",
-              "type": "Drive",
-              "url": "https://drive.google.com/drive/folders/1vKvtnWmATQgs_u57etUnvm8RlvUTyLkM"
             },
             {
               "titre": "Concours - 2ème PT",
