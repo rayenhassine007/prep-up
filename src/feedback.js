@@ -324,34 +324,45 @@ function construireSondage() {
   non.append(el('span', null, 'Non'));
   non.addEventListener('click', () => {
     voter('non');
-    // Un pouce bas sans explication n'apprend rien : on demande, sans obliger.
+    // Un pouce bas sans explication n'apprend rien : on demande pourquoi, avec
+    // de quoi passer sans répondre.
     bloc.replaceChildren();
-    bloc.appendChild(el('p', 'fb-poll-q', 'Qu’est-ce qui manque ?'));
+    bloc.classList.add('fb-poll-pourquoi');
+    const intitule = el('label', 'fb-poll-q', 'Pourquoi non ? Dis-nous ce qui t’a manqué.');
+    intitule.htmlFor = 'fb-poll-raison';
+    bloc.appendChild(intitule);
     const ligne = el('form', 'fb-poll-more');
-    const zone = el('input');
-    zone.type = 'text';
+    const zone = el('textarea');
+    zone.id = 'fb-poll-raison';
+    zone.rows = 3;
     zone.maxLength = MAX_MESSAGE;
-    zone.placeholder = 'En une phrase (facultatif)';
-    zone.setAttribute('aria-label', 'Ce qui manque sur cette page');
+    zone.placeholder = 'Ce qui manquait, ce qui était faux ou pas clair...';
+    const actions = el('div', 'fb-poll-more-actions');
+    const passer = el('button', 'fb-poll-skip', 'Passer');
+    passer.type = 'button';
+    passer.addEventListener('click', () => remercier('Merci, c’est noté.'));
     const envoi = el('button', 'fb-poll-send', 'Envoyer');
     envoi.type = 'submit';
-    ligne.append(zone, envoi);
+    envoi.disabled = true;
+    zone.addEventListener('input', () => { envoi.disabled = !zone.value.trim(); });
+    actions.append(passer, envoi);
+    ligne.append(zone, actions);
     ligne.addEventListener('submit', async (e) => {
       e.preventDefault();
       const texte = zone.value.trim();
-      if (texte) {
-        try {
-          await envoyer({
-            _subject: 'Prep’Up : micro-sondage',
-            vote: 'non',
-            message: texte,
-            contexte: contexteCourant(),
-          });
-        } catch {
-          /* idem : on ne bloque pas le visiteur là-dessus */
-        }
+      if (!texte) return;
+      envoi.disabled = true;
+      try {
+        await envoyer({
+          _subject: 'Prep’Up : micro-sondage',
+          vote: 'non',
+          message: texte,
+          contexte: contexteCourant(),
+        });
+      } catch {
+        /* idem : on ne bloque pas le visiteur là-dessus */
       }
-      remercier('Merci, c’est noté.');
+      remercier('Merci, ta réponse va nous aider.');
     });
     bloc.appendChild(ligne);
     zone.focus();
