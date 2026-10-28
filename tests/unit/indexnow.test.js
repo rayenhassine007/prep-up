@@ -18,8 +18,7 @@ describe('IndexNow', () => {
   it('reads every page of the sitemap', () => {
     expect(sitemap).toContain(`${S}/`);
     expect(sitemap).toContain(`${S}/apprendre-a-apprendre`);
-    expect(sitemap).toContain(`${S}/contact`);
-    expect(sitemap).toHaveLength(7);
+    expect(sitemap).toHaveLength(6);
   });
 
   it('maps each page file to its own URL', () => {
@@ -29,7 +28,7 @@ describe('IndexNow', () => {
     expect(urlsModifiees(['src/data/chapitres_concours_mp.json'], sitemap)).toEqual([`${S}/chapitres-concours`]);
     expect(urlsModifiees(['src/data/distribution_moyennes_2025.json'], sitemap)).toEqual([`${S}/calculateur`]);
     expect(urlsModifiees(['src/data/places2026.json'], sitemap)).toEqual([`${S}/places-2026`]);
-    expect(urlsModifiees(['contact.html', 'src/contact-page.js'], sitemap)).toEqual([`${S}/contact`]);
+    expect(urlsModifiees(['src/contact-lien.js'], sitemap)).toEqual([`${S}/`]);
   });
 
   it('announces every page when a shared file changes', () => {

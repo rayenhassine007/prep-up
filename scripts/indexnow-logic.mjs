@@ -10,12 +10,11 @@ export const SITE = `https://${HOTE}`;
 // règle qui correspond gagne.
 const REGLES = [
   // propre à une page
-  [/^index\.html$/, '/'],
+  [/^index\.html$|^src\/contact-lien\.js$/, '/'],
   [/^calculateur\.html$|^src\/(calculator|simulateur|objectif|annee1)\.js$|^src\/lib\/(rank|calculator-reach|simulateur-logic|objectif-logic|annee1-logic)\.js$|^src\/data\/(coefficients|coefficients_1ere_annee|distribution_moyennes_[^/]+|guide_rangs_capacites|rangs_[^/]+)\.json$/, '/calculateur'],
   [/^ressources\.html$|^src\/(ressources|navigateur)\.js$|^src\/lib\/(ressources-logic|navigateur-integre|contact)\.js$|^src\/data\/ressources\.json$|^public\/sources\//, '/ressources'],
   [/^places-2026\.html$|^src\/places\.js$|^src\/data\/places2026\.json$/, '/places-2026'],
   [/^chapitres-concours\.html$|^src\/chapitres\.js$|^src\/lib\/chapitres-logic\.js$|^src\/data\/chapitres_concours_[a-z]+\.json$/, '/chapitres-concours'],
-  [/^contact\.html$|^src\/contact-page\.js$/, '/contact'],
   [/^apprendre-a-apprendre\.html$|^src\/apprendre\.js$|^src\/lib\/apprendre-[a-z0-9-]+\.js$|^public\/og-apprendre\./, '/apprendre-a-apprendre'],
   // commun à tout le site : toutes les pages changent
   [/^src\/styles\/|^src\/(ui|feedback|icons|search|analytics)\.js$|^src\/lib\/feedback-logic\.js$|^public\/(icons\.svg|logo\.(png|svg)|og-image\.(png|svg)|sitemap\.xml)$|^vite\.config\.js$|^vercel\.json$|^scripts\/prerender\.mjs$|^package(-lock)?\.json$/, '*'],

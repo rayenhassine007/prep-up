@@ -3087,12 +3087,29 @@ html[lang="ar"] .aa-langue:lang(fr) { font-family: var(--font-display); }
   body[data-imprimer="concours"] main > #concours { margin-top: 0; }
 }
 
-
-/* ---------- page Contact ---------- */
-.ct-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 18px; }
-.ct-grid .feature-card h3 { margin: 12px 0 4px; }
-.ct-grid .feature-card p { overflow-wrap: anywhere; }
-.ct-note { padding: 16px 20px; line-height: 1.6; }
-@media (max-width: 760px) {
-  .ct-grid { grid-template-columns: 1fr; }
+/* ---------- accueil : contact, dans « À propos » ---------- */
+.about-contact {
+  margin: 34px auto 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 90px;
 }
+.about-contact h3 { margin: 0 0 8px; font-size: 1.1rem; }
+.about-contact p { margin: 0 0 16px; color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
+.about-contact-liens { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.about-contact-lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.9rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: border-color 0.14s ease-out;
+}
+.about-contact-lien:hover { border-color: var(--accent); }
+.about-contact-lien .icon { width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
