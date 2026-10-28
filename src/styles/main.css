@@ -3087,3 +3087,46 @@ html[lang="ar"] .aa-langue:lang(fr) { font-family: var(--font-display); }
   body[data-imprimer="concours"] main > #concours { margin-top: 0; }
 }
 
+/* ---------- accueil : onglets « À propos » / « Contact » ---------- */
+.about-tabs { display: flex; justify-content: center; gap: 28px; margin: 0 0 16px; }
+.about-tabs .about-tag {
+  margin: 0;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: color 0.25s ease;
+}
+.about-tabs .about-tag::after { transform: translateX(-50%) scaleX(0); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; }
+.about-tabs .about-tag[aria-selected="true"] { color: color-mix(in srgb, var(--text) 72%, var(--violet)); }
+.about-tabs .about-tag[aria-selected="true"]::after { transform: translateX(-50%) scaleX(1); opacity: 1; }
+.about-tabs .about-tag:hover { color: var(--text); }
+.about-tabs .about-tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+/* Les deux panneaux occupent la même case : la hauteur ne saute pas au changement. */
+.about-panneaux { display: grid; }
+.about-panneau { grid-area: 1 / 1; align-self: center; }
+#a-propos { scroll-margin-top: 50px; }
+.js-onglets .about-panneau { opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s; }
+.js-onglets .about-panneau.actif { opacity: 1; visibility: visible; transform: none; transition: opacity 0.3s ease 0.18s, transform 0.3s ease 0.18s, visibility 0s; }
+.about-contact-liens { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.about-contact-lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.9rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: border-color 0.14s ease-out;
+}
+.about-contact-lien:hover { border-color: var(--accent); }
+.about-contact-lien .icon { width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .js-onglets .about-panneau, .js-onglets .about-panneau.actif, .about-tabs .about-tag::after { transition: none; transform: none; }
+  .about-tabs .about-tag[aria-selected="true"]::after { transform: translateX(-50%); }
+}

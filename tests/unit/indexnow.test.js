@@ -28,6 +28,7 @@ describe('IndexNow', () => {
     expect(urlsModifiees(['src/data/chapitres_concours_mp.json'], sitemap)).toEqual([`${S}/chapitres-concours`]);
     expect(urlsModifiees(['src/data/distribution_moyennes_2025.json'], sitemap)).toEqual([`${S}/calculateur`]);
     expect(urlsModifiees(['src/data/places2026.json'], sitemap)).toEqual([`${S}/places-2026`]);
+    expect(urlsModifiees(['src/a-propos.js'], sitemap)).toEqual([`${S}/`]);
   });
 
   it('announces every page when a shared file changes', () => {

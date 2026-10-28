@@ -172,6 +172,7 @@ export const TEXTES = {
     'pied.ressources': 'Ressources',
     'pied.chapitres': 'Chapitres du concours',
     'pied.apprendre': 'Apprendre à apprendre',
+    'pied.contact': 'Contact',
     'pied.note': 'Des méthodes d\'apprentissage adaptées à la prépa.',
   },
 
@@ -338,6 +339,7 @@ export const TEXTES = {
     'pied.ressources': 'الموارد',
     'pied.chapitres': 'فصول المناظرة',
     'pied.apprendre': 'تعلّم كيف تتعلّم',
+    'pied.contact': 'اتصل بنا',
     'pied.note': 'طرق تعلّم مكيّفة للأقسام التحضيرية.',
   },
 };
