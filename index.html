@@ -219,29 +219,36 @@
     <section class="about-band reveal" id="a-propos" aria-labelledby="about-title">
       <div class="about-glow" aria-hidden="true"></div>
       <div class="about-wrap">
-        <span class="about-tag">À propos</span>
-        <h2 id="about-title">Fait par des prépas, <span class="grad-text">pour des prépas</span></h2>
-        <p class="about-lead">Prep'Up est pensé pour les prépas en 1ère et 2ème année (MP, PC, T, BG). Estimer ton rang, comparer les filières aux affectations passées, fixer tes notes à viser, retrouver cours et sujets par matière, ou lire l'historique des chapitres au concours MP : tout est regroupé ici.</p>
-        <ul class="about-outils" aria-label="Outils disponibles">
-          <li><a href="/calculateur">Rang &amp; filières accessibles</a></li>
-          <li><a href="/places-2026">Places 2026</a></li>
-          <li><a href="/ressources">Ressources</a></li>
-          <li><a href="/chapitres-concours">Chapitres du concours</a></li>
-          <li><a href="/apprendre-a-apprendre">Apprendre à apprendre</a></li>
-          <li><a href="https://rakezly.vercel.app/" target="_blank" rel="noopener">Pomodoro</a></li>
-        </ul>
-        <div class="about-contact" id="contact">
-          <h3>Contact</h3>
-          <p>Prep'Up est fait par Rayen, passé par la prépa. Une question, une erreur, une idée ou une envie de collaborer : écris-moi.</p>
-          <div class="about-contact-liens">
-            <a class="about-contact-lien" id="ct-mail" href="#contact">
-              <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-mail"/></svg>
-              <span id="ct-mail-adresse">contact.prep.upp [at] gmail.com</span>
-            </a>
-            <a class="about-contact-lien" href="https://www.instagram.com/prep__upp/" target="_blank" rel="noopener me">
-              <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-instagram"/></svg>
-              <span>@prep__upp</span>
-            </a>
+        <div class="about-tabs" role="tablist" aria-label="À propos et contact">
+          <button class="about-tag" type="button" role="tab" id="tab-a-propos" aria-controls="panneau-a-propos" aria-selected="true">À propos</button>
+          <button class="about-tag" type="button" role="tab" id="tab-contact" aria-controls="panneau-contact" aria-selected="false" tabindex="-1">Contact</button>
+        </div>
+        <div class="about-panneaux">
+          <div class="about-panneau actif" id="panneau-a-propos" role="tabpanel" aria-labelledby="tab-a-propos">
+            <h2 id="about-title">Fait par des prépas, <span class="grad-text">pour des prépas</span></h2>
+            <p class="about-lead">Prep'Up est pensé pour les prépas en 1ère et 2ème année (MP, PC, T, BG). Estimer ton rang, comparer les filières aux affectations passées, fixer tes notes à viser, retrouver cours et sujets par matière, ou lire l'historique des chapitres au concours MP : tout est regroupé ici.</p>
+            <ul class="about-outils" aria-label="Outils disponibles">
+              <li><a href="/calculateur">Rang &amp; filières accessibles</a></li>
+              <li><a href="/places-2026">Places 2026</a></li>
+              <li><a href="/ressources">Ressources</a></li>
+              <li><a href="/chapitres-concours">Chapitres du concours</a></li>
+              <li><a href="/apprendre-a-apprendre">Apprendre à apprendre</a></li>
+              <li><a href="https://rakezly.vercel.app/" target="_blank" rel="noopener">Pomodoro</a></li>
+            </ul>
+          </div>
+          <div class="about-panneau" id="panneau-contact" role="tabpanel" aria-labelledby="tab-contact">
+            <h2>Une question ? <span class="grad-text">Écris-moi</span></h2>
+            <p class="about-lead">Prep'Up est fait par Rayen, passé par la prépa. Une erreur, une idée ou une envie de collaborer : je lis tout.</p>
+            <div class="about-contact-liens">
+              <a class="about-contact-lien" id="ct-mail" href="#a-propos">
+                <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-mail"/></svg>
+                <span id="ct-mail-adresse">contact.prep.upp [at] gmail.com</span>
+              </a>
+              <a class="about-contact-lien" href="https://www.instagram.com/prep__upp/" target="_blank" rel="noopener me">
+                <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-instagram"/></svg>
+                <span>@prep__upp</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -299,7 +306,7 @@
       });
     </script>
     <script type="module" src="/src/analytics.js"></script>
-    <script type="module" src="/src/contact-lien.js"></script>
+    <script type="module" src="/src/a-propos.js"></script>
     <script type="module" src="/src/ui.js"></script>
   </body>
 </html>

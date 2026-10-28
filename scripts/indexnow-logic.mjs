@@ -10,7 +10,7 @@ export const SITE = `https://${HOTE}`;
 // règle qui correspond gagne.
 const REGLES = [
   // propre à une page
-  [/^index\.html$|^src\/contact-lien\.js$/, '/'],
+  [/^index\.html$|^src\/a-propos\.js$/, '/'],
   [/^calculateur\.html$|^src\/(calculator|simulateur|objectif|annee1)\.js$|^src\/lib\/(rank|calculator-reach|simulateur-logic|objectif-logic|annee1-logic)\.js$|^src\/data\/(coefficients|coefficients_1ere_annee|distribution_moyennes_[^/]+|guide_rangs_capacites|rangs_[^/]+)\.json$/, '/calculateur'],
   [/^ressources\.html$|^src\/(ressources|navigateur)\.js$|^src\/lib\/(ressources-logic|navigateur-integre|contact)\.js$|^src\/data\/ressources\.json$|^public\/sources\//, '/ressources'],
   [/^places-2026\.html$|^src\/places\.js$|^src\/data\/places2026\.json$/, '/places-2026'],
