@@ -79,11 +79,16 @@
       <p class="subtitle">Prep'Up est fait par Rayen, passé par la prépa, pour les élèves de prépa. Une question, une erreur, une idée ou une envie de collaborer : écris-moi.</p>
 
       <div class="feature-grid ct-grid">
-        <a class="feature-card live" id="ct-mail" href="/contact" style="--tint: var(--blue)">
+        <div class="feature-card ct-mail" style="--tint: var(--blue)">
           <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-mail"/></svg></div>
           <h3>Mail</h3>
           <p id="ct-mail-adresse">contact.prep.upp [at] gmail.com</p>
-        </a>
+          <div class="ct-actions" id="ct-mail-actions" hidden>
+            <a class="ct-btn" id="ct-gmail" href="/contact" target="_blank" rel="noopener">Ouvrir Gmail</a>
+            <a class="ct-btn" id="ct-mailto" href="/contact">Autre appli mail</a>
+            <button class="ct-btn" id="ct-copier" type="button">Copier l'adresse</button>
+          </div>
+        </div>
 
         <a class="feature-card live" href="https://www.instagram.com/prep__upp/" target="_blank" rel="noopener me" style="--tint: var(--pink)">
           <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-instagram"/></svg></div>
