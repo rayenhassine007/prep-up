@@ -3096,18 +3096,3 @@ html[lang="ar"] .aa-langue:lang(fr) { font-family: var(--font-display); }
 @media (max-width: 760px) {
   .ct-grid { grid-template-columns: 1fr; }
 }
-.ct-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.ct-btn {
-  padding: 7px 12px;
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-  background: var(--bg);
-  color: var(--text);
-  font: inherit;
-  font-size: 0.82rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: border-color 0.14s ease-out;
-}
-.ct-btn:hover { border-color: var(--accent); }
-.ct-btn:first-child { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); }
