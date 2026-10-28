@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact et à propos | Prep'Up</title>
+    <meta name="description" content="Contacter Prep'Up : par mail, sur Instagram ou sur LinkedIn. Prep'Up est fait par Rayen, passé par la prépa, pour les élèves de prépa MP, PC, T et BG." />
+    <link rel="canonical" href="https://prep-upp.com/contact" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Prep'Up" />
+    <meta property="og:title" content="Contact et à propos | Prep'Up" />
+    <meta property="og:description" content="Contacter Prep'Up par mail, sur Instagram ou sur LinkedIn." />
+    <meta property="og:url" content="https://prep-upp.com/contact" />
+    <meta property="og:image" content="https://prep-upp.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact et à propos | Prep'Up" />
+    <meta name="twitter:description" content="Contacter Prep'Up par mail, sur Instagram ou sur LinkedIn." />
+    <meta name="twitter:image" content="https://prep-upp.com/og-image.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "name": "Contact et à propos",
+            "url": "https://prep-upp.com/contact",
+            "inLanguage": "fr",
+            "about": { "@id": "https://prep-upp.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://prep-upp.com/#organization",
+            "name": "Prep'Up",
+            "url": "https://prep-upp.com/",
+            "logo": "https://prep-upp.com/logo.png",
+            "sameAs": ["https://www.instagram.com/prep__upp/"],
+            "founder": {
+              "@type": "Person",
+              "name": "Rayen",
+              "sameAs": ["https://www.linkedin.com/in/rayan-hassine-9b4163244/"]
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://prep-upp.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://prep-upp.com/contact" }
+            ]
+          }
+        ]
+      }
+    </script>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div class="bg-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+    <header class="site">
+      <a class="brand" href="/"><img class="brand-logo" src="/logo.png" alt="Prep'Up" />Prep<span>'Up</span></a>
+      <nav>
+        <a class="back" href="/">&larr; Accueil</a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Changer de thème">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/icons.svg#i-sun"/></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/icons.svg#i-moon"/></svg>
+        </button>
+      </nav>
+    </header>
+    <main class="ct">
+      <h1><span class="grad-text">Contact</span> et à propos</h1>
+      <p class="subtitle">Prep'Up est fait par Rayen, passé par la prépa, pour les élèves de prépa. Une question, une erreur, une idée ou une envie de collaborer : écris-moi.</p>
+
+      <div class="feature-grid ct-grid">
+        <a class="feature-card live" id="ct-mail" href="/contact" style="--tint: var(--blue)">
+          <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-mail"/></svg></div>
+          <h3>Mail</h3>
+          <p id="ct-mail-adresse">contact.prep.upp [at] gmail.com</p>
+        </a>
+
+        <a class="feature-card live" href="https://www.instagram.com/prep__upp/" target="_blank" rel="noopener me" style="--tint: var(--pink)">
+          <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-instagram"/></svg></div>
+          <h3>Instagram</h3>
+          <p>@prep__upp</p>
+        </a>
+
+        <a class="feature-card live" href="https://www.linkedin.com/in/rayan-hassine-9b4163244/" target="_blank" rel="noopener me" style="--tint: var(--violet)">
+          <div class="icon-chip"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-linkedin"/></svg></div>
+          <h3>LinkedIn</h3>
+          <p>Rayen, le créateur du site</p>
+        </a>
+      </div>
+
+      <div class="disclaimer ct-note">
+        Pour un avis rapide et anonyme sur le site, utilise le bouton <strong>Une idée ?</strong> en bas de l'écran.
+        Pour partager un cours, un TD ou un sujet, passe par
+        <a class="inline-link" href="/ressources">Proposer une ressource</a> sur la page Ressources.
+      </div>
+    </main>
+    <footer class="site-footer">
+      <nav class="site-footer-nav" aria-label="Outils Prep'Up">
+        <a href="/">Accueil</a>
+        <a href="/calculateur">Calculateur de rang</a>
+        <a href="/places-2026">Places 2026</a>
+        <a href="/ressources">Ressources</a>
+        <a href="/chapitres-concours">Chapitres du concours</a>
+        <a href="/apprendre-a-apprendre">Apprendre à apprendre</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <span class="grad-text">Prep'Up</span><br />
+      Les estimations sont indicatives : vérifie toujours les informations officielles.
+    </footer>
+    <script type="module" src="/src/analytics.js"></script>
+    <script type="module" src="/src/contact-page.js"></script>
+    <script type="module" src="/src/ui.js"></script>
+  </body>
+</html>

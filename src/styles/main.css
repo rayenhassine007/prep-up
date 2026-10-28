@@ -3087,3 +3087,12 @@ html[lang="ar"] .aa-langue:lang(fr) { font-family: var(--font-display); }
   body[data-imprimer="concours"] main > #concours { margin-top: 0; }
 }
 
+
+/* ---------- page Contact ---------- */
+.ct-grid { grid-template-columns: repeat(3, 1fr); margin-bottom: 18px; }
+.ct-grid .feature-card h3 { margin: 12px 0 4px; }
+.ct-grid .feature-card p { overflow-wrap: anywhere; }
+.ct-note { padding: 16px 20px; line-height: 1.6; }
+@media (max-width: 760px) {
+  .ct-grid { grid-template-columns: 1fr; }
+}
