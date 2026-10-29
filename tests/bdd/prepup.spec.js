@@ -22,7 +22,7 @@ test.describe('Feature: Homepage', () => {
     await page.goto('/#a-propos');
 
     const about = page.locator('#a-propos');
-    await expect(about.getByRole('heading', { name: /Fait par des prépas/i })).toBeVisible();
+    await expect(about.getByRole('heading', { name: /Fait par un ancien prépa/i })).toBeVisible();
     await expect(about.getByRole('link', { name: 'Rang & filières accessibles', exact: true })).toBeVisible();
     await expect(about.getByRole('link', { name: 'Ressources', exact: true })).toBeVisible();
     await expect(about.getByRole('link', { name: 'Chapitres du concours', exact: true })).toBeVisible();
