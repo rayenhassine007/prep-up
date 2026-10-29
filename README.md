@@ -1,6 +1,6 @@
 # Prep'Up
 
-Outils gratuits pour les prépas tunisiennes (**MP / PC / PT / BG**) - sans inscription, mobile-friendly.
+Outils gratuits pour les prépas (**MP / PC / PT / BG**).
 
 ## Fonctionnalités
 
@@ -49,7 +49,3 @@ src/
 Rangs et capacités basés sur les **résultats officiels d'affectation** et le **Journal Officiel (JORT)**. Les estimations sont indicatives - vérifie toujours les informations officielles.
 
 Les **liens de ressources** sont proposés par la communauté et modérés manuellement. Pour signaler un lien problématique ou demander un retrait, contacte le mainteneur.
-
-## Déploiement
-
-Déployé sur **Vercel** (build Vite automatique à chaque push). Aucune configuration serveur.
