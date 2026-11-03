@@ -286,6 +286,9 @@
     <script>
       // Smooth in-page scroll (manual rAF tween, works even when the OS
       // "reduce motion" setting would disable CSS scroll-behavior: smooth).
+      // Each step jumps with behavior 'instant': html has scroll-behavior:
+      // smooth, and a plain scrollTo would start a new native smooth scroll
+      // every frame, fighting the tween (slow start, then a jump).
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener('click', (e) => {
           const id = a.getAttribute('href').slice(1);
@@ -298,7 +301,7 @@
           const ease = (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
           function step(now) {
             const p = Math.min(1, (now - t0) / dur);
-            window.scrollTo(0, startY + (endY - startY) * ease(p));
+            window.scrollTo({ top: startY + (endY - startY) * ease(p), behavior: 'instant' });
             if (p < 1) requestAnimationFrame(step);
           }
           requestAnimationFrame(step);
