@@ -5,15 +5,15 @@
 | Command | Description |
 |---|---|
 | `npm test` | Run unit + BDD tests |
-| `npm run test:unit` | Vitest unit tests (54 tests) |
-| `npm run test:bdd` | Playwright BDD scenarios (18 tests, desktop + mobile) |
+| `npm run test:unit` | Vitest unit tests |
+| `npm run test:bdd` | Playwright BDD scenarios (desktop + mobile) |
 | `npm run test:unit:watch` | Vitest watch mode for TDD |
 
 ## Structure
 
-- **`src/lib/`** — Pure business logic extracted for testability (rank, simulateur, objectif, annee1, chapitres, ressources).
-- **`tests/unit/`** — Unit tests (Vitest) covering score/rank math, tiers, sorting, semester averages, favorites, chapter dedup.
-- **`tests/bdd/`** — BDD-style Playwright scenarios (Given/When/Then) for homepage, calculateur, ressources, chapitres.
+- **`src/lib/`**: Pure business logic extracted for testability (rank, simulateur, objectif, annee1, chapitres, ressources).
+- **`tests/unit/`**: Unit tests (Vitest) covering score/rank math, tiers, sorting, semester averages, favorites, chapter dedup.
+- **`tests/bdd/`**: BDD-style Playwright scenarios (Given/When/Then) for homepage, calculateur, ressources, chapitres.
 
 ## Coverage areas
 
