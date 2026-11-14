@@ -3130,3 +3130,18 @@ html[lang="ar"] .aa-langue:lang(fr) { font-family: var(--font-display); }
   .js-onglets .about-panneau, .js-onglets .about-panneau.actif, .about-tabs .about-tag::after { transition: none; transform: none; }
   .about-tabs .about-tag[aria-selected="true"]::after { transform: translateX(-50%); }
 }
+
+/* Bouton « Une idée ? » : le champ contact mis en avant */
+.fb-contact {
+  padding: 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.fb-contact-aide {
+  margin-top: -2px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-dim);
+}
