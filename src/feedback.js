@@ -149,13 +149,18 @@ function construireModal() {
   champMessage.appendChild(zone);
   form.appendChild(champMessage);
 
-  const champContact = el('label', 'submit-field');
-  champContact.appendChild(el('span', null, 'Ton contact (facultatif, pour une réponse)'));
+  // Mis en avant : sans contact, impossible de répondre. N'importe quel moyen
+  // convient, celui que la personne utilise vraiment.
+  const champContact = el('label', 'submit-field fb-contact');
+  champContact.appendChild(el('span', null, 'Tu veux une réponse ? Laisse un contact'));
+  champContact.appendChild(el('span', 'fb-contact-aide',
+    'Instagram, mail, WhatsApp, Facebook : celui que tu préfères, je te réponds dessus. Facultatif.'));
   const contact = el('input');
   contact.id = 'fb-contact';
   contact.type = 'text';
   contact.maxLength = 120;
-  contact.placeholder = 'mail ou Instagram';
+  contact.placeholder = '@insta, mail, numéro WhatsApp...';
+  contact.setAttribute('autocomplete', 'off');
   champContact.appendChild(contact);
   form.appendChild(champContact);
 
