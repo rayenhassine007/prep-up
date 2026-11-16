@@ -1394,7 +1394,13 @@
         },
         {
           "matiere": "Physique",
-          "items": []
+          "items": [
+            {
+              "titre": "Concours national - Physique PC : annales corrigées 2017-2026 (10 épreuves, énoncés et corrigés détaillés, Mohamed Rjili) - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1gbdRVPoMNbhxDALEzPLxZdLlL_35tMDS/view"
+            }
+          ]
         },
         {
           "matiere": "Chimie",
