@@ -254,6 +254,31 @@
               "titre": "Liaisons chimiques (Lewis, VSEPR, polarité) - Cours à compléter, chapitre 3 (Amani Toumi) - MP",
               "type": "PDF",
               "url": "/sources/liaisons-chimiques-ch3-cours-a-completer.pdf"
+            },
+            {
+              "titre": "Atomistique - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1vHdMhOlNEMo5zagyrSffJZEz3eF_Hpfr"
+            },
+            {
+              "titre": "Atomistique - Résumé manuscrit - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1IpW90dkTGyF5TeimVqXrBuUq08HO2x7B"
+            },
+            {
+              "titre": "Cinétique chimique - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1MQLyY6D9o5X0EYQzMaJGJM32hDLUyQy1"
+            },
+            {
+              "titre": "Cinétique chimique - Résumé - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1InueYSd7BVglfo-4kt74xeOqlt_M-E7i"
+            },
+            {
+              "titre": "Thermodynamique chimique - Cours (Ridha Ben Ismail) - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/14VzJbe9Oel8CDYMOGlDeAwXVF3AiRxBi/view"
             }
           ]
         },
@@ -760,6 +785,71 @@
               "titre": "Cristallographie - Série n°2 : diffraction des rayons X (Mohsen Graia) - MP",
               "type": "PDF",
               "url": "/sources/serie-2-cristallographie-diffraction-rx.pdf"
+            },
+            {
+              "titre": "Introduction à la cristallographie - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/11VhFXJUslYBXPKd0hmU-_eZuw_U2bife"
+            },
+            {
+              "titre": "Introduction à la cristallographie - Autre cours complet (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1Zh4GXsqJkLOyiFrfcZM-Y1lefScuRXSc"
+            },
+            {
+              "titre": "Introduction à la cristallographie - Résumé (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1y-gAcXjDReF44lvqcTeGFFZrIGzxzeO4"
+            },
+            {
+              "titre": "Cristaux métalliques - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1XPstrjsza4wStQu2guE7RdLkyV0N_fgV"
+            },
+            {
+              "titre": "Cristaux ioniques - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1gtr8HPNvnwjJ4zjvTL1VmCJnPGws5Zkx"
+            },
+            {
+              "titre": "Cristaux macrocovalents - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1yeM1mQoUl_xJM-nTbEl4cgimvLr-xO1_"
+            },
+            {
+              "titre": "Cristallographie - DS1 (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1smtsycVmP7yZPta0Q1iQa4XpHk06xcOI"
+            },
+            {
+              "titre": "Diagrammes de phase de corps purs - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1CVPpHy-RogHCHtNiLXHYMWudzOpIVFOB"
+            },
+            {
+              "titre": "Diagrammes de phase de corps purs - Résumé manuscrit - MP",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1KuwKCdGWluITDdtAyVZepjw7JKkrTZi-/view"
+            },
+            {
+              "titre": "Diagrammes binaires - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1Oq_e7YWpUgzcOVYLhx5mAqrWs7ye_ebW"
+            },
+            {
+              "titre": "Diagrammes binaires solide-liquide - Résumé manuscrit - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1IzGgN3iwHe2YmMgUZh0WULIAmrOgLbFQ"
+            },
+            {
+              "titre": "Diagramme de Pourbaix (E-pH) - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/13Lerm7eRCrst8Mdyz0grBTOOsmRPQkcW"
+            },
+            {
+              "titre": "Courbes intensité-potentiel - Cours et TD (Ridha Ben Ismail) - MP",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1NksTG1ESg_cbNSMelaSD3j_815QYN5Mq"
             }
           ]
         },
@@ -1119,12 +1209,73 @@
               "titre": "Analyse - pack Taki",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1TOWbMuK8vy2_KQedqcQvxQrYc5D5c8ZI"
+            },
+            {
+              "titre": "Analyse - Cours et TD du 1er semestre - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1ihlWDZXPVxropanklXCl_BRsGbZzfbdT"
+            },
+            {
+              "titre": "Analyse - Cours et TD du 2ème semestre - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1kVgRv9V_mhmG_0px_4MQoeUfV-gYnkmJ"
+            },
+            {
+              "titre": "Algèbre - Cours et TD du 1er semestre - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1kMoMlGENwW2-lqhgHbCJIUXMEuEkSWLE"
+            },
+            {
+              "titre": "Algèbre - Cours et TD du 2ème semestre - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1kM7drjnf-DrMztSHWkdnDUBzjU_XVWot"
+            },
+            {
+              "titre": "Analyse - Résumé en 30 fiches (Daniel Fredon) - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1l_BvTNYG7lpd5QSqJglSKm-p8hJMdd0E/view"
+            },
+            {
+              "titre": "Algèbre - Résumé en 30 fiches (Daniel Fredon) - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1kKbaAvqjQirK-Jz4ofaad-xQCIbsGvpr/view"
             }
           ]
         },
         {
           "matiere": "Physique",
-          "items": []
+          "items": [
+            {
+              "titre": "Thermodynamique - Cours et TD (Sfax) - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1P2zeNR0jaHzS3KWAKm1SVoocRiM2Tv3G"
+            },
+            {
+              "titre": "Optique géométrique - Cours et TD (Sfax) - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1OiadbWN-Hy52GJVhkGxOeDtGtq_sg2E1"
+            },
+            {
+              "titre": "Mécanique - Cours et TD (Sfax) - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1PDlY62wLwRSU4zaKBno_Tax8fOfPv9Lw"
+            },
+            {
+              "titre": "Électromagnétisme - Cours et TD (Sfax) - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1PGFwEDHvMUAvnEZYWhffZu2EC_p5XpKX"
+            },
+            {
+              "titre": "Programme complet - TD de toute l'année (IPEST) - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1yYyv4zsV5KZwL-0MduVom-BqI7xFfOEY"
+            },
+            {
+              "titre": "Programme complet - Examen 2 (Sfax) - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1P8sD6ykMh-TBWYGztn8EuOQA1cDXk4Ux"
+            }
+          ]
         },
         {
           "matiere": "Chimie",
@@ -1133,6 +1284,11 @@
               "titre": "Liaisons chimiques (Lewis, VSEPR, polarité) - Cours à compléter, chapitre 3 (Amani Toumi) - PC",
               "type": "PDF",
               "url": "/sources/liaisons-chimiques-ch3-cours-a-completer.pdf"
+            },
+            {
+              "titre": "Atomistique - Révision - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1-vljS2nqesJZ_6bDwBVVWSD3ONDU9ref/view"
             }
           ]
         },
@@ -1233,7 +1389,38 @@
         },
         {
           "matiere": "STA",
-          "items": []
+          "items": [
+            {
+              "titre": "Mécanique (MSI) - Cours et TD - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1NZypBRjxRwXuB03uUN5uKQaX0rDUyMZ0"
+            },
+            {
+              "titre": "Mécanique (MSI) - TP - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1NXjunfK6AKTBCydr_iD8JutSzIcSqg1C"
+            },
+            {
+              "titre": "Automatique - Cours et TD - PC",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1NXVZzUwDjs2X7d97xUn0lsTMUERlsB9H"
+            },
+            {
+              "titre": "Automatique et conception - Résumé - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1OyknSF_361dckFNfh8z5_vbrdBQKAQvf/view"
+            },
+            {
+              "titre": "Programme complet - Examen 2 2017-2018, énoncé - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1N_FPIssNr_CcxmXQQcmSGtSonLej97ze/view"
+            },
+            {
+              "titre": "Programme complet - Examen 2 2017-2018, correction - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1P0BHtABDbUTZY38Az7BZ9efb-XlAFLAz/view"
+            }
+          ]
         },
         {
           "matiere": "Français",
@@ -1399,6 +1586,41 @@
               "titre": "Concours national - Physique PC : annales corrigées 2017-2026 (10 épreuves, énoncés et corrigés détaillés, Mohamed Rjili) - PC",
               "type": "PDF",
               "url": "https://drive.google.com/file/d/1gbdRVPoMNbhxDALEzPLxZdLlL_35tMDS/view"
+            },
+            {
+              "titre": "Électromagnétisme - Cours - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1E92p793cil3Sywk7s_YmaBwzjgqWdbpB/view"
+            },
+            {
+              "titre": "Physique des ondes - Cours - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1-vHq6KRE5UlThW_aekiH7lUiwnxCLdf6/view"
+            },
+            {
+              "titre": "Optique - Cours - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1DB0HNQ-qn1TwknyOiL8nMaWDYwVe_exv/view"
+            },
+            {
+              "titre": "Thermodynamique - Cours - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1P7VsvHcoiArZSs2ww2ySrl7hJNObZ5fv/view"
+            },
+            {
+              "titre": "Mécanique des fluides - Cours - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1XlAeTieBqK-BZfJKb7pYpgcj8j9FYKVj/view"
+            },
+            {
+              "titre": "Approche ondulatoire de la physique quantique - Cours - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1qp-9TO9rkTrIgcQmRQ2Yx5awmr73bdv1/view"
+            },
+            {
+              "titre": "Introduction à la physique du laser - Cours - PC",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1iwuTUP2xSK8JR_l-jEL5S1MbEJ9iIupL/view"
             }
           ]
         },
@@ -1623,6 +1845,36 @@
               "titre": "Analyse - pack Taki",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1TOWbMuK8vy2_KQedqcQvxQrYc5D5c8ZI"
+            },
+            {
+              "titre": "Analyse - Cours et TD du 1er semestre - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1ihlWDZXPVxropanklXCl_BRsGbZzfbdT"
+            },
+            {
+              "titre": "Analyse - Cours et TD du 2ème semestre - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1kVgRv9V_mhmG_0px_4MQoeUfV-gYnkmJ"
+            },
+            {
+              "titre": "Algèbre - Cours et TD du 1er semestre - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1kMoMlGENwW2-lqhgHbCJIUXMEuEkSWLE"
+            },
+            {
+              "titre": "Algèbre - Cours et TD du 2ème semestre - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1kM7drjnf-DrMztSHWkdnDUBzjU_XVWot"
+            },
+            {
+              "titre": "Analyse - Résumé en 30 fiches (Daniel Fredon) - PT",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1l_BvTNYG7lpd5QSqJglSKm-p8hJMdd0E/view"
+            },
+            {
+              "titre": "Algèbre - Résumé en 30 fiches (Daniel Fredon) - PT",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1kKbaAvqjQirK-Jz4ofaad-xQCIbsGvpr/view"
             }
           ]
         },
@@ -1653,6 +1905,36 @@
               "titre": "Systèmes de coordonnées - Série d'exercices n°2 (IPEI Gabès 2026-2027) - PT",
               "type": "PDF",
               "url": "/sources/serie-2-systemes-coordonnees-t1-ipei-gabes.pdf"
+            },
+            {
+              "titre": "Thermodynamique - Cours et TD (Sfax) - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1P2zeNR0jaHzS3KWAKm1SVoocRiM2Tv3G"
+            },
+            {
+              "titre": "Optique géométrique - Cours et TD (Sfax) - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1OiadbWN-Hy52GJVhkGxOeDtGtq_sg2E1"
+            },
+            {
+              "titre": "Mécanique - Cours et TD (Sfax) - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1PDlY62wLwRSU4zaKBno_Tax8fOfPv9Lw"
+            },
+            {
+              "titre": "Électromagnétisme - Cours et TD (Sfax) - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1PGFwEDHvMUAvnEZYWhffZu2EC_p5XpKX"
+            },
+            {
+              "titre": "Programme complet - TD de toute l'année (IPEST) - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1yYyv4zsV5KZwL-0MduVom-BqI7xFfOEY"
+            },
+            {
+              "titre": "Programme complet - Examen 2 (Sfax) - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1P8sD6ykMh-TBWYGztn8EuOQA1cDXk4Ux"
             }
           ]
         },
@@ -1683,6 +1965,11 @@
               "titre": "Liaisons chimiques (Lewis, VSEPR, polarité) - Cours à compléter, chapitre 3 (Amani Toumi) - PT",
               "type": "PDF",
               "url": "/sources/liaisons-chimiques-ch3-cours-a-completer.pdf"
+            },
+            {
+              "titre": "Atomistique - Révision - PT",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1-vljS2nqesJZ_6bDwBVVWSD3ONDU9ref/view"
             }
           ]
         },
@@ -1708,6 +1995,36 @@
               "titre": "Cours STI (PDF)",
               "type": "PDF",
               "url": "https://drive.google.com/file/d/1e6hOTGmOv99G2-LEFFf_n55vsXw5frcA/view"
+            },
+            {
+              "titre": "Mécanique (MSI) - Cours et TD - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1NZypBRjxRwXuB03uUN5uKQaX0rDUyMZ0"
+            },
+            {
+              "titre": "Mécanique (MSI) - TP - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1NXjunfK6AKTBCydr_iD8JutSzIcSqg1C"
+            },
+            {
+              "titre": "Automatique - Cours et TD - PT",
+              "type": "Drive",
+              "url": "https://drive.google.com/drive/folders/1NXVZzUwDjs2X7d97xUn0lsTMUERlsB9H"
+            },
+            {
+              "titre": "Automatique et conception - Résumé - PT",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1OyknSF_361dckFNfh8z5_vbrdBQKAQvf/view"
+            },
+            {
+              "titre": "Programme complet - Examen 2 2017-2018, énoncé - PT",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1N_FPIssNr_CcxmXQQcmSGtSonLej97ze/view"
+            },
+            {
+              "titre": "Programme complet - Examen 2 2017-2018, correction - PT",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1P0BHtABDbUTZY38Az7BZ9efb-XlAFLAz/view"
             }
           ]
         },
@@ -1718,6 +2035,16 @@
               "titre": "CFM - 1er prépa",
               "type": "Drive",
               "url": "https://drive.google.com/drive/folders/1M30Sw6bmQzMbZThzl3V3RCQ-4rE7UeeR"
+            },
+            {
+              "titre": "Conception et fabrication - Production, 1er semestre - PT",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1XThvT06zFdmHWTZ23opn4VCOCNaaObZ4/view"
+            },
+            {
+              "titre": "Conception et fabrication - Résumé du 2ème semestre - PT",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1XfoAaw7-E1tSNfX2jB6WEEzZYXDVYJwT/view"
             }
           ]
         },
@@ -2314,6 +2641,31 @@
               "titre": "ADN (Google Doc)",
               "type": "Doc",
               "url": "https://docs.google.com/document/d/1_ied9n4FQ-hApZsnefunIrLnfg4IjURZlP8GzqggQ08"
+            },
+            {
+              "titre": "Génétique - Cours (BG1) - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1u0up9Wo_ckGuNp6rY19I57M-fYCzu4EW/view"
+            },
+            {
+              "titre": "Génétique - Cours, 2ème version (BG1) - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1uJP6MkRBQk0WylvJkDCLIn_VMwe1n4tt/view"
+            },
+            {
+              "titre": "Génétique - Fascicule de TD (BG1) - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1u9LQOG4AaqWAw67RkaemxALNb4U5VCLS/view"
+            },
+            {
+              "titre": "Biologie végétale - Histologie et anatomie, les tissus - Cours - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1h9rT0HV8jP5gz22ZJrplx2Z1uT6Xx6cB/view"
+            },
+            {
+              "titre": "Biologie animale - Examen BA1 janvier 2023 - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1hrHQKNXvtkUPgOY8tH8v9VlkkieKGvE_/view"
             }
           ]
         },
@@ -2364,6 +2716,31 @@
               "titre": "Liaisons chimiques (Lewis, VSEPR, polarité) - Cours à compléter, chapitre 3 (Amani Toumi) - BG",
               "type": "PDF",
               "url": "/sources/liaisons-chimiques-ch3-cours-a-completer.pdf"
+            },
+            {
+              "titre": "Cristallographie - TD2 - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1uJ3IT2bULWd2rz6GBRZGO_mdwqzRKSWp/view"
+            },
+            {
+              "titre": "Thermodynamique chimique I - Introduction - Cours - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1mFMhVh0YxpNGkwSzkakWakd3wDVf7y5O/view"
+            },
+            {
+              "titre": "Thermodynamique chimique I - Premier principe - Cours - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1lzf6BYlgMO-oqpiyXqBRrABpvCL-D_ka/view"
+            },
+            {
+              "titre": "Thermodynamique chimique I - Premier principe, volet expérimental - Cours - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1ls6YkQkATZxiS8uS9YmrkGglZbD3VwcP/view"
+            },
+            {
+              "titre": "Thermodynamique chimique II - Deuxième et troisième principes - Cours - BG",
+              "type": "PDF",
+              "url": "https://drive.google.com/file/d/1mFUsCk6_eGVlnxztO2-zqKUtoTC7KJMI/view"
             }
           ]
         },
